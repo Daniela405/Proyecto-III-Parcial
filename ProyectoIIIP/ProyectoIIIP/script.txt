@@ -1,0 +1,142 @@
+﻿create database proyecto 
+go 
+
+use proyecto 
+go 
+
+create table usuario(
+id int primary key not null, 
+nombre varchar(25) not null,
+apellido varchar(25) not null,
+usuario varchar(25) not null,
+contraseña varchar(50) not null,
+correo varchar(50) not null
+
+
+)
+
+
+create table empleado(
+id int primary key not null, 
+nombre varchar(25) not null,
+apellido varchar(25) not null,
+edad int not null,
+sexo varchar(25) not null,
+cargo varchar(50) not null,
+idusuario int not null
+
+constraint fk_empleado_usuario
+	foreign key (idusuario)
+	references usuario(id),
+)
+
+create table cliente(
+id int primary key not null, 
+nombre varchar(25) not null,
+apellido varchar(25) not null,
+
+)
+
+create table producto(
+id int primary key not null, 
+tipoproducto varchar(50) not null,
+nombre varchar(25) not null,
+precio decimal not null,
+cantidad int not null,
+estado varchar(25) not null
+)
+
+create table proveedor(
+id int primary key not null, 
+nombre varchar(25) not null,
+direccion varchar(50) not null, 
+telefono int not null, 
+correo varchar(60) not null,
+RTN int not null,
+idproducto int not null
+
+constraint fk_proveedor_producto
+	foreign key (idproducto)
+	references producto(id),
+)
+
+
+create table unas (
+id int primary key not null, 
+nombre varchar(50) not null, 
+preciounas decimal not null
+)
+
+create table cabello(
+id int primary key not null, 
+nombre varchar(50) not null, 
+preciocabello decimal not null
+)
+
+create table piel(
+id int primary key not null, 
+nombre varchar(50) not null, 
+preciopiel decimal not null
+)
+
+create table masaje(
+id int primary key not null, 
+nombre varchar(50) not null, 
+preciomasaje decimal not null
+)
+
+
+create table servicios(
+id int primary key not null,
+tiposervicio varchar(50) not null,
+idunas int ,
+idcabello int,
+idpiel int,
+idmasaje int
+
+constraint fk_servicios_nombreunas
+	foreign key (idunas)
+	references unas(id),
+
+	constraint fk_servicios_cabello
+	foreign key (idcabello)
+	references cabello(id),
+
+	constraint fk_servicios_piel
+	foreign key (idpiel)
+	references piel(id),
+
+	constraint fk_servicios_masaje
+	foreign key (idmasaje)
+	references masaje(id),
+)
+
+
+
+
+create table factura(
+id int primary key not null, 
+idcliente int  not null, 
+idempleado int not null,
+idproducto int not null,
+idservicios int not null
+
+ 
+	constraint fk_factura_idcliente 
+	foreign key (idcliente)
+	references cliente(id),
+
+	constraint fk_factura_idempleado
+	foreign key (idempleado)
+	references empleado(id),
+
+	constraint fk_factura_idproducto
+	foreign key (idproducto)
+	references producto(id),
+
+	constraint fk_factura_idservicios
+	foreign key (idservicios)
+	references servicios(id),
+
+
+)
