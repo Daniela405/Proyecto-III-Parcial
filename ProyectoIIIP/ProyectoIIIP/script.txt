@@ -1,4 +1,6 @@
-﻿create database proyecto 
+﻿drop database proyecto 
+
+create database proyecto 
 go 
 
 use proyecto 
@@ -12,9 +14,79 @@ usuario varchar(25) not null,
 contraseña varchar(50) not null,
 correo varchar(50) not null
 
+)
+
+-----ccreacion de procedimiento agregar usuario
+
+create procedure agregarUsuario (
+@id int,
+@nombre varchar(25),
+@apellido varchar(25),
+@usuario varchar(25),
+@contraseña varchar(25),
+@correo varchar(25)
 
 )
 
+AS
+BEGIN
+insert into usuario(id, nombre,apellido,usuario,contraseña,correo) 
+values(@id, @nombre,@apellido,@usuario,@contraseña,@correo)
+END
+
+exec agregarUsuario 3, 'marlon','menjivar','maquillista','1234','meilimala@gmail.com'
+
+
+select * from usuario
+
+
+--actualizar usuaario---
+create procedure actualizarUsuario (
+@id as int ,
+@nombre varchar(25),
+@apellido varchar(25),
+@usuario varchar(25),
+@contraseña varchar(25),
+@correo varchar(25)
+
+)
+
+AS
+BEGIN
+update usuario
+set nombre  = @nombre, apellido= @apellido, usuario = @usuario,
+contraseña  = @contraseña,correo = @correo
+where id = @id
+end 
+exec actualizarUsuario 3,' meliza','bonita','Admi','123456','melimala@gmail.com' 
+select  * from usuario  
+
+----crear procedimiento eliminar usuario
+create procedure eliminarUsuario(@id int )
+AS
+BEGIN
+delete from usuario where id = @id
+END
+
+exec eliminarUsuario 3
+select * from usuario
+
+----crear procedimiento consutar usurio
+
+create procedure consultarUsuario(@id as int)
+AS 
+BEGIN
+select id, nombre, apellido,usuario, contraseña, correo from  usuario
+
+where id = @id
+END
+
+exec consultarUsuario  3
+
+
+
+
+select * from usuario
 
 create table empleado(
 id int primary key not null, 
@@ -22,13 +94,84 @@ nombre varchar(25) not null,
 apellido varchar(25) not null,
 edad int not null,
 sexo varchar(25) not null,
-cargo varchar(50) not null,
-idusuario int not null
+cargo varchar(50) not null
 
-constraint fk_empleado_usuario
-	foreign key (idusuario)
-	references usuario(id),
 )
+
+----crear procedimiento para inseertar empleado
+
+create procedure agregarEmpleado (
+@id int,
+@nombre varchar(25) ,
+@apellido varchar(25), 
+@edad int ,
+@sexo varchar(25) ,
+@cargo varchar(50) 
+
+)
+
+AS
+BEGIN
+
+insert into empleado (id, nombre,apellido,edad,sexo,cargo) 
+values(@id, @nombre,@apellido,@edad,@sexo,@cargo)
+END
+
+exec agregarEmpleado 2, 'felipe','menjivar',22,'masculino','Make up artist';
+
+exec agregarEmpleado 3, 'Rosa','melento',22,'masculino','Masajista';
+
+select * from empleado
+
+----crear procedimiento de actualizar empleado----
+
+create procedure actualizarEmpleado (
+@id int,
+@nombre varchar(25) ,
+@apellido varchar(25), 
+@edad int ,
+@sexo varchar(25) ,
+@cargo varchar(50) 
+
+)
+
+AS
+BEGIN
+update empleado
+set nombre = @nombre, apellido = @apellido, edad = @edad,
+sexo = @sexo,cargo = @cargo
+where id = @id
+end 
+exec actualizarEmpleado 2, 'felipe','menjivar',20,'Binario','Make up artist';
+select  * from empleado
+
+
+----crear procedimiento eliminar empleado
+create procedure eliminarEmpleado(@id int )
+AS
+BEGIN
+delete from empleado where id = @id
+END
+
+exec eliminarEmpleado 3
+select * from empleado
+
+----crear procedimiento consutar empleado
+
+create procedure consultarEmpleado (@id as int)
+AS 
+BEGIN
+select id, nombre, apellido,edad, sexo, cargo from  empleado
+
+where id = @id
+END
+
+exec consultarEmpleado 1
+
+
+
+
+select * from empleado
 
 create table cliente(
 id int primary key not null, 
@@ -36,6 +179,67 @@ nombre varchar(25) not null,
 apellido varchar(25) not null,
 
 )
+
+---procedimiento insertar cliente---
+
+create procedure Insertarcliente (
+@id int ,
+@nombre varchar(25),
+@apellido varchar(25)
+)
+
+AS
+BEGIN
+insert into cliente (id,nombre,apellido)values
+(@id,@nombre,@apellido);
+END
+
+exec Insertarcliente 1,'Mauricio', 'Negro'
+select * from cliente
+
+---procedimiento para actualizar cliente------
+create procedure actualizarCliente (
+@id as int ,
+@nombre varchar(25),
+@apellido varchar(25)
+)
+
+AS
+BEGIN
+update cliente
+set nombre  = @nombre, apellido= @apellido
+where id = @id
+end 
+exec actualizarCliente 1,'Mauricio', 'Hernandez'
+select  * from cliente
+
+
+----procedimiento eliminar cliente----
+create procedure eliminarCliente(@id int )
+AS
+BEGIN
+delete from cliente where id = @id
+END
+
+exec eliminarCliente 1
+select * from cliente
+
+----crear procedimiento consutar cliente
+
+create procedure consultarCliente (@id as int)
+AS 
+BEGIN
+select id, nombre, apellido from  cliente
+
+where id = @id
+END
+
+exec consultarCliente 1
+
+
+
+
+select * from cliente
 
 create table producto(
 id int primary key not null, 
@@ -45,6 +249,80 @@ precio decimal not null,
 cantidad int not null,
 estado varchar(25) not null
 )
+----procedimiento para insertar producto
+create procedure agregarProducto (
+@id int, 
+@tipoproducto varchar(50), 
+@nombre varchar(25) ,
+@precio decimal ,
+@cantidad int ,
+@estado varchar(25) 
+)
+
+AS
+BEGIN
+
+insert into producto (id, tipoproducto,nombre,precio,cantidad,estado) 
+values(@id, @tipoproducto,@nombre,@precio,@cantidad,@estado)
+END
+
+exec agregarProducto 1, 'shampoo','nivea',200,'20','Activo';
+
+
+select * from producto
+
+
+-----procedimiento para actualizar  producto---
+
+create procedure actualizarProducto (
+@id int, 
+@tipoproducto varchar(50), 
+@nombre varchar(25) ,
+@precio decimal ,
+@cantidad int ,
+@estado varchar(25) 
+
+)
+
+AS
+BEGIN
+update producto
+set tipoproducto = @tipoproducto, nombre = @nombre, precio = @precio, cantidad = @cantidad,
+estado = @estado
+where id = @id
+end 
+exec actualizarProducto 1, 'shampoo','nivea',150,'20','Activo';
+select  * from producto
+
+
+
+----procedimiento eliminar producto----
+create procedure eliminarProducto(@id int )
+AS
+BEGIN
+delete from  producto where id = @id
+END
+
+exec eliminarProducto 1
+select * from Producto
+
+----crear procedimiento consutar producto
+
+create procedure consultarProducto (@id as int)
+AS 
+BEGIN
+select * from  producto
+
+where id = @id
+END
+
+exec consultarProducto 1
+
+
+
+
+
+
 
 create table proveedor(
 id int primary key not null, 
@@ -60,56 +338,147 @@ constraint fk_proveedor_producto
 	references producto(id),
 )
 
-
-create table unas (
-id int primary key not null, 
-nombre varchar(50) not null, 
-preciounas decimal not null
+----crear procedimiento para agregar proveedor----
+create procedure agregarProveedor (
+@id int ,
+@nombre varchar(25) ,
+@direccion varchar(50) , 
+@telefono int , 
+@correo varchar(60),
+@RTN int ,
+@idproducto int 
 )
 
-create table cabello(
-id int primary key not null, 
-nombre varchar(50) not null, 
-preciocabello decimal not null
+AS
+BEGIN
+insert into Proveedor (id,nombre,direccion,telefono,correo,RTN,idproducto)values
+(@id,@nombre,@direccion,@telefono,@correo,@RTN,@idproducto);
+END
+
+
+exec agregarProveedor 1, 'CompanyFamily', 'san pedro sula', 27730989, 'company200@gmail.com', '32456', 1
+select * from proveedor
+
+----procedimiento para modificar proveedor---
+
+create procedure actualizarProveedor (
+@id int ,
+@nombre varchar(25) ,
+@direccion varchar(50) , 
+@telefono int , 
+@correo varchar(60),
+@RTN int ,
+@idproducto int 
 )
 
-create table piel(
-id int primary key not null, 
-nombre varchar(50) not null, 
-preciopiel decimal not null
-)
+AS
+BEGIN
+update proveedor
+set nombre = @nombre, direccion = @direccion, telefono = @telefono,
+correo = @correo, RTN =@RTN, idproducto =@idproducto
+where id = @id
+ end
 
-create table masaje(
-id int primary key not null, 
-nombre varchar(50) not null, 
-preciomasaje decimal not null
-)
+
+exec actualizarProveedor 1, 'CompanyFamily', 'tegus', 27730989, 'company200@gmail.com', '32456', 1
+
+select * from proveedor
+
+----procedimiento eliminar proveedor----
+create procedure eliminarProveedor(@id int )
+AS
+BEGIN
+delete from  proveedor where id = @id
+END
+
+exec eliminarProveedor 1
+select * from proveedor
+
+----crear procedimiento consutar proveedor
+
+create procedure consultarProveedor(@id as int)
+AS 
+BEGIN
+select * from  proveedor
+
+where id = @id
+END
+
+exec consultarProveedor 1
 
 
 create table servicios(
 id int primary key not null,
 tiposervicio varchar(50) not null,
-idunas int ,
-idcabello int,
-idpiel int,
-idmasaje int
-
-constraint fk_servicios_nombreunas
-	foreign key (idunas)
-	references unas(id),
-
-	constraint fk_servicios_cabello
-	foreign key (idcabello)
-	references cabello(id),
-
-	constraint fk_servicios_piel
-	foreign key (idpiel)
-	references piel(id),
-
-	constraint fk_servicios_masaje
-	foreign key (idmasaje)
-	references masaje(id),
+nombre varchar(50),
+precio decimal not null
 )
+
+---procedimiento para insertar servicios -----
+
+create procedure insertarServicio (
+@id int ,
+@tiposervicio varchar(50) ,
+@nombre varchar (50) ,
+@precio decimal 
+)
+
+AS
+BEGIN
+insert into servicios (id,tiposervicio,nombre,precio)values
+(@id,@tiposervicio,@nombre,@precio);
+END
+
+
+exec insertarServicio 1, 'Uñas', 'uñas acrilicas',300 
+
+
+select * from servicios
+
+----procedimiento para modifcar servicios---
+
+
+create procedure actualizarServicios (
+@id int ,
+@tiposervicio varchar(50) ,
+@nombre varchar (50) ,
+@precio decimal 
+)
+
+AS
+BEGIN
+update servicios
+set tiposervicio = @tiposervicio, nombre = @nombre, precio = @precio
+where id = @id
+
+
+End
+
+exec actualizarServicios 1, 'Uñas', 'uñas acrilicas',250
+
+select *from servicios
+
+----procedimiento eliminar servicios----
+create procedure eliminarServicios(@id int )
+AS
+BEGIN
+delete from  servicios where id = @id
+END
+
+exec eliminarProducto 1
+select * from servicios
+
+----crear procedimiento consutar servicios
+
+create procedure consultarServicios (@id as int)
+AS 
+BEGIN
+select * from  servicios
+
+where id = @id
+END
+
+exec consultarServicios 1
 
 
 
@@ -140,3 +509,68 @@ idservicios int not null
 
 
 )
+---procedimiento para insertar en facturad
+create procedure insertarFacturas (
+@id int, 
+@idcliente int  , 
+@idempleado int ,
+@idproducto int ,
+@idservicios int 
+)
+
+AS
+BEGIN
+insert into factura (id,idcliente,idempleado,idproducto,idservicios)values
+(@id,@idcliente,@idempleado,@idproducto,@idservicios);
+END
+
+
+exec insertarFacturas 1, 1, 2, 1, 1
+ select * from factura
+
+ ---procedimiento para actualizar----
+ 
+create procedure actualizarFactura (
+@id int, 
+@idcliente int  , 
+@idempleado int ,
+@idproducto int ,
+@idservicios int 
+)
+
+AS
+BEGIN
+update factura
+set idcliente= @idcliente, idempleado = @idempleado, idproducto = @idproducto,
+idservicios = @idservicios
+where id = @id
+
+End
+
+exec actualizarFactura 1, 1, 3, 1, 1 
+
+select * from factura
+
+
+----procedimiento eliminar factura----
+create procedure eliminarFactura(@id int )
+AS
+BEGIN
+delete from  factura where id = @id
+END
+
+exec eliminarfactura 1
+select * from factura
+
+----crear procedimiento consutar Factura
+
+create procedure consultarFactura (@id as int)
+AS 
+BEGIN
+select * from  factura
+
+where id = @id
+END
+
+exec consultarFactura 1
+
