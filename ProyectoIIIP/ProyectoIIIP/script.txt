@@ -16,7 +16,7 @@ correo varchar(50) not null
 
 )
 
------ccreacion de procedimiento agregar usuario
+-----ccreacion de procedimiento agregar usuario-------
 
 create procedure agregarUsuario (
 @id int,
