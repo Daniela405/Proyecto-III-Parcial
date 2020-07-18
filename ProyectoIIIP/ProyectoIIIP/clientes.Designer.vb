@@ -22,32 +22,36 @@ Partial Class Cliente
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.Label3 = New System.Windows.Forms.Label()
+        Me.txtapellido = New System.Windows.Forms.TextBox()
+        Me.txtnombre = New System.Windows.Forms.TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
-        Me.TextBox3 = New System.Windows.Forms.TextBox()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.txtcodigo = New System.Windows.Forms.TextBox()
+        Me.Label1 = New System.Windows.Forms.Label()
         Me.btnguardar = New System.Windows.Forms.Button()
         Me.btnmodificar = New System.Windows.Forms.Button()
         Me.btneliminar = New System.Windows.Forms.Button()
         Me.btnlimpiar = New System.Windows.Forms.Button()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.btnbuscar = New System.Windows.Forms.Button()
+        Me.tmensaje = New System.Windows.Forms.ToolTip(Me.components)
+        Me.ErrorValidacion = New System.Windows.Forms.ErrorProvider(Me.components)
         Me.GroupBox1.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ErrorValidacion, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'GroupBox1
         '
-        Me.GroupBox1.Controls.Add(Me.TextBox3)
-        Me.GroupBox1.Controls.Add(Me.TextBox2)
+        Me.GroupBox1.Controls.Add(Me.txtapellido)
+        Me.GroupBox1.Controls.Add(Me.txtnombre)
         Me.GroupBox1.Controls.Add(Me.Label4)
         Me.GroupBox1.Controls.Add(Me.Label3)
         Me.GroupBox1.Controls.Add(Me.Label2)
-        Me.GroupBox1.Controls.Add(Me.TextBox1)
+        Me.GroupBox1.Controls.Add(Me.txtcodigo)
         Me.GroupBox1.Controls.Add(Me.Label1)
         Me.GroupBox1.Location = New System.Drawing.Point(58, 34)
         Me.GroupBox1.Name = "GroupBox1"
@@ -56,38 +60,19 @@ Partial Class Cliente
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Información"
         '
-        'TextBox1
+        'txtapellido
         '
-        Me.TextBox1.Location = New System.Drawing.Point(151, 51)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(124, 26)
-        Me.TextBox1.TabIndex = 1
+        Me.txtapellido.Location = New System.Drawing.Point(151, 146)
+        Me.txtapellido.Name = "txtapellido"
+        Me.txtapellido.Size = New System.Drawing.Size(124, 26)
+        Me.txtapellido.TabIndex = 6
         '
-        'Label1
+        'txtnombre
         '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(37, 51)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(0, 20)
-        Me.Label1.TabIndex = 0
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(37, 51)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(59, 20)
-        Me.Label2.TabIndex = 2
-        Me.Label2.Text = "Código"
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(37, 94)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(65, 20)
-        Me.Label3.TabIndex = 3
-        Me.Label3.Text = "Nombre"
+        Me.txtnombre.Location = New System.Drawing.Point(151, 94)
+        Me.txtnombre.Name = "txtnombre"
+        Me.txtnombre.Size = New System.Drawing.Size(124, 26)
+        Me.txtnombre.TabIndex = 5
         '
         'Label4
         '
@@ -98,19 +83,38 @@ Partial Class Cliente
         Me.Label4.TabIndex = 4
         Me.Label4.Text = "Apellido"
         '
-        'TextBox2
+        'Label3
         '
-        Me.TextBox2.Location = New System.Drawing.Point(151, 94)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(124, 26)
-        Me.TextBox2.TabIndex = 5
+        Me.Label3.AutoSize = True
+        Me.Label3.Location = New System.Drawing.Point(37, 94)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(65, 20)
+        Me.Label3.TabIndex = 3
+        Me.Label3.Text = "Nombre"
         '
-        'TextBox3
+        'Label2
         '
-        Me.TextBox3.Location = New System.Drawing.Point(151, 146)
-        Me.TextBox3.Name = "TextBox3"
-        Me.TextBox3.Size = New System.Drawing.Size(124, 26)
-        Me.TextBox3.TabIndex = 6
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(37, 51)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(59, 20)
+        Me.Label2.TabIndex = 2
+        Me.Label2.Text = "Código"
+        '
+        'txtcodigo
+        '
+        Me.txtcodigo.Location = New System.Drawing.Point(151, 51)
+        Me.txtcodigo.Name = "txtcodigo"
+        Me.txtcodigo.Size = New System.Drawing.Size(124, 26)
+        Me.txtcodigo.TabIndex = 1
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(37, 51)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(0, 20)
+        Me.Label1.TabIndex = 0
         '
         'btnguardar
         '
@@ -167,6 +171,10 @@ Partial Class Cliente
         Me.btnbuscar.Text = "Buscar"
         Me.btnbuscar.UseVisualStyleBackColor = True
         '
+        'ErrorValidacion
+        '
+        Me.ErrorValidacion.ContainerControl = Me
+        '
         'Cliente
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
@@ -184,15 +192,16 @@ Partial Class Cliente
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.ErrorValidacion, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
 
     Friend WithEvents GroupBox1 As GroupBox
-    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents txtcodigo As TextBox
     Friend WithEvents Label1 As Label
-    Friend WithEvents TextBox3 As TextBox
-    Friend WithEvents TextBox2 As TextBox
+    Friend WithEvents txtapellido As TextBox
+    Friend WithEvents txtnombre As TextBox
     Friend WithEvents Label4 As Label
     Friend WithEvents Label3 As Label
     Friend WithEvents Label2 As Label
@@ -202,4 +211,6 @@ Partial Class Cliente
     Friend WithEvents btnlimpiar As Button
     Friend WithEvents DataGridView1 As DataGridView
     Friend WithEvents btnbuscar As Button
+    Friend WithEvents tmensaje As ToolTip
+    Friend WithEvents ErrorValidacion As ErrorProvider
 End Class

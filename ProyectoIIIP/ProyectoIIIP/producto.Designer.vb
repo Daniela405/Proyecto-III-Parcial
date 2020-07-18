@@ -29,18 +29,18 @@ Partial Class producto
         Me.btnguardar = New System.Windows.Forms.Button()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
+        Me.cmbtipo = New System.Windows.Forms.ComboBox()
+        Me.txtcantidad = New System.Windows.Forms.TextBox()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.txtprecio = New System.Windows.Forms.TextBox()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.txtnombre = New System.Windows.Forms.TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.txtcodigo = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.TextBox5 = New System.Windows.Forms.TextBox()
-        Me.Label6 = New System.Windows.Forms.Label()
-        Me.Label7 = New System.Windows.Forms.Label()
-        Me.TextBox6 = New System.Windows.Forms.TextBox()
-        Me.Label8 = New System.Windows.Forms.Label()
-        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
@@ -102,17 +102,17 @@ Partial Class producto
         '
         'GroupBox1
         '
-        Me.GroupBox1.Controls.Add(Me.ComboBox1)
-        Me.GroupBox1.Controls.Add(Me.TextBox5)
+        Me.GroupBox1.Controls.Add(Me.cmbtipo)
+        Me.GroupBox1.Controls.Add(Me.txtcantidad)
         Me.GroupBox1.Controls.Add(Me.Label6)
         Me.GroupBox1.Controls.Add(Me.Label7)
-        Me.GroupBox1.Controls.Add(Me.TextBox6)
+        Me.GroupBox1.Controls.Add(Me.txtprecio)
         Me.GroupBox1.Controls.Add(Me.Label8)
-        Me.GroupBox1.Controls.Add(Me.TextBox2)
+        Me.GroupBox1.Controls.Add(Me.txtnombre)
         Me.GroupBox1.Controls.Add(Me.Label4)
         Me.GroupBox1.Controls.Add(Me.Label3)
         Me.GroupBox1.Controls.Add(Me.Label2)
-        Me.GroupBox1.Controls.Add(Me.TextBox1)
+        Me.GroupBox1.Controls.Add(Me.txtcodigo)
         Me.GroupBox1.Controls.Add(Me.Label1)
         Me.GroupBox1.Location = New System.Drawing.Point(36, 21)
         Me.GroupBox1.Name = "GroupBox1"
@@ -121,12 +121,60 @@ Partial Class producto
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Información"
         '
-        'TextBox2
+        'cmbtipo
         '
-        Me.TextBox2.Location = New System.Drawing.Point(148, 138)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(124, 26)
-        Me.TextBox2.TabIndex = 5
+        Me.cmbtipo.FormattingEnabled = True
+        Me.cmbtipo.Location = New System.Drawing.Point(148, 92)
+        Me.cmbtipo.Name = "cmbtipo"
+        Me.cmbtipo.Size = New System.Drawing.Size(124, 28)
+        Me.cmbtipo.TabIndex = 14
+        '
+        'txtcantidad
+        '
+        Me.txtcantidad.Location = New System.Drawing.Point(148, 234)
+        Me.txtcantidad.Name = "txtcantidad"
+        Me.txtcantidad.Size = New System.Drawing.Size(124, 26)
+        Me.txtcantidad.TabIndex = 12
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Location = New System.Drawing.Point(34, 234)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(73, 20)
+        Me.Label6.TabIndex = 10
+        Me.Label6.Text = "Cantidad"
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Location = New System.Drawing.Point(34, 191)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(53, 20)
+        Me.Label7.TabIndex = 9
+        Me.Label7.Text = "Precio"
+        '
+        'txtprecio
+        '
+        Me.txtprecio.Location = New System.Drawing.Point(148, 191)
+        Me.txtprecio.Name = "txtprecio"
+        Me.txtprecio.Size = New System.Drawing.Size(124, 26)
+        Me.txtprecio.TabIndex = 8
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Location = New System.Drawing.Point(34, 191)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(0, 20)
+        Me.Label8.TabIndex = 7
+        '
+        'txtnombre
+        '
+        Me.txtnombre.Location = New System.Drawing.Point(148, 138)
+        Me.txtnombre.Name = "txtnombre"
+        Me.txtnombre.Size = New System.Drawing.Size(124, 26)
+        Me.txtnombre.TabIndex = 5
         '
         'Label4
         '
@@ -155,12 +203,12 @@ Partial Class producto
         Me.Label2.TabIndex = 2
         Me.Label2.Text = "Código"
         '
-        'TextBox1
+        'txtcodigo
         '
-        Me.TextBox1.Location = New System.Drawing.Point(151, 51)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(124, 26)
-        Me.TextBox1.TabIndex = 1
+        Me.txtcodigo.Location = New System.Drawing.Point(151, 51)
+        Me.txtcodigo.Name = "txtcodigo"
+        Me.txtcodigo.Size = New System.Drawing.Size(124, 26)
+        Me.txtcodigo.TabIndex = 1
         '
         'Label1
         '
@@ -169,54 +217,6 @@ Partial Class producto
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(0, 20)
         Me.Label1.TabIndex = 0
-        '
-        'TextBox5
-        '
-        Me.TextBox5.Location = New System.Drawing.Point(148, 234)
-        Me.TextBox5.Name = "TextBox5"
-        Me.TextBox5.Size = New System.Drawing.Size(124, 26)
-        Me.TextBox5.TabIndex = 12
-        '
-        'Label6
-        '
-        Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(34, 234)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(73, 20)
-        Me.Label6.TabIndex = 10
-        Me.Label6.Text = "Cantidad"
-        '
-        'Label7
-        '
-        Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(34, 191)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(53, 20)
-        Me.Label7.TabIndex = 9
-        Me.Label7.Text = "Precio"
-        '
-        'TextBox6
-        '
-        Me.TextBox6.Location = New System.Drawing.Point(148, 191)
-        Me.TextBox6.Name = "TextBox6"
-        Me.TextBox6.Size = New System.Drawing.Size(124, 26)
-        Me.TextBox6.TabIndex = 8
-        '
-        'Label8
-        '
-        Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(34, 191)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(0, 20)
-        Me.Label8.TabIndex = 7
-        '
-        'ComboBox1
-        '
-        Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Location = New System.Drawing.Point(148, 92)
-        Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(124, 28)
-        Me.ComboBox1.TabIndex = 14
         '
         'producto
         '
@@ -246,16 +246,16 @@ Partial Class producto
     Friend WithEvents btnguardar As Button
     Friend WithEvents DataGridView1 As DataGridView
     Friend WithEvents GroupBox1 As GroupBox
-    Friend WithEvents ComboBox1 As ComboBox
-    Friend WithEvents TextBox5 As TextBox
+    Friend WithEvents cmbtipo As ComboBox
+    Friend WithEvents txtcantidad As TextBox
     Friend WithEvents Label6 As Label
     Friend WithEvents Label7 As Label
-    Friend WithEvents TextBox6 As TextBox
+    Friend WithEvents txtprecio As TextBox
     Friend WithEvents Label8 As Label
-    Friend WithEvents TextBox2 As TextBox
+    Friend WithEvents txtnombre As TextBox
     Friend WithEvents Label4 As Label
     Friend WithEvents Label3 As Label
     Friend WithEvents Label2 As Label
-    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents txtcodigo As TextBox
     Friend WithEvents Label1 As Label
 End Class

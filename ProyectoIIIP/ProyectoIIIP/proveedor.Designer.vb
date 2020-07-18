@@ -23,17 +23,21 @@ Partial Class proveedor
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
-        Me.TextBox5 = New System.Windows.Forms.TextBox()
+        Me.txtidProducto = New System.Windows.Forms.TextBox()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.txtrtn = New System.Windows.Forms.TextBox()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.cmbnombre = New System.Windows.Forms.ComboBox()
+        Me.txtcorreo = New System.Windows.Forms.TextBox()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
-        Me.TextBox6 = New System.Windows.Forms.TextBox()
+        Me.txttelefono = New System.Windows.Forms.TextBox()
         Me.Label8 = New System.Windows.Forms.Label()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
+        Me.txtdireccion = New System.Windows.Forms.TextBox()
         Me.Nombre = New System.Windows.Forms.Label()
         Me.Dirección = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.txtcodigo = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.btnbuscar = New System.Windows.Forms.Button()
         Me.btnlimpiar = New System.Windows.Forms.Button()
@@ -41,31 +45,27 @@ Partial Class proveedor
         Me.btnmodificar = New System.Windows.Forms.Button()
         Me.btnguardar = New System.Windows.Forms.Button()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
-        Me.TextBox3 = New System.Windows.Forms.TextBox()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.TextBox4 = New System.Windows.Forms.TextBox()
-        Me.Label4 = New System.Windows.Forms.Label()
         Me.GroupBox1.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'GroupBox1
         '
-        Me.GroupBox1.Controls.Add(Me.TextBox4)
+        Me.GroupBox1.Controls.Add(Me.txtidProducto)
         Me.GroupBox1.Controls.Add(Me.Label4)
-        Me.GroupBox1.Controls.Add(Me.TextBox3)
+        Me.GroupBox1.Controls.Add(Me.txtrtn)
         Me.GroupBox1.Controls.Add(Me.Label3)
-        Me.GroupBox1.Controls.Add(Me.ComboBox1)
-        Me.GroupBox1.Controls.Add(Me.TextBox5)
+        Me.GroupBox1.Controls.Add(Me.cmbnombre)
+        Me.GroupBox1.Controls.Add(Me.txtcorreo)
         Me.GroupBox1.Controls.Add(Me.Label6)
         Me.GroupBox1.Controls.Add(Me.Label7)
-        Me.GroupBox1.Controls.Add(Me.TextBox6)
+        Me.GroupBox1.Controls.Add(Me.txttelefono)
         Me.GroupBox1.Controls.Add(Me.Label8)
-        Me.GroupBox1.Controls.Add(Me.TextBox2)
+        Me.GroupBox1.Controls.Add(Me.txtdireccion)
         Me.GroupBox1.Controls.Add(Me.Nombre)
         Me.GroupBox1.Controls.Add(Me.Dirección)
         Me.GroupBox1.Controls.Add(Me.Label2)
-        Me.GroupBox1.Controls.Add(Me.TextBox1)
+        Me.GroupBox1.Controls.Add(Me.txtcodigo)
         Me.GroupBox1.Controls.Add(Me.Label1)
         Me.GroupBox1.Location = New System.Drawing.Point(49, 55)
         Me.GroupBox1.Name = "GroupBox1"
@@ -74,20 +74,52 @@ Partial Class proveedor
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Información"
         '
-        'ComboBox1
+        'txtidProducto
         '
-        Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Location = New System.Drawing.Point(148, 92)
-        Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(124, 28)
-        Me.ComboBox1.TabIndex = 14
+        Me.txtidProducto.Location = New System.Drawing.Point(151, 321)
+        Me.txtidProducto.Name = "txtidProducto"
+        Me.txtidProducto.Size = New System.Drawing.Size(124, 26)
+        Me.txtidProducto.TabIndex = 18
         '
-        'TextBox5
+        'Label4
         '
-        Me.TextBox5.Location = New System.Drawing.Point(148, 234)
-        Me.TextBox5.Name = "TextBox5"
-        Me.TextBox5.Size = New System.Drawing.Size(124, 26)
-        Me.TextBox5.TabIndex = 12
+        Me.Label4.AutoSize = True
+        Me.Label4.Location = New System.Drawing.Point(37, 321)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(94, 20)
+        Me.Label4.TabIndex = 17
+        Me.Label4.Text = "ID Producto"
+        '
+        'txtrtn
+        '
+        Me.txtrtn.Location = New System.Drawing.Point(151, 279)
+        Me.txtrtn.Name = "txtrtn"
+        Me.txtrtn.Size = New System.Drawing.Size(124, 26)
+        Me.txtrtn.TabIndex = 16
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Location = New System.Drawing.Point(37, 279)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(41, 20)
+        Me.Label3.TabIndex = 15
+        Me.Label3.Text = "RTN"
+        '
+        'cmbnombre
+        '
+        Me.cmbnombre.FormattingEnabled = True
+        Me.cmbnombre.Location = New System.Drawing.Point(148, 92)
+        Me.cmbnombre.Name = "cmbnombre"
+        Me.cmbnombre.Size = New System.Drawing.Size(124, 28)
+        Me.cmbnombre.TabIndex = 14
+        '
+        'txtcorreo
+        '
+        Me.txtcorreo.Location = New System.Drawing.Point(148, 234)
+        Me.txtcorreo.Name = "txtcorreo"
+        Me.txtcorreo.Size = New System.Drawing.Size(124, 26)
+        Me.txtcorreo.TabIndex = 12
         '
         'Label6
         '
@@ -107,12 +139,12 @@ Partial Class proveedor
         Me.Label7.TabIndex = 9
         Me.Label7.Text = "Teléfono"
         '
-        'TextBox6
+        'txttelefono
         '
-        Me.TextBox6.Location = New System.Drawing.Point(148, 191)
-        Me.TextBox6.Name = "TextBox6"
-        Me.TextBox6.Size = New System.Drawing.Size(124, 26)
-        Me.TextBox6.TabIndex = 8
+        Me.txttelefono.Location = New System.Drawing.Point(148, 191)
+        Me.txttelefono.Name = "txttelefono"
+        Me.txttelefono.Size = New System.Drawing.Size(124, 26)
+        Me.txttelefono.TabIndex = 8
         '
         'Label8
         '
@@ -122,12 +154,12 @@ Partial Class proveedor
         Me.Label8.Size = New System.Drawing.Size(0, 20)
         Me.Label8.TabIndex = 7
         '
-        'TextBox2
+        'txtdireccion
         '
-        Me.TextBox2.Location = New System.Drawing.Point(148, 138)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(124, 26)
-        Me.TextBox2.TabIndex = 5
+        Me.txtdireccion.Location = New System.Drawing.Point(148, 138)
+        Me.txtdireccion.Name = "txtdireccion"
+        Me.txtdireccion.Size = New System.Drawing.Size(124, 26)
+        Me.txtdireccion.TabIndex = 5
         '
         'Nombre
         '
@@ -156,12 +188,12 @@ Partial Class proveedor
         Me.Label2.TabIndex = 2
         Me.Label2.Text = "Código"
         '
-        'TextBox1
+        'txtcodigo
         '
-        Me.TextBox1.Location = New System.Drawing.Point(151, 51)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(124, 26)
-        Me.TextBox1.TabIndex = 1
+        Me.txtcodigo.Location = New System.Drawing.Point(151, 51)
+        Me.txtcodigo.Name = "txtcodigo"
+        Me.txtcodigo.Size = New System.Drawing.Size(124, 26)
+        Me.txtcodigo.TabIndex = 1
         '
         'Label1
         '
@@ -226,38 +258,6 @@ Partial Class proveedor
         Me.DataGridView1.Size = New System.Drawing.Size(614, 207)
         Me.DataGridView1.TabIndex = 25
         '
-        'TextBox3
-        '
-        Me.TextBox3.Location = New System.Drawing.Point(151, 279)
-        Me.TextBox3.Name = "TextBox3"
-        Me.TextBox3.Size = New System.Drawing.Size(124, 26)
-        Me.TextBox3.TabIndex = 16
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(37, 279)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(41, 20)
-        Me.Label3.TabIndex = 15
-        Me.Label3.Text = "RTN"
-        '
-        'TextBox4
-        '
-        Me.TextBox4.Location = New System.Drawing.Point(151, 321)
-        Me.TextBox4.Name = "TextBox4"
-        Me.TextBox4.Size = New System.Drawing.Size(124, 26)
-        Me.TextBox4.TabIndex = 18
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(37, 321)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(94, 20)
-        Me.Label4.TabIndex = 17
-        Me.Label4.Text = "ID Producto"
-        '
         'proveedor
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
@@ -280,17 +280,17 @@ Partial Class proveedor
     End Sub
 
     Friend WithEvents GroupBox1 As GroupBox
-    Friend WithEvents ComboBox1 As ComboBox
-    Friend WithEvents TextBox5 As TextBox
+    Friend WithEvents cmbnombre As ComboBox
+    Friend WithEvents txtcorreo As TextBox
     Friend WithEvents Label6 As Label
     Friend WithEvents Label7 As Label
-    Friend WithEvents TextBox6 As TextBox
+    Friend WithEvents txttelefono As TextBox
     Friend WithEvents Label8 As Label
-    Friend WithEvents TextBox2 As TextBox
+    Friend WithEvents txtdireccion As TextBox
     Friend WithEvents Nombre As Label
     Friend WithEvents Dirección As Label
     Friend WithEvents Label2 As Label
-    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents txtcodigo As TextBox
     Friend WithEvents Label1 As Label
     Friend WithEvents btnbuscar As Button
     Friend WithEvents btnlimpiar As Button
@@ -298,8 +298,8 @@ Partial Class proveedor
     Friend WithEvents btnmodificar As Button
     Friend WithEvents btnguardar As Button
     Friend WithEvents DataGridView1 As DataGridView
-    Friend WithEvents TextBox4 As TextBox
+    Friend WithEvents txtidProducto As TextBox
     Friend WithEvents Label4 As Label
-    Friend WithEvents TextBox3 As TextBox
+    Friend WithEvents txtrtn As TextBox
     Friend WithEvents Label3 As Label
 End Class

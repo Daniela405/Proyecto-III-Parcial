@@ -23,11 +23,11 @@ Partial Class servicios
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.ComboBox2 = New System.Windows.Forms.ComboBox()
+        Me.cmbtipoServicio = New System.Windows.Forms.ComboBox()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.txtcodigo = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.btnbuscar = New System.Windows.Forms.Button()
@@ -41,11 +41,11 @@ Partial Class servicios
         '
         'GroupBox1
         '
-        Me.GroupBox1.Controls.Add(Me.ComboBox2)
+        Me.GroupBox1.Controls.Add(Me.cmbtipoServicio)
         Me.GroupBox1.Controls.Add(Me.Label9)
         Me.GroupBox1.Controls.Add(Me.Label3)
         Me.GroupBox1.Controls.Add(Me.Label2)
-        Me.GroupBox1.Controls.Add(Me.TextBox1)
+        Me.GroupBox1.Controls.Add(Me.txtcodigo)
         Me.GroupBox1.Controls.Add(Me.Label1)
         Me.GroupBox1.Location = New System.Drawing.Point(42, 38)
         Me.GroupBox1.Name = "GroupBox1"
@@ -54,14 +54,14 @@ Partial Class servicios
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Información"
         '
-        'ComboBox2
+        'cmbtipoServicio
         '
-        Me.ComboBox2.FormattingEnabled = True
-        Me.ComboBox2.Items.AddRange(New Object() {"Uñas", "Cabello", "Piel", "Masaje"})
-        Me.ComboBox2.Location = New System.Drawing.Point(151, 94)
-        Me.ComboBox2.Name = "ComboBox2"
-        Me.ComboBox2.Size = New System.Drawing.Size(121, 28)
-        Me.ComboBox2.TabIndex = 16
+        Me.cmbtipoServicio.FormattingEnabled = True
+        Me.cmbtipoServicio.Items.AddRange(New Object() {"Uñas", "Cabello", "Piel", "Masaje"})
+        Me.cmbtipoServicio.Location = New System.Drawing.Point(151, 94)
+        Me.cmbtipoServicio.Name = "cmbtipoServicio"
+        Me.cmbtipoServicio.Size = New System.Drawing.Size(121, 28)
+        Me.cmbtipoServicio.TabIndex = 16
         '
         'Label9
         '
@@ -89,12 +89,12 @@ Partial Class servicios
         Me.Label2.TabIndex = 2
         Me.Label2.Text = "Código"
         '
-        'TextBox1
+        'txtcodigo
         '
-        Me.TextBox1.Location = New System.Drawing.Point(151, 51)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(124, 26)
-        Me.TextBox1.TabIndex = 1
+        Me.txtcodigo.Location = New System.Drawing.Point(151, 51)
+        Me.txtcodigo.Name = "txtcodigo"
+        Me.txtcodigo.Size = New System.Drawing.Size(124, 26)
+        Me.txtcodigo.TabIndex = 1
         '
         'Label1
         '
@@ -181,11 +181,11 @@ Partial Class servicios
     End Sub
 
     Friend WithEvents GroupBox1 As GroupBox
-    Friend WithEvents ComboBox2 As ComboBox
+    Friend WithEvents cmbtipoServicio As ComboBox
     Friend WithEvents Label9 As Label
     Friend WithEvents Label3 As Label
     Friend WithEvents Label2 As Label
-    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents txtcodigo As TextBox
     Friend WithEvents Label1 As Label
     Friend WithEvents DataGridView1 As DataGridView
     Friend WithEvents btnbuscar As Button
