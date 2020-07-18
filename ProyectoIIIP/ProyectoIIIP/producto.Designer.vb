@@ -22,6 +22,7 @@ Partial Class producto
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Me.btnbuscar = New System.Windows.Forms.Button()
         Me.btnlimpiar = New System.Windows.Forms.Button()
         Me.btneliminar = New System.Windows.Forms.Button()
@@ -41,51 +42,59 @@ Partial Class producto
         Me.Label2 = New System.Windows.Forms.Label()
         Me.txtcodigo = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.ErrorProvider = New System.Windows.Forms.ErrorProvider(Me.components)
+        Me.ToolTip = New System.Windows.Forms.ToolTip(Me.components)
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
+        CType(Me.ErrorProvider, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'btnbuscar
         '
-        Me.btnbuscar.Location = New System.Drawing.Point(435, 402)
+        Me.btnbuscar.Location = New System.Drawing.Point(290, 261)
+        Me.btnbuscar.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.btnbuscar.Name = "btnbuscar"
-        Me.btnbuscar.Size = New System.Drawing.Size(129, 54)
+        Me.btnbuscar.Size = New System.Drawing.Size(86, 35)
         Me.btnbuscar.TabIndex = 17
         Me.btnbuscar.Text = "Buscar"
         Me.btnbuscar.UseVisualStyleBackColor = True
         '
         'btnlimpiar
         '
-        Me.btnlimpiar.Location = New System.Drawing.Point(341, 487)
+        Me.btnlimpiar.Location = New System.Drawing.Point(227, 317)
+        Me.btnlimpiar.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.btnlimpiar.Name = "btnlimpiar"
-        Me.btnlimpiar.Size = New System.Drawing.Size(129, 54)
+        Me.btnlimpiar.Size = New System.Drawing.Size(86, 35)
         Me.btnlimpiar.TabIndex = 16
         Me.btnlimpiar.Text = "Limpiar"
         Me.btnlimpiar.UseVisualStyleBackColor = True
         '
         'btneliminar
         '
-        Me.btneliminar.Location = New System.Drawing.Point(165, 474)
+        Me.btneliminar.Location = New System.Drawing.Point(110, 308)
+        Me.btneliminar.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.btneliminar.Name = "btneliminar"
-        Me.btneliminar.Size = New System.Drawing.Size(129, 54)
+        Me.btneliminar.Size = New System.Drawing.Size(86, 35)
         Me.btneliminar.TabIndex = 15
         Me.btneliminar.Text = "Eliminar"
         Me.btneliminar.UseVisualStyleBackColor = True
         '
         'btnmodificar
         '
-        Me.btnmodificar.Location = New System.Drawing.Point(257, 390)
+        Me.btnmodificar.Location = New System.Drawing.Point(171, 253)
+        Me.btnmodificar.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.btnmodificar.Name = "btnmodificar"
-        Me.btnmodificar.Size = New System.Drawing.Size(129, 54)
+        Me.btnmodificar.Size = New System.Drawing.Size(86, 35)
         Me.btnmodificar.TabIndex = 14
         Me.btnmodificar.Text = "Modificar"
         Me.btnmodificar.UseVisualStyleBackColor = True
         '
         'btnguardar
         '
-        Me.btnguardar.Location = New System.Drawing.Point(91, 390)
+        Me.btnguardar.Location = New System.Drawing.Point(61, 253)
+        Me.btnguardar.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.btnguardar.Name = "btnguardar"
-        Me.btnguardar.Size = New System.Drawing.Size(129, 54)
+        Me.btnguardar.Size = New System.Drawing.Size(86, 35)
         Me.btnguardar.TabIndex = 13
         Me.btnguardar.Text = "Guardar"
         Me.btnguardar.UseVisualStyleBackColor = True
@@ -93,11 +102,12 @@ Partial Class producto
         'DataGridView1
         '
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Location = New System.Drawing.Point(429, 35)
+        Me.DataGridView1.Location = New System.Drawing.Point(286, 23)
+        Me.DataGridView1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.RowHeadersWidth = 62
         Me.DataGridView1.RowTemplate.Height = 28
-        Me.DataGridView1.Size = New System.Drawing.Size(614, 207)
+        Me.DataGridView1.Size = New System.Drawing.Size(409, 135)
         Me.DataGridView1.TabIndex = 19
         '
         'GroupBox1
@@ -114,9 +124,11 @@ Partial Class producto
         Me.GroupBox1.Controls.Add(Me.Label2)
         Me.GroupBox1.Controls.Add(Me.txtcodigo)
         Me.GroupBox1.Controls.Add(Me.Label1)
-        Me.GroupBox1.Location = New System.Drawing.Point(36, 21)
+        Me.GroupBox1.Location = New System.Drawing.Point(24, 14)
+        Me.GroupBox1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(350, 316)
+        Me.GroupBox1.Padding = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.GroupBox1.Size = New System.Drawing.Size(233, 205)
         Me.GroupBox1.TabIndex = 18
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Información"
@@ -124,105 +136,121 @@ Partial Class producto
         'cmbtipo
         '
         Me.cmbtipo.FormattingEnabled = True
-        Me.cmbtipo.Location = New System.Drawing.Point(148, 92)
+        Me.cmbtipo.Location = New System.Drawing.Point(99, 60)
+        Me.cmbtipo.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.cmbtipo.Name = "cmbtipo"
-        Me.cmbtipo.Size = New System.Drawing.Size(124, 28)
+        Me.cmbtipo.Size = New System.Drawing.Size(84, 21)
         Me.cmbtipo.TabIndex = 14
         '
         'txtcantidad
         '
-        Me.txtcantidad.Location = New System.Drawing.Point(148, 234)
+        Me.txtcantidad.Location = New System.Drawing.Point(99, 152)
+        Me.txtcantidad.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.txtcantidad.Name = "txtcantidad"
-        Me.txtcantidad.Size = New System.Drawing.Size(124, 26)
+        Me.txtcantidad.Size = New System.Drawing.Size(84, 20)
         Me.txtcantidad.TabIndex = 12
         '
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(34, 234)
+        Me.Label6.Location = New System.Drawing.Point(23, 152)
+        Me.Label6.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(73, 20)
+        Me.Label6.Size = New System.Drawing.Size(49, 13)
         Me.Label6.TabIndex = 10
         Me.Label6.Text = "Cantidad"
         '
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(34, 191)
+        Me.Label7.Location = New System.Drawing.Point(23, 124)
+        Me.Label7.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(53, 20)
+        Me.Label7.Size = New System.Drawing.Size(37, 13)
         Me.Label7.TabIndex = 9
         Me.Label7.Text = "Precio"
         '
         'txtprecio
         '
-        Me.txtprecio.Location = New System.Drawing.Point(148, 191)
+        Me.txtprecio.Location = New System.Drawing.Point(99, 124)
+        Me.txtprecio.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.txtprecio.Name = "txtprecio"
-        Me.txtprecio.Size = New System.Drawing.Size(124, 26)
+        Me.txtprecio.Size = New System.Drawing.Size(84, 20)
         Me.txtprecio.TabIndex = 8
         '
         'Label8
         '
         Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(34, 191)
+        Me.Label8.Location = New System.Drawing.Point(23, 124)
+        Me.Label8.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(0, 20)
+        Me.Label8.Size = New System.Drawing.Size(0, 13)
         Me.Label8.TabIndex = 7
         '
         'txtnombre
         '
-        Me.txtnombre.Location = New System.Drawing.Point(148, 138)
+        Me.txtnombre.Location = New System.Drawing.Point(99, 90)
+        Me.txtnombre.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.txtnombre.Name = "txtnombre"
-        Me.txtnombre.Size = New System.Drawing.Size(124, 26)
+        Me.txtnombre.Size = New System.Drawing.Size(84, 20)
         Me.txtnombre.TabIndex = 5
         '
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(37, 95)
+        Me.Label4.Location = New System.Drawing.Point(25, 62)
+        Me.Label4.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(39, 20)
+        Me.Label4.Size = New System.Drawing.Size(28, 13)
         Me.Label4.TabIndex = 4
         Me.Label4.Text = "Tipo"
         '
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(37, 141)
+        Me.Label3.Location = New System.Drawing.Point(25, 92)
+        Me.Label3.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(65, 20)
+        Me.Label3.Size = New System.Drawing.Size(44, 13)
         Me.Label3.TabIndex = 3
         Me.Label3.Text = "Nombre"
         '
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(37, 51)
+        Me.Label2.Location = New System.Drawing.Point(25, 33)
+        Me.Label2.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(59, 20)
+        Me.Label2.Size = New System.Drawing.Size(40, 13)
         Me.Label2.TabIndex = 2
         Me.Label2.Text = "Código"
         '
         'txtcodigo
         '
-        Me.txtcodigo.Location = New System.Drawing.Point(151, 51)
+        Me.txtcodigo.Location = New System.Drawing.Point(101, 33)
+        Me.txtcodigo.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.txtcodigo.Name = "txtcodigo"
-        Me.txtcodigo.Size = New System.Drawing.Size(124, 26)
+        Me.txtcodigo.Size = New System.Drawing.Size(84, 20)
         Me.txtcodigo.TabIndex = 1
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(37, 51)
+        Me.Label1.Location = New System.Drawing.Point(25, 33)
+        Me.Label1.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(0, 20)
+        Me.Label1.Size = New System.Drawing.Size(0, 13)
         Me.Label1.TabIndex = 0
+        '
+        'ErrorProvider
+        '
+        Me.ErrorProvider.ContainerControl = Me
         '
         'producto
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1168, 656)
+        Me.ClientSize = New System.Drawing.Size(779, 426)
         Me.Controls.Add(Me.DataGridView1)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.btnbuscar)
@@ -230,11 +258,13 @@ Partial Class producto
         Me.Controls.Add(Me.btneliminar)
         Me.Controls.Add(Me.btnmodificar)
         Me.Controls.Add(Me.btnguardar)
+        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Name = "producto"
         Me.Text = "producto"
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
+        CType(Me.ErrorProvider, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -258,4 +288,6 @@ Partial Class producto
     Friend WithEvents Label2 As Label
     Friend WithEvents txtcodigo As TextBox
     Friend WithEvents Label1 As Label
+    Friend WithEvents ErrorProvider As ErrorProvider
+    Friend WithEvents ToolTip As ToolTip
 End Class
