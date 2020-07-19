@@ -134,7 +134,8 @@ Public Class empleado
         ToolTip.ToolTipIcon = ToolTipIcon.Info
     End Sub
 
-    Private Sub txtcodigo_TextChanged(sender As Object, e As EventArgs) Handles txtcodigo.TextChanged
 
+    Private Sub btnCerrar_Click(sender As Object, e As EventArgs) Handles btnCerrar.Click
+        Me.Close()
     End Sub
 End Class

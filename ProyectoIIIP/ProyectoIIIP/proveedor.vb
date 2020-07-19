@@ -2,7 +2,7 @@
 Imports System.Text.RegularExpressions
 Public Class proveedor
 
-    Dim conexion As New Conexion()
+    '  Dim conexion As New Conexion()
 
 
     Private Function validarCorreo(ByVal isCorreo As String) As Boolean
@@ -120,32 +120,32 @@ Public Class proveedor
         tmensaje.ToolTipIcon = ToolTipIcon.Info
     End Sub
 
-    Private Sub btnguardar_MouseHover(sender As Object, e As EventArgs) Handles btnguardar.MouseHover
+    Private Sub btnguardar_MouseHover(sender As Object, e As EventArgs)
         tmensaje.SetToolTip(btnguardar, "Click para guardar")
         tmensaje.ToolTipTitle = "Guardar"
         tmensaje.ToolTipIcon = ToolTipIcon.Info
     End Sub
 
 
-    Private Sub btnmodificar_MouseHover(sender As Object, e As EventArgs) Handles btnmodificar.MouseHover
+    Private Sub btnmodificar_MouseHover(sender As Object, e As EventArgs)
         tmensaje.SetToolTip(btnmodificar, "Click para modificar")
         tmensaje.ToolTipTitle = "Modificar"
         tmensaje.ToolTipIcon = ToolTipIcon.Info
     End Sub
 
-    Private Sub btnbuscar_MouseHover(sender As Object, e As EventArgs) Handles btnbuscar.MouseHover
+    Private Sub btnbuscar_MouseHover(sender As Object, e As EventArgs)
         tmensaje.SetToolTip(btnbuscar, "Click para buscar")
         tmensaje.ToolTipTitle = "Buscar"
         tmensaje.ToolTipIcon = ToolTipIcon.Info
     End Sub
 
-    Private Sub btneliminar_Click(sender As Object, e As EventArgs) Handles btneliminar.Click
+    Private Sub btneliminar_Click(sender As Object, e As EventArgs)
         tmensaje.SetToolTip(btneliminar, "Click para eliminar")
         tmensaje.ToolTipTitle = "Eliminar"
         tmensaje.ToolTipIcon = ToolTipIcon.Info
     End Sub
 
-    Private Sub btnlimpiar_MouseHover(sender As Object, e As EventArgs) Handles btnlimpiar.MouseHover
+    Private Sub btnlimpiar_MouseHover(sender As Object, e As EventArgs)
         tmensaje.SetToolTip(btnlimpiar, "Click para limpiar")
         tmensaje.ToolTipTitle = "Limpiar"
         tmensaje.ToolTipIcon = ToolTipIcon.Info
@@ -216,14 +216,14 @@ Public Class proveedor
     End Sub
 
     Private Sub proveedor_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Conexion.conectar()
+        'conexion.conectar()
     End Sub
 
-    Private Sub btnlimpiar_Click(sender As Object, e As EventArgs) Handles btnlimpiar.Click
+    Private Sub btnlimpiar_Click(sender As Object, e As EventArgs)
         limpiar()
     End Sub
 
-    Private Sub btnguardar_Click(sender As Object, e As EventArgs) Handles btnguardar.Click
+    Private Sub btnguardar_Click(sender As Object, e As EventArgs)
         If validarCorreo(LCase(txtcorreo.Text)) = False Then
             MessageBox.Show("Correo invalido, *username@midominio.com*", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
             txtcorreo.Focus()
@@ -237,5 +237,9 @@ Public Class proveedor
 
     Private Sub insertarUsuaurio()
 
+    End Sub
+
+    Private Sub btnCerrar_Click(sender As Object, e As EventArgs) Handles btnCerrar.Click
+        Me.Close()
     End Sub
 End Class

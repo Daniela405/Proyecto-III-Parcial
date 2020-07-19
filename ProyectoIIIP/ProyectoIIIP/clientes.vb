@@ -1,7 +1,7 @@
 ﻿Imports System.ComponentModel
 Imports System.Text.RegularExpressions
 Public Class Cliente
-    Dim conexion As New Conexion()
+    'Dim conexion As New Conexion()
 
     Private Sub txtcodigo_MouseHover(sender As Object, e As EventArgs) Handles txtcodigo.MouseHover
         tmensaje.SetToolTip(txtcodigo, "Ingrese el código")
@@ -22,32 +22,32 @@ Public Class Cliente
         tmensaje.ToolTipIcon = ToolTipIcon.Info
     End Sub
 
-    Private Sub btnguardar_MouseHover(sender As Object, e As EventArgs) Handles btnguardar.MouseHover
+    Private Sub btnguardar_MouseHover(sender As Object, e As EventArgs)
         tmensaje.SetToolTip(btnguardar, "Click para guardar")
         tmensaje.ToolTipTitle = "Guardar"
         tmensaje.ToolTipIcon = ToolTipIcon.Info
     End Sub
 
 
-    Private Sub btnmodificar_MouseHover(sender As Object, e As EventArgs) Handles btnmodificar.MouseHover
+    Private Sub btnmodificar_MouseHover(sender As Object, e As EventArgs)
         tmensaje.SetToolTip(btnmodificar, "Click para modificar")
         tmensaje.ToolTipTitle = "Modificar"
         tmensaje.ToolTipIcon = ToolTipIcon.Info
     End Sub
 
-    Private Sub btnbuscar_MouseHover(sender As Object, e As EventArgs) Handles btnbuscar.MouseHover
+    Private Sub btnbuscar_MouseHover(sender As Object, e As EventArgs)
         tmensaje.SetToolTip(btnbuscar, "Click para buscar")
         tmensaje.ToolTipTitle = "Buscar"
         tmensaje.ToolTipIcon = ToolTipIcon.Info
     End Sub
 
-    Private Sub btneliminar_MouseHover(sender As Object, e As EventArgs) Handles btneliminar.MouseHover
+    Private Sub btneliminar_MouseHover(sender As Object, e As EventArgs)
         tmensaje.SetToolTip(btneliminar, "Click para eliminar")
         tmensaje.ToolTipTitle = "Eliminar"
         tmensaje.ToolTipIcon = ToolTipIcon.Info
     End Sub
 
-    Private Sub btnlimpiar_MouseHover(sender As Object, e As EventArgs) Handles btnlimpiar.MouseHover
+    Private Sub btnlimpiar_MouseHover(sender As Object, e As EventArgs)
         tmensaje.SetToolTip(btnlimpiar, "Click para limpiar")
         tmensaje.ToolTipTitle = "Limpiar"
         tmensaje.ToolTipIcon = ToolTipIcon.Info
@@ -118,10 +118,12 @@ Public Class Cliente
     End Sub
 
     Private Sub Cliente_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Conexion.conectar()
+        ' conexion.conectar()
     End Sub
 
-    Private Sub btnguardar_Click(sender As Object, e As EventArgs) Handles btnguardar.Click
 
+    Private Sub btnCerrar_Click(sender As Object, e As EventArgs) Handles btnCerrar.Click
+        Me.Close()
     End Sub
+
 End Class
