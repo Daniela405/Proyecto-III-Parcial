@@ -133,4 +133,8 @@ Public Class empleado
         ToolTip.ToolTipTitle = "CARGO"
         ToolTip.ToolTipIcon = ToolTipIcon.Info
     End Sub
+
+    Private Sub txtcodigo_TextChanged(sender As Object, e As EventArgs) Handles txtcodigo.TextChanged
+
+    End Sub
 End Class

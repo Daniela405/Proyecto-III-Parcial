@@ -133,10 +133,10 @@
     <Compile Include="servicios.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Usuario.Designer.vb">
-      <DependentUpon>Usuario.vb</DependentUpon>
+    <Compile Include="usuario.Designer.vb">
+      <DependentUpon>usuario.vb</DependentUpon>
     </Compile>
-    <Compile Include="Usuario.vb">
+    <Compile Include="usuario.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ventas.Designer.vb">
@@ -174,8 +174,8 @@
     <EmbeddedResource Include="servicios.resx">
       <DependentUpon>servicios.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Usuario.resx">
-      <DependentUpon>Usuario.vb</DependentUpon>
+    <EmbeddedResource Include="usuario.resx">
+      <DependentUpon>usuario.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ventas.resx">
       <DependentUpon>ventas.vb</DependentUpon>

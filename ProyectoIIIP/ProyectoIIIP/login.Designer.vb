@@ -22,12 +22,16 @@ Partial Class login
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.txtusuario = New System.Windows.Forms.TextBox()
         Me.txtcontraseña = New System.Windows.Forms.TextBox()
         Me.btnIngresar = New System.Windows.Forms.Button()
         Me.btnSalir = New System.Windows.Forms.Button()
+        Me.ErrorValidacion = New System.Windows.Forms.ErrorProvider(Me.components)
+        Me.tmensaje = New System.Windows.Forms.ToolTip(Me.components)
+        CType(Me.ErrorValidacion, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Label1
@@ -80,6 +84,10 @@ Partial Class login
         Me.btnSalir.Text = "Salir"
         Me.btnSalir.UseVisualStyleBackColor = True
         '
+        'ErrorValidacion
+        '
+        Me.ErrorValidacion.ContainerControl = Me
+        '
         'login
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
@@ -93,6 +101,7 @@ Partial Class login
         Me.Controls.Add(Me.Label1)
         Me.Name = "login"
         Me.Text = "login"
+        CType(Me.ErrorValidacion, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -104,4 +113,6 @@ Partial Class login
     Friend WithEvents txtcontraseña As TextBox
     Friend WithEvents btnIngresar As Button
     Friend WithEvents btnSalir As Button
+    Friend WithEvents ErrorValidacion As ErrorProvider
+    Friend WithEvents tmensaje As ToolTip
 End Class

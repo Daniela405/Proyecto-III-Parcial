@@ -120,4 +120,8 @@ Public Class Cliente
     Private Sub Cliente_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Conexion.conectar()
     End Sub
+
+    Private Sub btnguardar_Click(sender As Object, e As EventArgs) Handles btnguardar.Click
+
+    End Sub
 End Class
