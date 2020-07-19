@@ -2,7 +2,8 @@
 Imports System.Text.RegularExpressions
 
 Public Class Usuario
-
+    Dim Usuario As String
+    Dim Clave As String
 
     Private Function validarCorreo(ByVal isCorreo As String) As Boolean
         Return Regex.IsMatch(isCorreo, "^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,4})$")

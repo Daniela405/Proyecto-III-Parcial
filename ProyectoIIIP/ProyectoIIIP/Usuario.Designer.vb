@@ -24,6 +24,7 @@ Partial Class Usuario
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.txtnombre = New System.Windows.Forms.TextBox()
         Me.txtcorreo = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.txtcontraseña = New System.Windows.Forms.TextBox()
@@ -43,9 +44,13 @@ Partial Class Usuario
         Me.btnmodificar = New System.Windows.Forms.Button()
         Me.btnguardar = New System.Windows.Forms.Button()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+<<<<<<< HEAD
+        Me.btnsalir = New System.Windows.Forms.Button()
+=======
         Me.ErrorProvider = New System.Windows.Forms.ErrorProvider(Me.components)
         Me.txtnombre = New System.Windows.Forms.TextBox()
         Me.ToolTip = New System.Windows.Forms.ToolTip(Me.components)
+>>>>>>> cf2de11e58576bb44399812d6c2e57c8e0fb9043
         Me.GroupBox1.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ErrorProvider, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -76,13 +81,25 @@ Partial Class Usuario
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Información"
         '
+        'txtnombre
+        '
+        Me.txtnombre.Location = New System.Drawing.Point(151, 95)
+        Me.txtnombre.Name = "txtnombre"
+        Me.txtnombre.Size = New System.Drawing.Size(124, 26)
+        Me.txtnombre.TabIndex = 1
+        '
         'txtcorreo
         '
         Me.txtcorreo.Location = New System.Drawing.Point(101, 181)
         Me.txtcorreo.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.txtcorreo.Name = "txtcorreo"
+<<<<<<< HEAD
+        Me.txtcorreo.Size = New System.Drawing.Size(124, 26)
+        Me.txtcorreo.TabIndex = 5
+=======
         Me.txtcorreo.Size = New System.Drawing.Size(84, 20)
         Me.txtcorreo.TabIndex = 16
+>>>>>>> cf2de11e58576bb44399812d6c2e57c8e0fb9043
         '
         'Label3
         '
@@ -99,8 +116,13 @@ Partial Class Usuario
         Me.txtcontraseña.Location = New System.Drawing.Point(99, 152)
         Me.txtcontraseña.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.txtcontraseña.Name = "txtcontraseña"
+<<<<<<< HEAD
+        Me.txtcontraseña.Size = New System.Drawing.Size(124, 26)
+        Me.txtcontraseña.TabIndex = 4
+=======
         Me.txtcontraseña.Size = New System.Drawing.Size(84, 20)
         Me.txtcontraseña.TabIndex = 12
+>>>>>>> cf2de11e58576bb44399812d6c2e57c8e0fb9043
         '
         'Label6
         '
@@ -127,8 +149,13 @@ Partial Class Usuario
         Me.txtusuario.Location = New System.Drawing.Point(99, 124)
         Me.txtusuario.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.txtusuario.Name = "txtusuario"
+<<<<<<< HEAD
+        Me.txtusuario.Size = New System.Drawing.Size(124, 26)
+        Me.txtusuario.TabIndex = 3
+=======
         Me.txtusuario.Size = New System.Drawing.Size(84, 20)
         Me.txtusuario.TabIndex = 8
+>>>>>>> cf2de11e58576bb44399812d6c2e57c8e0fb9043
         '
         'Label8
         '
@@ -144,8 +171,13 @@ Partial Class Usuario
         Me.txtapellido.Location = New System.Drawing.Point(99, 90)
         Me.txtapellido.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.txtapellido.Name = "txtapellido"
+<<<<<<< HEAD
+        Me.txtapellido.Size = New System.Drawing.Size(124, 26)
+        Me.txtapellido.TabIndex = 2
+=======
         Me.txtapellido.Size = New System.Drawing.Size(84, 20)
         Me.txtapellido.TabIndex = 5
+>>>>>>> cf2de11e58576bb44399812d6c2e57c8e0fb9043
         '
         'Nombre
         '
@@ -182,8 +214,13 @@ Partial Class Usuario
         Me.txtcodigo.Location = New System.Drawing.Point(99, 33)
         Me.txtcodigo.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.txtcodigo.Name = "txtcodigo"
+<<<<<<< HEAD
+        Me.txtcodigo.Size = New System.Drawing.Size(124, 26)
+        Me.txtcodigo.TabIndex = 0
+=======
         Me.txtcodigo.Size = New System.Drawing.Size(84, 20)
         Me.txtcodigo.TabIndex = 1
+>>>>>>> cf2de11e58576bb44399812d6c2e57c8e0fb9043
         '
         'Label1
         '
@@ -199,8 +236,13 @@ Partial Class Usuario
         Me.btnbuscar.Location = New System.Drawing.Point(253, 276)
         Me.btnbuscar.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.btnbuscar.Name = "btnbuscar"
+<<<<<<< HEAD
+        Me.btnbuscar.Size = New System.Drawing.Size(129, 54)
+        Me.btnbuscar.TabIndex = 9
+=======
         Me.btnbuscar.Size = New System.Drawing.Size(86, 35)
         Me.btnbuscar.TabIndex = 29
+>>>>>>> cf2de11e58576bb44399812d6c2e57c8e0fb9043
         Me.btnbuscar.Text = "Buscar"
         Me.btnbuscar.UseVisualStyleBackColor = True
         '
@@ -209,8 +251,13 @@ Partial Class Usuario
         Me.btnlimpiar.Location = New System.Drawing.Point(190, 331)
         Me.btnlimpiar.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.btnlimpiar.Name = "btnlimpiar"
+<<<<<<< HEAD
+        Me.btnlimpiar.Size = New System.Drawing.Size(129, 54)
+        Me.btnlimpiar.TabIndex = 11
+=======
         Me.btnlimpiar.Size = New System.Drawing.Size(86, 35)
         Me.btnlimpiar.TabIndex = 28
+>>>>>>> cf2de11e58576bb44399812d6c2e57c8e0fb9043
         Me.btnlimpiar.Text = "Limpiar"
         Me.btnlimpiar.UseVisualStyleBackColor = True
         '
@@ -219,8 +266,13 @@ Partial Class Usuario
         Me.btneliminar.Location = New System.Drawing.Point(73, 323)
         Me.btneliminar.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.btneliminar.Name = "btneliminar"
+<<<<<<< HEAD
+        Me.btneliminar.Size = New System.Drawing.Size(129, 54)
+        Me.btneliminar.TabIndex = 10
+=======
         Me.btneliminar.Size = New System.Drawing.Size(86, 35)
         Me.btneliminar.TabIndex = 27
+>>>>>>> cf2de11e58576bb44399812d6c2e57c8e0fb9043
         Me.btneliminar.Text = "Eliminar"
         Me.btneliminar.UseVisualStyleBackColor = True
         '
@@ -229,8 +281,13 @@ Partial Class Usuario
         Me.btnmodificar.Location = New System.Drawing.Point(134, 268)
         Me.btnmodificar.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.btnmodificar.Name = "btnmodificar"
+<<<<<<< HEAD
+        Me.btnmodificar.Size = New System.Drawing.Size(129, 54)
+        Me.btnmodificar.TabIndex = 8
+=======
         Me.btnmodificar.Size = New System.Drawing.Size(86, 35)
         Me.btnmodificar.TabIndex = 26
+>>>>>>> cf2de11e58576bb44399812d6c2e57c8e0fb9043
         Me.btnmodificar.Text = "Modificar"
         Me.btnmodificar.UseVisualStyleBackColor = True
         '
@@ -239,8 +296,13 @@ Partial Class Usuario
         Me.btnguardar.Location = New System.Drawing.Point(23, 268)
         Me.btnguardar.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.btnguardar.Name = "btnguardar"
+<<<<<<< HEAD
+        Me.btnguardar.Size = New System.Drawing.Size(129, 54)
+        Me.btnguardar.TabIndex = 7
+=======
         Me.btnguardar.Size = New System.Drawing.Size(86, 35)
         Me.btnguardar.TabIndex = 25
+>>>>>>> cf2de11e58576bb44399812d6c2e57c8e0fb9043
         Me.btnguardar.Text = "Guardar"
         Me.btnguardar.UseVisualStyleBackColor = True
         '
@@ -255,6 +317,17 @@ Partial Class Usuario
         Me.DataGridView1.Size = New System.Drawing.Size(439, 135)
         Me.DataGridView1.TabIndex = 30
         '
+<<<<<<< HEAD
+        'btnsalir
+        '
+        Me.btnsalir.Location = New System.Drawing.Point(186, 600)
+        Me.btnsalir.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.btnsalir.Name = "btnsalir"
+        Me.btnsalir.Size = New System.Drawing.Size(129, 54)
+        Me.btnsalir.TabIndex = 31
+        Me.btnsalir.Text = "Regresar Menú"
+        Me.btnsalir.UseVisualStyleBackColor = True
+=======
         'ErrorProvider
         '
         Me.ErrorProvider.ContainerControl = Me
@@ -266,12 +339,18 @@ Partial Class Usuario
         Me.txtnombre.Name = "txtnombre"
         Me.txtnombre.Size = New System.Drawing.Size(84, 20)
         Me.txtnombre.TabIndex = 17
+>>>>>>> cf2de11e58576bb44399812d6c2e57c8e0fb9043
         '
         'Usuario
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+<<<<<<< HEAD
+        Me.ClientSize = New System.Drawing.Size(1153, 665)
+        Me.Controls.Add(Me.btnsalir)
+=======
         Me.ClientSize = New System.Drawing.Size(769, 432)
+>>>>>>> cf2de11e58576bb44399812d6c2e57c8e0fb9043
         Me.Controls.Add(Me.DataGridView1)
         Me.Controls.Add(Me.btnbuscar)
         Me.Controls.Add(Me.btnlimpiar)
@@ -310,7 +389,12 @@ Partial Class Usuario
     Friend WithEvents btnmodificar As Button
     Friend WithEvents btnguardar As Button
     Friend WithEvents DataGridView1 As DataGridView
+<<<<<<< HEAD
+    Friend WithEvents txtnombre As TextBox
+    Friend WithEvents btnsalir As Button
+=======
     Friend WithEvents ErrorProvider As ErrorProvider
     Friend WithEvents txtnombre As TextBox
     Friend WithEvents ToolTip As ToolTip
+>>>>>>> cf2de11e58576bb44399812d6c2e57c8e0fb9043
 End Class

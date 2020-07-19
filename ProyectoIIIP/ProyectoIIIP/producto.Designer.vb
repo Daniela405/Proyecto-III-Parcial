@@ -42,8 +42,12 @@ Partial Class producto
         Me.Label2 = New System.Windows.Forms.Label()
         Me.txtcodigo = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
+<<<<<<< HEAD
+        Me.btnsalir = New System.Windows.Forms.Button()
+=======
         Me.ErrorProvider = New System.Windows.Forms.ErrorProvider(Me.components)
         Me.ToolTip = New System.Windows.Forms.ToolTip(Me.components)
+>>>>>>> cf2de11e58576bb44399812d6c2e57c8e0fb9043
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
         CType(Me.ErrorProvider, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -242,15 +246,32 @@ Partial Class producto
         Me.Label1.Size = New System.Drawing.Size(0, 13)
         Me.Label1.TabIndex = 0
         '
+<<<<<<< HEAD
+        'btnsalir
+        '
+        Me.btnsalir.Location = New System.Drawing.Point(257, 546)
+        Me.btnsalir.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.btnsalir.Name = "btnsalir"
+        Me.btnsalir.Size = New System.Drawing.Size(129, 54)
+        Me.btnsalir.TabIndex = 20
+        Me.btnsalir.Text = "Regresar Menú"
+        Me.btnsalir.UseVisualStyleBackColor = True
+=======
         'ErrorProvider
         '
         Me.ErrorProvider.ContainerControl = Me
+>>>>>>> cf2de11e58576bb44399812d6c2e57c8e0fb9043
         '
         'producto
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+<<<<<<< HEAD
+        Me.ClientSize = New System.Drawing.Size(1168, 656)
+        Me.Controls.Add(Me.btnsalir)
+=======
         Me.ClientSize = New System.Drawing.Size(779, 426)
+>>>>>>> cf2de11e58576bb44399812d6c2e57c8e0fb9043
         Me.Controls.Add(Me.DataGridView1)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.btnbuscar)
@@ -288,6 +309,10 @@ Partial Class producto
     Friend WithEvents Label2 As Label
     Friend WithEvents txtcodigo As TextBox
     Friend WithEvents Label1 As Label
+<<<<<<< HEAD
+    Friend WithEvents btnsalir As Button
+=======
     Friend WithEvents ErrorProvider As ErrorProvider
     Friend WithEvents ToolTip As ToolTip
+>>>>>>> cf2de11e58576bb44399812d6c2e57c8e0fb9043
 End Class

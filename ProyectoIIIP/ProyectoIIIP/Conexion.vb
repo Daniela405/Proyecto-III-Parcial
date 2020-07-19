@@ -1,5 +1,11 @@
 ﻿Imports System.Data.SqlClient
+
+Imports System.Security.Cryptography
+Imports System.Text
 Public Class Conexion
+
+
+
     Public conexion As SqlConnection = New SqlConnection("Data Source= DESKTOP-HT00A5J \ SQLEXPRESS;Initial Catalog=proyecto; Integrated Security=True")
     'Private cmb As SqlCommandBuilder
     Public ds As DataSet = New DataSet()
@@ -17,4 +23,7 @@ Public Class Conexion
             conexion.Close()
         End Try
     End Sub
+
+
+
 End Class

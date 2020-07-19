@@ -48,6 +48,7 @@ Partial Class proveedor
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.tmensaje = New System.Windows.Forms.ToolTip(Me.components)
         Me.ErrorValidacion = New System.Windows.Forms.ErrorProvider(Me.components)
+        Me.btnsalir = New System.Windows.Forms.Button()
         Me.GroupBox1.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ErrorValidacion, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -266,11 +267,22 @@ Partial Class proveedor
         '
         Me.ErrorValidacion.ContainerControl = Me
         '
+        'btnsalir
+        '
+        Me.btnsalir.Location = New System.Drawing.Point(528, 530)
+        Me.btnsalir.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.btnsalir.Name = "btnsalir"
+        Me.btnsalir.Size = New System.Drawing.Size(129, 54)
+        Me.btnsalir.TabIndex = 26
+        Me.btnsalir.Text = "Regresar Menú"
+        Me.btnsalir.UseVisualStyleBackColor = True
+        '
         'proveedor
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1178, 604)
+        Me.Controls.Add(Me.btnsalir)
         Me.Controls.Add(Me.DataGridView1)
         Me.Controls.Add(Me.btnbuscar)
         Me.Controls.Add(Me.btnlimpiar)
@@ -313,4 +325,5 @@ Partial Class proveedor
     Friend WithEvents Label3 As Label
     Friend WithEvents tmensaje As ToolTip
     Friend WithEvents ErrorValidacion As ErrorProvider
+    Friend WithEvents btnsalir As Button
 End Class

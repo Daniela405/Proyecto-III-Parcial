@@ -47,6 +47,7 @@ Partial Class empleado
         Me.btnguardar = New System.Windows.Forms.Button()
         Me.ErrorProvider = New System.Windows.Forms.ErrorProvider(Me.components)
         Me.ToolTip = New System.Windows.Forms.ToolTip(Me.components)
+        Me.btnsalir = New System.Windows.Forms.Button()
         Me.GroupBox1.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ErrorProvider, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -69,11 +70,11 @@ Partial Class empleado
         Me.GroupBox1.Controls.Add(Me.Label2)
         Me.GroupBox1.Controls.Add(Me.txtcodigo)
         Me.GroupBox1.Controls.Add(Me.Label1)
-        Me.GroupBox1.Location = New System.Drawing.Point(40, 32)
+        Me.GroupBox1.Location = New System.Drawing.Point(45, 40)
         Me.GroupBox1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Padding = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.GroupBox1.Size = New System.Drawing.Size(317, 323)
+        Me.GroupBox1.Size = New System.Drawing.Size(357, 404)
         Me.GroupBox1.TabIndex = 1
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Información"
@@ -82,138 +83,138 @@ Partial Class empleado
         '
         Me.cmbsexo.FormattingEnabled = True
         Me.cmbsexo.Items.AddRange(New Object() {"Femenino", "Masculino"})
-        Me.cmbsexo.Location = New System.Drawing.Point(134, 190)
+        Me.cmbsexo.Location = New System.Drawing.Point(151, 238)
         Me.cmbsexo.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.cmbsexo.Name = "cmbsexo"
-        Me.cmbsexo.Size = New System.Drawing.Size(108, 24)
+        Me.cmbsexo.Size = New System.Drawing.Size(121, 28)
         Me.cmbsexo.TabIndex = 16
         '
         'cmbcargo
         '
         Me.cmbcargo.FormattingEnabled = True
         Me.cmbcargo.Items.AddRange(New Object() {"Estilista", "Masajista", "Maquillador", "Manicurista"})
-        Me.cmbcargo.Location = New System.Drawing.Point(134, 230)
+        Me.cmbcargo.Location = New System.Drawing.Point(151, 288)
         Me.cmbcargo.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.cmbcargo.Name = "cmbcargo"
-        Me.cmbcargo.Size = New System.Drawing.Size(108, 24)
+        Me.cmbcargo.Size = New System.Drawing.Size(121, 28)
         Me.cmbcargo.TabIndex = 15
         '
         'Label9
         '
         Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(44, 276)
+        Me.Label9.Location = New System.Drawing.Point(50, 345)
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(0, 17)
+        Me.Label9.Size = New System.Drawing.Size(0, 20)
         Me.Label9.TabIndex = 14
         '
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(33, 237)
+        Me.Label5.Location = New System.Drawing.Point(37, 296)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(46, 17)
+        Me.Label5.Size = New System.Drawing.Size(52, 20)
         Me.Label5.TabIndex = 11
         Me.Label5.Text = "Cargo"
         '
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(33, 193)
+        Me.Label6.Location = New System.Drawing.Point(37, 241)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(39, 17)
+        Me.Label6.Size = New System.Drawing.Size(45, 20)
         Me.Label6.TabIndex = 10
         Me.Label6.Text = "Sexo"
         '
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(33, 158)
+        Me.Label7.Location = New System.Drawing.Point(37, 198)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(41, 17)
+        Me.Label7.Size = New System.Drawing.Size(47, 20)
         Me.Label7.TabIndex = 9
         Me.Label7.Text = "Edad"
         '
         'txtedad
         '
-        Me.txtedad.Location = New System.Drawing.Point(134, 158)
+        Me.txtedad.Location = New System.Drawing.Point(151, 198)
         Me.txtedad.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txtedad.Name = "txtedad"
-        Me.txtedad.Size = New System.Drawing.Size(111, 22)
+        Me.txtedad.Size = New System.Drawing.Size(124, 26)
         Me.txtedad.TabIndex = 8
         '
         'Label8
         '
         Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(33, 158)
+        Me.Label8.Location = New System.Drawing.Point(37, 198)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(0, 17)
+        Me.Label8.Size = New System.Drawing.Size(0, 20)
         Me.Label8.TabIndex = 7
         '
         'txtapellido
         '
-        Me.txtapellido.Location = New System.Drawing.Point(134, 117)
+        Me.txtapellido.Location = New System.Drawing.Point(151, 146)
         Me.txtapellido.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txtapellido.Name = "txtapellido"
-        Me.txtapellido.Size = New System.Drawing.Size(111, 22)
+        Me.txtapellido.Size = New System.Drawing.Size(124, 26)
         Me.txtapellido.TabIndex = 6
         '
         'txtnombre
         '
-        Me.txtnombre.Location = New System.Drawing.Point(134, 75)
+        Me.txtnombre.Location = New System.Drawing.Point(151, 94)
         Me.txtnombre.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txtnombre.Name = "txtnombre"
-        Me.txtnombre.Size = New System.Drawing.Size(111, 22)
+        Me.txtnombre.Size = New System.Drawing.Size(124, 26)
         Me.txtnombre.TabIndex = 5
         '
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(33, 119)
+        Me.Label4.Location = New System.Drawing.Point(37, 149)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(58, 17)
+        Me.Label4.Size = New System.Drawing.Size(65, 20)
         Me.Label4.TabIndex = 4
         Me.Label4.Text = "Apellido"
         '
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(33, 75)
+        Me.Label3.Location = New System.Drawing.Point(37, 94)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(58, 17)
+        Me.Label3.Size = New System.Drawing.Size(65, 20)
         Me.Label3.TabIndex = 3
         Me.Label3.Text = "Nombre"
         '
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(33, 41)
+        Me.Label2.Location = New System.Drawing.Point(37, 51)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(52, 17)
+        Me.Label2.Size = New System.Drawing.Size(59, 20)
         Me.Label2.TabIndex = 2
         Me.Label2.Text = "Código"
         '
         'txtcodigo
         '
-        Me.txtcodigo.Location = New System.Drawing.Point(134, 41)
+        Me.txtcodigo.Location = New System.Drawing.Point(151, 51)
         Me.txtcodigo.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txtcodigo.Name = "txtcodigo"
-        Me.txtcodigo.Size = New System.Drawing.Size(111, 22)
+        Me.txtcodigo.Size = New System.Drawing.Size(124, 26)
         Me.txtcodigo.TabIndex = 1
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(33, 41)
+        Me.Label1.Location = New System.Drawing.Point(37, 51)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(0, 17)
+        Me.Label1.Size = New System.Drawing.Size(0, 20)
         Me.Label1.TabIndex = 0
         '
         'btnbuscar
         '
-        Me.btnbuscar.Location = New System.Drawing.Point(316, 380)
+        Me.btnbuscar.Location = New System.Drawing.Point(356, 475)
         Me.btnbuscar.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnbuscar.Name = "btnbuscar"
-        Me.btnbuscar.Size = New System.Drawing.Size(115, 43)
+        Me.btnbuscar.Size = New System.Drawing.Size(129, 54)
         Me.btnbuscar.TabIndex = 12
         Me.btnbuscar.Text = "Buscar"
         Me.btnbuscar.UseVisualStyleBackColor = True
@@ -221,50 +222,50 @@ Partial Class empleado
         'DataGridView1
         '
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Location = New System.Drawing.Point(379, 75)
+        Me.DataGridView1.Location = New System.Drawing.Point(426, 94)
         Me.DataGridView1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.RowHeadersWidth = 62
         Me.DataGridView1.RowTemplate.Height = 28
-        Me.DataGridView1.Size = New System.Drawing.Size(590, 219)
+        Me.DataGridView1.Size = New System.Drawing.Size(664, 274)
         Me.DataGridView1.TabIndex = 11
         '
         'btnlimpiar
         '
-        Me.btnlimpiar.Location = New System.Drawing.Point(232, 448)
+        Me.btnlimpiar.Location = New System.Drawing.Point(261, 560)
         Me.btnlimpiar.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnlimpiar.Name = "btnlimpiar"
-        Me.btnlimpiar.Size = New System.Drawing.Size(115, 43)
+        Me.btnlimpiar.Size = New System.Drawing.Size(129, 54)
         Me.btnlimpiar.TabIndex = 10
         Me.btnlimpiar.Text = "Limpiar"
         Me.btnlimpiar.UseVisualStyleBackColor = True
         '
         'btneliminar
         '
-        Me.btneliminar.Location = New System.Drawing.Point(76, 438)
+        Me.btneliminar.Location = New System.Drawing.Point(86, 548)
         Me.btneliminar.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btneliminar.Name = "btneliminar"
-        Me.btneliminar.Size = New System.Drawing.Size(115, 43)
+        Me.btneliminar.Size = New System.Drawing.Size(129, 54)
         Me.btneliminar.TabIndex = 9
         Me.btneliminar.Text = "Eliminar"
         Me.btneliminar.UseVisualStyleBackColor = True
         '
         'btnmodificar
         '
-        Me.btnmodificar.Location = New System.Drawing.Point(157, 370)
+        Me.btnmodificar.Location = New System.Drawing.Point(177, 462)
         Me.btnmodificar.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnmodificar.Name = "btnmodificar"
-        Me.btnmodificar.Size = New System.Drawing.Size(115, 43)
+        Me.btnmodificar.Size = New System.Drawing.Size(129, 54)
         Me.btnmodificar.TabIndex = 8
         Me.btnmodificar.Text = "Modificar"
         Me.btnmodificar.UseVisualStyleBackColor = True
         '
         'btnguardar
         '
-        Me.btnguardar.Location = New System.Drawing.Point(10, 370)
+        Me.btnguardar.Location = New System.Drawing.Point(11, 462)
         Me.btnguardar.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnguardar.Name = "btnguardar"
-        Me.btnguardar.Size = New System.Drawing.Size(115, 43)
+        Me.btnguardar.Size = New System.Drawing.Size(129, 54)
         Me.btnguardar.TabIndex = 7
         Me.btnguardar.Text = "Guardar"
         Me.btnguardar.UseVisualStyleBackColor = True
@@ -273,11 +274,22 @@ Partial Class empleado
         '
         Me.ErrorProvider.ContainerControl = Me
         '
+        'btnsalir
+        '
+        Me.btnsalir.Location = New System.Drawing.Point(177, 630)
+        Me.btnsalir.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.btnsalir.Name = "btnsalir"
+        Me.btnsalir.Size = New System.Drawing.Size(129, 54)
+        Me.btnsalir.TabIndex = 13
+        Me.btnsalir.Text = "Regresar Menú"
+        Me.btnsalir.UseVisualStyleBackColor = True
+        '
         'empleado
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(980, 574)
+        Me.ClientSize = New System.Drawing.Size(1102, 718)
+        Me.Controls.Add(Me.btnsalir)
         Me.Controls.Add(Me.btnbuscar)
         Me.Controls.Add(Me.DataGridView1)
         Me.Controls.Add(Me.btnlimpiar)
@@ -320,4 +332,5 @@ Partial Class empleado
     Friend WithEvents cmbcargo As ComboBox
     Friend WithEvents ErrorProvider As ErrorProvider
     Friend WithEvents ToolTip As ToolTip
+    Friend WithEvents btnsalir As Button
 End Class
