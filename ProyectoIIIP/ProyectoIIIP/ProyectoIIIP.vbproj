@@ -93,10 +93,22 @@
     <Compile Include="login.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="loginempleado.Designer.vb">
+      <DependentUpon>loginempleado.vb</DependentUpon>
+    </Compile>
+    <Compile Include="loginempleado.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="menu.Designer.vb">
       <DependentUpon>menu.vb</DependentUpon>
     </Compile>
     <Compile Include="menu.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="menuempleado.Designer.vb">
+      <DependentUpon>menuempleado.vb</DependentUpon>
+    </Compile>
+    <Compile Include="menuempleado.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -114,6 +126,12 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="principal.Designer.vb">
+      <DependentUpon>principal.vb</DependentUpon>
+    </Compile>
+    <Compile Include="principal.vb">
+      <SubType>Form</SubType>
     </Compile>
     <Compile Include="producto.Designer.vb">
       <DependentUpon>producto.vb</DependentUpon>
@@ -156,14 +174,23 @@
     <EmbeddedResource Include="login.resx">
       <DependentUpon>login.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="loginempleado.resx">
+      <DependentUpon>loginempleado.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="menu.resx">
       <DependentUpon>menu.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="menuempleado.resx">
+      <DependentUpon>menuempleado.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="principal.resx">
+      <DependentUpon>principal.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="producto.resx">
       <DependentUpon>producto.vb</DependentUpon>

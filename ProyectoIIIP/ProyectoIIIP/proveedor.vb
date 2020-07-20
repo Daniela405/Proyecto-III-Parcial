@@ -11,7 +11,7 @@ Public Class proveedor
 
     Private Sub limpiar()
         txtcodigo.Clear()
-        cmbnombre.Items.Clear()
+        txtnombre.Clear()
         txtdireccion.Clear()
         txttelefono.Clear()
         txtcodigo.Clear()
@@ -36,7 +36,7 @@ Public Class proveedor
         End If
     End Sub
 
-    Private Sub cmbnombre_Validating(sender As Object, e As CancelEventArgs) Handles cmbnombre.Validating
+    Private Sub cmbnombre_Validating(sender As Object, e As CancelEventArgs)
         If DirectCast(sender, ComboBox).Text.Length > 0 Then
             Me.ErrorValidacion.SetError(sender, "")
         Else
@@ -90,7 +90,7 @@ Public Class proveedor
         tmensaje.ToolTipIcon = ToolTipIcon.Info
     End Sub
 
-    Private Sub cmbnombre_MouseHover(sender As Object, e As EventArgs) Handles cmbnombre.MouseHover
+    Private Sub cmbnombre_MouseHover(sender As Object, e As EventArgs)
         tmensaje.SetToolTip(txtcodigo, "Seleccione el nombre del proveedor")
         tmensaje.ToolTipTitle = "Nombre del Proveedor"
         tmensaje.ToolTipIcon = ToolTipIcon.Info
@@ -121,32 +121,32 @@ Public Class proveedor
     End Sub
 
     Private Sub btnguardar_MouseHover(sender As Object, e As EventArgs)
-        tmensaje.SetToolTip(btnguardar, "Click para guardar")
+        tmensaje.SetToolTip(btnGuardar, "Click para guardar")
         tmensaje.ToolTipTitle = "Guardar"
         tmensaje.ToolTipIcon = ToolTipIcon.Info
     End Sub
 
 
     Private Sub btnmodificar_MouseHover(sender As Object, e As EventArgs)
-        tmensaje.SetToolTip(btnmodificar, "Click para modificar")
+        tmensaje.SetToolTip(btnModificar, "Click para modificar")
         tmensaje.ToolTipTitle = "Modificar"
         tmensaje.ToolTipIcon = ToolTipIcon.Info
     End Sub
 
     Private Sub btnbuscar_MouseHover(sender As Object, e As EventArgs)
-        tmensaje.SetToolTip(btnbuscar, "Click para buscar")
+        tmensaje.SetToolTip(btnBuscar, "Click para buscar")
         tmensaje.ToolTipTitle = "Buscar"
         tmensaje.ToolTipIcon = ToolTipIcon.Info
     End Sub
 
     Private Sub btneliminar_Click(sender As Object, e As EventArgs)
-        tmensaje.SetToolTip(btneliminar, "Click para eliminar")
+        tmensaje.SetToolTip(btnEliminar, "Click para eliminar")
         tmensaje.ToolTipTitle = "Eliminar"
         tmensaje.ToolTipIcon = ToolTipIcon.Info
     End Sub
 
     Private Sub btnlimpiar_MouseHover(sender As Object, e As EventArgs)
-        tmensaje.SetToolTip(btnlimpiar, "Click para limpiar")
+        tmensaje.SetToolTip(btnLimpiar, "Click para limpiar")
         tmensaje.ToolTipTitle = "Limpiar"
         tmensaje.ToolTipIcon = ToolTipIcon.Info
     End Sub
@@ -241,5 +241,23 @@ Public Class proveedor
 
     Private Sub btnCerrar_Click(sender As Object, e As EventArgs) Handles btnCerrar.Click
         Me.Close()
+    End Sub
+
+    Private Sub txtnombre_TextChanged(sender As Object, e As EventArgs) Handles txtnombre.TextChanged
+
+    End Sub
+
+    Private Sub txtnombre_MouseHover(sender As Object, e As EventArgs) Handles txtnombre.MouseHover
+        tmensaje.SetToolTip(txtnombre, "Ingrese el nombre")
+        tmensaje.ToolTipTitle = "Nombre"
+        tmensaje.ToolTipIcon = ToolTipIcon.Info
+    End Sub
+
+    Private Sub txtnombre_Validating(sender As Object, e As CancelEventArgs) Handles txtnombre.Validating
+        If DirectCast(sender, TextBox).Text.Length > 0 Then
+            Me.ErrorValidacion.SetError(sender, "")
+        Else
+            Me.ErrorValidacion.SetError(sender, "Es un campo obligatorio")
+        End If
     End Sub
 End Class

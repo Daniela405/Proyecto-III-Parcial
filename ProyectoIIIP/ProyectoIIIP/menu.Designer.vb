@@ -70,8 +70,9 @@ Partial Class menus
         Me.panelEncabezado.Controls.Add(Me.Panel1)
         Me.panelEncabezado.Dock = System.Windows.Forms.DockStyle.Top
         Me.panelEncabezado.Location = New System.Drawing.Point(0, 0)
+        Me.panelEncabezado.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.panelEncabezado.Name = "panelEncabezado"
-        Me.panelEncabezado.Size = New System.Drawing.Size(1359, 46)
+        Me.panelEncabezado.Size = New System.Drawing.Size(1529, 58)
         Me.panelEncabezado.TabIndex = 1
         '
         'btnRestaurar
@@ -84,10 +85,10 @@ Partial Class menus
         Me.btnRestaurar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent
         Me.btnRestaurar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MediumAquamarine
         Me.btnRestaurar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnRestaurar.Location = New System.Drawing.Point(1236, 6)
-        Me.btnRestaurar.Margin = New System.Windows.Forms.Padding(4)
+        Me.btnRestaurar.Location = New System.Drawing.Point(1390, 8)
+        Me.btnRestaurar.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.btnRestaurar.Name = "btnRestaurar"
-        Me.btnRestaurar.Size = New System.Drawing.Size(39, 36)
+        Me.btnRestaurar.Size = New System.Drawing.Size(44, 45)
         Me.btnRestaurar.TabIndex = 7
         Me.btnRestaurar.UseVisualStyleBackColor = True
         Me.btnRestaurar.Visible = False
@@ -102,10 +103,10 @@ Partial Class menus
         Me.btnMaximizar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkSlateBlue
         Me.btnMaximizar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MediumPurple
         Me.btnMaximizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnMaximizar.Location = New System.Drawing.Point(1236, 4)
-        Me.btnMaximizar.Margin = New System.Windows.Forms.Padding(4)
+        Me.btnMaximizar.Location = New System.Drawing.Point(1390, 5)
+        Me.btnMaximizar.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.btnMaximizar.Name = "btnMaximizar"
-        Me.btnMaximizar.Size = New System.Drawing.Size(39, 36)
+        Me.btnMaximizar.Size = New System.Drawing.Size(44, 45)
         Me.btnMaximizar.TabIndex = 6
         Me.btnMaximizar.UseVisualStyleBackColor = True
         '
@@ -119,10 +120,10 @@ Partial Class menus
         Me.btnMinimizar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightSeaGreen
         Me.btnMinimizar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Cyan
         Me.btnMinimizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnMinimizar.Location = New System.Drawing.Point(1184, 4)
-        Me.btnMinimizar.Margin = New System.Windows.Forms.Padding(4)
+        Me.btnMinimizar.Location = New System.Drawing.Point(1332, 5)
+        Me.btnMinimizar.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.btnMinimizar.Name = "btnMinimizar"
-        Me.btnMinimizar.Size = New System.Drawing.Size(39, 36)
+        Me.btnMinimizar.Size = New System.Drawing.Size(44, 45)
         Me.btnMinimizar.TabIndex = 5
         Me.btnMinimizar.UseVisualStyleBackColor = True
         '
@@ -136,25 +137,27 @@ Partial Class menus
         Me.btnSalir.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Brown
         Me.btnSalir.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red
         Me.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnSalir.Location = New System.Drawing.Point(1290, 4)
-        Me.btnSalir.Margin = New System.Windows.Forms.Padding(4)
+        Me.btnSalir.Location = New System.Drawing.Point(1451, 5)
+        Me.btnSalir.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.btnSalir.Name = "btnSalir"
-        Me.btnSalir.Size = New System.Drawing.Size(39, 36)
+        Me.btnSalir.Size = New System.Drawing.Size(44, 45)
         Me.btnSalir.TabIndex = 4
         Me.btnSalir.UseVisualStyleBackColor = True
         '
         'panelMenu
         '
-        Me.panelMenu.Location = New System.Drawing.Point(3, 46)
+        Me.panelMenu.Location = New System.Drawing.Point(3, 58)
+        Me.panelMenu.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.panelMenu.Name = "panelMenu"
-        Me.panelMenu.Size = New System.Drawing.Size(200, 531)
+        Me.panelMenu.Size = New System.Drawing.Size(225, 664)
         Me.panelMenu.TabIndex = 2
         '
         'Panel1
         '
-        Me.Panel1.Location = New System.Drawing.Point(0, 49)
+        Me.Panel1.Location = New System.Drawing.Point(0, 61)
+        Me.Panel1.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(1208, 100)
+        Me.Panel1.Size = New System.Drawing.Size(1359, 125)
         Me.Panel1.TabIndex = 2
         '
         'paneelMenu
@@ -171,9 +174,10 @@ Partial Class menus
         Me.paneelMenu.Controls.Add(Me.btnUsuario)
         Me.paneelMenu.Controls.Add(Me.Panel2)
         Me.paneelMenu.Dock = System.Windows.Forms.DockStyle.Left
-        Me.paneelMenu.Location = New System.Drawing.Point(0, 46)
+        Me.paneelMenu.Location = New System.Drawing.Point(0, 58)
+        Me.paneelMenu.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.paneelMenu.Name = "paneelMenu"
-        Me.paneelMenu.Size = New System.Drawing.Size(230, 620)
+        Me.paneelMenu.Size = New System.Drawing.Size(259, 774)
         Me.paneelMenu.TabIndex = 2
         '
         'btnVentas
@@ -185,11 +189,11 @@ Partial Class menus
         Me.btnVentas.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnVentas.Font = New System.Drawing.Font("Mongolian Baiti", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnVentas.ForeColor = System.Drawing.SystemColors.ButtonFace
-        Me.btnVentas.Location = New System.Drawing.Point(0, 553)
-        Me.btnVentas.Margin = New System.Windows.Forms.Padding(4)
+        Me.btnVentas.Location = New System.Drawing.Point(0, 695)
+        Me.btnVentas.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.btnVentas.Name = "btnVentas"
-        Me.btnVentas.Padding = New System.Windows.Forms.Padding(27, 0, 0, 0)
-        Me.btnVentas.Size = New System.Drawing.Size(230, 38)
+        Me.btnVentas.Padding = New System.Windows.Forms.Padding(30, 0, 0, 0)
+        Me.btnVentas.Size = New System.Drawing.Size(259, 48)
         Me.btnVentas.TabIndex = 10
         Me.btnVentas.Text = "VENTAS"
         Me.btnVentas.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -205,9 +209,10 @@ Partial Class menus
         Me.subMenuReporte.Controls.Add(Me.Button7)
         Me.subMenuReporte.Controls.Add(Me.btnArreglo)
         Me.subMenuReporte.Dock = System.Windows.Forms.DockStyle.Top
-        Me.subMenuReporte.Location = New System.Drawing.Point(0, 353)
+        Me.subMenuReporte.Location = New System.Drawing.Point(0, 445)
+        Me.subMenuReporte.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.subMenuReporte.Name = "subMenuReporte"
-        Me.subMenuReporte.Size = New System.Drawing.Size(230, 200)
+        Me.subMenuReporte.Size = New System.Drawing.Size(259, 250)
         Me.subMenuReporte.TabIndex = 9
         '
         'Button11
@@ -219,11 +224,11 @@ Partial Class menus
         Me.Button11.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button11.Font = New System.Drawing.Font("Bookman Old Style", 7.8!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button11.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Button11.Location = New System.Drawing.Point(0, 165)
-        Me.Button11.Margin = New System.Windows.Forms.Padding(4)
+        Me.Button11.Location = New System.Drawing.Point(0, 205)
+        Me.Button11.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.Button11.Name = "Button11"
-        Me.Button11.Padding = New System.Windows.Forms.Padding(60, 0, 0, 0)
-        Me.Button11.Size = New System.Drawing.Size(230, 33)
+        Me.Button11.Padding = New System.Windows.Forms.Padding(68, 0, 0, 0)
+        Me.Button11.Size = New System.Drawing.Size(259, 41)
         Me.Button11.TabIndex = 6
         Me.Button11.Text = "Reporte Servicio"
         Me.Button11.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -238,11 +243,11 @@ Partial Class menus
         Me.Button10.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button10.Font = New System.Drawing.Font("Bookman Old Style", 7.8!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button10.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Button10.Location = New System.Drawing.Point(0, 132)
-        Me.Button10.Margin = New System.Windows.Forms.Padding(4)
+        Me.Button10.Location = New System.Drawing.Point(0, 164)
+        Me.Button10.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.Button10.Name = "Button10"
-        Me.Button10.Padding = New System.Windows.Forms.Padding(60, 0, 0, 0)
-        Me.Button10.Size = New System.Drawing.Size(230, 33)
+        Me.Button10.Padding = New System.Windows.Forms.Padding(68, 0, 0, 0)
+        Me.Button10.Size = New System.Drawing.Size(259, 41)
         Me.Button10.TabIndex = 5
         Me.Button10.Text = "Reporte Proveedores"
         Me.Button10.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -257,11 +262,11 @@ Partial Class menus
         Me.Button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button9.Font = New System.Drawing.Font("Bookman Old Style", 7.8!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button9.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Button9.Location = New System.Drawing.Point(0, 99)
-        Me.Button9.Margin = New System.Windows.Forms.Padding(4)
+        Me.Button9.Location = New System.Drawing.Point(0, 123)
+        Me.Button9.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.Button9.Name = "Button9"
-        Me.Button9.Padding = New System.Windows.Forms.Padding(60, 0, 0, 0)
-        Me.Button9.Size = New System.Drawing.Size(230, 33)
+        Me.Button9.Padding = New System.Windows.Forms.Padding(68, 0, 0, 0)
+        Me.Button9.Size = New System.Drawing.Size(259, 41)
         Me.Button9.TabIndex = 4
         Me.Button9.Text = "Reporte Productos"
         Me.Button9.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -276,11 +281,11 @@ Partial Class menus
         Me.Button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button8.Font = New System.Drawing.Font("Bookman Old Style", 7.8!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button8.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Button8.Location = New System.Drawing.Point(0, 66)
-        Me.Button8.Margin = New System.Windows.Forms.Padding(4)
+        Me.Button8.Location = New System.Drawing.Point(0, 82)
+        Me.Button8.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.Button8.Name = "Button8"
-        Me.Button8.Padding = New System.Windows.Forms.Padding(60, 0, 0, 0)
-        Me.Button8.Size = New System.Drawing.Size(230, 33)
+        Me.Button8.Padding = New System.Windows.Forms.Padding(68, 0, 0, 0)
+        Me.Button8.Size = New System.Drawing.Size(259, 41)
         Me.Button8.TabIndex = 3
         Me.Button8.Text = "Reporte Clientes"
         Me.Button8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -295,11 +300,11 @@ Partial Class menus
         Me.Button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button7.Font = New System.Drawing.Font("Bookman Old Style", 7.8!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button7.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Button7.Location = New System.Drawing.Point(0, 33)
-        Me.Button7.Margin = New System.Windows.Forms.Padding(4)
+        Me.Button7.Location = New System.Drawing.Point(0, 41)
+        Me.Button7.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.Button7.Name = "Button7"
-        Me.Button7.Padding = New System.Windows.Forms.Padding(60, 0, 0, 0)
-        Me.Button7.Size = New System.Drawing.Size(230, 33)
+        Me.Button7.Padding = New System.Windows.Forms.Padding(68, 0, 0, 0)
+        Me.Button7.Size = New System.Drawing.Size(259, 41)
         Me.Button7.TabIndex = 2
         Me.Button7.Text = "Reporte Empleados"
         Me.Button7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -315,10 +320,10 @@ Partial Class menus
         Me.btnArreglo.Font = New System.Drawing.Font("Bookman Old Style", 7.8!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnArreglo.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.btnArreglo.Location = New System.Drawing.Point(0, 0)
-        Me.btnArreglo.Margin = New System.Windows.Forms.Padding(4)
+        Me.btnArreglo.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.btnArreglo.Name = "btnArreglo"
-        Me.btnArreglo.Padding = New System.Windows.Forms.Padding(60, 0, 0, 0)
-        Me.btnArreglo.Size = New System.Drawing.Size(230, 33)
+        Me.btnArreglo.Padding = New System.Windows.Forms.Padding(68, 0, 0, 0)
+        Me.btnArreglo.Size = New System.Drawing.Size(259, 41)
         Me.btnArreglo.TabIndex = 1
         Me.btnArreglo.Text = "Reporte Usuario"
         Me.btnArreglo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -333,11 +338,11 @@ Partial Class menus
         Me.btnReportes.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnReportes.Font = New System.Drawing.Font("Mongolian Baiti", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnReportes.ForeColor = System.Drawing.SystemColors.ButtonFace
-        Me.btnReportes.Location = New System.Drawing.Point(0, 315)
-        Me.btnReportes.Margin = New System.Windows.Forms.Padding(4)
+        Me.btnReportes.Location = New System.Drawing.Point(0, 397)
+        Me.btnReportes.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.btnReportes.Name = "btnReportes"
-        Me.btnReportes.Padding = New System.Windows.Forms.Padding(27, 0, 0, 0)
-        Me.btnReportes.Size = New System.Drawing.Size(230, 38)
+        Me.btnReportes.Padding = New System.Windows.Forms.Padding(30, 0, 0, 0)
+        Me.btnReportes.Size = New System.Drawing.Size(259, 48)
         Me.btnReportes.TabIndex = 8
         Me.btnReportes.Text = "REPORTES"
         Me.btnReportes.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -352,11 +357,11 @@ Partial Class menus
         Me.btnProveedores.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnProveedores.Font = New System.Drawing.Font("Mongolian Baiti", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnProveedores.ForeColor = System.Drawing.SystemColors.ButtonFace
-        Me.btnProveedores.Location = New System.Drawing.Point(0, 277)
-        Me.btnProveedores.Margin = New System.Windows.Forms.Padding(4)
+        Me.btnProveedores.Location = New System.Drawing.Point(0, 349)
+        Me.btnProveedores.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.btnProveedores.Name = "btnProveedores"
-        Me.btnProveedores.Padding = New System.Windows.Forms.Padding(27, 0, 0, 0)
-        Me.btnProveedores.Size = New System.Drawing.Size(230, 38)
+        Me.btnProveedores.Padding = New System.Windows.Forms.Padding(30, 0, 0, 0)
+        Me.btnProveedores.Size = New System.Drawing.Size(259, 48)
         Me.btnProveedores.TabIndex = 7
         Me.btnProveedores.Text = "PROVEEDORES"
         Me.btnProveedores.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -371,11 +376,11 @@ Partial Class menus
         Me.btnServicios.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnServicios.Font = New System.Drawing.Font("Mongolian Baiti", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnServicios.ForeColor = System.Drawing.SystemColors.ButtonFace
-        Me.btnServicios.Location = New System.Drawing.Point(0, 239)
-        Me.btnServicios.Margin = New System.Windows.Forms.Padding(4)
+        Me.btnServicios.Location = New System.Drawing.Point(0, 301)
+        Me.btnServicios.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.btnServicios.Name = "btnServicios"
-        Me.btnServicios.Padding = New System.Windows.Forms.Padding(27, 0, 0, 0)
-        Me.btnServicios.Size = New System.Drawing.Size(230, 38)
+        Me.btnServicios.Padding = New System.Windows.Forms.Padding(30, 0, 0, 0)
+        Me.btnServicios.Size = New System.Drawing.Size(259, 48)
         Me.btnServicios.TabIndex = 6
         Me.btnServicios.Text = "SERVICIOS"
         Me.btnServicios.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -390,11 +395,11 @@ Partial Class menus
         Me.btnProductos.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnProductos.Font = New System.Drawing.Font("Mongolian Baiti", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnProductos.ForeColor = System.Drawing.SystemColors.ButtonFace
-        Me.btnProductos.Location = New System.Drawing.Point(0, 201)
-        Me.btnProductos.Margin = New System.Windows.Forms.Padding(4)
+        Me.btnProductos.Location = New System.Drawing.Point(0, 253)
+        Me.btnProductos.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.btnProductos.Name = "btnProductos"
-        Me.btnProductos.Padding = New System.Windows.Forms.Padding(27, 0, 0, 0)
-        Me.btnProductos.Size = New System.Drawing.Size(230, 38)
+        Me.btnProductos.Padding = New System.Windows.Forms.Padding(30, 0, 0, 0)
+        Me.btnProductos.Size = New System.Drawing.Size(259, 48)
         Me.btnProductos.TabIndex = 5
         Me.btnProductos.Text = "PRODUCTOS"
         Me.btnProductos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -409,11 +414,11 @@ Partial Class menus
         Me.btnClieente.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnClieente.Font = New System.Drawing.Font("Mongolian Baiti", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnClieente.ForeColor = System.Drawing.SystemColors.ButtonFace
-        Me.btnClieente.Location = New System.Drawing.Point(0, 163)
-        Me.btnClieente.Margin = New System.Windows.Forms.Padding(4)
+        Me.btnClieente.Location = New System.Drawing.Point(0, 205)
+        Me.btnClieente.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.btnClieente.Name = "btnClieente"
-        Me.btnClieente.Padding = New System.Windows.Forms.Padding(27, 0, 0, 0)
-        Me.btnClieente.Size = New System.Drawing.Size(230, 38)
+        Me.btnClieente.Padding = New System.Windows.Forms.Padding(30, 0, 0, 0)
+        Me.btnClieente.Size = New System.Drawing.Size(259, 48)
         Me.btnClieente.TabIndex = 4
         Me.btnClieente.Text = "CLIENTES"
         Me.btnClieente.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -428,11 +433,11 @@ Partial Class menus
         Me.btnEmpleados.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnEmpleados.Font = New System.Drawing.Font("Mongolian Baiti", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnEmpleados.ForeColor = System.Drawing.SystemColors.ButtonFace
-        Me.btnEmpleados.Location = New System.Drawing.Point(0, 125)
-        Me.btnEmpleados.Margin = New System.Windows.Forms.Padding(4)
+        Me.btnEmpleados.Location = New System.Drawing.Point(0, 157)
+        Me.btnEmpleados.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.btnEmpleados.Name = "btnEmpleados"
-        Me.btnEmpleados.Padding = New System.Windows.Forms.Padding(27, 0, 0, 0)
-        Me.btnEmpleados.Size = New System.Drawing.Size(230, 38)
+        Me.btnEmpleados.Padding = New System.Windows.Forms.Padding(30, 0, 0, 0)
+        Me.btnEmpleados.Size = New System.Drawing.Size(259, 48)
         Me.btnEmpleados.TabIndex = 3
         Me.btnEmpleados.Text = "EMPLEADOS"
         Me.btnEmpleados.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -447,11 +452,11 @@ Partial Class menus
         Me.btnUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnUsuario.Font = New System.Drawing.Font("Mongolian Baiti", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnUsuario.ForeColor = System.Drawing.SystemColors.ButtonFace
-        Me.btnUsuario.Location = New System.Drawing.Point(0, 87)
-        Me.btnUsuario.Margin = New System.Windows.Forms.Padding(4)
+        Me.btnUsuario.Location = New System.Drawing.Point(0, 109)
+        Me.btnUsuario.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.btnUsuario.Name = "btnUsuario"
-        Me.btnUsuario.Padding = New System.Windows.Forms.Padding(27, 0, 0, 0)
-        Me.btnUsuario.Size = New System.Drawing.Size(230, 38)
+        Me.btnUsuario.Padding = New System.Windows.Forms.Padding(30, 0, 0, 0)
+        Me.btnUsuario.Size = New System.Drawing.Size(259, 48)
         Me.btnUsuario.TabIndex = 2
         Me.btnUsuario.Text = "USUARIO"
         Me.btnUsuario.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -466,8 +471,9 @@ Partial Class menus
         Me.Panel2.Controls.Add(Me.PictureBox2)
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel2.Location = New System.Drawing.Point(0, 0)
+        Me.Panel2.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(230, 87)
+        Me.Panel2.Size = New System.Drawing.Size(259, 109)
         Me.Panel2.TabIndex = 0
         '
         'Label3
@@ -475,9 +481,9 @@ Partial Class menus
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Poor Richard", 9.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.Color.White
-        Me.Label3.Location = New System.Drawing.Point(120, 56)
+        Me.Label3.Location = New System.Drawing.Point(135, 70)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(69, 18)
+        Me.Label3.Size = New System.Drawing.Size(81, 21)
         Me.Label3.TabIndex = 11
         Me.Label3.Text = "BEAUTY"
         '
@@ -486,9 +492,9 @@ Partial Class menus
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Poor Richard", 9.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.Color.White
-        Me.Label2.Location = New System.Drawing.Point(128, 32)
+        Me.Label2.Location = New System.Drawing.Point(144, 40)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(53, 18)
+        Me.Label2.Size = New System.Drawing.Size(61, 21)
         Me.Label2.TabIndex = 10
         Me.Label2.Text = "STYLE"
         '
@@ -497,18 +503,19 @@ Partial Class menus
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Poor Richard", 9.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.White
-        Me.Label1.Location = New System.Drawing.Point(128, 6)
+        Me.Label1.Location = New System.Drawing.Point(144, 8)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(60, 18)
+        Me.Label1.Size = New System.Drawing.Size(71, 21)
         Me.Label1.TabIndex = 9
         Me.Label1.Text = "SALON"
         '
         'PictureBox2
         '
         Me.PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), System.Drawing.Image)
-        Me.PictureBox2.Location = New System.Drawing.Point(12, 9)
+        Me.PictureBox2.Location = New System.Drawing.Point(14, 11)
+        Me.PictureBox2.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.PictureBox2.Name = "PictureBox2"
-        Me.PictureBox2.Size = New System.Drawing.Size(84, 65)
+        Me.PictureBox2.Size = New System.Drawing.Size(94, 81)
         Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox2.TabIndex = 8
         Me.PictureBox2.TabStop = False
@@ -517,16 +524,17 @@ Partial Class menus
         '
         Me.PanelChildForm.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(230, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.PanelChildForm.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.PanelChildForm.Location = New System.Drawing.Point(230, 46)
+        Me.PanelChildForm.Location = New System.Drawing.Point(259, 58)
+        Me.PanelChildForm.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.PanelChildForm.Name = "PanelChildForm"
-        Me.PanelChildForm.Size = New System.Drawing.Size(1129, 620)
+        Me.PanelChildForm.Size = New System.Drawing.Size(1270, 774)
         Me.PanelChildForm.TabIndex = 3
         '
         'menus
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1359, 666)
+        Me.ClientSize = New System.Drawing.Size(1529, 832)
         Me.Controls.Add(Me.PanelChildForm)
         Me.Controls.Add(Me.paneelMenu)
         Me.Controls.Add(Me.panelEncabezado)
