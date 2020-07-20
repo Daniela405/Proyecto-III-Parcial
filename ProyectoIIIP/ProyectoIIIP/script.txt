@@ -16,7 +16,7 @@ correo varchar(50) not null
 
 )
 
------ccreacion de procedimiento agregar usuario-------
+-----ccreacion de procedimiento agregar usuario
 
 create procedure agregarUsuario (
 @id int,
@@ -166,7 +166,7 @@ select id, nombre, apellido,edad, sexo, cargo from  empleado
 where id = @id
 END
 
-exec consultarEmpleado 1
+exec consultarEmpleado 2
 
 
 
@@ -483,12 +483,18 @@ exec consultarServicios 1
 
 
 
-create table factura(
+create table ventas(
 id int primary key not null, 
 idcliente int  not null, 
 idempleado int not null,
-idproducto int not null,
-idservicios int not null
+idproducto int ,
+idservicios int ,
+precio decimal not null,
+cantidad int not null,
+formapago varchar not null,
+descuento decimal not null,
+total decimal not null
+
 
  
 	constraint fk_factura_idcliente 
@@ -510,67 +516,76 @@ idservicios int not null
 
 )
 ---procedimiento para insertar en facturad
-create procedure insertarFacturas (
+create procedure insertarVentas (
 @id int, 
 @idcliente int  , 
 @idempleado int ,
 @idproducto int ,
-@idservicios int 
+@idservicios int ,
+@precio decimal ,
+@cantidad int ,
+@formapago varchar ,
+@descuento decimal ,
+@total decimal 
 )
 
 AS
 BEGIN
-insert into factura (id,idcliente,idempleado,idproducto,idservicios)values
-(@id,@idcliente,@idempleado,@idproducto,@idservicios);
+insert into ventas(id,idcliente,idempleado,idproducto,idservicios,precio,cantidad,formapago,descuento,total)values
+(@id,@idcliente,@idempleado,@idproducto,@idservicios,@precio,@cantidad,@formapago,@descuento,@total);
 END
 
 
-exec insertarFacturas 1, 1, 2, 1, 1
- select * from factura
+exec insertarVentas 1, 1, 2, 1, 1,200,4,efectivo,0.15,200
+ select * from ventas
 
  ---procedimiento para actualizar----
  
-create procedure actualizarFactura (
+create procedure actualizarVenta (
 @id int, 
 @idcliente int  , 
 @idempleado int ,
 @idproducto int ,
-@idservicios int 
+@idservicios int ,
+@precio decimal ,
+@cantidad int ,
+@formapago varchar ,
+@descuento decimal ,
+@total decimal 
 )
 
 AS
 BEGIN
-update factura
+update ventas
 set idcliente= @idcliente, idempleado = @idempleado, idproducto = @idproducto,
-idservicios = @idservicios
+idservicios = @idservicios,precio=@precio,cantidad=@cantidad,formapago=@formapago,descuento=@descuento,total=@total
 where id = @id
 
 End
 
-exec actualizarFactura 1, 1, 3, 1, 1 
+exec actualizarVenta 1, 1, 2, 1, 1,200,4,efectivo,0.25,300
 
-select * from factura
+select * from ventas
 
 
-----procedimiento eliminar factura----
-create procedure eliminarFactura(@id int )
+----procedimiento eliminar ventas----
+create procedure eliminarVentas(@id int )
 AS
 BEGIN
-delete from  factura where id = @id
+delete from  ventas where id = @id
 END
 
-exec eliminarfactura 1
-select * from factura
+exec eliminarVentas 1
+select * from ventas
 
-----crear procedimiento consutar Factura
+----crear procedimiento consutar ventas
 
-create procedure consultarFactura (@id as int)
+create procedure consultarVentas (@id as int)
 AS 
 BEGIN
-select * from  factura
+select * from  ventas
 
 where id = @id
 END
 
-exec consultarFactura 1
-
+exec consultarVentas 1
