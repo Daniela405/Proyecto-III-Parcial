@@ -12,10 +12,12 @@ nombre varchar(25) not null,
 apellido varchar(25) not null,
 usuario varchar(25) not null,
 contraseña varchar(50) not null,
-correo varchar(50) not null
+correo varchar(50) not null,
+rol char (15) not null,
+estado char(20) not null
 
 )
-
+alter table usuario add cifrado  varbinary(max) null
 -----ccreacion de procedimiento agregar usuario
 
 create procedure agregarUsuario (
@@ -24,18 +26,22 @@ create procedure agregarUsuario (
 @apellido varchar(25),
 @usuario varchar(25),
 @contraseña varchar(25),
-@correo varchar(25)
-
+@correo varchar(25),
+@rol char (15),
+@estado char(20) 
 )
 
 AS
 BEGIN
-insert into usuario(id, nombre,apellido,usuario,contraseña,correo) 
-values(@id, @nombre,@apellido,@usuario,@contraseña,@correo)
+if exists (select usuario from usuario where usuario = @usuario and estado = 'activo')
+raiserror ('Ya existe un usuario con ese usuario, porfavor ingrese uno nuevo',16,1)
+else
+insert into usuario(id, nombre,apellido,usuario,contraseña,correo,rol,estado) 
+values(@id, @nombre,@apellido,@usuario,@contraseña,@correo,@rol,@estado)
 END
 
-exec agregarUsuario 3, 'marlon','menjivar','maquillista','1234','meilimala@gmail.com'
-
+exec agregarUsuario 3, 'marlon','menjivar','mmenjivar','1234','meilimala@gmail.com','admin','activo'
+exec agregarUsuario 4, 'mario','menjivar','mmenji','1234','meilimala@gmail.com','cajero','activo'
 
 select * from usuario
 
@@ -47,46 +53,67 @@ create procedure actualizarUsuario (
 @apellido varchar(25),
 @usuario varchar(25),
 @contraseña varchar(25),
-@correo varchar(25)
-
+@correo varchar(25),
+@rol char (15),
+@estado char(20)
 )
 
 AS
 BEGIN
+if exists(select usuario from usuario where usuario =@usuario and id =@id and estado = 'activo') 
+raiserror('Usuario ya esta en uso',16,1)
+else
 update usuario
 set nombre  = @nombre, apellido= @apellido, usuario = @usuario,
-contraseña  = @contraseña,correo = @correo
+contraseña  = @contraseña,correo = @correo, rol=@rol,estado=@estado
 where id = @id
 end 
-exec actualizarUsuario 3,' meliza','bonita','Admi','123456','melimala@gmail.com' 
+exec actualizarUsuario 3, 'marlon','martinez','mmenjiva','1234','meilimala@gmail.com','admin','activo'
+
 select  * from usuario  
 
 ----crear procedimiento eliminar usuario
-create procedure eliminarUsuario(@id int )
+create procedure eliminarUsuario(@id int , @rol varchar(50))
 AS
 BEGIN
-delete from usuario where id = @id
+if exists (select usuario from usuario where @rol='admin')
+raiserror ('El usuario "Admin" no se puede eliminaar,Accion denegada',16,1)
+else 
+update usuario set estado ='eliminado'
+where  id =@id and rol <> 'admin'
+
 END
 
-exec eliminarUsuario 3
+execute eliminarUsuario 4,'cajero'
 select * from usuario
 
-----crear procedimiento consutar usurio
+----crear procedimiento consutar usuario
 
-create procedure consultarUsuario(@id as int)
+create procedure consultarUsuarios(@id as int)
 AS 
 BEGIN
-select id, nombre, apellido,usuario, contraseña, correo from  usuario
+select id, nombre, apellido,usuario, contraseña, correo,rol,estado from  usuario
 
 where id = @id
 END
 
-exec consultarUsuario  3
+exec consultarUsuarios  3
 
 
 
 
 select * from usuario
+create procedure buscarUsuarios
+@nombreUsuario as varchar(50)
+as begin
+select concat(nombre,' ',apellido) as 'Nombre Completo', usuario as 'usuario',estado as 'estado',rol as 'puesto', correo as 'correo'
+from usuario
+where usuario like '%' +@nombreUsuario+ '%'
+
+end 
+execute buscarUsuarios 'mm'
+
+
 
 create table empleado(
 id int primary key not null, 
@@ -172,7 +199,16 @@ exec consultarEmpleado 2
 
 
 select * from empleado
+--procediemiento busqueda de empleado
+create procedure buscarEmpleado
+@nombre as varchar(50)
+as begin
+select concat(nombre,' ',apellido) as 'Nombre Completo', edad as 'edad',sexo as 'sexo',cargo as 'cargo'
+from empleado
+where nombre like '%' +@nombre+ '%'
 
+end 
+execute buscarEmpleado 'r'
 create table cliente(
 id int primary key not null, 
 nombre varchar(25) not null,
@@ -240,7 +276,16 @@ exec consultarCliente 1
 
 
 select * from cliente
+--procediemiento busqueda de cliente
+create procedure buscarCliente
+@nombre as varchar(50)
+as begin
+select concat(nombre,' ',apellido) as 'Nombre Completo'
+from cliente
+where nombre like '%' +@nombre+ '%'
 
+end 
+execute buscarCliente 'm'
 create table producto(
 id int primary key not null, 
 tipoproducto varchar(50) not null,
@@ -320,7 +365,16 @@ exec consultarProducto 1
 
 
 
+--procediemiento busqueda de producto
+create procedure buscarProductoss
+@nombre as varchar(50)
+as begin
+select nombre as 'Nombre Producto',tipoproducto as 'Tipo de producto', precio as 'precio', cantidad as 'cantidad',estado as 'estado'
+from producto
+where nombre like '%' +@nombre+ '%' or  tipoproducto like '%' +@nombre+ '%'
 
+end 
+execute buscarProductoss 's'
 
 
 
@@ -405,7 +459,18 @@ where id = @id
 END
 
 exec consultarProveedor 1
+----busqueda de proveedor
+create procedure buscarProveedor
+@nombre as varchar(25)
+as begin
+select direccion as 'direccion', telefono as 'Telefono', correo as 'Correo',producto.id as 'producto'
+from proveedor
 
+INNER JOIN producto On proveedor.idproducto = producto.id
+where direccion like '%' +@nombre+ '%' or  tipoproducto like '%' +@nombre+ '%'
+
+end 
+execute buscarProveedor 't'
 
 create table servicios(
 id int primary key not null,
@@ -480,7 +545,16 @@ END
 
 exec consultarServicios 1
 
+--procediemiento busqueda de servicios
+create procedure buscarServicio
+@nombre as varchar(50)
+as begin
+select tiposervicio as 'Tipo Del Servicio', nombre as 'nombre',precio as 'precio'
+from servicios
+where nombre like '%' +@nombre+ '%'
 
+end 
+execute buscarServicio 'u'
 
 
 create table ventas(
@@ -568,7 +642,7 @@ exec actualizarVenta 1, 1, 2, 1, 1,200,4,efectivo,0.25,300
 select * from ventas
 
 
-----procedimiento eliminar ventas----
+----procedimiento eliminar factura----
 create procedure eliminarVentas(@id int )
 AS
 BEGIN
@@ -578,7 +652,7 @@ END
 exec eliminarVentas 1
 select * from ventas
 
-----crear procedimiento consutar ventas
+----crear procedimiento consutar Factura
 
 create procedure consultarVentas (@id as int)
 AS 
@@ -589,3 +663,70 @@ where id = @id
 END
 
 exec consultarVentas 1
+
+
+--/ENCRIPTACION DE CONTRASEñA/--
+USE master
+GO
+
+select * from sys.symmetric_keys
+WHERE name = '##MS_ServiceMasterKey##'
+GO
+
+/*CREACION DE CONTRASENA PARA LA BASE DE DATOS */
+USE proyecto ;
+GO
+CREATE MASTER KEY ENCRYPTION BY PASSWORD = 'manchester2000' ---excriptar toda la base 
+GO
+
+USE proyecto ;
+GO
+CREATE CERTIFICATE Certificado
+WITH SUBJECT = 'Protect Data';
+GO
+
+/*CREACION DE CONTRASENA Y CERTIFICADO */
+USE proyecto ;
+GO
+CREATE SYMMETRIC KEY ClaveContrasenaUsuario
+WITH ALGORITHM = AES_128
+ENCRYPTION BY CERTIFICATE Certificado;
+GO
+
+
+/*PARA ENCRIPTAR */
+
+alter table usuario 
+USE proyecto ;
+GO
+
+OPEN SYMMETRIC KEY ClaveContrasenaUsuario
+DECRYPTION BY CERTIFICATE Certificado;
+GO
+
+UPDATE usuario
+
+SET cifrado = ENCRYPTBYKEY (KEY_GUID('ClaveContrasenaUsuario'), contraseña)
+FROM usuario;
+GO
+
+CLOSE SYMMETRIC KEY ClaveContrasenaUsuario;
+GO
+
+select * from usuario
+/*PARA DESENCRIPTAR */
+use proyecto ;
+GO
+OPEN SYMMETRIC KEY ClaveContrasenaUsuario
+DECRYPTION BY CERTIFICATE Certificado;
+GO
+
+
+SELECT CAST(DecryptByKey(cifrado) AS vARCHAR(30)) AS DecryptedVal,cifrado FROM usuario;
+GO
+
+CLOSE SYMMETRIC KEY ClaveContrasenaUsuario;
+GO
+
+
+SELECT * FROM usuario
