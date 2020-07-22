@@ -20,7 +20,11 @@ estado char(20) not null
 alter table usuario add cifrado  varbinary(max) null
 -----ccreacion de procedimiento agregar usuario
 
+<<<<<<< HEAD
+create procedure agregarUsuarios (
+=======
 create procedure agregarUsuario (
+>>>>>>> 0e777a31aa74d610f1ccc63ba08c6cb1d64c0485
 @id int,
 @nombre varchar(25),
 @apellido varchar(25),
@@ -33,15 +37,25 @@ create procedure agregarUsuario (
 
 AS
 BEGIN
+<<<<<<< HEAD
+if exists (select usuario from usuario where usuario = @usuario and estado='activo')
+=======
 if exists (select usuario from usuario where usuario = @usuario and estado = 'activo')
+>>>>>>> 0e777a31aa74d610f1ccc63ba08c6cb1d64c0485
 raiserror ('Ya existe un usuario con ese usuario, porfavor ingrese uno nuevo',16,1)
 else
 insert into usuario(id, nombre,apellido,usuario,contraseña,correo,rol,estado) 
 values(@id, @nombre,@apellido,@usuario,@contraseña,@correo,@rol,@estado)
 END
 
+<<<<<<< HEAD
+exec agregarUsuarios 3, 'marlon','menjivar','mmenjivar','1234','meilimala@gmail.com','maquillista','activo'
+exec agregarUsuarios 4, 'mario','menjivar','mmenji','1234','meilimala@gmail.com','cajero','activo'
+
+=======
 exec agregarUsuario 3, 'marlon','menjivar','mmenjivar','1234','meilimala@gmail.com','admin','activo'
 exec agregarUsuario 4, 'mario','menjivar','mmenji','1234','meilimala@gmail.com','cajero','activo'
+>>>>>>> 0e777a31aa74d610f1ccc63ba08c6cb1d64c0485
 
 select * from usuario
 
@@ -98,21 +112,38 @@ where id = @id
 END
 
 exec consultarUsuarios  3
+<<<<<<< HEAD
+select *from usuario
+=======
+>>>>>>> 0e777a31aa74d610f1ccc63ba08c6cb1d64c0485
 
 
 
 
 select * from usuario
+<<<<<<< HEAD
+create procedure buscarUser
+@nombreUsuario as varchar(50)
+as begin
+select id as 'idUsuario',nombre as 'Nombre', apellido as 'Apellido', usuario as 'usuario',contraseña as 'Contraseña', correo as 'correo', rol as 'puesto',estado as 'estado' 
+=======
 create procedure buscarUsuarios
 @nombreUsuario as varchar(50)
 as begin
 select concat(nombre,' ',apellido) as 'Nombre Completo', usuario as 'usuario',estado as 'estado',rol as 'puesto', correo as 'correo'
+>>>>>>> 0e777a31aa74d610f1ccc63ba08c6cb1d64c0485
 from usuario
 where usuario like '%' +@nombreUsuario+ '%'
 
 end 
+<<<<<<< HEAD
+execute buscarUser 'mm'
+
+select * from usuario
+=======
 execute buscarUsuarios 'mm'
 
+>>>>>>> 0e777a31aa74d610f1ccc63ba08c6cb1d64c0485
 
 
 create table empleado(

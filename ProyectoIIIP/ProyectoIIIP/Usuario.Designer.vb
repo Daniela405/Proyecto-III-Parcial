@@ -34,10 +34,13 @@ Partial Class usuario
         Me.Label4 = New System.Windows.Forms.Label()
         Me.txtcorreo = New System.Windows.Forms.TextBox()
         Me.Label5 = New System.Windows.Forms.Label()
-        Me.txtcontraseña = New System.Windows.Forms.TextBox()
-        Me.Label6 = New System.Windows.Forms.Label()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.txtcontraseña = New System.Windows.Forms.TextBox()
+        Me.txtestado = New System.Windows.Forms.TextBox()
+        Me.Estado = New System.Windows.Forms.Label()
+        Me.cmbrol = New System.Windows.Forms.ComboBox()
+        Me.Label7 = New System.Windows.Forms.Label()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.ErrorValidacion = New System.Windows.Forms.ErrorProvider(Me.components)
         Me.tmensaje = New System.Windows.Forms.ToolTip(Me.components)
@@ -47,6 +50,7 @@ Partial Class usuario
         Me.btnLimpiar = New System.Windows.Forms.Button()
         Me.btnEliminar = New System.Windows.Forms.Button()
         Me.btnCerrar = New System.Windows.Forms.Button()
+        Me.Label6 = New System.Windows.Forms.Label()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -148,29 +152,10 @@ Partial Class usuario
         Me.Label5.TabIndex = 10
         Me.Label5.Text = "Correo"
         '
-        'txtcontraseña
-        '
-        Me.txtcontraseña.Location = New System.Drawing.Point(168, 286)
-        Me.txtcontraseña.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.txtcontraseña.Name = "txtcontraseña"
-        Me.txtcontraseña.Size = New System.Drawing.Size(212, 26)
-        Me.txtcontraseña.TabIndex = 9
-        '
-        'Label6
-        '
-        Me.Label6.AutoSize = True
-        Me.Label6.Font = New System.Drawing.Font("Modern No. 20", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Label6.Location = New System.Drawing.Point(38, 289)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(109, 24)
-        Me.Label6.TabIndex = 8
-        Me.Label6.Text = "Contraseña"
-        '
         'DataGridView1
         '
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Location = New System.Drawing.Point(52, 530)
+        Me.DataGridView1.Location = New System.Drawing.Point(62, 543)
         Me.DataGridView1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.RowHeadersWidth = 62
@@ -181,6 +166,12 @@ Partial Class usuario
         'GroupBox1
         '
         Me.GroupBox1.BackColor = System.Drawing.Color.Black
+        Me.GroupBox1.Controls.Add(Me.Label6)
+        Me.GroupBox1.Controls.Add(Me.txtcontraseña)
+        Me.GroupBox1.Controls.Add(Me.txtestado)
+        Me.GroupBox1.Controls.Add(Me.Estado)
+        Me.GroupBox1.Controls.Add(Me.cmbrol)
+        Me.GroupBox1.Controls.Add(Me.Label7)
         Me.GroupBox1.Controls.Add(Me.Label4)
         Me.GroupBox1.Controls.Add(Me.Label1)
         Me.GroupBox1.Controls.Add(Me.txtcodigo)
@@ -191,18 +182,63 @@ Partial Class usuario
         Me.GroupBox1.Controls.Add(Me.txtapellido)
         Me.GroupBox1.Controls.Add(Me.txtusuario)
         Me.GroupBox1.Controls.Add(Me.txtcorreo)
-        Me.GroupBox1.Controls.Add(Me.Label6)
         Me.GroupBox1.Controls.Add(Me.Label5)
-        Me.GroupBox1.Controls.Add(Me.txtcontraseña)
         Me.GroupBox1.ForeColor = System.Drawing.SystemColors.Control
         Me.GroupBox1.Location = New System.Drawing.Point(52, 50)
         Me.GroupBox1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Padding = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.GroupBox1.Size = New System.Drawing.Size(458, 416)
+        Me.GroupBox1.Size = New System.Drawing.Size(458, 469)
         Me.GroupBox1.TabIndex = 20
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Informacion"
+        '
+        'txtcontraseña
+        '
+        Me.txtcontraseña.Location = New System.Drawing.Point(168, 289)
+        Me.txtcontraseña.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.txtcontraseña.Name = "txtcontraseña"
+        Me.txtcontraseña.Size = New System.Drawing.Size(212, 26)
+        Me.txtcontraseña.TabIndex = 27
+        '
+        'txtestado
+        '
+        Me.txtestado.Location = New System.Drawing.Point(168, 417)
+        Me.txtestado.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.txtestado.Name = "txtestado"
+        Me.txtestado.Size = New System.Drawing.Size(212, 26)
+        Me.txtestado.TabIndex = 26
+        '
+        'Estado
+        '
+        Me.Estado.AutoSize = True
+        Me.Estado.Font = New System.Drawing.Font("Modern No. 20", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Estado.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.Estado.Location = New System.Drawing.Point(38, 419)
+        Me.Estado.Name = "Estado"
+        Me.Estado.Size = New System.Drawing.Size(71, 24)
+        Me.Estado.TabIndex = 25
+        Me.Estado.Text = "Estado"
+        '
+        'cmbrol
+        '
+        Me.cmbrol.FormattingEnabled = True
+        Me.cmbrol.Items.AddRange(New Object() {"Maquillista"})
+        Me.cmbrol.Location = New System.Drawing.Point(168, 371)
+        Me.cmbrol.Name = "cmbrol"
+        Me.cmbrol.Size = New System.Drawing.Size(212, 28)
+        Me.cmbrol.TabIndex = 24
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Font = New System.Drawing.Font("Modern No. 20", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label7.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.Label7.Location = New System.Drawing.Point(39, 376)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(42, 24)
+        Me.Label7.TabIndex = 23
+        Me.Label7.Text = "Rol"
         '
         'PictureBox1
         '
@@ -322,6 +358,17 @@ Partial Class usuario
         Me.btnCerrar.TabIndex = 28
         Me.btnCerrar.UseVisualStyleBackColor = False
         '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Font = New System.Drawing.Font("Modern No. 20", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.Label6.Location = New System.Drawing.Point(38, 300)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(109, 24)
+        Me.Label6.TabIndex = 28
+        Me.Label6.Text = "Contraseña"
+        '
         'usuario
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
@@ -362,8 +409,6 @@ Partial Class usuario
     Friend WithEvents Label4 As Label
     Friend WithEvents txtcorreo As TextBox
     Friend WithEvents Label5 As Label
-    Friend WithEvents txtcontraseña As TextBox
-    Friend WithEvents Label6 As Label
     Friend WithEvents DataGridView1 As DataGridView
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents ErrorValidacion As ErrorProvider
@@ -375,4 +420,10 @@ Partial Class usuario
     Friend WithEvents btnBuscar As Button
     Friend WithEvents btnModificar As Button
     Friend WithEvents btnGuardar As Button
+    Friend WithEvents cmbrol As ComboBox
+    Friend WithEvents Label7 As Label
+    Friend WithEvents txtestado As TextBox
+    Friend WithEvents Estado As Label
+    Friend WithEvents txtcontraseña As TextBox
+    Friend WithEvents Label6 As Label
 End Class
