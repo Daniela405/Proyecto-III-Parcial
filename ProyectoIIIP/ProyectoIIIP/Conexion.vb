@@ -4,7 +4,7 @@ Imports System.Windows.Forms
 Imports System.Security.Cryptography
 Imports System.Text
 Public Class Conexion
-    Public conexion As SqlConnection = New SqlConnection("Data Source= DESKTOP-HT00A5J \ SQLEXPRESS;Initial Catalog=proyecto; Integrated Security=True")
+    Public conexion As SqlConnection = New SqlConnection("Data Source= DESKTOP-LGDBE5Q\SQLEXPRESS;Initial Catalog=proyecto; Integrated Security=True")
     'Private cmb As SqlCommandBuilder
     Public ds As DataSet = New DataSet()
     Public da As SqlDataAdapter
@@ -185,5 +185,34 @@ Public Class Conexion
         End Try
     End Function
 
+
+
+    'funciones para agregar en productos ''
+
+
+    Public Function agregarProductos(id As Integer, codigobarra As String, tipoproducto As String, nombre As String,
+                               precio As Decimal, cantidad As Integer, caracteristica As String)
+        Try
+            conexion.Open()
+            cmb = New SqlCommand("agregarProductos", conexion)
+            cmb.CommandType = CommandType.StoredProcedure
+            cmb.Parameters.AddWithValue("@id", id)
+            cmb.Parameters.AddWithValue("@codigobarra", codigobarra)
+            cmb.Parameters.AddWithValue("@tipoproducto", tipoproducto)
+            cmb.Parameters.AddWithValue("@nombre", nombre)
+            cmb.Parameters.AddWithValue("@precio", precio)
+            cmb.Parameters.AddWithValue("@cantidad", cantidad)
+            cmb.Parameters.AddWithValue("@caracteristica", caracteristica)
+
+
+            If cmb.ExecuteNonQuery Then
+                Return True
+            Else
+                Return False
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+    End Function
 
 End Class

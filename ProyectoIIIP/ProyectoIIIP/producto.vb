@@ -1,6 +1,7 @@
 ﻿Imports System.ComponentModel
 
 Public Class producto
+    Dim conexion As Conexion = New Conexion()
     Private Sub txtcorreo_TextChanged(sender As Object, e As EventArgs)
 
     End Sub
@@ -133,4 +134,47 @@ Public Class producto
         tmensaje.ToolTipIcon = ToolTipIcon.Info
     End Sub
 
+    Private Sub GroupBox1_Enter(sender As Object, e As EventArgs) Handles GroupBox1.Enter
+
+    End Sub
+
+    Private Sub producto_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        conexion.conectar()
+
+        mostrardatos()
+    End Sub
+    Public Sub mostrardatos()
+        conexion.consulta("select * from productos", "productos")
+
+        DataGridView1.DataSource = conexion.ds.Tables("productos")
+
+    End Sub
+
+
+    Private Sub insertarProducto()
+        Dim id As Integer, codigobarra As String, tipoproducto As String, nombre As String, precio As Decimal, cantidad As Integer, caracteristica As String
+        id = txtcodigo.Text
+        codigobarra = txtcodbarra.Text
+        tipoproducto = txttipo.Text
+        nombre = txtnombre.Text
+        precio = txtprecio.Text
+        cantidad = txtcantidad.Text
+        caracteristica = txtcaracteristica.Text
+        Try
+            If conexion.agregarProductos(id, codigobarra, tipoproducto, nombre, precio, cantidad, caracteristica) Then
+                MessageBox.Show("Guardado", "Correcto", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                mostrardatos()
+
+            Else
+                MessageBox.Show("Error al guardar", "Incorrecto", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                conexion.conexion.Close()
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+    End Sub
+
+    Private Sub btnGuardar_Click(sender As Object, e As EventArgs) Handles btnGuardar.Click
+        insertarProducto()
+    End Sub
 End Class

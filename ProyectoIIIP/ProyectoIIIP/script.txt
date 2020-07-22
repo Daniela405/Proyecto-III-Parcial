@@ -290,58 +290,64 @@ where nombre like '%' +@nombre+ '%'
 
 end 
 execute buscarCliente 'm'
-create table producto(
+
+
+create table productos(
 id int primary key not null, 
+codigobarra varchar(25),
 tipoproducto varchar(50) not null,
 nombre varchar(25) not null,
 precio decimal not null,
 cantidad int not null,
-estado varchar(25) not null
+caracteristica varchar(50),
+estado varchar(25) default 'En Existencia'
 )
 ----procedimiento para insertar producto
-create procedure agregarProducto (
+create procedure agregarProductos (
 @id int, 
+@codigobarra varchar(25),
 @tipoproducto varchar(50), 
 @nombre varchar(25) ,
 @precio decimal ,
 @cantidad int ,
-@estado varchar(25) 
+@caracteristica varchar(50)
 )
 
 AS
 BEGIN
 
-insert into producto (id, tipoproducto,nombre,precio,cantidad,estado) 
-values(@id, @tipoproducto,@nombre,@precio,@cantidad,@estado)
+insert into productos(id,codigobarra, tipoproducto,nombre,precio,cantidad,caracteristica) 
+values(@id,@codigobarra, @tipoproducto,@nombre,@precio,@cantidad,@caracteristica)
 END
 
-exec agregarProducto 1, 'shampoo','nivea',200,'20','Activo';
+exec agregarProductos 1,'11pd20', 'shampoo','nivea',200,'20','risos definidos';
+exec agregarProductoss 2, 'shampoo','Sedal',200,'20';
 
-
-select * from producto
+select * from productos
 
 
 -----procedimiento para actualizar  producto---
 
 create procedure actualizarProducto (
 @id int, 
+@codigobarra varchar(25),
 @tipoproducto varchar(50), 
 @nombre varchar(25) ,
 @precio decimal ,
 @cantidad int ,
-@estado varchar(25) 
-
+@caracteristica varchar(50)
 )
 
 AS
 BEGIN
-update producto
-set tipoproducto = @tipoproducto, nombre = @nombre, precio = @precio, cantidad = @cantidad,
-estado = @estado
+
+update productos
+set codigobarra=@codigobarra ,tipoproducto = @tipoproducto, nombre = @nombre, precio = @precio, cantidad = @cantidad,
+caracteristica = @caracteristica
 where id = @id
 end 
-exec actualizarProducto 1, 'shampoo','nivea',150,'20','Activo';
-select  * from producto
+exec actualizarProducto 1,'11pd20', 'shampoo','nivea',200,'22','risos definidos';
+select  * from productos
 
 
 
@@ -349,7 +355,7 @@ select  * from producto
 create procedure eliminarProducto(@id int )
 AS
 BEGIN
-delete from  producto where id = @id
+delete from  productos where id = @id
 END
 
 exec eliminarProducto 1
@@ -370,17 +376,17 @@ exec consultarProducto 1
 
 
 --procediemiento busqueda de producto
-create procedure buscarProductoss
+create procedure buscarProductos
 @nombre as varchar(50)
 as begin
-select nombre as 'Nombre Producto',tipoproducto as 'Tipo de producto', precio as 'precio', cantidad as 'cantidad',estado as 'estado'
-from producto
+select codigobarra as 'Codigo de Barra', nombre as 'Nombre Producto',tipoproducto as 'Tipo de producto', precio as 'precio', cantidad as 'cantidad',caracteristica as 'Caracteristica' , estado as 'estado'
+from productos
 where nombre like '%' +@nombre+ '%' or  tipoproducto like '%' +@nombre+ '%'
 
 end 
-execute buscarProductoss 's'
+execute buscarProductos 's'
 
-
+select min(id) from productos
 
 create table proveedor(
 id int primary key not null, 
@@ -733,4 +739,4 @@ CLOSE SYMMETRIC KEY ClaveContrasenaUsuario;
 GO
 
 
-SELECT * FROM usuario
+SELECT * F
