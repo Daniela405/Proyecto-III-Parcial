@@ -249,4 +249,22 @@ Public Class producto
     Private Sub btnBuscar_Click(sender As Object, e As EventArgs) Handles btnBuscar.Click
         BuscarProducto()
     End Sub
+
+    Private Sub btnEliminar_Click(sender As Object, e As EventArgs) Handles btnEliminar.Click
+        Dim id As Integer
+
+        id = txtcodigo.Text
+
+
+        Try
+            If conexion.EliminarProducto(id) Then
+                MsgBox("Se elimino")
+                mostrardatos()
+
+            End If
+        Catch ex As Exception
+
+        End Try
+
+    End Sub
 End Class

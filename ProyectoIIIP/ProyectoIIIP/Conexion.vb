@@ -299,4 +299,27 @@ Public Class Conexion
             conexion.Close()
         End Try
     End Function
+
+    Public Function EliminarProducto(id As Integer)
+        Try
+            conexion.Open()
+            Dim cmd As New SqlCommand("eliminarProducto", conexion)
+            cmd.CommandType = CommandType.StoredProcedure
+            cmd.Parameters.AddWithValue("@id", id)
+
+            If cmd.ExecuteNonQuery Then
+                Return True
+            Else
+                Return False
+            End If
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            Return False
+        Finally
+            conexion.Close()
+
+        End Try
+
+    End Function
 End Class
