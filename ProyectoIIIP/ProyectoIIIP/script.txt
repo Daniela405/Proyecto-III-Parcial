@@ -119,6 +119,11 @@ execute buscarUser 'mm'
 select * from usuario
 
 
+
+
+
+
+
 create table empleado(
 id int primary key not null, 
 nombre varchar(25) not null,
@@ -376,15 +381,15 @@ exec consultarProducto 1
 
 
 --procediemiento busqueda de producto
-create procedure buscarProductos
+create procedure buscarProduct
 @nombre as varchar(50)
 as begin
-select codigobarra as 'Codigo de Barra', nombre as 'Nombre Producto',tipoproducto as 'Tipo de producto', precio as 'precio', cantidad as 'cantidad',caracteristica as 'Caracteristica' , estado as 'estado'
+select id as 'id', codigobarra as 'Codigo de Barra', tipoproducto as 'Tipo de producto',nombre as 'Nombre Producto', precio as 'precio', cantidad as 'cantidad',caracteristica as 'Caracteristica' , estado as 'estado'
 from productos
 where nombre like '%' +@nombre+ '%' or  tipoproducto like '%' +@nombre+ '%'
 
 end 
-execute buscarProductos 's'
+execute buscarProduct'sedal'
 
 select min(id) from productos
 
