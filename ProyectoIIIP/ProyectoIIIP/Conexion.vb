@@ -215,4 +215,36 @@ Public Class Conexion
         End Try
     End Function
 
+
+
+    ''modificar productos
+    Public Function modificarProducto(id As Integer, codigobarra As String, tipoproducto As String, nombre As String,
+                               precio As Decimal, cantidad As Integer, caracteristica As String)
+
+        Try
+            conexion.Open()
+            cmb = New SqlCommand("actualizarProducto ", conexion)
+            cmb.CommandType = CommandType.StoredProcedure
+
+            cmb.Parameters.AddWithValue("@id", id)
+            cmb.Parameters.AddWithValue("@codigobarra", codigobarra)
+            cmb.Parameters.AddWithValue("@tipoproducto", tipoproducto)
+            cmb.Parameters.AddWithValue("@nombre", nombre)
+            cmb.Parameters.AddWithValue("@precio", precio)
+            cmb.Parameters.AddWithValue("@cantidad", cantidad)
+            cmb.Parameters.AddWithValue("@caracteristica", caracteristica)
+
+
+            If cmb.ExecuteNonQuery <> 0 Then
+                Return True
+            Else
+                Return False
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            Return False
+        Finally
+            conexion.Close()
+        End Try
+    End Function
 End Class

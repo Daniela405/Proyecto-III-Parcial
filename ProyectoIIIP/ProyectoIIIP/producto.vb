@@ -177,4 +177,47 @@ Public Class producto
     Private Sub btnGuardar_Click(sender As Object, e As EventArgs) Handles btnGuardar.Click
         insertarProducto()
     End Sub
+
+    Private Sub DataGridView1_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellContentClick
+        Dim dgv As DataGridViewRow = DataGridView1.Rows(e.RowIndex)
+        txtcodigo.Text = dgv.Cells(0).Value.ToString()
+        txtcodbarra.Text = dgv.Cells(1).Value.ToString()
+        txttipo.Text = dgv.Cells(2).Value.ToString()
+        txtnombre.Text = dgv.Cells(3).Value.ToString()
+        txtprecio.Text = dgv.Cells(4).Value.ToString()
+        txtcantidad.Text = dgv.Cells(5).Value.ToString()
+        txtcaracteristica.Text = dgv.Cells(6).Value.ToString()
+
+    End Sub
+
+    Private Sub modificar()
+        Dim id As Integer, codigobarra As String, tipoproducto As String, nombre As String, precio As Decimal, cantidad As Integer, caracteristica As String
+        id = txtcodigo.Text
+        codigobarra = txtcodbarra.Text
+        tipoproducto = txttipo.Text
+        nombre = txtnombre.Text
+        precio = txtprecio.Text
+        cantidad = txtcantidad.Text
+        caracteristica = txtcaracteristica.Text
+        Try
+            If (conexion.modificarProducto(id, codigobarra, tipoproducto, nombre, precio, cantidad, caracteristica)) Then
+                MsgBox("Modificado correctamente")
+                ' conexion.conexion.Close()
+                mostrardatos()
+
+            Else
+                MsgBox("Error al modificar usuario")
+                ' conexion.conexion.Close()
+
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            mostrardatos()
+        End Try
+        mostrardatos()
+    End Sub
+
+    Private Sub btnModificar_Click(sender As Object, e As EventArgs) Handles btnModificar.Click
+        modificar()
+    End Sub
 End Class
