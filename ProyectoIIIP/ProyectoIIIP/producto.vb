@@ -1,6 +1,7 @@
 ﻿Imports System.ComponentModel
 
 Public Class producto
+    Dim DataT As DataTable
     Dim conexion As Conexion = New Conexion()
     Private Sub txtcorreo_TextChanged(sender As Object, e As EventArgs)
 
@@ -219,5 +220,33 @@ Public Class producto
 
     Private Sub btnModificar_Click(sender As Object, e As EventArgs) Handles btnModificar.Click
         modificar()
+    End Sub
+
+
+    Private Sub BuscarProducto()
+        Dim nombreproducto, tipo As String
+        nombreproducto = txtnombre.Text
+        tipo = txttipo.Text
+        Try
+
+
+            DataT = conexion.BuscarProducto(nombreproducto)
+
+                If DataT.Rows.Count <> 0 Then
+                MessageBox.Show("Usuario Encontrado correctamente", "Buscando", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                DataGridView1.DataSource = DataT
+                txtnombre.Text = ""
+            Else
+                MessageBox.Show("Usuario no encontrado", "Buscando", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                DataGridView1.DataSource = Nothing
+                txtnombre.Text = ""
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+    End Sub
+
+    Private Sub btnBuscar_Click(sender As Object, e As EventArgs) Handles btnBuscar.Click
+        BuscarProducto()
     End Sub
 End Class

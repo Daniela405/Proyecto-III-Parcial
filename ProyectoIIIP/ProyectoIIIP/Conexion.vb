@@ -247,4 +247,55 @@ Public Class Conexion
             conexion.Close()
         End Try
     End Function
+
+
+    '' funcion para buscar productos
+    Public Function BuscarProducto(nombreproducto As String)
+
+        Try
+            conexion.Open()
+            cmb = New SqlCommand("buscarProduct", conexion)
+            cmb.CommandType = CommandType.StoredProcedure
+            cmb.Parameters.AddWithValue("@nombre", nombreproducto)
+
+            If cmb.ExecuteNonQuery Then
+                Dim dt As New DataTable
+                Dim da As New SqlDataAdapter(cmb)
+                da.Fill(dt)
+                Return dt
+                conexion.Close()
+            Else
+                Return Nothing
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            Return Nothing
+        Finally
+            conexion.Close()
+        End Try
+    End Function
+    Public Function BuscarTipoProducto(tipo As String)
+
+        Try
+            conexion.Open()
+            cmb = New SqlCommand("buscarProduct", conexion)
+            cmb.CommandType = CommandType.StoredProcedure
+            cmb.Parameters.AddWithValue("@nombre", tipo)
+
+            If cmb.ExecuteNonQuery Then
+                Dim dt As New DataTable
+                Dim da As New SqlDataAdapter(cmb)
+                da.Fill(dt)
+                Return dt
+                conexion.Close()
+            Else
+                Return Nothing
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            Return Nothing
+        Finally
+            conexion.Close()
+        End Try
+    End Function
 End Class
