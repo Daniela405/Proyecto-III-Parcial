@@ -274,6 +274,7 @@ Public Class Conexion
             conexion.Close()
         End Try
     End Function
+    ''funcio pa buscar en productos
     Public Function BuscarTipoProducto(tipo As String)
 
         Try
