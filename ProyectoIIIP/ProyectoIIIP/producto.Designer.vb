@@ -45,10 +45,6 @@ Partial Class producto
         Me.btnBuscar = New System.Windows.Forms.Button()
         Me.btnModificar = New System.Windows.Forms.Button()
         Me.btnGuardar = New System.Windows.Forms.Button()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.txtcodbarra = New System.Windows.Forms.TextBox()
-        Me.labecha = New System.Windows.Forms.Label()
-        Me.txtcaracteristica = New System.Windows.Forms.TextBox()
         Me.GroupBox1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -58,10 +54,6 @@ Partial Class producto
         'GroupBox1
         '
         Me.GroupBox1.BackColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.GroupBox1.Controls.Add(Me.txtcaracteristica)
-        Me.GroupBox1.Controls.Add(Me.labecha)
-        Me.GroupBox1.Controls.Add(Me.txtcodbarra)
-        Me.GroupBox1.Controls.Add(Me.Label1)
         Me.GroupBox1.Controls.Add(Me.PictureBox1)
         Me.GroupBox1.Controls.Add(Me.Label7)
         Me.GroupBox1.Controls.Add(Me.txtcodigo)
@@ -74,11 +66,11 @@ Partial Class producto
         Me.GroupBox1.Controls.Add(Me.Label11)
         Me.GroupBox1.Controls.Add(Me.txtcantidad)
         Me.GroupBox1.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.GroupBox1.Location = New System.Drawing.Point(193, 9)
-        Me.GroupBox1.Margin = New System.Windows.Forms.Padding(2, 1, 2, 1)
+        Me.GroupBox1.Location = New System.Drawing.Point(290, 14)
+        Me.GroupBox1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Padding = New System.Windows.Forms.Padding(2, 1, 2, 1)
-        Me.GroupBox1.Size = New System.Drawing.Size(273, 327)
+        Me.GroupBox1.Padding = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.GroupBox1.Size = New System.Drawing.Size(410, 485)
         Me.GroupBox1.TabIndex = 21
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Informacion"
@@ -86,10 +78,10 @@ Partial Class producto
         'PictureBox1
         '
         Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
-        Me.PictureBox1.Location = New System.Drawing.Point(100, 17)
-        Me.PictureBox1.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
+        Me.PictureBox1.Location = New System.Drawing.Point(135, 25)
+        Me.PictureBox1.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(57, 51)
+        Me.PictureBox1.Size = New System.Drawing.Size(86, 78)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox1.TabIndex = 41
         Me.PictureBox1.TabStop = False
@@ -97,112 +89,107 @@ Partial Class producto
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label7.Font = New System.Drawing.Font("Modern No. 20", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label7.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Label7.Location = New System.Drawing.Point(27, 226)
-        Me.Label7.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label7.Location = New System.Drawing.Point(40, 291)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(51, 18)
+        Me.Label7.Size = New System.Drawing.Size(68, 24)
         Me.Label7.TabIndex = 38
         Me.Label7.Text = "Precio"
         '
         'txtcodigo
         '
-        Me.txtcodigo.Location = New System.Drawing.Point(151, 97)
-        Me.txtcodigo.Margin = New System.Windows.Forms.Padding(2, 1, 2, 1)
+        Me.txtcodigo.Location = New System.Drawing.Point(206, 149)
+        Me.txtcodigo.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txtcodigo.Name = "txtcodigo"
-        Me.txtcodigo.Size = New System.Drawing.Size(68, 20)
+        Me.txtcodigo.Size = New System.Drawing.Size(100, 26)
         Me.txtcodigo.TabIndex = 1
         '
         'Label8
         '
         Me.Label8.AutoSize = True
-        Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label8.Font = New System.Drawing.Font("Modern No. 20", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label8.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Label8.Location = New System.Drawing.Point(27, 97)
-        Me.Label8.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label8.Location = New System.Drawing.Point(40, 150)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(56, 18)
+        Me.Label8.Size = New System.Drawing.Size(70, 24)
         Me.Label8.TabIndex = 35
         Me.Label8.Text = "Código"
         '
         'txttipo
         '
-        Me.txttipo.Location = New System.Drawing.Point(151, 160)
-        Me.txttipo.Margin = New System.Windows.Forms.Padding(2, 1, 2, 1)
+        Me.txttipo.Location = New System.Drawing.Point(206, 200)
+        Me.txttipo.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txttipo.Name = "txttipo"
-        Me.txttipo.Size = New System.Drawing.Size(101, 20)
+        Me.txttipo.Size = New System.Drawing.Size(150, 26)
         Me.txttipo.TabIndex = 3
         '
         'Label9
         '
         Me.Label9.AutoSize = True
-        Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label9.Font = New System.Drawing.Font("Modern No. 20", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label9.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Label9.Location = New System.Drawing.Point(27, 160)
-        Me.Label9.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label9.Location = New System.Drawing.Point(40, 199)
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(100, 18)
+        Me.Label9.Size = New System.Drawing.Size(134, 24)
         Me.Label9.TabIndex = 36
         Me.Label9.Text = "Tipo producto"
         '
         'txtnombre
         '
-        Me.txtnombre.Location = New System.Drawing.Point(151, 192)
-        Me.txtnombre.Margin = New System.Windows.Forms.Padding(2, 1, 2, 1)
+        Me.txtnombre.Location = New System.Drawing.Point(206, 249)
+        Me.txtnombre.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txtnombre.Name = "txtnombre"
-        Me.txtnombre.Size = New System.Drawing.Size(101, 20)
+        Me.txtnombre.Size = New System.Drawing.Size(150, 26)
         Me.txtnombre.TabIndex = 5
         '
         'Label10
         '
         Me.Label10.AutoSize = True
-        Me.Label10.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label10.Font = New System.Drawing.Font("Modern No. 20", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label10.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Label10.Location = New System.Drawing.Point(27, 192)
-        Me.Label10.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label10.Location = New System.Drawing.Point(40, 248)
         Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(62, 18)
+        Me.Label10.Size = New System.Drawing.Size(80, 24)
         Me.Label10.TabIndex = 37
         Me.Label10.Text = "Nombre"
         '
         'txtprecio
         '
-        Me.txtprecio.Location = New System.Drawing.Point(151, 224)
-        Me.txtprecio.Margin = New System.Windows.Forms.Padding(2, 1, 2, 1)
+        Me.txtprecio.Location = New System.Drawing.Point(206, 292)
+        Me.txtprecio.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txtprecio.Name = "txtprecio"
-        Me.txtprecio.Size = New System.Drawing.Size(68, 20)
+        Me.txtprecio.Size = New System.Drawing.Size(100, 26)
         Me.txtprecio.TabIndex = 7
         '
         'Label11
         '
         Me.Label11.AutoSize = True
-        Me.Label11.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label11.Font = New System.Drawing.Font("Modern No. 20", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label11.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Label11.Location = New System.Drawing.Point(23, 258)
-        Me.Label11.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label11.Location = New System.Drawing.Point(40, 330)
         Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(66, 18)
+        Me.Label11.Size = New System.Drawing.Size(90, 24)
         Me.Label11.TabIndex = 39
         Me.Label11.Text = "Cantidad"
         '
         'txtcantidad
         '
-        Me.txtcantidad.Location = New System.Drawing.Point(151, 256)
-        Me.txtcantidad.Margin = New System.Windows.Forms.Padding(2, 1, 2, 1)
+        Me.txtcantidad.Location = New System.Drawing.Point(206, 331)
+        Me.txtcantidad.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txtcantidad.Name = "txtcantidad"
-        Me.txtcantidad.Size = New System.Drawing.Size(68, 20)
+        Me.txtcantidad.Size = New System.Drawing.Size(100, 26)
         Me.txtcantidad.TabIndex = 9
         '
         'DataGridView1
         '
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Location = New System.Drawing.Point(43, 338)
-        Me.DataGridView1.Margin = New System.Windows.Forms.Padding(2, 1, 2, 1)
+        Me.DataGridView1.Location = New System.Drawing.Point(47, 520)
+        Me.DataGridView1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.RowHeadersWidth = 62
         Me.DataGridView1.RowTemplate.Height = 28
-        Me.DataGridView1.Size = New System.Drawing.Size(567, 155)
+        Me.DataGridView1.Size = New System.Drawing.Size(850, 238)
         Me.DataGridView1.TabIndex = 22
         '
         'ErrorValidacion
@@ -220,9 +207,10 @@ Partial Class producto
         Me.btnCerrar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightSeaGreen
         Me.btnCerrar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Cyan
         Me.btnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnCerrar.Location = New System.Drawing.Point(782, 458)
+        Me.btnCerrar.Location = New System.Drawing.Point(1173, 705)
+        Me.btnCerrar.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.btnCerrar.Name = "btnCerrar"
-        Me.btnCerrar.Size = New System.Drawing.Size(47, 35)
+        Me.btnCerrar.Size = New System.Drawing.Size(71, 54)
         Me.btnCerrar.TabIndex = 34
         Me.btnCerrar.UseVisualStyleBackColor = False
         '
@@ -236,9 +224,10 @@ Partial Class producto
         Me.btnEliminar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer))
         Me.btnEliminar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnEliminar.Location = New System.Drawing.Point(663, 428)
+        Me.btnEliminar.Location = New System.Drawing.Point(994, 659)
+        Me.btnEliminar.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.btnEliminar.Name = "btnEliminar"
-        Me.btnEliminar.Size = New System.Drawing.Size(98, 35)
+        Me.btnEliminar.Size = New System.Drawing.Size(147, 54)
         Me.btnEliminar.TabIndex = 33
         Me.btnEliminar.UseVisualStyleBackColor = True
         '
@@ -252,9 +241,10 @@ Partial Class producto
         Me.btnLimpiar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Yellow
         Me.btnLimpiar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gold
         Me.btnLimpiar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnLimpiar.Location = New System.Drawing.Point(663, 345)
+        Me.btnLimpiar.Location = New System.Drawing.Point(994, 531)
+        Me.btnLimpiar.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.btnLimpiar.Name = "btnLimpiar"
-        Me.btnLimpiar.Size = New System.Drawing.Size(98, 35)
+        Me.btnLimpiar.Size = New System.Drawing.Size(147, 54)
         Me.btnLimpiar.TabIndex = 32
         Me.btnLimpiar.UseVisualStyleBackColor = True
         '
@@ -268,9 +258,10 @@ Partial Class producto
         Me.btnBuscar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Violet
         Me.btnBuscar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Plum
         Me.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnBuscar.Location = New System.Drawing.Point(521, 191)
+        Me.btnBuscar.Location = New System.Drawing.Point(781, 294)
+        Me.btnBuscar.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.btnBuscar.Name = "btnBuscar"
-        Me.btnBuscar.Size = New System.Drawing.Size(98, 35)
+        Me.btnBuscar.Size = New System.Drawing.Size(147, 54)
         Me.btnBuscar.TabIndex = 31
         Me.btnBuscar.UseVisualStyleBackColor = True
         '
@@ -284,9 +275,10 @@ Partial Class producto
         Me.btnModificar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightSeaGreen
         Me.btnModificar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Cyan
         Me.btnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnModificar.Location = New System.Drawing.Point(521, 116)
+        Me.btnModificar.Location = New System.Drawing.Point(781, 179)
+        Me.btnModificar.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.btnModificar.Name = "btnModificar"
-        Me.btnModificar.Size = New System.Drawing.Size(98, 35)
+        Me.btnModificar.Size = New System.Drawing.Size(147, 54)
         Me.btnModificar.TabIndex = 30
         Me.btnModificar.UseVisualStyleBackColor = True
         '
@@ -300,59 +292,20 @@ Partial Class producto
         Me.btnGuardar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DeepSkyBlue
         Me.btnGuardar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.RoyalBlue
         Me.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnGuardar.Location = New System.Drawing.Point(521, 57)
+        Me.btnGuardar.Location = New System.Drawing.Point(781, 88)
+        Me.btnGuardar.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.btnGuardar.Name = "btnGuardar"
-        Me.btnGuardar.Size = New System.Drawing.Size(98, 36)
+        Me.btnGuardar.Size = New System.Drawing.Size(147, 56)
         Me.btnGuardar.TabIndex = 29
         Me.btnGuardar.UseVisualStyleBackColor = True
         '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Label1.Location = New System.Drawing.Point(27, 127)
-        Me.Label1.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(114, 18)
-        Me.Label1.TabIndex = 42
-        Me.Label1.Text = "Codigo de barra"
-        '
-        'txtcodbarra
-        '
-        Me.txtcodbarra.Location = New System.Drawing.Point(148, 127)
-        Me.txtcodbarra.Margin = New System.Windows.Forms.Padding(2, 1, 2, 1)
-        Me.txtcodbarra.Name = "txtcodbarra"
-        Me.txtcodbarra.Size = New System.Drawing.Size(101, 20)
-        Me.txtcodbarra.TabIndex = 43
-        '
-        'labecha
-        '
-        Me.labecha.AutoSize = True
-        Me.labecha.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.labecha.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.labecha.Location = New System.Drawing.Point(23, 291)
-        Me.labecha.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.labecha.Name = "labecha"
-        Me.labecha.Size = New System.Drawing.Size(99, 18)
-        Me.labecha.TabIndex = 44
-        Me.labecha.Text = "Caracteristica"
-        '
-        'txtcaracteristica
-        '
-        Me.txtcaracteristica.Location = New System.Drawing.Point(148, 291)
-        Me.txtcaracteristica.Margin = New System.Windows.Forms.Padding(2, 1, 2, 1)
-        Me.txtcaracteristica.Name = "txtcaracteristica"
-        Me.txtcaracteristica.Size = New System.Drawing.Size(101, 20)
-        Me.txtcaracteristica.TabIndex = 45
-        '
         'producto
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.ClientSize = New System.Drawing.Size(847, 504)
+        Me.ClientSize = New System.Drawing.Size(1270, 775)
         Me.Controls.Add(Me.btnCerrar)
         Me.Controls.Add(Me.btnEliminar)
         Me.Controls.Add(Me.btnLimpiar)
@@ -362,7 +315,7 @@ Partial Class producto
         Me.Controls.Add(Me.DataGridView1)
         Me.Controls.Add(Me.GroupBox1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
-        Me.Margin = New System.Windows.Forms.Padding(2, 1, 2, 1)
+        Me.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Name = "producto"
         Me.Text = "producto"
         Me.GroupBox1.ResumeLayout(False)
@@ -395,8 +348,4 @@ Partial Class producto
     Friend WithEvents Label10 As Label
     Friend WithEvents Label11 As Label
     Friend WithEvents PictureBox1 As PictureBox
-    Friend WithEvents txtcaracteristica As TextBox
-    Friend WithEvents labecha As Label
-    Friend WithEvents txtcodbarra As TextBox
-    Friend WithEvents Label1 As Label
 End Class

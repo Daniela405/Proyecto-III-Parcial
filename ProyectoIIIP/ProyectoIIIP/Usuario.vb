@@ -134,6 +134,7 @@ Public Class usuario
         txtcorreo.Text = dgv.Cells(5).Value.ToString()
         cmbrol.Text = dgv.Cells(6).Value.ToString()
         txtestado.Text = dgv.Cells(7).Value.ToString()
+
     End Sub
 
     Private Sub btnGuardar_Click(sender As Object, e As EventArgs) Handles btnGuardar.Click
@@ -198,7 +199,7 @@ Public Class usuario
 
         Try
             If conexion.Eliminar(id, rol) Then
-                MsgBox("SeJue")
+                MsgBox("Eliminado Correctamente")
             End If
         Catch ex As Exception
 
@@ -279,25 +280,8 @@ Public Class usuario
 
         End Try
     End Sub
-    Private Sub consultar()
-        Dim id As Integer
 
 
-
-        id = txtcodigo.Text
-
-        Try
-            If (conexion.consultar(id)) Then
-                MsgBox("Consulta correctamente")
-                ' conexion.conexion.Close()
-            Else
-                MsgBox("Error al consultar usuario")
-                ' conexion.conexion.Close()
-            End If
-        Catch ex As Exception
-            MsgBox(ex.Message)
-        End Try
-    End Sub
 
     Private Sub btnBuscar_Click(sender As Object, e As EventArgs) Handles btnBuscar.Click
         BuscarUsuario()

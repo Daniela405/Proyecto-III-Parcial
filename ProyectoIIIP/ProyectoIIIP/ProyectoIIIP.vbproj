@@ -145,6 +145,12 @@
     <Compile Include="proveedor.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="restaurarcontraseña.Designer.vb">
+      <DependentUpon>restaurarcontraseña.vb</DependentUpon>
+    </Compile>
+    <Compile Include="restaurarcontraseña.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="servicios.Designer.vb">
       <DependentUpon>servicios.vb</DependentUpon>
     </Compile>
@@ -198,6 +204,9 @@
     <EmbeddedResource Include="proveedor.resx">
       <DependentUpon>proveedor.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="restaurarcontraseña.resx">
+      <DependentUpon>restaurarcontraseña.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="servicios.resx">
       <DependentUpon>servicios.vb</DependentUpon>
     </EmbeddedResource>
@@ -221,6 +230,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="MensajeAennviar.html" />
     <Content Include="script.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />

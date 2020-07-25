@@ -1,6 +1,13 @@
 ﻿Imports System.ComponentModel
-
+Imports System.Data.SqlClient
+Imports System.Data
+Imports System.Windows.Forms
+Imports System.Security.Cryptography
+Imports System.Text
 Public Class loginempleado
+    Public cmb As SqlCommand
+
+    Dim conexion As Conexion = New Conexion()
     Private Sub btnSalir_Click(sender As Object, e As EventArgs) Handles btnSalir.Click
         Dim opcion As DialogResult
         opcion = MessageBox.Show("¿Desea finalizar?", "SALIR", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
@@ -37,5 +44,35 @@ Public Class loginempleado
         tmensaje.SetToolTip(txtcontraseña, "Ingrese su contraseña")
         tmensaje.ToolTipTitle = "Contraseña"
         tmensaje.ToolTipIcon = ToolTipIcon.Info
+    End Sub
+
+
+    Private Sub loginempleado_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        conexion.conectar()
+    End Sub
+
+    Private Sub ingresarMenu()
+        Dim userName, psw As String
+        userName = txtusuario.Text
+        psw = txtcontraseña.Text
+        Try
+            If conexion.validarUsuario(userName, psw) Then
+                MsgBox("Correcto")
+                menuempleado.Show()
+                Me.Hide()
+            Else
+                MsgBox("Usuario/Contraseña invalido")
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+    End Sub
+
+
+
+
+    Private Sub btnIngresar_Click(sender As Object, e As EventArgs) Handles btnIngresar.Click
+        ingresarMenu()
+
     End Sub
 End Class

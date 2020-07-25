@@ -4,13 +4,21 @@ Imports System.Windows.Forms
 Imports System.Security.Cryptography
 Imports System.Text
 Public Class Conexion
+<<<<<<< HEAD
+    Public conexion As SqlConnection = New SqlConnection("Data Source= DESKTOP-HT00A5J \ SQLEXPRESS;Initial Catalog=proyecto; Integrated Security=True")
+=======
     Public conexion As SqlConnection = New SqlConnection("Data Source= localhost\SQLEXPRESS;Initial Catalog=proyecto; Integrated Security=True")
+>>>>>>> 82cff1b54790e387c5c72a151739c599dcc8f406
     'Private cmb As SqlCommandBuilder
+
     Public ds As DataSet = New DataSet()
     Public da As SqlDataAdapter
     Public cmb As SqlCommand
     Public dr As SqlDataReader
     Public comando As SqlCommandBuilder
+
+    Public enunciado As SqlCommand
+    Public respuesta As SqlDataReader
 
     Public Sub conectar()
         Try
@@ -193,55 +201,12 @@ Public Class Conexion
     End Function
 
 
-
-    'funciones para agregar en productos ''
-
-
-    Public Function agregarProductos(id As Integer, codigobarra As String, tipoproducto As String, nombre As String,
-                               precio As Decimal, cantidad As Integer, caracteristica As String)
+    Public Function consultarPSW(correo As String)
         Try
             conexion.Open()
-            cmb = New SqlCommand("agregarProductos", conexion)
+            cmb = New SqlCommand("buscarUsuarioPorCorreos", conexion)
             cmb.CommandType = CommandType.StoredProcedure
-            cmb.Parameters.AddWithValue("@id", id)
-            cmb.Parameters.AddWithValue("@codigobarra", codigobarra)
-            cmb.Parameters.AddWithValue("@tipoproducto", tipoproducto)
-            cmb.Parameters.AddWithValue("@nombre", nombre)
-            cmb.Parameters.AddWithValue("@precio", precio)
-            cmb.Parameters.AddWithValue("@cantidad", cantidad)
-            cmb.Parameters.AddWithValue("@caracteristica", caracteristica)
-
-
-            If cmb.ExecuteNonQuery Then
-                Return True
-            Else
-                Return False
-            End If
-        Catch ex As Exception
-            MsgBox(ex.Message)
-        End Try
-    End Function
-
-
-
-    ''modificar productos
-    Public Function modificarProducto(id As Integer, codigobarra As String, tipoproducto As String, nombre As String,
-                               precio As Decimal, cantidad As Integer, caracteristica As String)
-
-        Try
-            conexion.Open()
-            cmb = New SqlCommand("actualizarProducto ", conexion)
-            cmb.CommandType = CommandType.StoredProcedure
-
-            cmb.Parameters.AddWithValue("@id", id)
-            cmb.Parameters.AddWithValue("@codigobarra", codigobarra)
-            cmb.Parameters.AddWithValue("@tipoproducto", tipoproducto)
-            cmb.Parameters.AddWithValue("@nombre", nombre)
-            cmb.Parameters.AddWithValue("@precio", precio)
-            cmb.Parameters.AddWithValue("@cantidad", cantidad)
-            cmb.Parameters.AddWithValue("@caracteristica", caracteristica)
-
-
+            cmb.Parameters.AddWithValue("@correo", correo)
             If cmb.ExecuteNonQuery <> 0 Then
                 Return True
             Else
@@ -256,79 +221,29 @@ Public Class Conexion
     End Function
 
 
-    '' funcion para buscar productos
-    Public Function BuscarProducto(nombreproducto As String)
 
+    Public Function validarUsuario(userName As String, psw As String)
         Try
             conexion.Open()
-            cmb = New SqlCommand("buscarProduct", conexion)
+            cmb = New SqlCommand("validarUserst", conexion)
             cmb.CommandType = CommandType.StoredProcedure
-            cmb.Parameters.AddWithValue("@nombre", nombreproducto)
-
-            If cmb.ExecuteNonQuery Then
-                Dim dt As New DataTable
-                Dim da As New SqlDataAdapter(cmb)
-                da.Fill(dt)
-                Return dt
-                conexion.Close()
-            Else
-                Return Nothing
-            End If
-        Catch ex As Exception
-            MsgBox(ex.Message)
-            Return Nothing
-        Finally
-            conexion.Close()
-        End Try
-    End Function
-    ''funcio pa buscar en productos
-    Public Function BuscarTipoProducto(tipo As String)
-
-        Try
-            conexion.Open()
-            cmb = New SqlCommand("buscarProduct", conexion)
-            cmb.CommandType = CommandType.StoredProcedure
-            cmb.Parameters.AddWithValue("@nombre", tipo)
-
-            If cmb.ExecuteNonQuery Then
-                Dim dt As New DataTable
-                Dim da As New SqlDataAdapter(cmb)
-                da.Fill(dt)
-                Return dt
-                conexion.Close()
-            Else
-                Return Nothing
-            End If
-        Catch ex As Exception
-            MsgBox(ex.Message)
-            Return Nothing
-        Finally
-            conexion.Close()
-        End Try
-    End Function
-
-    Public Function EliminarProducto(id As Integer)
-        Try
-            conexion.Open()
-            Dim cmd As New SqlCommand("eliminarProducto", conexion)
-            cmd.CommandType = CommandType.StoredProcedure
-            cmd.Parameters.AddWithValue("@id", id)
-
-            If cmd.ExecuteNonQuery Then
+            cmb.Parameters.AddWithValue("@username", userName)
+            cmb.Parameters.AddWithValue("@psw", psw)
+            If cmb.ExecuteNonQuery <> 0 Then
                 Return True
             Else
                 Return False
             End If
-
         Catch ex As Exception
             MsgBox(ex.Message)
             Return False
         Finally
             conexion.Close()
-
         End Try
-
     End Function
+<<<<<<< HEAD
+
+=======
     Public Function agregarEmpleado(Id As Integer, Identidad As String, Nombre As String, Apellido As String, ByVal NombreUsuario As String, Edad As Integer, Sexo As String, Telefono As Integer, Correo As String, Cargo As String, Estado As String)
         Try
             conexion.Open()
@@ -623,5 +538,6 @@ Public Class Conexion
             conexion.Close()
         End Try
     End Function
+>>>>>>> 82cff1b54790e387c5c72a151739c599dcc8f406
 
 End Class

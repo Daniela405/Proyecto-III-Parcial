@@ -92,7 +92,7 @@ Partial Class loginempleado
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(620, 310)
+        Me.ClientSize = New System.Drawing.Size(588, 347)
         Me.Controls.Add(Me.btnSalir)
         Me.Controls.Add(Me.btnIngresar)
         Me.Controls.Add(Me.txtcontraseña)
