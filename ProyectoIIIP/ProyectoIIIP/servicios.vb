@@ -5,46 +5,6 @@ Public Class servicios
     Dim dt As DataTable
 
 
-    Private Sub txtcodigo_Validating(sender As Object, e As CancelEventArgs) Handles txtNombre.Validating
-        If DirectCast(sender, TextBox).Text.Length > 0 Then
-            Me.ErrorProvider.SetError(sender, "")
-        Else
-            Me.ErrorProvider.SetError(sender, "Campo obligatorio")
-        End If
-    End Sub
-
-    Private Sub txtcodigo_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtCodigo.KeyPress
-        If Char.IsNumber(e.KeyChar) Then
-            e.Handled = False
-        ElseIf Char.IsControl(e.KeyChar) Then
-            e.Handled = False
-        ElseIf Char.IsSeparator(e.KeyChar) Then
-            e.Handled = False
-        Else
-            e.Handled = True
-        End If
-    End Sub
-
-    Private Sub cmbTipoServicio_Validating(sender As Object, e As CancelEventArgs) Handles cmbTipoServicio.Validating
-        If DirectCast(sender, ComboBox).Text.Length > 0 Then
-            Me.ErrorProvider.SetError(sender, "")
-        Else
-            Me.ErrorProvider.SetError(sender, "Campo obligatorio")
-        End If
-    End Sub
-
-    Private Sub txtNombre_MouseHover(sender As Object, e As EventArgs) Handles txtNombre.MouseHover
-        ToolTip.SetToolTip(txtNombre, "Ingresar código")
-        ToolTip.ToolTipTitle = "CÓDIGO"
-        ToolTip.ToolTipIcon = ToolTipIcon.Info
-    End Sub
-
-    Private Sub cmbTipoServicio_MouseHover(sender As Object, e As EventArgs) Handles cmbTipoServicio.MouseHover
-        ToolTip.SetToolTip(cmbTipoServicio, "Seleccione el tipo de servicio que desea")
-        ToolTip.ToolTipTitle = "SERVICIO"
-        ToolTip.ToolTipIcon = ToolTipIcon.Info
-    End Sub
-
     Private Sub btnCerrar_Click(sender As Object, e As EventArgs) Handles btnCerrar.Click
         Me.Close()
         conexion.conexion.Close()
@@ -66,8 +26,19 @@ Public Class servicios
     End Sub
 
     Private Sub btnEliminar_Click(sender As Object, e As EventArgs) Handles btnEliminar.Click
-        eliminarServicio()
-        mostrarDatos()
+        Dim Cancel As Integer
+
+        Try
+            If (MsgBox("¿Esta seguro que desea eliminar este servicio?", vbCritical + vbYesNo) = vbYes) Then
+                eliminarServicio()
+                mostrarDatos()
+
+            Else
+                Cancel = 1
+            End If
+        Catch ex As Exception
+            MsgBox("ex.Message")
+        End Try
 
     End Sub
 
@@ -75,22 +46,30 @@ Public Class servicios
         Limpiar()
         mostrarDatos()
     End Sub
+    Private Sub btnModificar_Click(sender As Object, e As EventArgs) Handles btnModificar.Click
+        modificarServicio()
+    End Sub
+
+    Private Sub btnBuscar_Click(sender As Object, e As EventArgs) Handles btnBuscar.Click
+        mostrarBusqueda()
+    End Sub
     '@id int ,
     '@tiposervicio varchar(50) ,
     '@nombre varchar (50) ,
     '@precio decimal 
     Private Sub insertarServicio()
         Dim id As Integer
-        Dim nombre, tipoServicio As String
+        Dim nombre, tipoServicio, estado As String
         Dim precio As Double
 
         id = Val(txtCodigo.Text)
         nombre = txtNombre.Text
         tipoServicio = cmbTipoServicio.Text
-        precio = txtPrecio.Text
+        precio = Val(txtPrecio.Text)
+        estado = "Disponible"
 
         Try
-            If conexion.insertarServicio(id, tipoServicio, nombre, precio) Then
+            If conexion.insertarServicio(id, tipoServicio, nombre, precio, estado) Then
                 MessageBox.Show("Guardado", "Correcto", MessageBoxButtons.OK, MessageBoxIcon.Information)
                 mostrarDatos()
             Else
@@ -106,11 +85,14 @@ Public Class servicios
 
     Private Sub eliminarServicio()
         Dim id As Integer
+        Dim estado As String
+        estado = lbEstado.Text
 
-        id = txtCodigo.Text
+        id = Val(txtCodigo.Text)
+
 
         Try
-            If (conexion.eliminarServicio(id)) Then
+            If (conexion.eliminarServicio(id, estado)) Then
                 MsgBox("Servicio Eliminado")
                 mostrarDatos()
             Else
@@ -124,6 +106,51 @@ Public Class servicios
 
     End Sub
 
+
+    Private Sub modificarServicio()
+        Dim id As Integer
+        Dim nombre, tipoServicio As String
+        Dim precio As Double
+
+        id = Val(txtCodigo.Text)
+        nombre = txtNombre.Text
+        tipoServicio = cmbTipoServicio.Text
+        precio = Val(txtPrecio.Text)
+
+        Try
+            If (conexion.modificarServicio(id, tipoServicio, nombre, precio)) Then
+                MessageBox.Show("Actualizado")
+                mostrarDatos()
+                Limpiar()
+                'conexion.conexion.Close()
+            Else
+                MessageBox.Show("Error al actualizar")
+                'conexion.conexion.Close()
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            mostrarDatos()
+            conexion.conexion.Close()
+        End Try
+    End Sub
+
+    Private Sub mostrarBusqueda()
+        Dim dato As String
+        dato = txtBuscar.Text
+        Try
+            dt = conexion.buscarServicio(dato)
+            If dt.Rows.Count <> 0 Then
+                dtgServicios.DataSource = dt
+                conexion.conexion.Close()
+            Else
+                dtgServicios.DataSource = Nothing
+                conexion.conexion.Close()
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+    End Sub
+
     Private Sub llenarCampos(e As DataGridViewCellEventArgs)
 
         Try
@@ -132,6 +159,7 @@ Public Class servicios
             cmbTipoServicio.Text = dtg.Cells(1).Value.ToString()
             txtNombre.Text = dtg.Cells(2).Value.ToString()
             txtPrecio.Text = dtg.Cells(3).Value.ToString()
+            lbEstado.Text = dtg.Cells(4).Value.ToString()
 
             conexion.conexion.Close()
         Catch ex As Exception
@@ -161,12 +189,60 @@ Public Class servicios
         txtNombre.Clear()
         txtPrecio.Clear()
         cmbTipoServicio.Text = ""
+        lbEstado.Text = ""
     End Sub
 
-    Private Sub txtPrecio_TextChanged(sender As Object, e As EventArgs) Handles txtPrecio.TextChanged
-
+    Private Sub txtCodigo_Validating(sender As Object, e As CancelEventArgs) Handles txtCodigo.Validating
+        If DirectCast(sender, TextBox).Text.Length > 0 Then
+            Me.ErrorProvider.SetError(sender, "")
+        Else
+            Me.ErrorProvider.SetError(sender, "Campo obligatorio")
+        End If
     End Sub
 
+    Private Sub cmbTipoServicio_Validating(sender As Object, e As CancelEventArgs) Handles cmbTipoServicio.Validating
+        If DirectCast(sender, ComboBox).Text.Length > 0 Then
+            Me.ErrorProvider.SetError(sender, "")
+        Else
+            Me.ErrorProvider.SetError(sender, "Campo obligatorio")
+        End If
+    End Sub
+
+    Private Sub txtNombre_MouseHover(sender As Object, e As EventArgs) Handles txtNombre.MouseHover
+        ToolTip.SetToolTip(txtNombre, "Ingresar código")
+        ToolTip.ToolTipTitle = "Nombre"
+        ToolTip.ToolTipIcon = ToolTipIcon.Info
+    End Sub
+
+    Private Sub cmbTipoServicio_MouseHover(sender As Object, e As EventArgs) Handles cmbTipoServicio.MouseHover
+        ToolTip.SetToolTip(cmbTipoServicio, "Seleccione el tipo de servicio que desea")
+        ToolTip.ToolTipTitle = "Servicio"
+        ToolTip.ToolTipIcon = ToolTipIcon.Info
+    End Sub
+
+
+    Private Sub txtNombre_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtNombre.KeyPress
+        If Char.IsLetter(e.KeyChar) Then
+            e.Handled = False
+        ElseIf Char.IsControl(e.KeyChar) Then
+            e.Handled = False
+        ElseIf Char.IsSeparator(e.KeyChar) Then
+            e.Handled = False
+        Else
+            e.Handled = True
+        End If
+    End Sub
+    Private Sub txtCodigo_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtCodigo.KeyPress
+        If Char.IsNumber(e.KeyChar) Then
+            e.Handled = False
+        ElseIf Char.IsControl(e.KeyChar) Then
+            e.Handled = False
+        ElseIf Char.IsSeparator(e.KeyChar) Then
+            e.Handled = False
+        Else
+            e.Handled = True
+        End If
+    End Sub
     Private Sub txtPrecio_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtPrecio.KeyPress
         If Char.IsNumber(e.KeyChar) Then
             e.Handled = False
@@ -179,11 +255,45 @@ Public Class servicios
         End If
     End Sub
 
-    Private Sub txtNombre_TextChanged(sender As Object, e As EventArgs) Handles txtNombre.TextChanged
-
+    Private Sub txtNombre_Validating(sender As Object, e As CancelEventArgs) Handles txtNombre.Validating
+        If DirectCast(sender, TextBox).Text.Length > 0 Then
+            Me.ErrorProvider.SetError(sender, "")
+        Else
+            Me.ErrorProvider.SetError(sender, "Campo obligatorio")
+        End If
     End Sub
 
-    Private Sub txtNombre_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtNombre.KeyPress
+
+    Private Sub txtPrecio_Validated(sender As Object, e As EventArgs) Handles txtPrecio.Validated
+        If DirectCast(sender, TextBox).Text.Length > 0 Then
+            Me.ErrorProvider.SetError(sender, "")
+        Else
+            Me.ErrorProvider.SetError(sender, "Campo obligatorio")
+        End If
+    End Sub
+
+    Private Sub txtPrecio_MouseHover(sender As Object, e As EventArgs) Handles txtPrecio.MouseHover
+        ToolTip.SetToolTip(txtPrecio, "Ingrese un Precio")
+        ToolTip.ToolTipTitle = "Precio"
+        ToolTip.ToolTipIcon = ToolTipIcon.Info
+    End Sub
+
+
+    Private Sub txtBuscar_Validating(sender As Object, e As CancelEventArgs) Handles txtBuscar.Validating
+        If DirectCast(sender, TextBox).Text.Length > 0 Then
+            Me.ErrorProvider.SetError(sender, "")
+        Else
+            Me.ErrorProvider.SetError(sender, "Ingrese dato a buscar")
+        End If
+    End Sub
+
+    Private Sub txtBuscar_MouseHover(sender As Object, e As EventArgs) Handles txtBuscar.MouseHover
+        ToolTip.SetToolTip(txtBuscar, "Ingrese el dato a buscar")
+        ToolTip.ToolTipTitle = "Buscar"
+        ToolTip.ToolTipIcon = ToolTipIcon.Info
+    End Sub
+
+    Private Sub txtBuscar_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtBuscar.KeyPress
         If Char.IsLetter(e.KeyChar) Then
             e.Handled = False
         ElseIf Char.IsControl(e.KeyChar) Then

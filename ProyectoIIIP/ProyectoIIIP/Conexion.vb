@@ -4,7 +4,7 @@ Imports System.Windows.Forms
 Imports System.Security.Cryptography
 Imports System.Text
 Public Class Conexion
-    Public conexion As SqlConnection = New SqlConnection("Data Source= DESKTOP-2KKKGON;Initial Catalog=proyecto; Integrated Security=True")
+    Public conexion As SqlConnection = New SqlConnection("Data Source= localhost\SQLEXPRESS;Initial Catalog=proyecto; Integrated Security=True")
     'Private cmb As SqlCommandBuilder
     Public ds As DataSet = New DataSet()
     Public da As SqlDataAdapter
@@ -502,7 +502,7 @@ Public Class Conexion
         End Try
     End Function
 
-    Public Function insertarServicio(id As Integer, tiposervicio As String, nombre As String, precio As Double)
+    Public Function insertarServicio(id As Integer, tiposervicio As String, nombre As String, precio As Double, estado As String)
         Try
             conexion.Open()
             cmb = New SqlCommand("insertarServicio", conexion)
@@ -511,6 +511,7 @@ Public Class Conexion
             cmb.Parameters.AddWithValue("@tiposervicio", tiposervicio)
             cmb.Parameters.AddWithValue("@nombre", nombre)
             cmb.Parameters.AddWithValue("@precio", precio)
+            cmb.Parameters.AddWithValue("@estado", estado)
 
             If cmb.ExecuteNonQuery Then
                 Return True
@@ -525,12 +526,13 @@ Public Class Conexion
         End Try
     End Function
 
-    Public Function eliminarServicio(id As Integer)
+    Public Function eliminarServicio(id As Integer, estado As String)
         Try
             conexion.Open()
             cmb = New SqlCommand("eliminarServicios", conexion)
             cmb.CommandType = CommandType.StoredProcedure
             cmb.Parameters.AddWithValue("@id", id)
+            cmb.Parameters.AddWithValue("@estado", estado)
 
             If cmb.ExecuteNonQuery <> 0 Then
                 Return True
@@ -572,4 +574,54 @@ Public Class Conexion
             conexion.Close()
         End Try
     End Function
+
+    Public Function modificarServicio(id As Integer, tiposervicio As String, nombre As String, precio As Double)
+        Try
+            conexion.Open()
+            cmb = New SqlCommand("actualizarServicios", conexion)
+            cmb.CommandType = CommandType.StoredProcedure
+            cmb.Parameters.AddWithValue("@id", id)
+            cmb.Parameters.AddWithValue("@tiposervicio", tiposervicio)
+            cmb.Parameters.AddWithValue("@nombre", nombre)
+            cmb.Parameters.AddWithValue("@precio", precio)
+
+            If cmb.ExecuteNonQuery Then
+                Return True
+            Else
+                Return False
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            Return False
+        Finally
+            conexion.Close()
+        End Try
+    End Function
+
+    Public Function buscarServicio(nombre As String)
+
+        Try
+            conexion.Open()
+            cmb = New SqlCommand("buscarServicio", conexion)
+            cmb.CommandType = CommandType.StoredProcedure
+            cmb.Parameters.AddWithValue("@nombre", nombre)
+
+            If cmb.ExecuteNonQuery Then
+                Dim dt As New DataTable
+                Dim da As New SqlDataAdapter(cmb)
+                da.Fill(dt)
+                Return dt
+                conexion.Close()
+            Else
+                Return Nothing
+                conexion.Close()
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            Return Nothing
+        Finally
+            conexion.Close()
+        End Try
+    End Function
+
 End Class
