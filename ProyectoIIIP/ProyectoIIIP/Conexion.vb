@@ -501,4 +501,75 @@ Public Class Conexion
 
         End Try
     End Function
+
+    Public Function insertarServicio(id As Integer, tiposervicio As String, nombre As String, precio As Double)
+        Try
+            conexion.Open()
+            cmb = New SqlCommand("insertarServicio", conexion)
+            cmb.CommandType = CommandType.StoredProcedure
+            cmb.Parameters.AddWithValue("@id", id)
+            cmb.Parameters.AddWithValue("@tiposervicio", tiposervicio)
+            cmb.Parameters.AddWithValue("@nombre", nombre)
+            cmb.Parameters.AddWithValue("@precio", precio)
+
+            If cmb.ExecuteNonQuery Then
+                Return True
+            Else
+                Return False
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        Finally
+            conexion.Close()
+
+        End Try
+    End Function
+
+    Public Function eliminarServicio(id As Integer)
+        Try
+            conexion.Open()
+            cmb = New SqlCommand("eliminarServicios", conexion)
+            cmb.CommandType = CommandType.StoredProcedure
+            cmb.Parameters.AddWithValue("@id", id)
+
+            If cmb.ExecuteNonQuery <> 0 Then
+                Return True
+            Else
+                Return False
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            Return False
+        Finally
+            conexion.Close()
+        End Try
+    End Function
+
+    Public Function consultaServicios()
+        Try
+            conexion.Open()
+
+            cmb = New SqlCommand("consultarServicios", conexion)
+
+            cmb.CommandType = CommandType.StoredProcedure
+
+            If cmb.ExecuteNonQuery Then
+                Dim dt As New DataTable
+                Dim da As New SqlDataAdapter(cmb)
+                da.Fill(dt)
+                Return dt
+                conexion.Close()
+            Else
+                Return Nothing
+                conexion.Close()
+            End If
+            conexion.Close()
+        Catch ex As Exception
+            MsgBox(ex.Message)
+
+            Return Nothing
+        Finally
+            conexion.Close()
+        End Try
+    End Function
 End Class

@@ -1,11 +1,11 @@
 ﻿Imports System.ComponentModel
 
 Public Class servicios
-    Private Sub txtcodigo_TextChanged(sender As Object, e As EventArgs) Handles txtcodigo.TextChanged
+    Dim conexion As New Conexion()
+    Dim dt As DataTable
 
-    End Sub
 
-    Private Sub txtcodigo_Validating(sender As Object, e As CancelEventArgs) Handles txtcodigo.Validating
+    Private Sub txtcodigo_Validating(sender As Object, e As CancelEventArgs) Handles txtNombre.Validating
         If DirectCast(sender, TextBox).Text.Length > 0 Then
             Me.ErrorProvider.SetError(sender, "")
         Else
@@ -13,7 +13,7 @@ Public Class servicios
         End If
     End Sub
 
-    Private Sub txtcodigo_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtcodigo.KeyPress
+    Private Sub txtcodigo_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtCodigo.KeyPress
         If Char.IsNumber(e.KeyChar) Then
             e.Handled = False
         ElseIf Char.IsControl(e.KeyChar) Then
@@ -25,7 +25,7 @@ Public Class servicios
         End If
     End Sub
 
-    Private Sub cmbtipoServicio_Validating(sender As Object, e As CancelEventArgs) Handles cmbtipoServicio.Validating
+    Private Sub cmbTipoServicio_Validating(sender As Object, e As CancelEventArgs) Handles cmbTipoServicio.Validating
         If DirectCast(sender, ComboBox).Text.Length > 0 Then
             Me.ErrorProvider.SetError(sender, "")
         Else
@@ -33,19 +33,165 @@ Public Class servicios
         End If
     End Sub
 
-    Private Sub txtcodigo_MouseHover(sender As Object, e As EventArgs) Handles txtcodigo.MouseHover
-        ToolTip.SetToolTip(txtcodigo, "Ingresar código")
+    Private Sub txtNombre_MouseHover(sender As Object, e As EventArgs) Handles txtNombre.MouseHover
+        ToolTip.SetToolTip(txtNombre, "Ingresar código")
         ToolTip.ToolTipTitle = "CÓDIGO"
         ToolTip.ToolTipIcon = ToolTipIcon.Info
     End Sub
 
-    Private Sub cmbtipoServicio_MouseHover(sender As Object, e As EventArgs) Handles cmbtipoServicio.MouseHover
-        ToolTip.SetToolTip(txtcodigo, "Seleccione el tipo de servicio que desea")
+    Private Sub cmbTipoServicio_MouseHover(sender As Object, e As EventArgs) Handles cmbTipoServicio.MouseHover
+        ToolTip.SetToolTip(cmbTipoServicio, "Seleccione el tipo de servicio que desea")
         ToolTip.ToolTipTitle = "SERVICIO"
         ToolTip.ToolTipIcon = ToolTipIcon.Info
     End Sub
 
     Private Sub btnCerrar_Click(sender As Object, e As EventArgs) Handles btnCerrar.Click
         Me.Close()
+        conexion.conexion.Close()
+    End Sub
+
+    Private Sub dtgServicios_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dtgServicios.CellContentClick
+        llenarCampos(e)
+        conexion.conexion.Close()
+    End Sub
+
+    Private Sub servicios_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        conexion.conectar()
+    End Sub
+
+    Private Sub btnGuardar_Click(sender As Object, e As EventArgs) Handles btnGuardar.Click
+        insertarServicio()
+        mostrarDatos()
+        conexion.conexion.Close()
+    End Sub
+
+    Private Sub btnEliminar_Click(sender As Object, e As EventArgs) Handles btnEliminar.Click
+        eliminarServicio()
+        mostrarDatos()
+
+    End Sub
+
+    Private Sub btnLimpiar_Click(sender As Object, e As EventArgs) Handles btnLimpiar.Click
+        Limpiar()
+        mostrarDatos()
+    End Sub
+    '@id int ,
+    '@tiposervicio varchar(50) ,
+    '@nombre varchar (50) ,
+    '@precio decimal 
+    Private Sub insertarServicio()
+        Dim id As Integer
+        Dim nombre, tipoServicio As String
+        Dim precio As Double
+
+        id = Val(txtCodigo.Text)
+        nombre = txtNombre.Text
+        tipoServicio = cmbTipoServicio.Text
+        precio = txtPrecio.Text
+
+        Try
+            If conexion.insertarServicio(id, tipoServicio, nombre, precio) Then
+                MessageBox.Show("Guardado", "Correcto", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                mostrarDatos()
+            Else
+                MessageBox.Show("Error al guardar", "Incorrecto", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                conexion.conexion.Close()
+
+            End If
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+    End Sub
+
+    Private Sub eliminarServicio()
+        Dim id As Integer
+
+        id = txtCodigo.Text
+
+        Try
+            If (conexion.eliminarServicio(id)) Then
+                MsgBox("Servicio Eliminado")
+                mostrarDatos()
+            Else
+                MsgBox("No se pudo eliminar el servicio")
+                conexion.conexion.Close()
+
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+
+    End Sub
+
+    Private Sub llenarCampos(e As DataGridViewCellEventArgs)
+
+        Try
+            Dim dtg As DataGridViewRow = dtgServicios.Rows(e.RowIndex)
+            txtCodigo.Text = dtg.Cells(0).Value.ToString()
+            cmbTipoServicio.Text = dtg.Cells(1).Value.ToString()
+            txtNombre.Text = dtg.Cells(2).Value.ToString()
+            txtPrecio.Text = dtg.Cells(3).Value.ToString()
+
+            conexion.conexion.Close()
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            conexion.conexion.Close()
+        End Try
+    End Sub
+
+    Private Sub mostrarDatos()
+        Try
+            dt = conexion.consultaServicios
+            If dt.Rows.Count <> 0 Then
+                dtgServicios.DataSource = dt
+                conexion.conexion.Close()
+            Else
+                dtgServicios.DataSource = Nothing
+                conexion.conexion.Close()
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            conexion.conexion.Close()
+
+        End Try
+    End Sub
+    Private Sub Limpiar()
+        txtCodigo.Clear()
+        txtNombre.Clear()
+        txtPrecio.Clear()
+        cmbTipoServicio.Text = ""
+    End Sub
+
+    Private Sub txtPrecio_TextChanged(sender As Object, e As EventArgs) Handles txtPrecio.TextChanged
+
+    End Sub
+
+    Private Sub txtPrecio_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtPrecio.KeyPress
+        If Char.IsNumber(e.KeyChar) Then
+            e.Handled = False
+        ElseIf Char.IsControl(e.KeyChar) Then
+            e.Handled = False
+        ElseIf Char.IsSeparator(e.KeyChar) Then
+            e.Handled = False
+        Else
+            e.Handled = True
+        End If
+    End Sub
+
+    Private Sub txtNombre_TextChanged(sender As Object, e As EventArgs) Handles txtNombre.TextChanged
+
+    End Sub
+
+    Private Sub txtNombre_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtNombre.KeyPress
+        If Char.IsLetter(e.KeyChar) Then
+            e.Handled = False
+        ElseIf Char.IsControl(e.KeyChar) Then
+            e.Handled = False
+        ElseIf Char.IsSeparator(e.KeyChar) Then
+            e.Handled = False
+        Else
+            e.Handled = True
+        End If
     End Sub
 End Class
