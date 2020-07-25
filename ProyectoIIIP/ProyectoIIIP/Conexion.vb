@@ -4,7 +4,7 @@ Imports System.Windows.Forms
 Imports System.Security.Cryptography
 Imports System.Text
 Public Class Conexion
-    Public conexion As SqlConnection = New SqlConnection("Data Source= DESKTOP-LGDBE5Q\SQLEXPRESS;Initial Catalog=proyecto; Integrated Security=True")
+    Public conexion As SqlConnection = New SqlConnection("Data Source= DESKTOP-2KKKGON;Initial Catalog=proyecto; Integrated Security=True")
     'Private cmb As SqlCommandBuilder
     Public ds As DataSet = New DataSet()
     Public da As SqlDataAdapter
@@ -103,6 +103,13 @@ Public Class Conexion
 
         da.Fill(ds, tabla)
 
+    End Sub
+    Public Sub consultaEmpleado(ByVal sql As String, ByVal tabla As String)
+        ds.Tables.Clear()
+        da = New SqlDataAdapter(sql, conexion)
+        comando = New SqlCommandBuilder(da)
+
+        da.Fill(ds, tabla)
 
     End Sub
 
@@ -321,5 +328,177 @@ Public Class Conexion
 
         End Try
 
+    End Function
+    Public Function agregarEmpleado(Id As Integer, Identidad As String, Nombre As String, Apellido As String, ByVal NombreUsuario As String, Edad As Integer, Sexo As String, Telefono As Integer, Correo As String, Cargo As String, Estado As String)
+        Try
+            conexion.Open()
+            cmb = New SqlCommand("agregarEmpleado", conexion)
+            cmb.CommandType = CommandType.StoredProcedure
+
+            cmb.Parameters.AddWithValue("@Id", Id)
+            cmb.Parameters.AddWithValue("@Identidad", Identidad)
+            cmb.Parameters.AddWithValue("@Nombre", Nombre)
+            cmb.Parameters.AddWithValue("@Apellido", Apellido)
+            cmb.Parameters.AddWithValue("@NombreUsuario", NombreUsuario)
+            cmb.Parameters.AddWithValue("@Edad", Edad)
+            cmb.Parameters.AddWithValue("@Sexo", Sexo)
+            cmb.Parameters.AddWithValue("@Telefono", Telefono)
+            cmb.Parameters.AddWithValue("@Correo", Correo)
+            cmb.Parameters.AddWithValue("@Cargo", Cargo)
+            cmb.Parameters.AddWithValue("@Estado", Estado)
+
+            If cmb.ExecuteNonQuery Then
+
+                Return True
+            Else
+                Return False
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        Finally
+            conexion.Close()
+        End Try
+    End Function
+
+    Public Function actualizarEmpleado(Id As Integer, Identidad As String, Nombre As String, Apellido As String, ByVal NombreUsuario As String, Edad As Integer, Sexo As String, Telefono As Integer, Correo As String, Cargo As String, Estado As String)
+        Try
+            conexion.Open()
+            cmb = New SqlCommand("actualizarEmpleado", conexion)
+            cmb.CommandType = CommandType.StoredProcedure
+            cmb.Parameters.AddWithValue("@Id", Id)
+            cmb.Parameters.AddWithValue("@Identidad", Identidad)
+            cmb.Parameters.AddWithValue("@Nombre", Nombre)
+            cmb.Parameters.AddWithValue("@Apellido", Apellido)
+            cmb.Parameters.AddWithValue("@NombreUsuario", NombreUsuario)
+            cmb.Parameters.AddWithValue("@Edad", Edad)
+            cmb.Parameters.AddWithValue("@Sexo", Sexo)
+            cmb.Parameters.AddWithValue("@Telefono", Telefono)
+            cmb.Parameters.AddWithValue("@Correo", Correo)
+            cmb.Parameters.AddWithValue("@Cargo", Cargo)
+            cmb.Parameters.AddWithValue("@Estado", Estado)
+
+            If cmb.ExecuteNonQuery Then
+                Return True
+            Else
+                Return False
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+    End Function
+
+
+    Public Function eliminarEmpleados(ByVal Id As Integer)
+        Try
+            conexion.Open()
+            Dim cmd As New SqlCommand("eliminarEmpleados", conexion)
+            cmd.CommandType = CommandType.StoredProcedure
+            cmd.Parameters.AddWithValue("@Id", Id)
+
+            If cmd.ExecuteNonQuery Then
+                Return True
+            Else
+                Return False
+            End If
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            Return False
+        Finally
+            conexion.Close()
+
+        End Try
+
+    End Function
+
+    Public Function buscarEmpleado(Nombre As String)
+
+        Try
+            conexion.Open()
+            cmb = New SqlCommand("buscarEmpleado", conexion)
+            cmb.CommandType = CommandType.StoredProcedure
+            cmb.Parameters.AddWithValue("@Nombre", Nombre)
+
+            If cmb.ExecuteNonQuery Then
+                Dim dt As New DataTable
+                Dim da As New SqlDataAdapter(cmb)
+                da.Fill(dt)
+                Return dt
+                conexion.Close()
+            Else
+                Return Nothing
+                conexion.Close()
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            Return Nothing
+        Finally
+            conexion.Close()
+        End Try
+    End Function
+
+    Function consultaEmpleado(ByVal Identidad As String)
+
+        Dim cmd As SqlCommand = conexion.CreateCommand()
+
+        cmd.CommandText = ("SELECT Identidad from empleado Where empleado.Identidad = '" & Identidad & "'")
+
+        conexion.Open()
+
+        Dim numReg As Integer = CInt(cmd.ExecuteScalar())
+
+        If numReg > 0 Then
+            conexion.Close()
+            Return 1
+
+        Else
+            conexion.Close()
+            Return 2
+
+        End If
+    End Function
+
+    Function comprobarExistenciaIdentidadEm(ByVal Identidad As String)
+
+        Dim cmd As SqlCommand = conexion.CreateCommand()
+
+        cmd.CommandText = ("SELECT Id from empleado WHERE empleado.Identidad = '" & Identidad & "'")
+
+        conexion.Open()
+
+        Dim numReg As Integer = CInt(cmd.ExecuteScalar())
+
+        If numReg > 0 Then
+            conexion.Close()
+            Return 1
+
+        Else
+            conexion.Close()
+            Return 2
+
+        End If
+    End Function
+    Function retornarUltimoEmpleado()
+        Try
+
+            Dim valorARetornar As String
+            Dim cmd As SqlCommand = conexion.CreateCommand()
+            cmd.CommandText = ("SELECT MAX(Id) FROM empleado")
+
+            conexion.Open()
+
+            Dim value As Object = cmd.ExecuteScalar()
+
+            valorARetornar = Convert.ToString(value)
+            conexion.Close()
+
+            Return valorARetornar
+
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            conexion.Close()
+
+        End Try
     End Function
 End Class

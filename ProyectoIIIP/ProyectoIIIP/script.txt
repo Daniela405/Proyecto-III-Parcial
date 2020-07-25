@@ -119,111 +119,136 @@ execute buscarUser 'mm'
 select * from usuario
 
 
-
-
-
-
-
+--------------------------------------------------------------------------
 create table empleado(
-id int primary key not null, 
-nombre varchar(25) not null,
-apellido varchar(25) not null,
-edad int not null,
-sexo varchar(25) not null,
-cargo varchar(50) not null
-
+Id int primary key not null, 
+Identidad varchar(15) not null,
+Nombre varchar(25) not null,
+Apellido varchar(25) not null,
+NombreUsuario varchar(25) not null,
+Edad int not null,
+Sexo varchar(25) not null,
+Telefono int not null,
+Correo varchar(25) not null,
+Cargo varchar(50) not null,
+Estado char(20) not null
 )
+
 
 ----crear procedimiento para inseertar empleado
 
 create procedure agregarEmpleado (
-@id int,
-@nombre varchar(25) ,
-@apellido varchar(25), 
-@edad int ,
-@sexo varchar(25) ,
-@cargo varchar(50) 
-
+@Id int,
+@Identidad varchar(13),
+@Nombre varchar(25) ,
+@Apellido varchar(25), 
+@NombreUsuario varchar(25),
+@Edad int ,
+@Sexo varchar(25),
+@Telefono int,
+@Correo varchar(25),
+@Cargo varchar(50),
+@Estado char(20)
 )
 
 AS
 BEGIN
 
-insert into empleado (id, nombre,apellido,edad,sexo,cargo) 
-values(@id, @nombre,@apellido,@edad,@sexo,@cargo)
+insert into empleado (Id, Identidad, Nombre, Apellido, NombreUsuario, Edad, Sexo, Telefono, Correo, Cargo, Estado) 
+values(@Id, @Identidad, @Nombre,@Apellido, @NombreUsuario, @Edad, @Sexo, @Telefono, @Correo, @Cargo, @Estado)
 END
 
-exec agregarEmpleado 2, 'felipe','menjivar',22,'masculino','Make up artist';
-
-exec agregarEmpleado 3, 'Rosa','melento',22,'masculino','Masajista';
+exec agregarEmpleado 1, '1305200200359','Marivel','Hernandez', 'marivel34',22,'Femenino',98765436, 'marivelHe@gmail.com','Estilista','Activo';
+exec agregarEmpleado 2, '1305200200330','Fernando','Flores', 'ferFlor',22,'Masculino',97372336, 'fernando@gmail.com','Masajista','Activo';
+exec agregarEmpleado 3, '1305200200331','Fernanda','Flores', 'ferFlawer',22,'Femenino',97372332, 'fernandaf@gmail.com','Cortadora','Activo';
 
 select * from empleado
 
 ----crear procedimiento de actualizar empleado----
 
 create procedure actualizarEmpleado (
-@id int,
-@nombre varchar(25) ,
-@apellido varchar(25), 
-@edad int ,
-@sexo varchar(25) ,
-@cargo varchar(50) 
+@Id int,
+@Identidad varchar(13),
+@Nombre varchar(25) ,
+@Apellido varchar(25), 
+@NombreUsuario varchar(25),
+@Edad int ,
+@Sexo varchar(25),
+@Telefono int,
+@Correo varchar(25),
+@Cargo varchar(50),
+@Estado char(20)
 
 )
 
 AS
 BEGIN
 update empleado
-set nombre = @nombre, apellido = @apellido, edad = @edad,
-sexo = @sexo,cargo = @cargo
-where id = @id
+set Nombre = @Nombre, Apellido = @Apellido, NombreUsuario = @NombreUsuario, Edad = @Edad,
+Sexo = @Sexo, Telefono = @Telefono, Correo = @Correo, Cargo = @Cargo, Estado = @Estado
+where Identidad = @Identidad and Id = @Id
 end 
-exec actualizarEmpleado 2, 'felipe','menjivar',20,'Binario','Make up artist';
+exec actualizarEmpleado 1, '1305200200359','Marivel','Hernandez', 'marivell',25,'Femenino',98765436, 'marivelHe@gmail.com','Estilista','Activo';
 select  * from empleado
 
 
-----crear procedimiento eliminar empleado
+----crear procedimiento eliminar empleado (ID)
 create procedure eliminarEmpleado(@id int )
 AS
 BEGIN
 delete from empleado where id = @id
 END
 
-exec eliminarEmpleado 3
+exec eliminarEmpleado 1;
+exec eliminarEmpleado 2;
+exec eliminarEmpleado 3;
 select * from empleado
+---- eliminar empleado (Estado)
+Create procedure eliminarEmpleados (@Id int)
+	as begin 
+			update empleado set Estado = 'Eliminado'
+			where Id = @Id
+	End 
+
+	exec eliminarEmpleados 1;
+	exec eliminarEmpleados 2;
+	exec eliminarEmpleados 3;
+	select * from empleado
+
 
 ----crear procedimiento consutar empleado
 
-create procedure consultarEmpleado (@id as int)
+create procedure consultaEmpleado (@Identidad varchar(13))
 AS 
 BEGIN
-select id, nombre, apellido,edad, sexo, cargo from  empleado
-
-where id = @id
+select * from empleado Where empleado.Identidad = @Identidad
 END
 
-exec consultarEmpleado 2
-
-
-
+exec consultaEmpleado '1305200200359';
 
 select * from empleado
+
+
 --procediemiento busqueda de empleado
 create procedure buscarEmpleado
-@nombre as varchar(50)
+@Nombre as varchar(50)
 as begin
-select concat(nombre,' ',apellido) as 'Nombre Completo', edad as 'edad',sexo as 'sexo',cargo as 'cargo'
+select Identidad as 'No. Identidad', concat(Nombre,' ',Apellido) as 'Nombre Completo', Edad, Sexo, Telefono as 'Teléfono', Correo, Cargo, Estado 
 from empleado
-where nombre like '%' +@nombre+ '%'
+where Nombre like '%' +@Nombre+ '%'
 
 end 
-execute buscarEmpleado 'r'
+execute buscarEmpleado 'j'
+---------------------------------------------------------------------------------------------------------------
+
 create table cliente(
 id int primary key not null, 
 nombre varchar(25) not null,
 apellido varchar(25) not null,
 
 )
+
+
 
 ---procedimiento insertar cliente---
 
