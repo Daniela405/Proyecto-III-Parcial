@@ -4,11 +4,11 @@ Imports System.Windows.Forms
 Imports System.Security.Cryptography
 Imports System.Text
 Public Class Conexion
-<<<<<<< HEAD
-    Public conexion As SqlConnection = New SqlConnection("Data Source= DESKTOP-HT00A5J \ SQLEXPRESS;Initial Catalog=proyecto; Integrated Security=True")
-=======
+
+    'Public conexion As SqlConnection = New SqlConnection("Data Source= DESKTOP-HT00A5J \ SQLEXPRESS;Initial Catalog=proyecto; Integrated Security=True")
+
     Public conexion As SqlConnection = New SqlConnection("Data Source= localhost\SQLEXPRESS;Initial Catalog=proyecto; Integrated Security=True")
->>>>>>> 82cff1b54790e387c5c72a151739c599dcc8f406
+
     'Private cmb As SqlCommandBuilder
 
     Public ds As DataSet = New DataSet()
@@ -241,9 +241,8 @@ Public Class Conexion
             conexion.Close()
         End Try
     End Function
-<<<<<<< HEAD
 
-=======
+
     Public Function agregarEmpleado(Id As Integer, Identidad As String, Nombre As String, Apellido As String, ByVal NombreUsuario As String, Edad As Integer, Sexo As String, Telefono As Integer, Correo As String, Cargo As String, Estado As String)
         Try
             conexion.Open()
@@ -538,6 +537,6 @@ Public Class Conexion
             conexion.Close()
         End Try
     End Function
->>>>>>> 82cff1b54790e387c5c72a151739c599dcc8f406
+
 
 End Class

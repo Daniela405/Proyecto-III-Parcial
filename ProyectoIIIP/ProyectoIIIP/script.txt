@@ -509,32 +509,40 @@ where direccion like '%' +@nombre+ '%' or  tipoproducto like '%' +@nombre+ '%'
 end 
 execute buscarProveedor 't'
 
+---procedimientos para la de tabla servicios -----
+
 create table servicios(
 id int primary key not null,
 tiposervicio varchar(50) not null,
-nombre varchar(50),
-precio decimal not null
-)
+nombre varchar(50)not null,
+precio decimal not null,
+estado varchar(25)
 
+)
+drop procedure 
+select * from servicios
 ---procedimiento para insertar servicios -----
 
 create procedure insertarServicio (
-@id int ,
-@tiposervicio varchar(50) ,
-@nombre varchar (50) ,
-@precio decimal 
+@id int,
+@tiposervicio varchar(50),
+@nombre varchar (50),
+@precio decimal,
+@estado varchar(25)
 )
-
 AS
 BEGIN
-insert into servicios (id,tiposervicio,nombre,precio)values
-(@id,@tiposervicio,@nombre,@precio);
+	if exists (select id from servicios where id = @id and estado='Disponible')
+		raiserror('Ya existe un registro, porfavor verifique los datos',16,1)
+	else if exists (select nombre from servicios where nombre=@nombre and estado='Disponible')
+	raiserror('Ya existe un registro, porfavor verifique los datos',16,1)
+	else
+		insert into servicios values (@id,@tiposervicio,@nombre,@precio,@estado)
 END
 
+exec insertarServicio 5, 'Uñas', 'decoracion de uñas',300,'Disponible'
 
-exec insertarServicio 1, 'Uñas', 'uñas acrilicas',300 
-
-
+drop procedure insertarServicio 
 select * from servicios
 
 ----procedimiento para modifcar servicios---
@@ -552,47 +560,50 @@ BEGIN
 update servicios
 set tiposervicio = @tiposervicio, nombre = @nombre, precio = @precio
 where id = @id
-
-
 End
 
-exec actualizarServicios 1, 'Uñas', 'uñas acrilicas',250
+exec actualizarServicios 5, 'Uñas', 'uñas acrilicas',250
 
 select *from servicios
 
 ----procedimiento eliminar servicios----
-create procedure eliminarServicios(@id int )
+create procedure eliminarServicios(@id as int,@estado as varchar(25))
 AS
 BEGIN
-delete from  servicios where id = @id
+if exists( select nombre from servicios where @estado= 'No Disponible')
+	raiserror('Este servicio ya fue eliminado',16,1)
+	else
+update servicios set estado = 'No Disponible'
+	where id = @id 
 END
 
-exec eliminarProducto 1
+exec eliminarServicios 5,'Disponible' 
 select * from servicios
+create procedure eliminarUsuario
 
 ----crear procedimiento consutar servicios
 
-create procedure consultarServicios (@id as int)
+create procedure consultarServicios
 AS 
 BEGIN
-select * from  servicios
-
-where id = @id
+select id as 'Codigo', tiposervicio as 'Tipo del Servicio', nombre as 'Nombre',precio as 'Precio', estado as 'Estado'
+from servicios
 END
 
-exec consultarServicios 1
+exec consultarServicios 
 
 --procediemiento busqueda de servicios
 create procedure buscarServicio
 @nombre as varchar(50)
 as begin
-select tiposervicio as 'Tipo Del Servicio', nombre as 'nombre',precio as 'precio'
+select id as 'Codigo', tiposervicio as 'Tipo del Servicio', nombre as 'Nombre',precio as 'Precio', estado as 'Estado'
 from servicios
 where nombre like '%' +@nombre+ '%'
 
 end 
 execute buscarServicio 'u'
 
+------------------------------------------
 
 create table ventas(
 id int primary key not null, 
