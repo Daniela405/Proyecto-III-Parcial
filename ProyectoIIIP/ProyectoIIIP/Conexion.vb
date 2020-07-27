@@ -551,6 +551,132 @@ Public Class Conexion
         End Try
     End Function
 
+    Public Function agregarProveedor(id As Integer, nombre As String, direccion As String, telefono As Integer, correo As String, RTN As Integer, idproducto As Integer)
+        Try
+            conexion.Open()
+            cmb = New SqlCommand("agregarProveedor", conexion)
+            cmb.CommandType = CommandType.StoredProcedure
+            cmb.Parameters.AddWithValue("@id", id)
+            cmb.Parameters.AddWithValue("@nombre", nombre)
+            cmb.Parameters.AddWithValue("@direccion", direccion)
+            cmb.Parameters.AddWithValue("@telefono", telefono)
+            cmb.Parameters.AddWithValue("@correo", correo)
+            cmb.Parameters.AddWithValue("@RTN", RTN)
+            cmb.Parameters.AddWithValue("@idproducto", idproducto)
+
+            If cmb.ExecuteNonQuery Then
+                Return True
+            Else
+                Return False
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        Finally
+            conexion.Close()
+
+        End Try
+    End Function
+
+    Public Function consultarProveedor()
+        Try
+            conexion.Open()
+
+            cmb = New SqlCommand("consultarProveedor", conexion)
+
+            cmb.CommandType = CommandType.StoredProcedure
+
+            If cmb.ExecuteNonQuery Then
+                Dim dt As New DataTable
+                Dim da As New SqlDataAdapter(cmb)
+                da.Fill(dt)
+                Return dt
+                conexion.Close()
+            Else
+                Return Nothing
+                conexion.Close()
+            End If
+            conexion.Close()
+        Catch ex As Exception
+            MsgBox(ex.Message)
+
+            Return Nothing
+        Finally
+            conexion.Close()
+        End Try
+    End Function
+
+    Public Function modificarProveedor(id As Integer, nombre As String, direccion As String, telefono As Integer, correo As String, RTN As Integer, idproducto As Integer)
+        Try
+            conexion.Open()
+            cmb = New SqlCommand("actualizarProveedor", conexion)
+            cmb.CommandType = CommandType.StoredProcedure
+            cmb.Parameters.AddWithValue("@id", id)
+            cmb.Parameters.AddWithValue("@nombre", nombre)
+            cmb.Parameters.AddWithValue("@direccion", direccion)
+            cmb.Parameters.AddWithValue("@telefono", telefono)
+            cmb.Parameters.AddWithValue("@correo", correo)
+            cmb.Parameters.AddWithValue("@RTN", RTN)
+            cmb.Parameters.AddWithValue("@idproducto", idproducto)
+
+            If cmb.ExecuteNonQuery Then
+                Return True
+            Else
+                Return False
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            Return False
+        Finally
+            conexion.Close()
+        End Try
+    End Function
+
+    Public Function eliminarProveedor(id As Integer)
+        Try
+            conexion.Open()
+            cmb = New SqlCommand("eliminarProveedor", conexion)
+            cmb.CommandType = CommandType.StoredProcedure
+            cmb.Parameters.AddWithValue("@id", id)
+
+            If cmb.ExecuteNonQuery <> 0 Then
+                Return True
+            Else
+                Return False
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            Return False
+        Finally
+            conexion.Close()
+        End Try
+    End Function
+
+
+    Public Function buscarProveedor(nombre As String)
+        Try
+            conexion.Open()
+            cmb = New SqlCommand("buscarProveedor", conexion)
+            cmb.CommandType = CommandType.StoredProcedure
+            cmb.Parameters.AddWithValue("@nombre", nombre)
+
+            If cmb.ExecuteNonQuery Then
+                Dim dt As New DataTable
+                Dim da As New SqlDataAdapter(cmb)
+                da.Fill(dt)
+                Return dt
+                conexion.Close()
+            Else
+                Return Nothing
+                conexion.Close()
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            Return Nothing
+        Finally
+            conexion.Close()
+        End Try
+    End Function
+
 <<<<<<< HEAD
 
 =======
