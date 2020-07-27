@@ -260,4 +260,5 @@ Public Class proveedor
             Me.ErrorValidacion.SetError(sender, "Es un campo obligatorio")
         End If
     End Sub
+
 End Class

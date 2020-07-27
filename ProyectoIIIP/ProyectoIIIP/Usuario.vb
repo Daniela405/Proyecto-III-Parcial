@@ -146,6 +146,7 @@ Public Class usuario
             insertarUsuaurio()
             'MessageBox.Show("Correo valido", "Correcto", MessageBoxButtons.OK, MessageBoxIcon.Information)
             conexion.conexion.Close()
+
         End If
     End Sub
 

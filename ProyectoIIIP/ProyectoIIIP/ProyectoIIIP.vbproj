@@ -6,13 +6,13 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{5DC8482B-A50D-45FF-976E-BEDF48AD0F9E}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <StartupObject>ProyectoIIIP.My.MyApplication</StartupObject>
+    <StartupObject>ProyectoIIIP.principal</StartupObject>
     <RootNamespace>ProyectoIIIP</RootNamespace>
     <AssemblyName>ProyectoIIIP</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <MyType>WindowsForms</MyType>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
-    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <AutoGenerateBindingRedirects>false</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">

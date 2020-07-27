@@ -25,6 +25,7 @@ Partial Class proveedor
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(proveedor))
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.txtnombre = New System.Windows.Forms.TextBox()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.txtidProducto = New System.Windows.Forms.TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
@@ -50,7 +51,6 @@ Partial Class proveedor
         Me.btnBuscar = New System.Windows.Forms.Button()
         Me.btnModificar = New System.Windows.Forms.Button()
         Me.btnGuardar = New System.Windows.Forms.Button()
-        Me.txtnombre = New System.Windows.Forms.TextBox()
         Me.GroupBox1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -86,6 +86,14 @@ Partial Class proveedor
         Me.GroupBox1.TabIndex = 19
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Información"
+        '
+        'txtnombre
+        '
+        Me.txtnombre.Location = New System.Drawing.Point(166, 138)
+        Me.txtnombre.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.txtnombre.Name = "txtnombre"
+        Me.txtnombre.Size = New System.Drawing.Size(200, 26)
+        Me.txtnombre.TabIndex = 24
         '
         'PictureBox1
         '
@@ -356,14 +364,6 @@ Partial Class proveedor
         Me.btnGuardar.Size = New System.Drawing.Size(147, 56)
         Me.btnGuardar.TabIndex = 29
         Me.btnGuardar.UseVisualStyleBackColor = True
-        '
-        'txtnombre
-        '
-        Me.txtnombre.Location = New System.Drawing.Point(166, 138)
-        Me.txtnombre.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.txtnombre.Name = "txtnombre"
-        Me.txtnombre.Size = New System.Drawing.Size(200, 26)
-        Me.txtnombre.TabIndex = 24
         '
         'proveedor
         '

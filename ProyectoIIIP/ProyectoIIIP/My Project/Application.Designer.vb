@@ -32,11 +32,11 @@ Namespace My
         
         <Global.System.Diagnostics.DebuggerStepThroughAttribute()>  _
         Protected Overrides Sub OnCreateMainForm()
-<<<<<<< HEAD
+
             Me.MainForm = Global.ProyectoIIIP.restaurarcontraseña
-=======
+
             Me.MainForm = Global.ProyectoIIIP.servicios
->>>>>>> 82cff1b54790e387c5c72a151739c599dcc8f406
+
         End Sub
     End Class
 End Namespace

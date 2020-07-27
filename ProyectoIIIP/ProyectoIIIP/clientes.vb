@@ -126,11 +126,4 @@ Public Class Cliente
         Me.Close()
     End Sub
 
-    Private Sub txtcodigo_TextChanged(sender As Object, e As EventArgs) Handles txtcodigo.TextChanged
-
-    End Sub
-
-    Private Sub txtnombre_TextChanged(sender As Object, e As EventArgs) Handles txtnombre.TextChanged
-
-    End Sub
 End Class

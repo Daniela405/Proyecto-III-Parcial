@@ -5,9 +5,14 @@ Imports System.Security.Cryptography
 Imports System.Text
 Public Class Conexion
 
+<<<<<<< HEAD
+
+    Public conexion As SqlConnection = New SqlConnection("Data Source=DESKTOP-HT00A5J \ SQLEXPRESS;Initial Catalog=proyecto;Integrated Security=True")
+=======
     'Public conexion As SqlConnection = New SqlConnection("Data Source= DESKTOP-HT00A5J \ SQLEXPRESS;Initial Catalog=proyecto; Integrated Security=True")
 
     Public conexion As SqlConnection = New SqlConnection("Data Source= localhost\SQLEXPRESS;Initial Catalog=proyecto; Integrated Security=True")
+>>>>>>> b330c919c743d930a62218b9c754c41f11ad7c78
 
     'Private cmb As SqlCommandBuilder
 
@@ -17,8 +22,7 @@ Public Class Conexion
     Public dr As SqlDataReader
     Public comando As SqlCommandBuilder
 
-    Public enunciado As SqlCommand
-    Public respuesta As SqlDataReader
+
 
     Public Sub conectar()
         Try
@@ -105,12 +109,17 @@ Public Class Conexion
 
 
     Public Sub consulta(ByVal sql As String, ByVal tabla As String)
-        ds.Tables.Clear()
-        da = New SqlDataAdapter(sql, conexion)
-        comando = New SqlCommandBuilder(da)
+        Try
+            conexion.Open()
+            ds.Tables.Clear()
+            da = New SqlDataAdapter(sql, conexion)
+            comando = New SqlCommandBuilder(da)
 
-        da.Fill(ds, tabla)
+            da.Fill(ds, tabla)
 
+        Catch ex As Exception
+            conexion.Close()
+        End Try
     End Sub
     Public Sub consultaEmpleado(ByVal sql As String, ByVal tabla As String)
         ds.Tables.Clear()
@@ -243,6 +252,10 @@ Public Class Conexion
     End Function
 
 
+<<<<<<< HEAD
+
+=======
+>>>>>>> b330c919c743d930a62218b9c754c41f11ad7c78
     Public Function agregarEmpleado(Id As Integer, Identidad As String, Nombre As String, Apellido As String, ByVal NombreUsuario As String, Edad As Integer, Sexo As String, Telefono As Integer, Correo As String, Cargo As String, Estado As String)
         Try
             conexion.Open()
@@ -538,5 +551,9 @@ Public Class Conexion
         End Try
     End Function
 
+<<<<<<< HEAD
+
+=======
+>>>>>>> b330c919c743d930a62218b9c754c41f11ad7c78
 
 End Class

@@ -201,6 +201,7 @@ Public Class empleado
             Else
                 MessageBox.Show("Error al eliminar", "Incorrecto", MessageBoxButtons.OK, MessageBoxIcon.Error)
             End If
+
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try

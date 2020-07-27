@@ -25,6 +25,10 @@ Partial Class ventas
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(ventas))
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.MaskedTextBox1 = New System.Windows.Forms.MaskedTextBox()
+        Me.txtnumeroVenta = New System.Windows.Forms.TextBox()
+        Me.Label3 = New System.Windows.Forms.Label()
         Me.cmbempleado = New System.Windows.Forms.ComboBox()
         Me.cmbcliente = New System.Windows.Forms.ComboBox()
         Me.Label2 = New System.Windows.Forms.Label()
@@ -65,24 +69,66 @@ Partial Class ventas
         'GroupBox1
         '
         Me.GroupBox1.BackColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.GroupBox1.Controls.Add(Me.Label4)
+        Me.GroupBox1.Controls.Add(Me.MaskedTextBox1)
+        Me.GroupBox1.Controls.Add(Me.txtnumeroVenta)
+        Me.GroupBox1.Controls.Add(Me.Label3)
         Me.GroupBox1.Controls.Add(Me.cmbempleado)
         Me.GroupBox1.Controls.Add(Me.cmbcliente)
         Me.GroupBox1.Controls.Add(Me.Label2)
         Me.GroupBox1.Controls.Add(Me.Label1)
         Me.GroupBox1.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.GroupBox1.Location = New System.Drawing.Point(14, 40)
+        Me.GroupBox1.Location = New System.Drawing.Point(73, 11)
         Me.GroupBox1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Padding = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.GroupBox1.Size = New System.Drawing.Size(431, 162)
+        Me.GroupBox1.Size = New System.Drawing.Size(911, 162)
         Me.GroupBox1.TabIndex = 0
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Datos"
         '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Font = New System.Drawing.Font("Modern No. 20", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.ForeColor = System.Drawing.Color.White
+        Me.Label4.Location = New System.Drawing.Point(496, 41)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(64, 24)
+        Me.Label4.TabIndex = 15
+        Me.Label4.Text = "Fecha"
+        '
+        'MaskedTextBox1
+        '
+        Me.MaskedTextBox1.Location = New System.Drawing.Point(630, 39)
+        Me.MaskedTextBox1.Mask = "00/00/0000"
+        Me.MaskedTextBox1.Name = "MaskedTextBox1"
+        Me.MaskedTextBox1.Size = New System.Drawing.Size(121, 26)
+        Me.MaskedTextBox1.TabIndex = 14
+        Me.MaskedTextBox1.ValidatingType = GetType(Date)
+        '
+        'txtnumeroVenta
+        '
+        Me.txtnumeroVenta.Location = New System.Drawing.Point(192, 41)
+        Me.txtnumeroVenta.Name = "txtnumeroVenta"
+        Me.txtnumeroVenta.Size = New System.Drawing.Size(121, 26)
+        Me.txtnumeroVenta.TabIndex = 13
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Modern No. 20", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.ForeColor = System.Drawing.Color.White
+        Me.Label3.Location = New System.Drawing.Point(34, 44)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(123, 24)
+        Me.Label3.TabIndex = 12
+        Me.Label3.Text = "No. de Venta"
+        '
         'cmbempleado
         '
         Me.cmbempleado.FormattingEnabled = True
-        Me.cmbempleado.Location = New System.Drawing.Point(220, 88)
+        Me.cmbempleado.Location = New System.Drawing.Point(630, 86)
         Me.cmbempleado.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.cmbempleado.Name = "cmbempleado"
         Me.cmbempleado.Size = New System.Drawing.Size(121, 28)
@@ -91,7 +137,7 @@ Partial Class ventas
         'cmbcliente
         '
         Me.cmbcliente.FormattingEnabled = True
-        Me.cmbcliente.Location = New System.Drawing.Point(220, 42)
+        Me.cmbcliente.Location = New System.Drawing.Point(192, 90)
         Me.cmbcliente.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.cmbcliente.Name = "cmbcliente"
         Me.cmbcliente.Size = New System.Drawing.Size(121, 28)
@@ -102,7 +148,7 @@ Partial Class ventas
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Modern No. 20", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.Color.White
-        Me.Label2.Location = New System.Drawing.Point(86, 96)
+        Me.Label2.Location = New System.Drawing.Point(496, 94)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(100, 24)
         Me.Label2.TabIndex = 1
@@ -113,7 +159,7 @@ Partial Class ventas
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Modern No. 20", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.White
-        Me.Label1.Location = New System.Drawing.Point(86, 50)
+        Me.Label1.Location = New System.Drawing.Point(34, 98)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(73, 24)
         Me.Label1.TabIndex = 0
@@ -136,7 +182,7 @@ Partial Class ventas
         Me.GroupBox3.Controls.Add(Me.btnNuevo)
         Me.GroupBox3.Controls.Add(Me.btnCobrar)
         Me.GroupBox3.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.GroupBox3.Location = New System.Drawing.Point(71, 271)
+        Me.GroupBox3.Location = New System.Drawing.Point(909, 247)
         Me.GroupBox3.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.GroupBox3.Name = "GroupBox3"
         Me.GroupBox3.Padding = New System.Windows.Forms.Padding(3, 2, 3, 2)
@@ -203,11 +249,11 @@ Partial Class ventas
         Me.GroupBox5.Controls.Add(Me.Label6)
         Me.GroupBox5.Controls.Add(Me.Label7)
         Me.GroupBox5.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.GroupBox5.Location = New System.Drawing.Point(485, 46)
+        Me.GroupBox5.Location = New System.Drawing.Point(73, 177)
         Me.GroupBox5.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.GroupBox5.Name = "GroupBox5"
         Me.GroupBox5.Padding = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.GroupBox5.Size = New System.Drawing.Size(721, 379)
+        Me.GroupBox5.Size = New System.Drawing.Size(721, 344)
         Me.GroupBox5.TabIndex = 12
         Me.GroupBox5.TabStop = False
         Me.GroupBox5.Text = "Ventas"
@@ -255,6 +301,7 @@ Partial Class ventas
         '
         'txtdescuento
         '
+        Me.txtdescuento.Enabled = False
         Me.txtdescuento.Location = New System.Drawing.Point(353, 224)
         Me.txtdescuento.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txtdescuento.Name = "txtdescuento"
@@ -469,4 +516,8 @@ Partial Class ventas
     Friend WithEvents btnNuevo As Button
     Friend WithEvents tmensaje As ToolTip
     Friend WithEvents ErrorValidacion As ErrorProvider
+    Friend WithEvents Label4 As Label
+    Friend WithEvents MaskedTextBox1 As MaskedTextBox
+    Friend WithEvents txtnumeroVenta As TextBox
+    Friend WithEvents Label3 As Label
 End Class
