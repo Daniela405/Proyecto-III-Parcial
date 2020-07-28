@@ -8,15 +8,6 @@ Public Class proveedor
         Return Regex.IsMatch(isCorreo, "^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,4})$")
     End Function
 
-    Private Sub limpiar()
-        txtcodigo.Clear()
-        txtnombre.Clear()
-        txtdireccion.Clear()
-        txttelefono.Clear()
-        txtcodigo.Clear()
-        txtrtn.Clear()
-        txtidProducto.Clear()
-    End Sub
 
     Private Sub txtcodigo_Validating(sender As Object, e As CancelEventArgs) Handles txtcodigo.Validating
         If DirectCast(sender, TextBox).Text.Length > 0 Then
@@ -208,9 +199,7 @@ Public Class proveedor
         End If
     End Sub
 
-    Private Sub proveedor_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        'conexion.conectar()
-    End Sub
+
 
     'Botones
     Private Sub btnlimpiar_Click(sender As Object, e As EventArgs)
@@ -354,7 +343,7 @@ Public Class proveedor
             If (conexion.modificarProveedor(id, nombre, direccion, telefono, correo, rtn, idProducto)) Then
                 MessageBox.Show("Actualizado")
                 mostrarDatos()
-                limpiar()
+
                 'conexion.conexion.Close()
             Else
                 MessageBox.Show("Error al actualizar")

@@ -5,16 +5,10 @@ Imports System.Security.Cryptography
 Imports System.Text
 Public Class Conexion
 
-<<<<<<< HEAD
 
-    Public conexion As SqlConnection = New SqlConnection("Data Source=DESKTOP-HT00A5J \ SQLEXPRESS;Initial Catalog=proyecto;Integrated Security=True")
-=======
-    'Public conexion As SqlConnection = New SqlConnection("Data Source= DESKTOP-HT00A5J \ SQLEXPRESS;Initial Catalog=proyecto; Integrated Security=True")
 
-    Public conexion As SqlConnection = New SqlConnection("Data Source= localhost\SQLEXPRESS;Initial Catalog=proyecto; Integrated Security=True")
->>>>>>> b330c919c743d930a62218b9c754c41f11ad7c78
+    Public conexion As SqlConnection = New SqlConnection("Data Source=DESKTOP-LGDBE5Q\SQLEXPRESS;Initial Catalog=proyecto;Integrated Security=True")
 
-    'Private cmb As SqlCommandBuilder
 
     Public ds As DataSet = New DataSet()
     Public da As SqlDataAdapter
@@ -58,6 +52,7 @@ Public Class Conexion
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try
+        conexion.Close()
     End Function
 
 
@@ -120,6 +115,7 @@ Public Class Conexion
         Catch ex As Exception
             conexion.Close()
         End Try
+        conexion.Close()
     End Sub
     Public Sub consultaEmpleado(ByVal sql As String, ByVal tabla As String)
         ds.Tables.Clear()
@@ -183,6 +179,171 @@ Public Class Conexion
         End Try
     End Function
 
+    'funciones para agregar en productos ''
+
+
+    Public Function agregarProductos(id As Integer, codigobarra As String, tipoproducto As String, nombre As String,
+                               precio As Decimal, precioventa As Decimal, cantidad As Integer, caracteristica As String)
+        Try
+            conexion.Open()
+            cmb = New SqlCommand("agregarProductos", conexion)
+            cmb.CommandType = CommandType.StoredProcedure
+            cmb.Parameters.AddWithValue("@id", id)
+            cmb.Parameters.AddWithValue("@codigobarra", codigobarra)
+            cmb.Parameters.AddWithValue("@tipoproducto", tipoproducto)
+            cmb.Parameters.AddWithValue("@nombre", nombre)
+            cmb.Parameters.AddWithValue("@precio", precio)
+            cmb.Parameters.AddWithValue("@precioventa", precioventa)
+            cmb.Parameters.AddWithValue("@cantidad", cantidad)
+            cmb.Parameters.AddWithValue("@caracteristica", caracteristica)
+
+
+            If cmb.ExecuteNonQuery Then
+                Return True
+            Else
+                Return False
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        Finally
+            conexion.Close()
+        End Try
+        conexion.Close()
+    End Function
+
+
+
+    ''modificar productos
+    Public Function modificarProducto(id As Integer, codigobarra As String, tipoproducto As String, nombre As String,
+                               precio As Decimal, precioventa As Decimal, cantidad As Integer, caracteristica As String)
+
+        Try
+            conexion.Open()
+            cmb = New SqlCommand("actualizarProducto ", conexion)
+            cmb.CommandType = CommandType.StoredProcedure
+
+            cmb.Parameters.AddWithValue("@id", id)
+            cmb.Parameters.AddWithValue("@codigobarra", codigobarra)
+            cmb.Parameters.AddWithValue("@tipoproducto", tipoproducto)
+            cmb.Parameters.AddWithValue("@nombre", nombre)
+            cmb.Parameters.AddWithValue("@precio", precio)
+            cmb.Parameters.AddWithValue("@precioventa", precioventa)
+            cmb.Parameters.AddWithValue("@cantidad", cantidad)
+            cmb.Parameters.AddWithValue("@caracteristica", caracteristica)
+
+
+            If cmb.ExecuteNonQuery <> 0 Then
+                Return True
+            Else
+                Return False
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            Return False
+        Finally
+            conexion.Close()
+        End Try
+        conexion.Close()
+    End Function
+
+
+    '' funcion para buscar productos
+    Public Function BuscarProducto(nombreproducto As String)
+
+        Try
+            conexion.Open()
+            cmb = New SqlCommand("buscarProduct", conexion)
+            cmb.CommandType = CommandType.StoredProcedure
+            cmb.Parameters.AddWithValue("@nombre", nombreproducto)
+
+            If cmb.ExecuteNonQuery Then
+                Dim dt As New DataTable
+                Dim da As New SqlDataAdapter(cmb)
+                da.Fill(dt)
+                Return dt
+                conexion.Close()
+            Else
+                Return Nothing
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            Return Nothing
+        Finally
+            conexion.Close()
+        End Try
+    End Function
+    ''funcio pa buscar en productos
+    Public Function BuscarTipoProducto(tipo As String)
+
+        Try
+            conexion.Open()
+            cmb = New SqlCommand("buscarProduct", conexion)
+            cmb.CommandType = CommandType.StoredProcedure
+            cmb.Parameters.AddWithValue("@nombre", tipo)
+
+            If cmb.ExecuteNonQuery Then
+                Dim dt As New DataTable
+                Dim da As New SqlDataAdapter(cmb)
+                da.Fill(dt)
+                Return dt
+                conexion.Close()
+            Else
+                Return Nothing
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            Return Nothing
+        Finally
+            conexion.Close()
+        End Try
+    End Function
+
+    Public Function EliminarProducto(id As Integer)
+        Try
+            conexion.Open()
+            Dim cmd As New SqlCommand("eliminarProducto", conexion)
+            cmd.CommandType = CommandType.StoredProcedure
+            cmd.Parameters.AddWithValue("@id", id)
+
+            If cmd.ExecuteNonQuery Then
+                Return True
+            Else
+                Return False
+            End If
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            Return False
+        Finally
+            conexion.Close()
+
+        End Try
+
+    End Function
+    Function retornarId()
+        Try
+
+            Dim valorARetornar As String
+            Dim cmd As SqlCommand = conexion.CreateCommand()
+            cmd.CommandText = ("SELECT MAX(id) FROM productos")
+
+            conexion.Open()
+
+            Dim value As Object = cmd.ExecuteScalar()
+
+            valorARetornar = value
+            conexion.Close()
+
+            Return valorARetornar
+
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            conexion.Close()
+
+        End Try
+
+    End Function
 
     Public Function BuscarUsuario(userName As String)
 
@@ -252,10 +413,7 @@ Public Class Conexion
     End Function
 
 
-<<<<<<< HEAD
 
-=======
->>>>>>> b330c919c743d930a62218b9c754c41f11ad7c78
     Public Function agregarEmpleado(Id As Integer, Identidad As String, Nombre As String, Apellido As String, ByVal NombreUsuario As String, Edad As Integer, Sexo As String, Telefono As Integer, Correo As String, Cargo As String, Estado As String)
         Try
             conexion.Open()
@@ -677,9 +835,6 @@ Public Class Conexion
         End Try
     End Function
 
-<<<<<<< HEAD
 
-=======
->>>>>>> b330c919c743d930a62218b9c754c41f11ad7c78
 
 End Class
