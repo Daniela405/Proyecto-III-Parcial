@@ -60,7 +60,7 @@ Partial Class Cliente
         Me.GroupBox1.Controls.Add(Me.txtcodigo)
         Me.GroupBox1.Controls.Add(Me.Label1)
         Me.GroupBox1.ForeColor = System.Drawing.SystemColors.Control
-        Me.GroupBox1.Location = New System.Drawing.Point(26, 34)
+        Me.GroupBox1.Location = New System.Drawing.Point(11, 10)
         Me.GroupBox1.Margin = New System.Windows.Forms.Padding(2, 1, 2, 1)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Padding = New System.Windows.Forms.Padding(2, 1, 2, 1)
@@ -152,12 +152,12 @@ Partial Class Cliente
         'DataGridView1
         '
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Location = New System.Drawing.Point(299, 34)
+        Me.DataGridView1.Location = New System.Drawing.Point(266, 10)
         Me.DataGridView1.Margin = New System.Windows.Forms.Padding(2, 1, 2, 1)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.RowHeadersWidth = 62
         Me.DataGridView1.RowTemplate.Height = 28
-        Me.DataGridView1.Size = New System.Drawing.Size(517, 291)
+        Me.DataGridView1.Size = New System.Drawing.Size(471, 339)
         Me.DataGridView1.TabIndex = 5
         '
         'ErrorValidacion
@@ -166,7 +166,7 @@ Partial Class Cliente
         '
         'btnCerrar
         '
-        Me.btnCerrar.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btnCerrar.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.btnCerrar.BackColor = System.Drawing.Color.Transparent
         Me.btnCerrar.BackgroundImage = CType(resources.GetObject("btnCerrar.BackgroundImage"), System.Drawing.Image)
         Me.btnCerrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
@@ -175,7 +175,7 @@ Partial Class Cliente
         Me.btnCerrar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightSeaGreen
         Me.btnCerrar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Cyan
         Me.btnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnCerrar.Location = New System.Drawing.Point(760, 375)
+        Me.btnCerrar.Location = New System.Drawing.Point(693, 361)
         Me.btnCerrar.Name = "btnCerrar"
         Me.btnCerrar.Size = New System.Drawing.Size(47, 40)
         Me.btnCerrar.TabIndex = 34
@@ -183,7 +183,6 @@ Partial Class Cliente
         '
         'btnEliminar
         '
-        Me.btnEliminar.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.btnEliminar.BackgroundImage = CType(resources.GetObject("btnEliminar.BackgroundImage"), System.Drawing.Image)
         Me.btnEliminar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btnEliminar.Cursor = System.Windows.Forms.Cursors.Hand
@@ -191,7 +190,7 @@ Partial Class Cliente
         Me.btnEliminar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer))
         Me.btnEliminar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnEliminar.Location = New System.Drawing.Point(163, 323)
+        Me.btnEliminar.Location = New System.Drawing.Point(148, 281)
         Me.btnEliminar.Name = "btnEliminar"
         Me.btnEliminar.Size = New System.Drawing.Size(98, 35)
         Me.btnEliminar.TabIndex = 33
@@ -199,7 +198,6 @@ Partial Class Cliente
         '
         'btnLimpiar
         '
-        Me.btnLimpiar.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.btnLimpiar.BackgroundImage = CType(resources.GetObject("btnLimpiar.BackgroundImage"), System.Drawing.Image)
         Me.btnLimpiar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btnLimpiar.Cursor = System.Windows.Forms.Cursors.Hand
@@ -207,7 +205,7 @@ Partial Class Cliente
         Me.btnLimpiar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Yellow
         Me.btnLimpiar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gold
         Me.btnLimpiar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnLimpiar.Location = New System.Drawing.Point(92, 380)
+        Me.btnLimpiar.Location = New System.Drawing.Point(87, 334)
         Me.btnLimpiar.Name = "btnLimpiar"
         Me.btnLimpiar.Size = New System.Drawing.Size(98, 35)
         Me.btnLimpiar.TabIndex = 32
@@ -215,7 +213,6 @@ Partial Class Cliente
         '
         'btnBuscar
         '
-        Me.btnBuscar.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.btnBuscar.BackgroundImage = CType(resources.GetObject("btnBuscar.BackgroundImage"), System.Drawing.Image)
         Me.btnBuscar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btnBuscar.Cursor = System.Windows.Forms.Cursors.Hand
@@ -223,7 +220,7 @@ Partial Class Cliente
         Me.btnBuscar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Violet
         Me.btnBuscar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Plum
         Me.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnBuscar.Location = New System.Drawing.Point(40, 269)
+        Me.btnBuscar.Location = New System.Drawing.Point(25, 227)
         Me.btnBuscar.Name = "btnBuscar"
         Me.btnBuscar.Size = New System.Drawing.Size(98, 35)
         Me.btnBuscar.TabIndex = 31
@@ -231,7 +228,6 @@ Partial Class Cliente
         '
         'btnModificar
         '
-        Me.btnModificar.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.btnModificar.BackgroundImage = CType(resources.GetObject("btnModificar.BackgroundImage"), System.Drawing.Image)
         Me.btnModificar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btnModificar.Cursor = System.Windows.Forms.Cursors.Hand
@@ -239,7 +235,7 @@ Partial Class Cliente
         Me.btnModificar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightSeaGreen
         Me.btnModificar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Cyan
         Me.btnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnModificar.Location = New System.Drawing.Point(40, 323)
+        Me.btnModificar.Location = New System.Drawing.Point(25, 281)
         Me.btnModificar.Name = "btnModificar"
         Me.btnModificar.Size = New System.Drawing.Size(98, 35)
         Me.btnModificar.TabIndex = 30
@@ -247,7 +243,6 @@ Partial Class Cliente
         '
         'btnGuardar
         '
-        Me.btnGuardar.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.btnGuardar.BackgroundImage = CType(resources.GetObject("btnGuardar.BackgroundImage"), System.Drawing.Image)
         Me.btnGuardar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btnGuardar.Cursor = System.Windows.Forms.Cursors.Hand
@@ -255,7 +250,7 @@ Partial Class Cliente
         Me.btnGuardar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DeepSkyBlue
         Me.btnGuardar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.RoyalBlue
         Me.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnGuardar.Location = New System.Drawing.Point(163, 269)
+        Me.btnGuardar.Location = New System.Drawing.Point(148, 227)
         Me.btnGuardar.Name = "btnGuardar"
         Me.btnGuardar.Size = New System.Drawing.Size(98, 36)
         Me.btnGuardar.TabIndex = 29
@@ -267,7 +262,7 @@ Partial Class Cliente
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.ClientSize = New System.Drawing.Size(847, 433)
+        Me.ClientSize = New System.Drawing.Size(752, 413)
         Me.Controls.Add(Me.btnCerrar)
         Me.Controls.Add(Me.btnEliminar)
         Me.Controls.Add(Me.btnLimpiar)

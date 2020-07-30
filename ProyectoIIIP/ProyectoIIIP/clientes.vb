@@ -9,7 +9,6 @@ Public Class Cliente
         tmensaje.ToolTipIcon = ToolTipIcon.Info
     End Sub
 
-
     Private Sub txtnombre_MouseHover(sender As Object, e As EventArgs) Handles txtnombre.MouseHover
         tmensaje.SetToolTip(txtnombre, "Ingrese el nombre")
         tmensaje.ToolTipTitle = "Nombre"
@@ -27,7 +26,6 @@ Public Class Cliente
         tmensaje.ToolTipTitle = "Guardar"
         tmensaje.ToolTipIcon = ToolTipIcon.Info
     End Sub
-
 
     Private Sub btnmodificar_MouseHover(sender As Object, e As EventArgs)
         tmensaje.SetToolTip(btnmodificar, "Click para modificar")
@@ -61,7 +59,6 @@ Public Class Cliente
         End If
     End Sub
 
-
     Private Sub txtnombre_Validating(sender As Object, e As CancelEventArgs) Handles txtnombre.Validating
         If DirectCast(sender, TextBox).Text.Length > 0 Then
             Me.ErrorValidacion.SetError(sender, "")
@@ -78,7 +75,6 @@ Public Class Cliente
         End If
     End Sub
 
-
     Private Sub txtcodigo_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtcodigo.KeyPress
         If Char.IsNumber(e.KeyChar) Then
             e.Handled = False
@@ -91,7 +87,6 @@ Public Class Cliente
         End If
     End Sub
 
-
     Private Sub txtnombre_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtnombre.KeyPress
         If Char.IsLetter(e.KeyChar) Then
             e.Handled = False
@@ -103,7 +98,6 @@ Public Class Cliente
             e.Handled = True
         End If
     End Sub
-
 
     Private Sub txtapellido_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtapellido.KeyPress
         If Char.IsLetter(e.KeyChar) Then
@@ -121,9 +115,13 @@ Public Class Cliente
         ' conexion.conectar()
     End Sub
 
-
     Private Sub btnCerrar_Click(sender As Object, e As EventArgs) Handles btnCerrar.Click
         Me.Close()
     End Sub
 
+    Private Sub btnLimpiar_Click(sender As Object, e As EventArgs) Handles btnLimpiar.Click
+        txtcodigo.Clear()
+        txtnombre.Clear()
+        txtapellido.Clear()
+    End Sub
 End Class

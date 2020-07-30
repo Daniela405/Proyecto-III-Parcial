@@ -6,8 +6,8 @@ Imports System.Text
 Public Class Conexion
 
 
-
-    Public conexion As SqlConnection = New SqlConnection("Data Source=DESKTOP-LGDBE5Q\SQLEXPRESS;Initial Catalog=proyecto;Integrated Security=True")
+    'Public conexion As SqlConnection = New SqlConnection("Data Source=DESKTOP-LGDBE5Q\SQLEXPRESS;Initial Catalog=proyecto;Integrated Security=True")
+    Public conexion As SqlConnection = New SqlConnection("Data Source=DESKTOP-BFND73I;Initial Catalog=proyecto;Integrated Security=True") 'Eduardo
 
 
     Public ds As DataSet = New DataSet()

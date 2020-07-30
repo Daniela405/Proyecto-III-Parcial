@@ -100,16 +100,14 @@ Public Class empleado
         txtnombre.Clear()
         txtapellido.Clear()
         txtedad.Clear()
-        cmbsexo.SelectedItem = "Seleccione una opción"
-        cmbcargo.SelectedItem = "Seleccione una opción"
+        cmbsexo.SelectedItem = "<Seleccionar>"
+        cmbcargo.SelectedItem = "<Seleccionar>"
         mtxtIdentidad.Clear()
         txtBuscarNombre.Clear()
         txtUsuario.Clear()
         txtEstado.Clear()
         txtCorreo.Clear()
         txtTel.Clear()
-        rbCodigo.Checked = False
-        rbNombre.Checked = False
         dataEmpleado.DataSource = ""
     End Sub
 
@@ -128,51 +126,51 @@ Public Class empleado
         End Try
     End Sub
 
-    Private Sub btnBuscarCodigo_Click(sender As Object, e As EventArgs) Handles btnBuscarCodigo.Click
-        Try
-            If IsNumeric(mBuscarIdentidad.Text) = True And mBuscarIdentidad.TextLength = 13 Then
+    Private Sub btnBuscar_Click(sender As Object, e As EventArgs) Handles btnBuscar.Click
+        If rbCodigo.Checked Then 'con Radio Button Codigo==========
+            Try
+                If IsNumeric(mBuscarIdentidad.Text) = True And mBuscarIdentidad.TextLength = 13 Then
 
-                If conexion.comprobarExistenciaIdentidadEm(mBuscarIdentidad.Text) = 1 Then
+                    If conexion.comprobarExistenciaIdentidadEm(mBuscarIdentidad.Text) = 1 Then
 
-                    conexion.consultaEmpleado("SELECT * from empleado Where empleado.Identidad = '" & mBuscarIdentidad.Text & "'", "data")
-                    dataEmpleado.DataSource = conexion.ds.Tables("data")
+                        conexion.consultaEmpleado("SELECT * from empleado Where empleado.Identidad = '" & mBuscarIdentidad.Text & "'", "data")
+                        dataEmpleado.DataSource = conexion.ds.Tables("data")
 
-                    Dim dtg As DataGridViewRow = dataEmpleado.Rows(0)
-                    txtcodigo.Text = dtg.Cells(0).Value.ToString()
-                    mtxtIdentidad.Text = dtg.Cells(1).Value.ToString()
-                    txtnombre.Text = dtg.Cells(2).Value.ToString()
-                    txtapellido.Text = dtg.Cells(3).Value.ToString()
-                    txtUsuario.Text = dtg.Cells(4).Value.ToString()
-                    txtedad.Text = dtg.Cells(5).Value.ToString()
-                    cmbsexo.SelectedItem = dtg.Cells(6).Value.ToString()
-                    txtTel.Text = dtg.Cells(7).Value.ToString()
-                    txtCorreo.Text = dtg.Cells(8).Value.ToString()
-                    cmbcargo.SelectedItem = dtg.Cells(9).Value.ToString()
-                    txtEstado.Text = dtg.Cells(10).Value.ToString()
+                        Dim dtg As DataGridViewRow = dataEmpleado.Rows(0)
+                        txtcodigo.Text = dtg.Cells(0).Value.ToString()
+                        mtxtIdentidad.Text = dtg.Cells(1).Value.ToString()
+                        txtnombre.Text = dtg.Cells(2).Value.ToString()
+                        txtapellido.Text = dtg.Cells(3).Value.ToString()
+                        txtUsuario.Text = dtg.Cells(4).Value.ToString()
+                        txtedad.Text = dtg.Cells(5).Value.ToString()
+                        cmbsexo.SelectedItem = dtg.Cells(6).Value.ToString()
+                        txtTel.Text = dtg.Cells(7).Value.ToString()
+                        txtCorreo.Text = dtg.Cells(8).Value.ToString()
+                        cmbcargo.SelectedItem = dtg.Cells(9).Value.ToString()
+                        txtEstado.Text = dtg.Cells(10).Value.ToString()
+                    Else
+                        MsgBox("El empleado no existe!", vbCritical)
+                    End If
+
                 Else
-                    MsgBox("El empleado no existe!", vbCritical)
+                    MsgBox("Revise el número de identidad!", vbCritical)
                 End If
+            Catch ex As Exception
+                MsgBox(ex.Message)
+            End Try
+        ElseIf rbNombre.Checked Then 'con Radio Button Nombre==========
+            ordenarLetra()
+            Try
+                ' If conexion.comprobarExistencianombreEmpleado(txtBuscarNombre.Text) = 1 Then
+                dataEmpleado.DataSource = conexion.buscarEmpleado(txtBuscarNombre.Text)
 
-            Else
-                MsgBox("Revise el número de identidad!", vbCritical)
-            End If
-        Catch ex As Exception
-            MsgBox(ex.Message)
-        End Try
-    End Sub
-
-    Private Sub btnBuscarNombre_Click(sender As Object, e As EventArgs) Handles btnBuscarNombre.Click
-        ordenarLetra()
-        Try
-            ' If conexion.comprobarExistencianombreEmpleado(txtBuscarNombre.Text) = 1 Then
-            dataEmpleado.DataSource = conexion.buscarEmpleado(txtBuscarNombre.Text)
-
-            'Else
-            'MessageBox.Show("No existe registro", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-            'End If
-        Catch ex As Exception
-            MsgBox(ex.Message)
-        End Try
+                'Else
+                'MessageBox.Show("No existe registro", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                'End If
+            Catch ex As Exception
+                MsgBox(ex.Message)
+            End Try
+        End If
     End Sub
 
     Private Sub btnEliminar_Click(sender As Object, e As EventArgs) Handles btnEliminar.Click
@@ -396,18 +394,18 @@ Public Class empleado
     End Sub
 
     Private Sub cmbsexo_Validating(sender As Object, e As CancelEventArgs) Handles cmbsexo.Validating
-        If DirectCast(sender, ComboBox).Text.Length > 0 Then
-            Me.ErrorProvider.SetError(sender, "")
-        Else
+        If DirectCast(sender, ComboBox).Text.Length < 1 Or cmbsexo.Text = "<Seleccionar>" Then
             Me.ErrorProvider.SetError(sender, "Campo obligatorio")
+        Else
+            Me.ErrorProvider.SetError(sender, "")
         End If
     End Sub
 
     Private Sub cmbcargo_Validating(sender As Object, e As CancelEventArgs) Handles cmbcargo.Validating
-        If DirectCast(sender, ComboBox).Text.Length > 0 Then
-            Me.ErrorProvider.SetError(sender, "")
-        Else
+        If DirectCast(sender, ComboBox).Text.Length < 1 Or cmbcargo.Text = "<Seleccionar>" Then
             Me.ErrorProvider.SetError(sender, "Campo obligatorio")
+        Else
+            Me.ErrorProvider.SetError(sender, "")
         End If
     End Sub
 
@@ -462,16 +460,22 @@ Public Class empleado
     Private Sub rbCodigo_CheckedChanged(sender As Object, e As EventArgs) Handles rbCodigo.CheckedChanged
         dataEmpleado.DataSource = ""
         limpiar()
-        gbCodigo.Visible = True
-        gbBuscar.Visible = False
+        txtBuscarNombre.Enabled = False
+        mBuscarIdentidad.Enabled = True
     End Sub
 
-    Private Sub rbNombre_CheckedChanged(sender As Object, e As EventArgs) Handles rbNombre.CheckedChanged
+    Private Sub rbNombre_CheckedChanged_1(sender As Object, e As EventArgs) Handles rbNombre.CheckedChanged
         dataEmpleado.DataSource = ""
         limpiar()
-        gbCodigo.Visible = False
-        gbBuscar.Visible = True
+        txtBuscarNombre.Enabled = True
+        mBuscarIdentidad.Enabled = False
     End Sub
 
+    Private Sub cmbsexo_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbsexo.SelectedIndexChanged
 
+    End Sub
+
+    Private Sub cmbcargo_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbcargo.SelectedIndexChanged
+
+    End Sub
 End Class

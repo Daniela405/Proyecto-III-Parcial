@@ -45,22 +45,27 @@ Partial Class servicios
         Me.Label14 = New System.Windows.Forms.Label()
         Me.txtNombre = New System.Windows.Forms.TextBox()
         Me.Label15 = New System.Windows.Forms.Label()
-        Me.Label1 = New System.Windows.Forms.Label()
         Me.txtBuscar = New System.Windows.Forms.TextBox()
+        Me.gbBuscar = New System.Windows.Forms.GroupBox()
+        Me.Label16 = New System.Windows.Forms.Label()
+        Me.Label17 = New System.Windows.Forms.Label()
+        Me.Label18 = New System.Windows.Forms.Label()
+        Me.Label5 = New System.Windows.Forms.Label()
         CType(Me.dtgServicios, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ErrorProvider, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox2.SuspendLayout()
+        Me.gbBuscar.SuspendLayout()
         Me.SuspendLayout()
         '
         'dtgServicios
         '
         Me.dtgServicios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dtgServicios.Location = New System.Drawing.Point(93, 250)
+        Me.dtgServicios.Location = New System.Drawing.Point(11, 198)
         Me.dtgServicios.Margin = New System.Windows.Forms.Padding(2)
         Me.dtgServicios.Name = "dtgServicios"
         Me.dtgServicios.RowHeadersWidth = 62
         Me.dtgServicios.RowTemplate.Height = 28
-        Me.dtgServicios.Size = New System.Drawing.Size(529, 145)
+        Me.dtgServicios.Size = New System.Drawing.Size(529, 207)
         Me.dtgServicios.TabIndex = 3
         '
         'ErrorProvider
@@ -69,7 +74,6 @@ Partial Class servicios
         '
         'btnEliminar
         '
-        Me.btnEliminar.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.btnEliminar.BackgroundImage = CType(resources.GetObject("btnEliminar.BackgroundImage"), System.Drawing.Image)
         Me.btnEliminar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btnEliminar.Cursor = System.Windows.Forms.Cursors.Hand
@@ -77,7 +81,7 @@ Partial Class servicios
         Me.btnEliminar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer))
         Me.btnEliminar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnEliminar.Location = New System.Drawing.Point(408, 99)
+        Me.btnEliminar.Location = New System.Drawing.Point(524, 96)
         Me.btnEliminar.Name = "btnEliminar"
         Me.btnEliminar.Size = New System.Drawing.Size(98, 35)
         Me.btnEliminar.TabIndex = 33
@@ -85,7 +89,6 @@ Partial Class servicios
         '
         'btnLimpiar
         '
-        Me.btnLimpiar.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.btnLimpiar.BackgroundImage = CType(resources.GetObject("btnLimpiar.BackgroundImage"), System.Drawing.Image)
         Me.btnLimpiar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btnLimpiar.Cursor = System.Windows.Forms.Cursors.Hand
@@ -93,7 +96,7 @@ Partial Class servicios
         Me.btnLimpiar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Yellow
         Me.btnLimpiar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gold
         Me.btnLimpiar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnLimpiar.Location = New System.Drawing.Point(409, 34)
+        Me.btnLimpiar.Location = New System.Drawing.Point(420, 143)
         Me.btnLimpiar.Name = "btnLimpiar"
         Me.btnLimpiar.Size = New System.Drawing.Size(98, 35)
         Me.btnLimpiar.TabIndex = 32
@@ -101,7 +104,6 @@ Partial Class servicios
         '
         'btnBuscar
         '
-        Me.btnBuscar.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.btnBuscar.BackgroundImage = CType(resources.GetObject("btnBuscar.BackgroundImage"), System.Drawing.Image)
         Me.btnBuscar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btnBuscar.Cursor = System.Windows.Forms.Cursors.Hand
@@ -109,7 +111,7 @@ Partial Class servicios
         Me.btnBuscar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Violet
         Me.btnBuscar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Plum
         Me.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnBuscar.Location = New System.Drawing.Point(653, 283)
+        Me.btnBuscar.Location = New System.Drawing.Point(210, 22)
         Me.btnBuscar.Name = "btnBuscar"
         Me.btnBuscar.Size = New System.Drawing.Size(98, 35)
         Me.btnBuscar.TabIndex = 31
@@ -117,7 +119,6 @@ Partial Class servicios
         '
         'btnModificar
         '
-        Me.btnModificar.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.btnModificar.BackgroundImage = CType(resources.GetObject("btnModificar.BackgroundImage"), System.Drawing.Image)
         Me.btnModificar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btnModificar.Cursor = System.Windows.Forms.Cursors.Hand
@@ -125,7 +126,7 @@ Partial Class servicios
         Me.btnModificar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightSeaGreen
         Me.btnModificar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Cyan
         Me.btnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnModificar.Location = New System.Drawing.Point(286, 98)
+        Me.btnModificar.Location = New System.Drawing.Point(420, 96)
         Me.btnModificar.Name = "btnModificar"
         Me.btnModificar.Size = New System.Drawing.Size(98, 35)
         Me.btnModificar.TabIndex = 30
@@ -133,7 +134,6 @@ Partial Class servicios
         '
         'btnGuardar
         '
-        Me.btnGuardar.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.btnGuardar.BackgroundImage = CType(resources.GetObject("btnGuardar.BackgroundImage"), System.Drawing.Image)
         Me.btnGuardar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btnGuardar.Cursor = System.Windows.Forms.Cursors.Hand
@@ -141,7 +141,7 @@ Partial Class servicios
         Me.btnGuardar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DeepSkyBlue
         Me.btnGuardar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.RoyalBlue
         Me.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnGuardar.Location = New System.Drawing.Point(286, 33)
+        Me.btnGuardar.Location = New System.Drawing.Point(316, 95)
         Me.btnGuardar.Name = "btnGuardar"
         Me.btnGuardar.Size = New System.Drawing.Size(98, 37)
         Me.btnGuardar.TabIndex = 29
@@ -149,7 +149,7 @@ Partial Class servicios
         '
         'btnCerrar
         '
-        Me.btnCerrar.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btnCerrar.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.btnCerrar.BackColor = System.Drawing.Color.Transparent
         Me.btnCerrar.BackgroundImage = CType(resources.GetObject("btnCerrar.BackgroundImage"), System.Drawing.Image)
         Me.btnCerrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
@@ -159,7 +159,7 @@ Partial Class servicios
         Me.btnCerrar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightSeaGreen
         Me.btnCerrar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Cyan
         Me.btnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnCerrar.Location = New System.Drawing.Point(12, 12)
+        Me.btnCerrar.Location = New System.Drawing.Point(718, 446)
         Me.btnCerrar.Name = "btnCerrar"
         Me.btnCerrar.Size = New System.Drawing.Size(47, 35)
         Me.btnCerrar.TabIndex = 38
@@ -172,23 +172,19 @@ Partial Class servicios
         Me.GroupBox2.Controls.Add(Me.Label10)
         Me.GroupBox2.Controls.Add(Me.txtPrecio)
         Me.GroupBox2.Controls.Add(Me.Label11)
-        Me.GroupBox2.Controls.Add(Me.btnLimpiar)
-        Me.GroupBox2.Controls.Add(Me.btnEliminar)
         Me.GroupBox2.Controls.Add(Me.txtCodigo)
         Me.GroupBox2.Controls.Add(Me.Label12)
         Me.GroupBox2.Controls.Add(Me.Label13)
-        Me.GroupBox2.Controls.Add(Me.btnModificar)
         Me.GroupBox2.Controls.Add(Me.cmbTipoServicio)
-        Me.GroupBox2.Controls.Add(Me.btnGuardar)
         Me.GroupBox2.Controls.Add(Me.Label14)
         Me.GroupBox2.Controls.Add(Me.txtNombre)
         Me.GroupBox2.Controls.Add(Me.Label15)
         Me.GroupBox2.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.GroupBox2.Location = New System.Drawing.Point(93, 26)
+        Me.GroupBox2.Location = New System.Drawing.Point(11, 11)
         Me.GroupBox2.Margin = New System.Windows.Forms.Padding(2)
         Me.GroupBox2.Name = "GroupBox2"
         Me.GroupBox2.Padding = New System.Windows.Forms.Padding(2)
-        Me.GroupBox2.Size = New System.Drawing.Size(529, 210)
+        Me.GroupBox2.Size = New System.Drawing.Size(292, 183)
         Me.GroupBox2.TabIndex = 37
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Información"
@@ -311,27 +307,72 @@ Partial Class servicios
         Me.Label15.Size = New System.Drawing.Size(0, 13)
         Me.Label15.TabIndex = 0
         '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.BackColor = System.Drawing.Color.Transparent
-        Me.Label1.Font = New System.Drawing.Font("Modern No. 20", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Label1.Location = New System.Drawing.Point(671, 218)
-        Me.Label1.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(59, 17)
-        Me.Label1.TabIndex = 40
-        Me.Label1.Text = "Nombre "
-        '
         'txtBuscar
         '
         Me.txtBuscar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtBuscar.Location = New System.Drawing.Point(645, 248)
+        Me.txtBuscar.Location = New System.Drawing.Point(76, 26)
         Me.txtBuscar.Margin = New System.Windows.Forms.Padding(2)
         Me.txtBuscar.Name = "txtBuscar"
-        Me.txtBuscar.Size = New System.Drawing.Size(111, 20)
+        Me.txtBuscar.Size = New System.Drawing.Size(124, 20)
         Me.txtBuscar.TabIndex = 39
+        '
+        'gbBuscar
+        '
+        Me.gbBuscar.BackColor = System.Drawing.Color.Black
+        Me.gbBuscar.Controls.Add(Me.Label5)
+        Me.gbBuscar.Controls.Add(Me.txtBuscar)
+        Me.gbBuscar.Controls.Add(Me.Label16)
+        Me.gbBuscar.Controls.Add(Me.Label17)
+        Me.gbBuscar.Controls.Add(Me.btnBuscar)
+        Me.gbBuscar.Controls.Add(Me.Label18)
+        Me.gbBuscar.ForeColor = System.Drawing.Color.White
+        Me.gbBuscar.Location = New System.Drawing.Point(307, 11)
+        Me.gbBuscar.Margin = New System.Windows.Forms.Padding(2)
+        Me.gbBuscar.Name = "gbBuscar"
+        Me.gbBuscar.Padding = New System.Windows.Forms.Padding(2)
+        Me.gbBuscar.Size = New System.Drawing.Size(323, 74)
+        Me.gbBuscar.TabIndex = 41
+        Me.gbBuscar.TabStop = False
+        Me.gbBuscar.Text = "Buscar"
+        '
+        'Label16
+        '
+        Me.Label16.AutoSize = True
+        Me.Label16.Location = New System.Drawing.Point(33, 224)
+        Me.Label16.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label16.Name = "Label16"
+        Me.Label16.Size = New System.Drawing.Size(0, 13)
+        Me.Label16.TabIndex = 14
+        '
+        'Label17
+        '
+        Me.Label17.AutoSize = True
+        Me.Label17.Location = New System.Drawing.Point(25, 128)
+        Me.Label17.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label17.Name = "Label17"
+        Me.Label17.Size = New System.Drawing.Size(0, 13)
+        Me.Label17.TabIndex = 7
+        '
+        'Label18
+        '
+        Me.Label18.AutoSize = True
+        Me.Label18.Location = New System.Drawing.Point(25, 33)
+        Me.Label18.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label18.Name = "Label18"
+        Me.Label18.Size = New System.Drawing.Size(0, 13)
+        Me.Label18.TabIndex = 0
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Font = New System.Drawing.Font("Modern No. 20", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.Label5.Location = New System.Drawing.Point(19, 26)
+        Me.Label5.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(55, 17)
+        Me.Label5.TabIndex = 0
+        Me.Label5.Text = "Nombre"
         '
         'servicios
         '
@@ -339,13 +380,15 @@ Partial Class servicios
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.ClientSize = New System.Drawing.Size(813, 504)
-        Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.txtBuscar)
+        Me.ClientSize = New System.Drawing.Size(777, 493)
+        Me.Controls.Add(Me.gbBuscar)
         Me.Controls.Add(Me.btnCerrar)
         Me.Controls.Add(Me.GroupBox2)
-        Me.Controls.Add(Me.btnBuscar)
         Me.Controls.Add(Me.dtgServicios)
+        Me.Controls.Add(Me.btnLimpiar)
+        Me.Controls.Add(Me.btnEliminar)
+        Me.Controls.Add(Me.btnGuardar)
+        Me.Controls.Add(Me.btnModificar)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Margin = New System.Windows.Forms.Padding(2)
         Me.Name = "servicios"
@@ -354,8 +397,9 @@ Partial Class servicios
         CType(Me.ErrorProvider, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox2.PerformLayout()
+        Me.gbBuscar.ResumeLayout(False)
+        Me.gbBuscar.PerformLayout()
         Me.ResumeLayout(False)
-        Me.PerformLayout()
 
     End Sub
     Friend WithEvents dtgServicios As DataGridView
@@ -378,7 +422,11 @@ Partial Class servicios
     Friend WithEvents Label14 As Label
     Friend WithEvents txtNombre As TextBox
     Friend WithEvents Label15 As Label
-    Friend WithEvents Label1 As Label
     Friend WithEvents txtBuscar As TextBox
     Friend WithEvents lbEstado As Label
+    Friend WithEvents gbBuscar As GroupBox
+    Friend WithEvents Label5 As Label
+    Friend WithEvents Label16 As Label
+    Friend WithEvents Label17 As Label
+    Friend WithEvents Label18 As Label
 End Class

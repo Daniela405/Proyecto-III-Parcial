@@ -202,7 +202,7 @@ Public Class proveedor
 
 
     'Botones
-    Private Sub btnlimpiar_Click(sender As Object, e As EventArgs)
+    Private Sub btnLimpiar_Click(sender As Object, e As EventArgs) Handles btnLimpiar.Click
         limpiar()
     End Sub
     Private Sub limpiar()
@@ -213,6 +213,7 @@ Public Class proveedor
         txtcodigo.Clear()
         txtrtn.Clear()
         txtidProducto.Clear()
+        txtBuscar.Clear()
     End Sub
 
     Private Sub btnGuardar_Click(sender As Object, e As EventArgs) Handles btnGuardar.Click
@@ -389,5 +390,4 @@ Public Class proveedor
             MsgBox(ex.Message)
         End Try
     End Sub
-
 End Class

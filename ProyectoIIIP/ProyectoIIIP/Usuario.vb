@@ -206,14 +206,11 @@ Public Class usuario
 
         End Try
 
-
     End Sub
 
     Private Sub btnLimpiar_Click(sender As Object, e As EventArgs) Handles btnLimpiar.Click
         limpiar()
-
     End Sub
-
 
 
     Private Sub modificar()
@@ -240,7 +237,6 @@ Public Class usuario
                 MsgBox("Modificado correctamente")
                 ' conexion.conexion.Close()
 
-
             Else
                 MsgBox("Error al modificar usuario")
                 ' conexion.conexion.Close()
@@ -263,7 +259,6 @@ Public Class usuario
         Dim rol As Char
         Dim Estado As Char
 
-
         id = txtcodigo.Text
         nombre = txtnombre.Text
         apellido = txtapellido.Text
@@ -282,11 +277,8 @@ Public Class usuario
         End Try
     End Sub
 
-
-
     Private Sub btnBuscar_Click(sender As Object, e As EventArgs) Handles btnBuscar.Click
         BuscarUsuario()
-
     End Sub
 
     Private Sub txtnombre_TextChanged(sender As Object, e As EventArgs) Handles txtnombre.TextChanged
