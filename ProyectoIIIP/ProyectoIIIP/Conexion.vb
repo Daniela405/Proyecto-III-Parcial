@@ -835,6 +835,29 @@ Public Class Conexion
         End Try
     End Function
 
+    Function retornarventa()
+        Try
 
+            Dim valorARetornar As String
+            Dim cmd As SqlCommand = conexion.CreateCommand()
+            cmd.CommandText = ("SELECT MAX(id) FROM productos")
+
+            conexion.Open()
+
+            Dim value As Object = cmd.ExecuteScalar()
+
+            valorARetornar = value
+            conexion.Close()
+
+            Return valorARetornar
+
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            conexion.Close()
+
+        End Try
+
+    End Function
 
 End Class

@@ -6,7 +6,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{5DC8482B-A50D-45FF-976E-BEDF48AD0F9E}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <StartupObject>ProyectoIIIP.menus</StartupObject>
+    <StartupObject>ProyectoIIIP.detalleVentas</StartupObject>
     <RootNamespace>ProyectoIIIP</RootNamespace>
     <AssemblyName>ProyectoIIIP</AssemblyName>
     <FileAlignment>512</FileAlignment>
@@ -81,6 +81,12 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Conexion.vb" />
+    <Compile Include="detalleVentas.Designer.vb">
+      <DependentUpon>detalleVentas.vb</DependentUpon>
+    </Compile>
+    <Compile Include="detalleVentas.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="empleado.Designer.vb">
       <DependentUpon>empleado.vb</DependentUpon>
     </Compile>
@@ -173,6 +179,9 @@
   <ItemGroup>
     <EmbeddedResource Include="clientes.resx">
       <DependentUpon>clientes.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="detalleVentas.resx">
+      <DependentUpon>detalleVentas.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="empleado.resx">
       <DependentUpon>empleado.vb</DependentUpon>
