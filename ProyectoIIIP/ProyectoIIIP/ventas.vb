@@ -11,6 +11,8 @@ Public Class ventas
     Dim adapter As SqlDataAdapter
     Dim data As DataSet
     Dim leer As SqlDataAdapter
+    Dim idanterior As Integer
+    Public lavariable As Integer
     Private Sub btnCerrar_Click(sender As Object, e As EventArgs) Handles btnCerrar.Click
         Me.Close()
     End Sub
@@ -34,7 +36,7 @@ Public Class ventas
     End Sub
 
 
-    Private Sub cmbproducto_Validating(sender As Object, e As CancelEventArgs) Handles cmbproducto.Validating
+    Private Sub cmbproducto_Validating(sender As Object, e As CancelEventArgs)
         If DirectCast(sender, ComboBox).Text.Length > 0 Then
             Me.ErrorValidacion.SetError(sender, "")
         Else
@@ -43,7 +45,7 @@ Public Class ventas
     End Sub
 
 
-    Private Sub cmbservicio_Validating(sender As Object, e As CancelEventArgs) Handles cmbservicio.Validating
+    Private Sub cmbservicio_Validating(sender As Object, e As CancelEventArgs)
         If DirectCast(sender, ComboBox).Text.Length > 0 Then
             Me.ErrorValidacion.SetError(sender, "")
         Else
@@ -52,7 +54,7 @@ Public Class ventas
     End Sub
 
 
-    Private Sub txtcantidad1_Validating(sender As Object, e As CancelEventArgs) Handles txtcantidad1.Validating
+    Private Sub txtcantidad1_Validating(sender As Object, e As CancelEventArgs)
         If DirectCast(sender, TextBox).Text.Length > 0 Then
             Me.ErrorValidacion.SetError(sender, "")
         Else
@@ -60,7 +62,7 @@ Public Class ventas
         End If
     End Sub
 
-    Private Sub txtcantidad2_Validating(sender As Object, e As CancelEventArgs) Handles txtcantidad2.Validating
+    Private Sub txtcantidad2_Validating(sender As Object, e As CancelEventArgs)
         If DirectCast(sender, TextBox).Text.Length > 0 Then
             Me.ErrorValidacion.SetError(sender, "")
         Else
@@ -69,7 +71,7 @@ Public Class ventas
     End Sub
 
 
-    Private Sub cmbpagos_Validating(sender As Object, e As CancelEventArgs) Handles cmbpagos.Validating
+    Private Sub cmbpagos_Validating(sender As Object, e As CancelEventArgs)
         If DirectCast(sender, ComboBox).Text.Length > 0 Then
             Me.ErrorValidacion.SetError(sender, "")
         Else
@@ -78,7 +80,7 @@ Public Class ventas
     End Sub
 
 
-    Private Sub txtdescuento_Validating(sender As Object, e As CancelEventArgs) Handles txtdescuento.Validating
+    Private Sub txtdescuento_Validating(sender As Object, e As CancelEventArgs)
         If DirectCast(sender, TextBox).Text.Length > 0 Then
             Me.ErrorValidacion.SetError(sender, "")
         Else
@@ -98,58 +100,69 @@ Public Class ventas
         tmensaje.ToolTipIcon = ToolTipIcon.Info
     End Sub
 
-    Private Sub cmbproducto_MouseHover(sender As Object, e As EventArgs) Handles cmbproducto.MouseHover
+    Private Sub cmbproducto_MouseHover(sender As Object, e As EventArgs)
         tmensaje.SetToolTip(cmbproducto, "Seleccione el producto")
         tmensaje.ToolTipTitle = "Producto"
         tmensaje.ToolTipIcon = ToolTipIcon.Info
     End Sub
 
-    Private Sub cmbservicio_MouseHover(sender As Object, e As EventArgs) Handles cmbservicio.MouseHover
+    Private Sub cmbservicio_MouseHover(sender As Object, e As EventArgs)
         tmensaje.SetToolTip(cmbservicio, "Seleccione el servicio")
         tmensaje.ToolTipTitle = "Servicio"
         tmensaje.ToolTipIcon = ToolTipIcon.Info
     End Sub
 
-    Private Sub txtcantidad1_MouseHover(sender As Object, e As EventArgs) Handles txtcantidad1.MouseHover
+    Private Sub txtcantidad1_MouseHover(sender As Object, e As EventArgs)
         tmensaje.SetToolTip(txtcantidad1, "Ingrese la cantidad")
         tmensaje.ToolTipTitle = "Cantidad"
         tmensaje.ToolTipIcon = ToolTipIcon.Info
     End Sub
 
-    Private Sub txtcantidad2_MouseHover(sender As Object, e As EventArgs) Handles txtcantidad2.MouseHover
+    Private Sub txtcantidad2_MouseHover(sender As Object, e As EventArgs)
         tmensaje.SetToolTip(txtcantidad2, "Ingrese la cantidad")
         tmensaje.ToolTipTitle = "Cantidad"
         tmensaje.ToolTipIcon = ToolTipIcon.Info
     End Sub
 
-    Private Sub cmbpagos_MouseHover(sender As Object, e As EventArgs) Handles cmbpagos.MouseHover
+    Private Sub cmbpagos_MouseHover(sender As Object, e As EventArgs)
         tmensaje.SetToolTip(cmbpagos, "Seleccione la forma de pago")
         tmensaje.ToolTipTitle = "Forma de Pago"
         tmensaje.ToolTipIcon = ToolTipIcon.Info
     End Sub
 
-    Private Sub txtdescuento_MouseHover(sender As Object, e As EventArgs) Handles txtdescuento.MouseHover
+    Private Sub txtdescuento_MouseHover(sender As Object, e As EventArgs)
         tmensaje.SetToolTip(txtdescuento, "Ingrese el descuento")
         tmensaje.ToolTipTitle = "Descuento"
         tmensaje.ToolTipIcon = ToolTipIcon.Info
     End Sub
-    Public Sub mostrardatos()
-        conexion.consulta("select * from ventas", "ventas")
 
-        DataGridView1.DataSource = conexion.ds.Tables("ventas")
+    Public Sub mostrardatos()
+        conexion.consulta("select * from venta", "venta")
+
+        DataGridView1.DataSource = conexion.ds.Tables("venta")
 
     End Sub
+
+    Function idventa()
+
+        If conexion.retornarIdventa() = 0 Then
+            idanterior = 1
+
+
+        Else
+            idanterior = conexion.retornarIdventa() + 1
+
+            Return idanterior
+        End If
+    End Function
     Private Sub ventas_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         conexion.conectar()
         mostrardatos()
+        txtnumeroVenta.Text = idventa()
+        lavariable = idventa()
+        TextBox2.Text = idventa()
 
-        strcomando = "Select * from cliente"
-        adapter = New System.Data.SqlClient.SqlDataAdapter(strcomando, conexion.conexion)
-        data = New DataSet
-        adapter.Fill(data)
-        cmbcliente.DataSource = data.Tables(0)
-        cmbcliente.DisplayMember = "nombre"
-        cmbcliente.ValueMember = "id"
+
 
         strcomando = "Select * from empleado"
         adapter = New System.Data.SqlClient.SqlDataAdapter(strcomando, conexion.conexion)
@@ -159,78 +172,48 @@ Public Class ventas
         cmbempleado.DisplayMember = "Nombre"
         cmbempleado.ValueMember = "Id"
 
-
-        strcomando = "Select * from producto"
+        strcomando = "Select * from cliente"
         adapter = New System.Data.SqlClient.SqlDataAdapter(strcomando, conexion.conexion)
         data = New DataSet
         adapter.Fill(data)
-        cmbproducto.DataSource = data.Tables(0)
-        cmbproducto.DisplayMember = "nombre"
-        cmbproducto.ValueMember = "id"
+        cmbcliente.DataSource = data.Tables(0)
+        cmbcliente.DisplayMember = "nombre"
+        cmbcliente.ValueMember = "id"
 
-        strcomando = "Select * from servicios"
-        adapter = New System.Data.SqlClient.SqlDataAdapter(strcomando, conexion.conexion)
-        data = New DataSet
-        adapter.Fill(data)
-        cmbservicio.DataSource = data.Tables(0)
-        cmbservicio.DisplayMember = "nombre"
-        cmbservicio.ValueMember = "id"
 
 
 
 
     End Sub
 
-    Private Sub cmbproducto_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbproducto.SelectedIndexChanged
-        Dim conexion As SqlConnection = New SqlConnection("Data Source=DESKTOP-HT00A5J \ SQLEXPRESS;Initial Catalog=proyecto;Integrated Security=True")
-        Dim datpro As String = "select * from producto where nombre='" + cmbproducto.Text + "'"
+    Private Sub insertarVenta()
+        Dim id As Integer, idcliente As Integer, idempleado As Integer, fecha As String, formapago As String, numerofactura As Integer
+        id = idventa()
+        idcliente = cmbcliente.SelectedIndex + 1
+        idempleado = cmbempleado.SelectedIndex + 1
+        fecha = MaskedTextBox1.Text
+        formapago = ComboBox1.Text
+        numerofactura = TextBox2.Text
 
-        Dim cmb As New SqlCommand(datpro, conexion)
-        conexion.Open()
-        Dim leer As SqlDataReader = cmb.ExecuteReader
 
+        Try
+            If conexion.agregarVenta(id, idcliente, idempleado, fecha, formapago, numerofactura) Then
+                MessageBox.Show("Venta Generada Ahora a Agregar Productos ", "Correcto", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                mostrardatos()
+                detalleVentas.Show()
+                Me.Hide()
 
-        If leer.Read = True Then
-            txtprecio1.Text = leer("precio").ToString
+            Else
+                MessageBox.Show("Error al guardar", "Incorrecto", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                conexion.conexion.Close()
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
 
-        Else
-            txtprecio1.Text = ""
-
-        End If
-        conexion.Close()
     End Sub
 
-    Private Sub cmbservicio_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbservicio.SelectedIndexChanged
-        Dim conexion As SqlConnection = New SqlConnection("Data Source=DESKTOP-HT00A5J \ SQLEXPRESS;Initial Catalog=proyecto;Integrated Security=True")
-        Dim datpro As String = "select * from servicios where nombre='" + cmbservicio.Text + "'"
-
-        Dim cmb As New SqlCommand(datpro, conexion)
-        conexion.Open()
-        Dim leer As SqlDataReader = cmb.ExecuteReader
-
-
-        If leer.Read = True Then
-            txtprecio2.Text = leer("precio").ToString
-
-        Else
-            txtprecio2.Text = ""
-
-        End If
-        conexion.Close()
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        insertarVenta()
     End Sub
-
-    Private Sub cmbpagos_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbpagos.SelectedIndexChanged
-        Dim descuentro As Double
-        Select Case cmbpagos.SelectedIndex
-            Case 0
-                descuentro = 0
-                txtdescuento.Text = Convert.ToString(FormatNumber(descuentro, 2))
-            Case 1
-                descuentro = 20
-                txtdescuento.Text = Convert.ToString(FormatNumber(descuentro, 2))
-
-        End Select
-    End Sub
-
-
 End Class

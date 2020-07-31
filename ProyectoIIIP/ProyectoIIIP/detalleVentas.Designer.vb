@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class detalleVentas
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,43 +20,43 @@ Partial Class detalleVentas
     'NOTA: el Diseñador de Windows Forms necesita el siguiente procedimiento
     'Se puede modificar usando el Diseñador de Windows Forms.  
     'No lo modifique con el editor de código.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(detalleVentas))
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.txtidventa = New System.Windows.Forms.TextBox()
-        Me.txtidcliente = New System.Windows.Forms.TextBox()
-        Me.txt1 = New System.Windows.Forms.TextBox()
-        Me.txtdocumento = New System.Windows.Forms.TextBox()
-        Me.txtnombrecliente = New System.Windows.Forms.TextBox()
         Me.txtnumerodoc = New System.Windows.Forms.TextBox()
+        Me.txtnombrecliente = New System.Windows.Forms.TextBox()
+        Me.txtdocumento = New System.Windows.Forms.TextBox()
+        Me.txt1 = New System.Windows.Forms.TextBox()
+        Me.txtidcliente = New System.Windows.Forms.TextBox()
+        Me.txtidventa = New System.Windows.Forms.TextBox()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.Label1 = New System.Windows.Forms.Label()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
-        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.txtbuscar = New System.Windows.Forms.TextBox()
+        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.supedido = New System.Windows.Forms.GroupBox()
-        Me.DataGridView2 = New System.Windows.Forms.DataGridView()
-        Me.Label6 = New System.Windows.Forms.Label()
-        Me.txtidproducto = New System.Windows.Forms.TextBox()
-        Me.Label7 = New System.Windows.Forms.Label()
-        Me.txtnombreproducto = New System.Windows.Forms.TextBox()
-        Me.Label8 = New System.Windows.Forms.Label()
-        Me.txtprecio = New System.Windows.Forms.TextBox()
-        Me.Label9 = New System.Windows.Forms.Label()
-        Me.txtsctok = New System.Windows.Forms.TextBox()
-        Me.Label10 = New System.Windows.Forms.Label()
-        Me.txtcantllevar = New System.Windows.Forms.TextBox()
-        Me.txttotal = New System.Windows.Forms.TextBox()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.Button3 = New System.Windows.Forms.Button()
         Me.Label11 = New System.Windows.Forms.Label()
+        Me.Button3 = New System.Windows.Forms.Button()
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.txttotal = New System.Windows.Forms.TextBox()
+        Me.txtcantllevar = New System.Windows.Forms.TextBox()
+        Me.Label10 = New System.Windows.Forms.Label()
+        Me.txtsctok = New System.Windows.Forms.TextBox()
+        Me.Label9 = New System.Windows.Forms.Label()
+        Me.txtprecio = New System.Windows.Forms.TextBox()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.txtnombreproducto = New System.Windows.Forms.TextBox()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.txtidproducto = New System.Windows.Forms.TextBox()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.DataGridView2 = New System.Windows.Forms.DataGridView()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
-        Me.DataGridView3 = New System.Windows.Forms.DataGridView()
         Me.txtlookservice = New System.Windows.Forms.TextBox()
+        Me.DataGridView3 = New System.Windows.Forms.DataGridView()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -86,41 +86,59 @@ Partial Class detalleVentas
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Datos de la venta"
         '
-        'Label1
+        'txtnumerodoc
         '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(24, 30)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(43, 13)
-        Me.Label1.TabIndex = 1
-        Me.Label1.Text = "Idventa"
+        Me.txtnumerodoc.Enabled = False
+        Me.txtnumerodoc.Location = New System.Drawing.Point(111, 164)
+        Me.txtnumerodoc.Name = "txtnumerodoc"
+        Me.txtnumerodoc.ReadOnly = True
+        Me.txtnumerodoc.Size = New System.Drawing.Size(100, 20)
+        Me.txtnumerodoc.TabIndex = 10
         '
-        'Label2
+        'txtnombrecliente
         '
-        Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(28, 61)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(39, 13)
-        Me.Label2.TabIndex = 2
-        Me.Label2.Text = "Cliente"
+        Me.txtnombrecliente.Enabled = False
+        Me.txtnombrecliente.Location = New System.Drawing.Point(153, 61)
+        Me.txtnombrecliente.Name = "txtnombrecliente"
+        Me.txtnombrecliente.ReadOnly = True
+        Me.txtnombrecliente.Size = New System.Drawing.Size(84, 20)
+        Me.txtnombrecliente.TabIndex = 9
         '
-        'Label3
+        'txtdocumento
         '
-        Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(28, 99)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(37, 13)
-        Me.Label3.TabIndex = 3
-        Me.Label3.Text = "Fecha"
+        Me.txtdocumento.Enabled = False
+        Me.txtdocumento.Location = New System.Drawing.Point(111, 128)
+        Me.txtdocumento.Name = "txtdocumento"
+        Me.txtdocumento.ReadOnly = True
+        Me.txtdocumento.Size = New System.Drawing.Size(100, 20)
+        Me.txtdocumento.TabIndex = 8
         '
-        'Label4
+        'txt1
         '
-        Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(6, 131)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(99, 13)
-        Me.Label4.TabIndex = 4
-        Me.Label4.Text = "Tipo de documento"
+        Me.txt1.Enabled = False
+        Me.txt1.Location = New System.Drawing.Point(111, 99)
+        Me.txt1.Name = "txt1"
+        Me.txt1.ReadOnly = True
+        Me.txt1.Size = New System.Drawing.Size(100, 20)
+        Me.txt1.TabIndex = 7
+        '
+        'txtidcliente
+        '
+        Me.txtidcliente.Enabled = False
+        Me.txtidcliente.Location = New System.Drawing.Point(111, 61)
+        Me.txtidcliente.Name = "txtidcliente"
+        Me.txtidcliente.ReadOnly = True
+        Me.txtidcliente.Size = New System.Drawing.Size(36, 20)
+        Me.txtidcliente.TabIndex = 6
+        '
+        'txtidventa
+        '
+        Me.txtidventa.Enabled = False
+        Me.txtidventa.Location = New System.Drawing.Point(111, 27)
+        Me.txtidventa.Name = "txtidventa"
+        Me.txtidventa.ReadOnly = True
+        Me.txtidventa.Size = New System.Drawing.Size(100, 20)
+        Me.txtidventa.TabIndex = 1
         '
         'Label5
         '
@@ -131,47 +149,41 @@ Partial Class detalleVentas
         Me.Label5.TabIndex = 5
         Me.Label5.Text = "Numero de factura"
         '
-        'txtidventa
+        'Label4
         '
-        Me.txtidventa.Location = New System.Drawing.Point(111, 27)
-        Me.txtidventa.Name = "txtidventa"
-        Me.txtidventa.Size = New System.Drawing.Size(100, 20)
-        Me.txtidventa.TabIndex = 1
+        Me.Label4.AutoSize = True
+        Me.Label4.Location = New System.Drawing.Point(6, 131)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(99, 13)
+        Me.Label4.TabIndex = 4
+        Me.Label4.Text = "Tipo de documento"
         '
-        'txtidcliente
+        'Label3
         '
-        Me.txtidcliente.Location = New System.Drawing.Point(111, 61)
-        Me.txtidcliente.Name = "txtidcliente"
-        Me.txtidcliente.Size = New System.Drawing.Size(36, 20)
-        Me.txtidcliente.TabIndex = 6
+        Me.Label3.AutoSize = True
+        Me.Label3.Location = New System.Drawing.Point(28, 99)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(37, 13)
+        Me.Label3.TabIndex = 3
+        Me.Label3.Text = "Fecha"
         '
-        'txt1
+        'Label2
         '
-        Me.txt1.Location = New System.Drawing.Point(111, 99)
-        Me.txt1.Name = "txt1"
-        Me.txt1.Size = New System.Drawing.Size(100, 20)
-        Me.txt1.TabIndex = 7
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(28, 61)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(39, 13)
+        Me.Label2.TabIndex = 2
+        Me.Label2.Text = "Cliente"
         '
-        'txtdocumento
+        'Label1
         '
-        Me.txtdocumento.Location = New System.Drawing.Point(111, 128)
-        Me.txtdocumento.Name = "txtdocumento"
-        Me.txtdocumento.Size = New System.Drawing.Size(100, 20)
-        Me.txtdocumento.TabIndex = 8
-        '
-        'txtnombrecliente
-        '
-        Me.txtnombrecliente.Location = New System.Drawing.Point(153, 61)
-        Me.txtnombrecliente.Name = "txtnombrecliente"
-        Me.txtnombrecliente.Size = New System.Drawing.Size(84, 20)
-        Me.txtnombrecliente.TabIndex = 9
-        '
-        'txtnumerodoc
-        '
-        Me.txtnumerodoc.Location = New System.Drawing.Point(111, 164)
-        Me.txtnumerodoc.Name = "txtnumerodoc"
-        Me.txtnumerodoc.Size = New System.Drawing.Size(100, 20)
-        Me.txtnumerodoc.TabIndex = 10
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(24, 30)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(43, 13)
+        Me.Label1.TabIndex = 1
+        Me.Label1.Text = "Idventa"
         '
         'GroupBox2
         '
@@ -184,6 +196,13 @@ Partial Class detalleVentas
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Seleccion De productos"
         '
+        'txtbuscar
+        '
+        Me.txtbuscar.Location = New System.Drawing.Point(122, 30)
+        Me.txtbuscar.Name = "txtbuscar"
+        Me.txtbuscar.Size = New System.Drawing.Size(100, 20)
+        Me.txtbuscar.TabIndex = 1
+        '
         'DataGridView1
         '
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
@@ -191,13 +210,6 @@ Partial Class detalleVentas
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.Size = New System.Drawing.Size(371, 150)
         Me.DataGridView1.TabIndex = 0
-        '
-        'txtbuscar
-        '
-        Me.txtbuscar.Location = New System.Drawing.Point(122, 30)
-        Me.txtbuscar.Name = "txtbuscar"
-        Me.txtbuscar.Size = New System.Drawing.Size(100, 20)
-        Me.txtbuscar.TabIndex = 1
         '
         'supedido
         '
@@ -223,110 +235,14 @@ Partial Class detalleVentas
         Me.supedido.TabStop = False
         Me.supedido.Text = "Su pedido"
         '
-        'DataGridView2
+        'Label11
         '
-        Me.DataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView2.Location = New System.Drawing.Point(338, 58)
-        Me.DataGridView2.Name = "DataGridView2"
-        Me.DataGridView2.Size = New System.Drawing.Size(523, 164)
-        Me.DataGridView2.TabIndex = 0
-        '
-        'Label6
-        '
-        Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(6, 58)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(37, 13)
-        Me.Label6.TabIndex = 11
-        Me.Label6.Text = "Id S/p"
-        '
-        'txtidproducto
-        '
-        Me.txtidproducto.Location = New System.Drawing.Point(49, 55)
-        Me.txtidproducto.Name = "txtidproducto"
-        Me.txtidproducto.Size = New System.Drawing.Size(36, 20)
-        Me.txtidproducto.TabIndex = 11
-        '
-        'Label7
-        '
-        Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(91, 58)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(65, 13)
-        Me.Label7.TabIndex = 12
-        Me.Label7.Text = "Nombre S/p"
-        '
-        'txtnombreproducto
-        '
-        Me.txtnombreproducto.Location = New System.Drawing.Point(158, 55)
-        Me.txtnombreproducto.Name = "txtnombreproducto"
-        Me.txtnombreproducto.Size = New System.Drawing.Size(133, 20)
-        Me.txtnombreproducto.TabIndex = 11
-        '
-        'Label8
-        '
-        Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(6, 100)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(37, 13)
-        Me.Label8.TabIndex = 13
-        Me.Label8.Text = "Precio"
-        '
-        'txtprecio
-        '
-        Me.txtprecio.Location = New System.Drawing.Point(49, 97)
-        Me.txtprecio.Name = "txtprecio"
-        Me.txtprecio.Size = New System.Drawing.Size(84, 20)
-        Me.txtprecio.TabIndex = 11
-        '
-        'Label9
-        '
-        Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(139, 100)
-        Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(35, 13)
-        Me.Label9.TabIndex = 14
-        Me.Label9.Text = "Stock"
-        '
-        'txtsctok
-        '
-        Me.txtsctok.Location = New System.Drawing.Point(180, 97)
-        Me.txtsctok.Name = "txtsctok"
-        Me.txtsctok.Size = New System.Drawing.Size(84, 20)
-        Me.txtsctok.TabIndex = 15
-        '
-        'Label10
-        '
-        Me.Label10.AutoSize = True
-        Me.Label10.Location = New System.Drawing.Point(24, 142)
-        Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(90, 13)
-        Me.Label10.TabIndex = 16
-        Me.Label10.Text = "Cantidad a Llevar"
-        '
-        'txtcantllevar
-        '
-        Me.txtcantllevar.Location = New System.Drawing.Point(120, 142)
-        Me.txtcantllevar.Name = "txtcantllevar"
-        Me.txtcantllevar.Size = New System.Drawing.Size(84, 20)
-        Me.txtcantllevar.TabIndex = 17
-        '
-        'txttotal
-        '
-        Me.txttotal.Location = New System.Drawing.Point(687, 240)
-        Me.txttotal.Name = "txttotal"
-        Me.txttotal.Size = New System.Drawing.Size(84, 20)
-        Me.txttotal.TabIndex = 18
-        '
-        'Button1
-        '
-        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button1.Image = CType(resources.GetObject("Button1.Image"), System.Drawing.Image)
-        Me.Button1.Location = New System.Drawing.Point(39, 181)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(75, 59)
-        Me.Button1.TabIndex = 19
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.Label11.AutoSize = True
+        Me.Label11.Location = New System.Drawing.Point(632, 243)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(49, 13)
+        Me.Label11.TabIndex = 21
+        Me.Label11.Text = "Sub total"
         '
         'Button3
         '
@@ -338,14 +254,114 @@ Partial Class detalleVentas
         Me.Button3.TabIndex = 20
         Me.Button3.UseVisualStyleBackColor = True
         '
-        'Label11
+        'Button1
         '
-        Me.Label11.AutoSize = True
-        Me.Label11.Location = New System.Drawing.Point(632, 243)
-        Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(49, 13)
-        Me.Label11.TabIndex = 21
-        Me.Label11.Text = "Sub total"
+        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button1.Image = CType(resources.GetObject("Button1.Image"), System.Drawing.Image)
+        Me.Button1.Location = New System.Drawing.Point(39, 181)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(75, 59)
+        Me.Button1.TabIndex = 19
+        Me.Button1.UseVisualStyleBackColor = True
+        '
+        'txttotal
+        '
+        Me.txttotal.Location = New System.Drawing.Point(687, 240)
+        Me.txttotal.Name = "txttotal"
+        Me.txttotal.Size = New System.Drawing.Size(84, 20)
+        Me.txttotal.TabIndex = 18
+        '
+        'txtcantllevar
+        '
+        Me.txtcantllevar.Location = New System.Drawing.Point(120, 142)
+        Me.txtcantllevar.Name = "txtcantllevar"
+        Me.txtcantllevar.Size = New System.Drawing.Size(84, 20)
+        Me.txtcantllevar.TabIndex = 17
+        '
+        'Label10
+        '
+        Me.Label10.AutoSize = True
+        Me.Label10.Location = New System.Drawing.Point(24, 142)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(90, 13)
+        Me.Label10.TabIndex = 16
+        Me.Label10.Text = "Cantidad a Llevar"
+        '
+        'txtsctok
+        '
+        Me.txtsctok.Enabled = False
+        Me.txtsctok.Location = New System.Drawing.Point(180, 97)
+        Me.txtsctok.Name = "txtsctok"
+        Me.txtsctok.Size = New System.Drawing.Size(84, 20)
+        Me.txtsctok.TabIndex = 15
+        '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.Location = New System.Drawing.Point(139, 100)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(35, 13)
+        Me.Label9.TabIndex = 14
+        Me.Label9.Text = "Stock"
+        '
+        'txtprecio
+        '
+        Me.txtprecio.Enabled = False
+        Me.txtprecio.Location = New System.Drawing.Point(49, 97)
+        Me.txtprecio.Name = "txtprecio"
+        Me.txtprecio.Size = New System.Drawing.Size(84, 20)
+        Me.txtprecio.TabIndex = 11
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Location = New System.Drawing.Point(6, 100)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(37, 13)
+        Me.Label8.TabIndex = 13
+        Me.Label8.Text = "Precio"
+        '
+        'txtnombreproducto
+        '
+        Me.txtnombreproducto.Enabled = False
+        Me.txtnombreproducto.Location = New System.Drawing.Point(158, 55)
+        Me.txtnombreproducto.Name = "txtnombreproducto"
+        Me.txtnombreproducto.Size = New System.Drawing.Size(133, 20)
+        Me.txtnombreproducto.TabIndex = 11
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Location = New System.Drawing.Point(91, 58)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(65, 13)
+        Me.Label7.TabIndex = 12
+        Me.Label7.Text = "Nombre S/p"
+        '
+        'txtidproducto
+        '
+        Me.txtidproducto.Enabled = False
+        Me.txtidproducto.Location = New System.Drawing.Point(49, 55)
+        Me.txtidproducto.Name = "txtidproducto"
+        Me.txtidproducto.Size = New System.Drawing.Size(36, 20)
+        Me.txtidproducto.TabIndex = 11
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Location = New System.Drawing.Point(6, 58)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(37, 13)
+        Me.Label6.TabIndex = 11
+        Me.Label6.Text = "Id S/p"
+        '
+        'DataGridView2
+        '
+        Me.DataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DataGridView2.Location = New System.Drawing.Point(338, 58)
+        Me.DataGridView2.Name = "DataGridView2"
+        Me.DataGridView2.Size = New System.Drawing.Size(488, 164)
+        Me.DataGridView2.TabIndex = 0
         '
         'GroupBox3
         '
@@ -358,20 +374,20 @@ Partial Class detalleVentas
         Me.GroupBox3.TabStop = False
         Me.GroupBox3.Text = "Seleccion de Servicios"
         '
-        'DataGridView3
-        '
-        Me.DataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView3.Location = New System.Drawing.Point(6, 49)
-        Me.DataGridView3.Name = "DataGridView3"
-        Me.DataGridView3.Size = New System.Drawing.Size(415, 160)
-        Me.DataGridView3.TabIndex = 0
-        '
         'txtlookservice
         '
         Me.txtlookservice.Location = New System.Drawing.Point(93, 23)
         Me.txtlookservice.Name = "txtlookservice"
         Me.txtlookservice.Size = New System.Drawing.Size(100, 20)
         Me.txtlookservice.TabIndex = 2
+        '
+        'DataGridView3
+        '
+        Me.DataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DataGridView3.Location = New System.Drawing.Point(19, 49)
+        Me.DataGridView3.Name = "DataGridView3"
+        Me.DataGridView3.Size = New System.Drawing.Size(402, 150)
+        Me.DataGridView3.TabIndex = 0
         '
         'detalleVentas
         '

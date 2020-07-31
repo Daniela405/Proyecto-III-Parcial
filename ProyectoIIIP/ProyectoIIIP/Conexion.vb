@@ -7,7 +7,7 @@ Public Class Conexion
 
 
     'Public conexion As SqlConnection = New SqlConnection("Data Source=DESKTOP-LGDBE5Q\SQLEXPRESS;Initial Catalog=proyecto;Integrated Security=True")
-    Public conexion As SqlConnection = New SqlConnection("Data Source=DESKTOP-BFND73I;Initial Catalog=proyecto;Integrated Security=True") 'Eduardo
+    Public conexion As SqlConnection = New SqlConnection("Data Source=DESKTOP-LGDBE5Q\SQLEXPRESS;Initial Catalog=proyecto;Integrated Security=True") 'Eduardo
 
 
     Public ds As DataSet = New DataSet()
@@ -835,12 +835,101 @@ Public Class Conexion
         End Try
     End Function
 
-    Function retornarventa()
+    Function retornarventa(ByVal contador As Integer)
         Try
 
             Dim valorARetornar As String
             Dim cmd As SqlCommand = conexion.CreateCommand()
-            cmd.CommandText = ("SELECT MAX(id) FROM productos")
+
+            Select Case contador
+                Case 0
+                    cmd.CommandText = ("SELECT id FROM venta where id = " & ventas.lavariable)
+
+                    conexion.Open()
+
+                    Dim value As Object = cmd.ExecuteScalar()
+
+                    valorARetornar = value
+                    conexion.Close()
+
+                    Return valorARetornar
+
+                Case 1
+                    cmd.CommandText = ("SELECT idcliente FROM venta where id = " & ventas.lavariable)
+
+                    conexion.Open()
+
+                    Dim value As Object = cmd.ExecuteScalar()
+
+                    valorARetornar = value
+                    conexion.Close()
+
+                    Return valorARetornar
+                Case 2
+                    cmd.CommandText = ("SELECT concat(nombre,' ', apellido) FROM venta inner join cliente on venta.idcliente=cliente.id and venta.id = " & ventas.lavariable)
+
+                    conexion.Open()
+
+                    Dim value As Object = cmd.ExecuteScalar()
+
+                    valorARetornar = value
+                    conexion.Close()
+
+                    Return valorARetornar
+                Case 3
+                    cmd.CommandText = ("SELECT  fecha FROM venta where id = " & ventas.lavariable)
+
+                    conexion.Open()
+
+                    Dim value As Object = cmd.ExecuteScalar()
+
+                    valorARetornar = value
+                    conexion.Close()
+
+                    Return valorARetornar
+                Case 4
+                    cmd.CommandText = ("SELECT formapago FROM venta where id = " & ventas.lavariable)
+
+                    conexion.Open()
+
+                    Dim value As Object = cmd.ExecuteScalar()
+
+                    valorARetornar = value
+                    conexion.Close()
+
+                    Return valorARetornar
+
+                Case 5
+
+                    cmd.CommandText = ("SELECT numerofactura FROM venta where id = " & ventas.lavariable)
+
+                    conexion.Open()
+
+                    Dim value As Object = cmd.ExecuteScalar()
+
+                    valorARetornar = value
+                    conexion.Close()
+
+                    Return valorARetornar
+            End Select
+
+
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            conexion.Close()
+        Finally
+            conexion.Close()
+        End Try
+
+    End Function
+
+    Function retornarIdventa()
+        Try
+
+            Dim valorARetornar As String
+            Dim cmd As SqlCommand = conexion.CreateCommand()
+            cmd.CommandText = ("SELECT MAX(id) FROM venta")
 
             conexion.Open()
 
@@ -859,5 +948,202 @@ Public Class Conexion
         End Try
 
     End Function
+    Public Function agregarVenta(id As Integer, idcliente As Integer, idempleado As Integer,
+                              fecha As String, formapago As String, numerofactura As Integer)
+        Try
+            conexion.Open()
+            cmb = New SqlCommand("insertarVentas", conexion)
+            cmb.CommandType = CommandType.StoredProcedure
+            cmb.Parameters.AddWithValue("@id", id)
+            cmb.Parameters.AddWithValue("@idcliente", idcliente)
+            cmb.Parameters.AddWithValue("@idempleado", idempleado)
+            cmb.Parameters.AddWithValue("@fecha", fecha)
+            cmb.Parameters.AddWithValue("@formapago", formapago)
+            cmb.Parameters.AddWithValue("@numerofactura", numerofactura)
 
+            If cmb.ExecuteNonQuery Then
+                Return True
+            Else
+                Return False
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        Finally
+            conexion.Close()
+        End Try
+        conexion.Close()
+    End Function
+
+    Function retornarIddetalleproducto()
+        Try
+
+            Dim valorARetornar As String
+            Dim cmd As SqlCommand = conexion.CreateCommand()
+            cmd.CommandText = ("SELECT MAX(iddetalleventa) FROM detalleventa")
+
+            conexion.Open()
+
+            Dim value As Object = cmd.ExecuteScalar()
+
+            valorARetornar = value
+            conexion.Close()
+
+            Return valorARetornar
+
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            conexion.Close()
+
+        End Try
+        conexion.Close()
+    End Function
+    Public Function agregardetalle(iddetalleventa As Integer, idventa As Integer, nombrearticulo As String,
+                           cantidad As Integer, precio As Decimal)
+        Try
+            conexion.Open()
+            cmb = New SqlCommand("detVentas", conexion)
+            cmb.CommandType = CommandType.StoredProcedure
+            cmb.Parameters.AddWithValue("@iddetalleventa ", iddetalleventa)
+            cmb.Parameters.AddWithValue("@idventa ", idventa)
+            cmb.Parameters.AddWithValue("@nombrearticulo", nombrearticulo)
+            cmb.Parameters.AddWithValue("@cantidad ", cantidad)
+            cmb.Parameters.AddWithValue("@precio", precio)
+
+
+            If cmb.ExecuteNonQuery Then
+                Return True
+            Else
+                Return False
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            conexion.Close()
+        Finally
+            conexion.Close()
+        End Try
+        conexion.Close()
+    End Function
+    Public Function modificardetalleProducto(id As Integer, cantidad As Integer)
+        Try
+            conexion.Open()
+            cmb = New SqlCommand("actualiardp", conexion)
+            cmb.CommandType = CommandType.StoredProcedure
+            cmb.Parameters.AddWithValue("@id", id)
+            cmb.Parameters.AddWithValue("@cantidad", cantidad)
+
+            If cmb.ExecuteNonQuery Then
+                Return True
+            Else
+                Return False
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            Return False
+        Finally
+            conexion.Close()
+
+        End Try
+    End Function
+
+    Public Function selectdeproductos(idventa As Integer)
+
+        Try
+            conexion.Open()
+            cmb = New SqlCommand("llenargrid", conexion)
+            cmb.CommandType = CommandType.StoredProcedure
+            cmb.Parameters.AddWithValue("@idventa", idventa)
+
+            If cmb.ExecuteNonQuery Then
+                Dim dt As New DataTable
+                Dim da As New SqlDataAdapter(cmb)
+                da.Fill(dt)
+                Return dt
+                conexion.Close()
+            Else
+                Return Nothing
+                conexion.Close()
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            Return Nothing
+        Finally
+            conexion.Close()
+        End Try
+    End Function
+
+
+    Public Function BuscarDetalleProducto(nombre As Integer)
+
+        Try
+            conexion.Open()
+            cmb = New SqlCommand("buscardetallrProductos", conexion)
+            cmb.CommandType = CommandType.StoredProcedure
+            cmb.Parameters.AddWithValue("@nombre", nombre)
+
+            If cmb.ExecuteNonQuery Then
+                Dim dt As New DataTable
+                Dim da As New SqlDataAdapter(cmb)
+                da.Fill(dt)
+                Return dt
+                conexion.Close()
+            Else
+                Return Nothing
+                conexion.Close()
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            Return Nothing
+        Finally
+            conexion.Close()
+        End Try
+    End Function
+
+    Public Function buscarservicedet(nombre As Integer)
+
+        Try
+            conexion.Open()
+            cmb = New SqlCommand("buscarServicio", conexion)
+            cmb.CommandType = CommandType.StoredProcedure
+            cmb.Parameters.AddWithValue("@nombre", nombre)
+
+            If cmb.ExecuteNonQuery Then
+                Dim dt As New DataTable
+                Dim da As New SqlDataAdapter(cmb)
+                da.Fill(dt)
+                Return dt
+                conexion.Close()
+            Else
+                Return Nothing
+                conexion.Close()
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            Return Nothing
+        Finally
+            conexion.Close()
+        End Try
+        conexion.Close()
+    End Function
+
+    Public Function EliminardetalleProducto(id As Integer)
+        Try
+            conexion.Open()
+            cmb = New SqlCommand("eliminardetalleproducto", conexion)
+            cmb.CommandType = CommandType.StoredProcedure
+            cmb.Parameters.AddWithValue("@iddetalleventa", id)
+
+            If cmb.ExecuteNonQuery <> 0 Then
+                Return True
+            Else
+                Return False
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            Return False
+        Finally
+            conexion.Close()
+        End Try
+        conexion.Close()
+    End Function
 End Class
