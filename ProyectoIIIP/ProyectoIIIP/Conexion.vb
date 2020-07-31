@@ -1073,7 +1073,7 @@ Public Class Conexion
     End Function
 
 
-    Public Function BuscarDetalleProducto(nombre As Integer)
+    Public Function BuscarDetalleProducto(nombre As String)
 
         Try
             conexion.Open()
@@ -1099,7 +1099,7 @@ Public Class Conexion
         End Try
     End Function
 
-    Public Function buscarservicedet(nombre As Integer)
+    Public Function buscarservicedet(nombre As String)
 
         Try
             conexion.Open()

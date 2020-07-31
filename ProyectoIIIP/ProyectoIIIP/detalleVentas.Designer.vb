@@ -57,6 +57,8 @@ Partial Class detalleVentas
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
         Me.txtlookservice = New System.Windows.Forms.TextBox()
         Me.DataGridView3 = New System.Windows.Forms.DataGridView()
+        Me.Label12 = New System.Windows.Forms.Label()
+        Me.Label13 = New System.Windows.Forms.Label()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -187,6 +189,7 @@ Partial Class detalleVentas
         '
         'GroupBox2
         '
+        Me.GroupBox2.Controls.Add(Me.Label12)
         Me.GroupBox2.Controls.Add(Me.txtbuscar)
         Me.GroupBox2.Controls.Add(Me.DataGridView1)
         Me.GroupBox2.Location = New System.Drawing.Point(304, 12)
@@ -198,9 +201,9 @@ Partial Class detalleVentas
         '
         'txtbuscar
         '
-        Me.txtbuscar.Location = New System.Drawing.Point(122, 30)
+        Me.txtbuscar.Location = New System.Drawing.Point(142, 30)
         Me.txtbuscar.Name = "txtbuscar"
-        Me.txtbuscar.Size = New System.Drawing.Size(100, 20)
+        Me.txtbuscar.Size = New System.Drawing.Size(106, 20)
         Me.txtbuscar.TabIndex = 1
         '
         'DataGridView1
@@ -365,18 +368,19 @@ Partial Class detalleVentas
         '
         'GroupBox3
         '
+        Me.GroupBox3.Controls.Add(Me.Label13)
         Me.GroupBox3.Controls.Add(Me.txtlookservice)
         Me.GroupBox3.Controls.Add(Me.DataGridView3)
-        Me.GroupBox3.Location = New System.Drawing.Point(723, 24)
+        Me.GroupBox3.Location = New System.Drawing.Point(723, 21)
         Me.GroupBox3.Name = "GroupBox3"
-        Me.GroupBox3.Size = New System.Drawing.Size(427, 215)
+        Me.GroupBox3.Size = New System.Drawing.Size(427, 218)
         Me.GroupBox3.TabIndex = 3
         Me.GroupBox3.TabStop = False
         Me.GroupBox3.Text = "Seleccion de Servicios"
         '
         'txtlookservice
         '
-        Me.txtlookservice.Location = New System.Drawing.Point(93, 23)
+        Me.txtlookservice.Location = New System.Drawing.Point(151, 18)
         Me.txtlookservice.Name = "txtlookservice"
         Me.txtlookservice.Size = New System.Drawing.Size(100, 20)
         Me.txtlookservice.TabIndex = 2
@@ -388,6 +392,24 @@ Partial Class detalleVentas
         Me.DataGridView3.Name = "DataGridView3"
         Me.DataGridView3.Size = New System.Drawing.Size(402, 150)
         Me.DataGridView3.TabIndex = 0
+        '
+        'Label12
+        '
+        Me.Label12.AutoSize = True
+        Me.Label12.Location = New System.Drawing.Point(29, 34)
+        Me.Label12.Name = "Label12"
+        Me.Label12.Size = New System.Drawing.Size(113, 13)
+        Me.Label12.TabIndex = 11
+        Me.Label12.Text = "Buscar por Id/nombre "
+        '
+        'Label13
+        '
+        Me.Label13.AutoSize = True
+        Me.Label13.Location = New System.Drawing.Point(20, 21)
+        Me.Label13.Name = "Label13"
+        Me.Label13.Size = New System.Drawing.Size(125, 13)
+        Me.Label13.TabIndex = 12
+        Me.Label13.Text = "Buscar nombre servicios "
         '
         'detalleVentas
         '
@@ -449,4 +471,6 @@ Partial Class detalleVentas
     Friend WithEvents GroupBox3 As GroupBox
     Friend WithEvents DataGridView3 As DataGridView
     Friend WithEvents txtlookservice As TextBox
+    Friend WithEvents Label12 As Label
+    Friend WithEvents Label13 As Label
 End Class
