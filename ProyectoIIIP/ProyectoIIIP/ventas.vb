@@ -13,12 +13,13 @@ Public Class ventas
     Dim leer As SqlDataAdapter
     Dim idanterior As Integer
     Public lavariable As Integer
+    Public DataT As DataTable
     Private Sub btnCerrar_Click(sender As Object, e As EventArgs) Handles btnCerrar.Click
         Me.Close()
     End Sub
 
 
-    Private Sub cmbcliente_Validating(sender As Object, e As CancelEventArgs) Handles cmbcliente.Validating
+    Private Sub cmbcliente_Validating(sender As Object, e As CancelEventArgs)
         If DirectCast(sender, ComboBox).Text.Length > 0 Then
             Me.ErrorValidacion.SetError(sender, "")
         Else
@@ -88,8 +89,8 @@ Public Class ventas
         End If
     End Sub
 
-    Private Sub cmbcliente_MouseHover(sender As Object, e As EventArgs) Handles cmbcliente.MouseHover
-        tmensaje.SetToolTip(cmbcliente, "Seleccione el cliente")
+    Private Sub cmbcliente_MouseHover(sender As Object, e As EventArgs)
+        tmensaje.SetToolTip(txtidcliente, "Seleccione el cliente")
         tmensaje.ToolTipTitle = "Cliente"
         tmensaje.ToolTipIcon = ToolTipIcon.Info
     End Sub
@@ -142,6 +143,12 @@ Public Class ventas
         DataGridView1.DataSource = conexion.ds.Tables("venta")
 
     End Sub
+    Public Sub mostrarcliente()
+        conexion.consulta("select * from cliente", "cliente")
+
+        DataGridView2.DataSource = conexion.ds.Tables("cliente")
+
+    End Sub
 
     Function idventa()
 
@@ -158,6 +165,7 @@ Public Class ventas
     Private Sub ventas_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         conexion.conectar()
         mostrardatos()
+        mostrarcliente()
         txtnumeroVenta.Text = idventa()
         lavariable = idventa()
         TextBox2.Text = idventa()
@@ -172,14 +180,6 @@ Public Class ventas
         cmbempleado.DisplayMember = "Nombre"
         cmbempleado.ValueMember = "Id"
 
-        strcomando = "Select * from cliente"
-        adapter = New System.Data.SqlClient.SqlDataAdapter(strcomando, conexion.conexion)
-        data = New DataSet
-        adapter.Fill(data)
-        cmbcliente.DataSource = data.Tables(0)
-        cmbcliente.DisplayMember = "nombre"
-        cmbcliente.ValueMember = "id"
-
 
 
 
@@ -189,8 +189,8 @@ Public Class ventas
     Private Sub insertarVenta()
         Dim id As Integer, idcliente As Integer, idempleado As Integer, fecha As String, formapago As String, numerofactura As Integer
         id = idventa()
-        idcliente = cmbcliente.SelectedIndex + 1
-        idempleado = cmbempleado.SelectedIndex + 1
+        idcliente = txtidcliente.Text
+        idempleado = txtidcliente.Text
         fecha = MaskedTextBox1.Text
         formapago = ComboBox1.Text
         numerofactura = TextBox2.Text
@@ -215,5 +215,67 @@ Public Class ventas
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         insertarVenta()
+    End Sub
+
+    Private Sub Buscarcliente()
+        Dim nombrecliente As String
+        nombrecliente = txtnombrecliente.Text
+
+        Try
+
+
+            DataT = conexion.Buscarclienteenventas(nombrecliente)
+
+            If DataT.Rows.Count <> 0 Then
+
+                DataGridView2.DataSource = DataT
+
+            Else
+                MessageBox.Show("Cliente no econtrado", "Buscando", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                DataGridView2.DataSource = Nothing
+                txtbuscarcliente.Text = " "
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+    End Sub
+
+    Private Sub DataGridView2_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView2.CellClick
+
+        Dim dgv As DataGridViewRow = DataGridView2.Rows(e.RowIndex)
+
+
+        txtidcliente.Text = dgv.Cells(0).Value.ToString()
+        txtnombrecliente.Text = dgv.Cells(1).Value.ToString()
+        txtapellidocliente.Text = dgv.Cells(2).Value.ToString()
+    End Sub
+
+    Private Sub txtbuscarcliente_TextChanged(sender As Object, e As EventArgs) Handles txtbuscarcliente.TextChanged
+        Buscarcliente()
+    End Sub
+
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+        insertarclientemas()
+    End Sub
+
+    Private Sub insertarclientemas()
+        Dim id As Integer, nombrecliente As String, apellidocliente As String
+        id = txtidcliente.Text
+        nombrecliente = txtnombrecliente.Text
+        apellidocliente = txtapellidocliente.Text
+
+        Try
+            If conexion.agregarclientemas(id, nombrecliente, apellidocliente) Then
+                MessageBox.Show("Guardado", "Correcto", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                mostrarcliente()
+
+            Else
+                MessageBox.Show("Error al guardar", "Incorrecto", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                conexion.conexion.Close()
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+
     End Sub
 End Class

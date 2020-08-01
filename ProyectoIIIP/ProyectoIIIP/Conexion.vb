@@ -1146,4 +1146,53 @@ Public Class Conexion
         End Try
         conexion.Close()
     End Function
+
+    Public Function Buscarclienteenventas(nombre As String)
+
+        Try
+            conexion.Open()
+            cmb = New SqlCommand("buscarCliente", conexion)
+            cmb.CommandType = CommandType.StoredProcedure
+            cmb.Parameters.AddWithValue("@nombre", nombre)
+
+            If cmb.ExecuteNonQuery Then
+                Dim dt As New DataTable
+                Dim da As New SqlDataAdapter(cmb)
+                da.Fill(dt)
+                Return dt
+                conexion.Close()
+            Else
+                Return Nothing
+                conexion.Close()
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            Return Nothing
+        Finally
+            conexion.Close()
+        End Try
+    End Function
+
+    Public Function agregarclientemas(id As Integer, nombrecliente As String, apellidocliente As String)
+        Try
+            conexion.Open()
+            cmb = New SqlCommand("Insertarcliente", conexion)
+            cmb.CommandType = CommandType.StoredProcedure
+            cmb.Parameters.AddWithValue("@id", id)
+            cmb.Parameters.AddWithValue("@nombre", nombrecliente)
+            cmb.Parameters.AddWithValue("@apellido", apellidocliente)
+
+            If cmb.ExecuteNonQuery Then
+                Return True
+            Else
+                Return False
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        Finally
+            conexion.Close()
+
+        End Try
+
+    End Function
 End Class
