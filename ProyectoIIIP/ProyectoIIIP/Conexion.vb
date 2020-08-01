@@ -7,7 +7,10 @@ Public Class Conexion
 
 
     'Public conexion As SqlConnection = New SqlConnection("Data Source=DESKTOP-LGDBE5Q\SQLEXPRESS;Initial Catalog=proyecto;Integrated Security=True")
-    Public conexion As SqlConnection = New SqlConnection("Data Source=DESKTOP-LGDBE5Q\SQLEXPRESS;Initial Catalog=proyecto;Integrated Security=True") 'Eduardo
+
+    ' Public conexion As SqlConnection = New SqlConnection("Data Source=DESKTOP-LGDBE5Q\SQLEXPRESS;Initial Catalog=proyecto;Integrated Security=True") 'Eduardo
+
+    Public conexion As SqlConnection = New SqlConnection("Data Source=MOY-ALIENWARE;Initial Catalog=proyecto;Integrated Security=True") 'Emerson
 
 
     Public ds As DataSet = New DataSet()
@@ -1195,4 +1198,128 @@ Public Class Conexion
         End Try
 
     End Function
+
+
+    ''------------------------CLIENTES------------------------------
+    Public Function insertarCliente(id As Integer, nombre As String, apellido As String)
+        Try
+            conexion.Open()
+            cmb = New SqlCommand("Insertarcliente", conexion)
+            cmb.CommandType = CommandType.StoredProcedure
+            cmb.Parameters.AddWithValue("@id", id)
+            cmb.Parameters.AddWithValue("@nombre", nombre)
+            cmb.Parameters.AddWithValue("@apellido", apellido)
+
+            If cmb.ExecuteNonQuery Then
+                Return True
+            Else
+                Return False
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        Finally
+            conexion.Close()
+
+        End Try
+    End Function
+
+    Public Function eliminarCliente(id As Integer)
+        Try
+            conexion.Open()
+            cmb = New SqlCommand("eliminarCliente", conexion)
+            cmb.CommandType = CommandType.StoredProcedure
+            cmb.Parameters.AddWithValue("@id", id)
+
+
+            If cmb.ExecuteNonQuery <> 0 Then
+                Return True
+            Else
+                Return False
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            Return False
+        Finally
+            conexion.Close()
+        End Try
+    End Function
+
+    Public Function consultarCliente()
+        Try
+            conexion.Open()
+
+            cmb = New SqlCommand("consultarCliente", conexion)
+
+            cmb.CommandType = CommandType.StoredProcedure
+
+            If cmb.ExecuteNonQuery Then
+                Dim dt As New DataTable
+                Dim da As New SqlDataAdapter(cmb)
+                da.Fill(dt)
+                Return dt
+                conexion.Close()
+            Else
+                Return Nothing
+                conexion.Close()
+            End If
+            conexion.Close()
+        Catch ex As Exception
+            MsgBox(ex.Message)
+
+            Return Nothing
+        Finally
+            conexion.Close()
+        End Try
+    End Function
+
+    Public Function modificarCliente(id As Integer, nombre As String, apellido As String)
+        Try
+            conexion.Open()
+            cmb = New SqlCommand("actualizarCliente", conexion)
+            cmb.CommandType = CommandType.StoredProcedure
+            cmb.Parameters.AddWithValue("@id", id)
+
+            cmb.Parameters.AddWithValue("@nombre", nombre)
+            cmb.Parameters.AddWithValue("@apellido", apellido)
+
+            If cmb.ExecuteNonQuery Then
+                Return True
+            Else
+                Return False
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            Return False
+        Finally
+            conexion.Close()
+        End Try
+    End Function
+
+    Public Function buscarCliente(nombre As String)
+
+        Try
+            conexion.Open()
+            cmb = New SqlCommand("buscarCliente", conexion)
+            cmb.CommandType = CommandType.StoredProcedure
+            cmb.Parameters.AddWithValue("@nombre", nombre)
+
+            If cmb.ExecuteNonQuery Then
+                Dim dt As New DataTable
+                Dim da As New SqlDataAdapter(cmb)
+                da.Fill(dt)
+                Return dt
+                conexion.Close()
+            Else
+                Return Nothing
+                conexion.Close()
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            Return Nothing
+        Finally
+            conexion.Close()
+        End Try
+    End Function
+    ''------------------FIN CLIENTES---------------------------------
+
 End Class

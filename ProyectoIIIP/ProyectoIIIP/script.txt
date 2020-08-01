@@ -241,6 +241,10 @@ end
 execute buscarEmpleado 'j'
 ---------------------------------------------------------------------------------------------------------------
 
+
+
+------------------------------------------------------CLIENTE---------------------------------------------------------
+
 create table cliente(
 id int primary key not null, 
 nombre varchar(25) not null,
@@ -260,14 +264,21 @@ create procedure Insertarcliente (
 
 AS
 BEGIN
-insert into cliente (id,nombre,apellido)values
+if exists (select id from cliente where id = @id)
+		raiserror('Ya existe un registro, porfavor verifique los datos',16,1)
+	
+	else
+		insert into cliente (id,nombre,apellido)values
 (@id,@nombre,@apellido);
+
 END
 
-exec Insertarcliente 1,'Mauricio', 'Negro'
-exec Insertarcliente 2,'marcela', 'Ramirez'
-exec Insertarcliente 3,'Wanda', 'Nara'
+
+
+exec Insertarcliente 1,'Mauricio', 'Guevara'
 select * from cliente
+
+
 
 ---procedimiento para actualizar cliente------
 create procedure actualizarCliente (
@@ -282,8 +293,10 @@ update cliente
 set nombre  = @nombre, apellido= @apellido
 where id = @id
 end 
+
 exec actualizarCliente 1,'Mauricio', 'Hernandez'
 select  * from cliente
+
 
 
 ----procedimiento eliminar cliente----
@@ -293,26 +306,33 @@ BEGIN
 delete from cliente where id = @id
 END
 
+
 exec eliminarCliente 1
 select * from cliente
 
+
+
 ----crear procedimiento consutar cliente
 
-create procedure consultarCliente (@id as int)
+drop proc consultarCliente
+
+create procedure consultarCliente 
 AS 
 BEGIN
-select id, nombre, apellido from  cliente
+select id as 'Codigo', nombre as 'Nombre', apellido as 'Apellido' from  cliente
 
-where id = @id
+
 END
 
 exec consultarCliente 1
 
 
-
-
 select * from cliente
+
+
+
 --procediemiento busqueda de cliente
+
 create procedure buscarCliente
 @nombre as varchar(50)
 as begin
@@ -321,7 +341,13 @@ from cliente
 where nombre like '%' +@nombre+ '%'
 
 end 
+
+
 execute buscarCliente 'm'
+
+
+--+++++++++++++++++++++++++ FIN CLINTES++++++++++++++++++++++++++++++++++
+
 
 
 

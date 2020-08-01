@@ -33,7 +33,7 @@ Partial Class Cliente
         Me.txtnombre = New System.Windows.Forms.TextBox()
         Me.txtcodigo = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.dataclientes = New System.Windows.Forms.DataGridView()
         Me.tmensaje = New System.Windows.Forms.ToolTip(Me.components)
         Me.ErrorValidacion = New System.Windows.Forms.ErrorProvider(Me.components)
         Me.btnCerrar = New System.Windows.Forms.Button()
@@ -44,7 +44,7 @@ Partial Class Cliente
         Me.btnGuardar = New System.Windows.Forms.Button()
         Me.GroupBox1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dataclientes, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ErrorValidacion, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -149,16 +149,16 @@ Partial Class Cliente
         Me.Label1.Size = New System.Drawing.Size(0, 13)
         Me.Label1.TabIndex = 0
         '
-        'DataGridView1
+        'dataclientes
         '
-        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Location = New System.Drawing.Point(266, 10)
-        Me.DataGridView1.Margin = New System.Windows.Forms.Padding(2, 1, 2, 1)
-        Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.RowHeadersWidth = 62
-        Me.DataGridView1.RowTemplate.Height = 28
-        Me.DataGridView1.Size = New System.Drawing.Size(471, 339)
-        Me.DataGridView1.TabIndex = 5
+        Me.dataclientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dataclientes.Location = New System.Drawing.Point(266, 10)
+        Me.dataclientes.Margin = New System.Windows.Forms.Padding(2, 1, 2, 1)
+        Me.dataclientes.Name = "dataclientes"
+        Me.dataclientes.RowHeadersWidth = 62
+        Me.dataclientes.RowTemplate.Height = 28
+        Me.dataclientes.Size = New System.Drawing.Size(471, 339)
+        Me.dataclientes.TabIndex = 5
         '
         'ErrorValidacion
         '
@@ -269,7 +269,7 @@ Partial Class Cliente
         Me.Controls.Add(Me.btnBuscar)
         Me.Controls.Add(Me.btnModificar)
         Me.Controls.Add(Me.btnGuardar)
-        Me.Controls.Add(Me.DataGridView1)
+        Me.Controls.Add(Me.dataclientes)
         Me.Controls.Add(Me.GroupBox1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Margin = New System.Windows.Forms.Padding(2, 1, 2, 1)
@@ -278,7 +278,7 @@ Partial Class Cliente
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dataclientes, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ErrorValidacion, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
@@ -289,7 +289,7 @@ Partial Class Cliente
     Friend WithEvents Label1 As Label
     Friend WithEvents txtapellido As TextBox
     Friend WithEvents txtnombre As TextBox
-    Friend WithEvents DataGridView1 As DataGridView
+    Friend WithEvents dataclientes As DataGridView
     Friend WithEvents tmensaje As ToolTip
     Friend WithEvents ErrorValidacion As ErrorProvider
     Friend WithEvents btnCerrar As Button
