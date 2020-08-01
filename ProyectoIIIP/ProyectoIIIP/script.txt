@@ -119,10 +119,7 @@ execute buscarUser 'mm'
 select * from usuario
 
 
-<<<<<<< HEAD
-=======
---------------------------------------------------------------------------
->>>>>>> 82cff1b54790e387c5c72a151739c599dcc8f406
+
 create table empleado(
 Id int primary key not null, 
 Identidad varchar(15) not null,
@@ -268,6 +265,8 @@ insert into cliente (id,nombre,apellido)values
 END
 
 exec Insertarcliente 1,'Mauricio', 'Negro'
+exec Insertarcliente 2,'marcela', 'Ramirez'
+exec Insertarcliente 3,'Wanda', 'Nara'
 select * from cliente
 
 ---procedimiento para actualizar cliente------
@@ -323,58 +322,68 @@ where nombre like '%' +@nombre+ '%'
 
 end 
 execute buscarCliente 'm'
-create table producto(
+
+
+
+create table productos(
 id int primary key not null, 
+codigobarra varchar(25),
 tipoproducto varchar(50) not null,
 nombre varchar(25) not null,
 precio decimal not null,
+precioventa decimal not null,
 cantidad int not null,
-estado varchar(25) not null
+caracteristica varchar(50),
+estado varchar(25) default 'En Existencia'
 )
 ----procedimiento para insertar producto
-create procedure agregarProducto (
+create procedure agregarProductos (
 @id int, 
+@codigobarra varchar(25),
 @tipoproducto varchar(50), 
 @nombre varchar(25) ,
 @precio decimal ,
+@precioventa decimal,
 @cantidad int ,
-@estado varchar(25) 
+@caracteristica varchar(50)
 )
 
 AS
 BEGIN
 
-insert into producto (id, tipoproducto,nombre,precio,cantidad,estado) 
-values(@id, @tipoproducto,@nombre,@precio,@cantidad,@estado)
+insert into productos(id,codigobarra, tipoproducto,nombre,precio,precioventa,cantidad,caracteristica) 
+values(@id,@codigobarra, @tipoproducto,@nombre,@precio,@precioventa,@cantidad,@caracteristica)
 END
 
-exec agregarProducto 1, 'shampoo','nivea',200,'20','Activo';
+exec agregarProductos 1,'11pd20', 'shampoo','nivea',200,259,'20','risos definidos';
+exec agregarProductoss 2, 'shampoo','Sedal',200,'20';
 
-
-select * from producto
+select * from productos
 
 
 -----procedimiento para actualizar  producto---
 
 create procedure actualizarProducto (
 @id int, 
+@codigobarra varchar(25),
 @tipoproducto varchar(50), 
 @nombre varchar(25) ,
 @precio decimal ,
+@precioventa decimal,
 @cantidad int ,
-@estado varchar(25) 
-
+@caracteristica varchar(50)
 )
 
 AS
 BEGIN
-update producto
-set tipoproducto = @tipoproducto, nombre = @nombre, precio = @precio, cantidad = @cantidad,
-estado = @estado
+
+update productos
+set codigobarra=@codigobarra ,tipoproducto = @tipoproducto, nombre = @nombre, precio = @precio,precioventa = @precioventa ,cantidad = @cantidad,
+caracteristica = @caracteristica
 where id = @id
 end 
-exec actualizarProducto 1, 'shampoo','nivea',150,'20','Activo';
-select  * from producto
+exec actualizarProducto 1,'11pd20', 'shampoo','nivea',200,250,'22','risos definidos';
+select  * from productos
 
 
 
@@ -382,7 +391,7 @@ select  * from producto
 create procedure eliminarProducto(@id int )
 AS
 BEGIN
-delete from  producto where id = @id
+delete from  productos where id = @id
 END
 
 exec eliminarProducto 1
@@ -403,15 +412,18 @@ exec consultarProducto 1
 
 
 --procediemiento busqueda de producto
-create procedure buscarProductoss
+create procedure buscarProductos
 @nombre as varchar(50)
 as begin
-select nombre as 'Nombre Producto',tipoproducto as 'Tipo de producto', precio as 'precio', cantidad as 'cantidad',estado as 'estado'
-from producto
+select id as 'id', codigobarra as 'Codigo de Barra', tipoproducto as 'Tipo de producto',nombre as 'Nombre Producto', precioventa as 'precio', cantidad as 'cantidad',caracteristica as 'Caracteristica' , estado as 'estado'
+from [dbo].[productos]
 where nombre like '%' +@nombre+ '%' or  tipoproducto like '%' +@nombre+ '%'
 
 end 
-execute buscarProductoss 's'
+execute buscarProductos 's'
+
+select min(id) from productos
+
 
 
 
@@ -426,7 +438,7 @@ idproducto int not null
 
 constraint fk_proveedor_producto
 	foreign key (idproducto)
-	references producto(id),
+	references productos(id),
 )
 
 ----crear procedimiento para agregar proveedor----
@@ -540,7 +552,9 @@ BEGIN
 		insert into servicios values (@id,@tiposervicio,@nombre,@precio,@estado)
 END
 
-exec insertarServicio 5, 'Uñas', 'decoracion de uñas',300,'Disponible'
+exec insertarServicio 1, 'Uñas', 'decoracion de uñas',300,'Disponible'
+exec insertarServicio 2, 'Pelo', 'Secado de pelo',150,'Disponible'
+exec insertarServicio 3, 'Pelo', 'Planchado de pelo',200,'Disponible'
 
 drop procedure insertarServicio 
 select * from servicios
@@ -562,7 +576,7 @@ set tiposervicio = @tiposervicio, nombre = @nombre, precio = @precio
 where id = @id
 End
 
-exec actualizarServicios 5, 'Uñas', 'uñas acrilicas',250
+exec actualizarServicios 1, 'Uñas', 'uñas acrilicas',250
 
 select *from servicios
 
@@ -601,23 +615,17 @@ from servicios
 where nombre like '%' +@nombre+ '%'
 
 end 
-execute buscarServicio 'u'
+execute buscarServicio 'p'
 
 ------------------------------------------
 
-create table ventas(
+create table venta(
 id int primary key not null, 
 idcliente int  not null, 
 idempleado int not null,
-idproducto int ,
-idservicios int ,
-precio decimal not null,
-cantidad int not null,
-formapago varchar not null,
-descuento decimal not null,
-total decimal not null
-
-
+fecha date,
+formapago varchar(45) not null,
+numerofactura decimal not null
  
 	constraint fk_factura_idcliente 
 	foreign key (idcliente)
@@ -627,16 +635,146 @@ total decimal not null
 	foreign key (idempleado)
 	references empleado(id),
 
-	constraint fk_factura_idproducto
-	foreign key (idproducto)
-	references producto(id),
-
-	constraint fk_factura_idservicios
-	foreign key (idservicios)
-	references servicios(id),
 
 
 )
+select * from venta
+SELECT MAX(id) FROM venta
+---procedimiento para insertar en facturad
+create procedure insertarVentas (
+@id int, 
+@idcliente int  , 
+@idempleado int ,
+@fecha date,
+@formapago varchar(50),
+@numerofactura decimal
+)
+
+AS
+BEGIN
+insert into venta(id,idcliente,idempleado,fecha,formapago,numerofactura)values
+(@id,@idcliente,@idempleado,@fecha,@formapago,@numerofactura);
+END
+
+
+exec insertarVentas 1, 1, 2,'2020-07-03','Efectivo',1
+ select * from venta
+
+
+
+ create procedure consultardetalleProduct
+AS 
+BEGIN
+select id as Id ,codigobarra as 'codigo de barra',[tipoproducto] as 'tipo de Producto',[nombre] as 'Nombre',  [precioventa] as 'precio de venta' ,[cantidad] as 'cantidad disponible' ,[caracteristica] as 'Caracteristica' from  productos
+
+END
+
+exec consultardetalleProduct
+
+
+create procedure buscardetallrProductos
+@nombre as varchar(50)
+as begin
+select id as 'id', codigobarra as 'Codigo de Barra', tipoproducto as 'Tipo de producto',nombre as 'Nombre Producto', precioventa as 'precio', cantidad as 'cantidad',caracteristica as 'Caracteristica' 
+from [dbo].[productos]
+where nombre like '%' +@nombre+ '%' or id like '%' +@nombre+ '%'
+
+end 
+execute buscardetallrProductos '1'
+SELECT nombre FROM venta inner join cliente on venta.idcliente=cliente.id and venta.id = 1
+---proceddimiento para actualizar stock desde detalle producto
+create procedure actualiardp (
+@id int, 
+@cantidad int 
+)
+
+AS
+BEGIN
+
+update productos
+set cantidad = @cantidad
+where id = @id
+end 
+exec actualiardp 1,'199';
+select  * from productos
+drop table detalleventa
+create table detalleventa(
+iddetalleventa int primary key not null, 
+idventa int  not null, 
+nombrearticulo Varchar(100),
+cantidad int not null,
+precio decimal not null,
+ 
+	constraint fk_detalle_idventa 
+	foreign key (idventa)
+	references venta(id),
+
+
+
+
+
+
+)
+
+
+---llena el grid de productos en detalleventa
+create procedure llenargrid(
+@idventa int
+)
+AS
+BEGIN
+select nombrearticulo as 'Nombre Articulo', detalleventa.cantidad as 'Cantidad', detalleventa.precio,(detalleventa.cantidad) * (detalleventa.precio) as total   from detalleventa
+where detalleventa.idventa=@idventa
+end
+drop procedure llenargrid
+execute llenargrid 1
+select * from detalleventa where idventa=1
+
+create procedure detVentas (
+@iddetalleventa int , 
+@idventa int , 
+@nombrearticulo varchar(100) ,
+@cantidad int ,
+@precio decimal 
+)
+
+AS
+BEGIN
+insert into detalleventa(iddetalleventa,idventa,nombrearticulo,cantidad,precio)values
+(@iddetalleventa,@idventa,@nombrearticulo,@cantidad,@precio);
+END
+
+
+exec detVentas 1, 1, 'nivea',2,200
+ select * from detalleventa
+ SELECT MAX(iddetalleventa)as 'id' FROM detalleventa
+select * from detalleventa
+
+Select * from productos
+
+----procedimiento eliminar detalleventa----
+create procedure eliminardetalleproducto(@iddetalleventa int )
+AS
+BEGIN
+delete from  detalleventa where iddetalleventa = @iddetalleventa
+END
+
+exec eliminardetalleproducto 15
+select * from detalleventa
+
+----procedimiento modificar cantidad en detalle producto----
+create procedure modificarcantidad(@id int,@cantidad int )
+AS
+BEGIN
+update detalleventa
+set cantidad = @cantidad
+where iddetalleventa = @id
+END
+
+exec modificarcantidad 22,3
+select * from detalleventa
+
+
 ---procedimiento para insertar en facturad
 create procedure insertarVentas (
 @id int, 
@@ -689,16 +827,6 @@ exec actualizarVenta 1, 1, 2, 1, 1,200,4,efectivo,0.25,300
 
 select * from ventas
 
-
-----procedimiento eliminar factura----
-create procedure eliminarVentas(@id int )
-AS
-BEGIN
-delete from  ventas where id = @id
-END
-
-exec eliminarVentas 1
-select * from ventas
 
 ----crear procedimiento consutar Factura
 
