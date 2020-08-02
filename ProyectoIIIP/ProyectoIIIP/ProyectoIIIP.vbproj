@@ -6,7 +6,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{5DC8482B-A50D-45FF-976E-BEDF48AD0F9E}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <StartupObject>ProyectoIIIP.menus</StartupObject>
+    <StartupObject>ProyectoIIIP.Bienvenida</StartupObject>
     <RootNamespace>ProyectoIIIP</RootNamespace>
     <AssemblyName>ProyectoIIIP</AssemblyName>
     <FileAlignment>512</FileAlignment>
@@ -73,6 +73,12 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Bienvenida.Designer.vb">
+      <DependentUpon>Bienvenida.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Bienvenida.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="clientes.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -177,6 +183,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Bienvenida.resx">
+      <DependentUpon>Bienvenida.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="clientes.resx">
       <DependentUpon>clientes.vb</DependentUpon>
     </EmbeddedResource>
@@ -240,6 +249,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="MensajeAennviar.html" />
+    <None Include="Resources\WhatsApp Image 2020-07-15 at 9.58.18 PM.jpeg" />
     <Content Include="script.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
