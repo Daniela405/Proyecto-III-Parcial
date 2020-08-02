@@ -4,7 +4,9 @@ Public Class login
     Private Sub btnIngresar_Click(sender As Object, e As EventArgs) Handles btnIngresar.Click
         Try
             If txtusuario.Text = "Admin" And txtcontraseña.Text = "root" Then
-
+                Me.Hide()
+                Dim formwelcome As New Bienvenida()
+                formwelcome.ShowDialog()
                 menus.Show()
             Else
                 MessageBox.Show("Usuario o contraseña incorrecta")

@@ -189,11 +189,11 @@ Public Class ventas
     Private Sub insertarVenta()
         Dim id As Integer, idcliente As Integer, idempleado As Integer, fecha As String, formapago As String, numerofactura As Integer
         id = idventa()
-        idcliente = txtidcliente.Text
-        idempleado = txtidcliente.Text
+        idcliente = Val(txtidcliente.Text)
+        idempleado = Val(txtidcliente.Text)
         fecha = MaskedTextBox1.Text
         formapago = ComboBox1.Text
-        numerofactura = TextBox2.Text
+        numerofactura = Val(TextBox2.Text)
 
 
         Try

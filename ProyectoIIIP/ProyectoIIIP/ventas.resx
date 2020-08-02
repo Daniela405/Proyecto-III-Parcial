@@ -748,6 +748,9 @@
   <metadata name="ErrorValidacion.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>794, 17</value>
   </metadata>
+  <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>25</value>
+  </metadata>
   <data name="Button2.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAA
@@ -767,6 +770,24 @@
         WmcG2hn9Vp11vpCM1jvKRUUL2Z65eJFZgu7M+jkXV7KFL9FjMHEjHUt4xwDO0GGgtVHu2KP7lHkvSGvc
         47kcK+AsYba2L1voyWjCFbflegUY0BuXyM7l5iyjBUjA3RX/etHxhBGjBdih6PeC9JZUtlA2VCAoewpb
         qoUt7DZUoI7RFdP4FwQ/l0I7RjUvAAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="Button1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
+        JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAACXBIWXMAAA7pAAAO6QEOM0IcAAAAB3RJ
+        TUUH5AgCBhcTXsjJhAAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAJOSURBVEhL
+        pVXLUhNBFJ2lwemBpS9KpHx8jI/v8MWXKLhVdCnoQlwpLrWU6U6yo7B7BjYs/IGEWEWokIrnNDcpSGYm
+        DZ6qW7lz7mvS987tqAo7teZ8lujnmdLfrNKZU/ovRfRNF+tn27X6DXEPx25NX3cqfYskx5ABxGZx+h6/
+        KxTRndh6TpnVfGbrmoRXwyrzCEEHkEPoL22ib4tpAi6p37EqXYZvlzGZMg/FVAybmCU49vFGxs2lN4We
+        imzOLCCuzlgeqdBnIW/ex++n/ej7JaGDwRjEb/gi4//k5Mx5LMZcJPkQfyJdQ54GpO1mfl4VGmep9DvI
+        4bRjgc8PijwWIp9t3IJPF5P2xhMcRRDHbKgnKhBSgIAPp63Hkxk2dsCJEHspQgtw8nzOOH3KoE3Ib7FV
+        IrQAAT9+J1+o7NlYrwlfiXMVSMwH+OYM6mAVvBB+hGGyMWmJTNgkbAT2FHyHiQ6KGnw6+JQEFwDHRreh
+        pLtYWuvCV6IsWRFckn6Er2MQm2yFr8R5CsjGRZOxcqEMMtW4K7ZShBbgyDOnjc3jiPscDz1uRbGXIrhA
+        rF8xp//QPIF9DqLLreiJEoQU2Jv9tQifI0zma6GwP3BZgOQdUP/fZYfETeRp2cvNK0KfgCsWBtwFeuMi
+        RWSTfvY5kvS+0GfBy0KKNLgVhZ4KHou8eZ9DI3Qx4PgAjm1Il82qmq5cbd2Thh5BWqVvPg5eFtznCMKF
+        jnHjTONjhO4vfdFz2iA9NnTizEPgb7rYPMGUfUUibseOiN+UtI1GsRBR9A8GF/fY4SmmtwAAAABJRU5E
+        rkJggg==
 </value>
   </data>
 </root>

@@ -23,6 +23,7 @@ Partial Class empleado
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(empleado))
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.mtxtIdentidad = New System.Windows.Forms.MaskedTextBox()
@@ -104,11 +105,11 @@ Partial Class empleado
         Me.GroupBox1.Controls.Add(Me.txtcodigo)
         Me.GroupBox1.Controls.Add(Me.Label1)
         Me.GroupBox1.ForeColor = System.Drawing.Color.White
-        Me.GroupBox1.Location = New System.Drawing.Point(11, 11)
+        Me.GroupBox1.Location = New System.Drawing.Point(82, 31)
         Me.GroupBox1.Margin = New System.Windows.Forms.Padding(2)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Padding = New System.Windows.Forms.Padding(2)
-        Me.GroupBox1.Size = New System.Drawing.Size(361, 328)
+        Me.GroupBox1.Size = New System.Drawing.Size(360, 328)
         Me.GroupBox1.TabIndex = 1
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Información"
@@ -383,13 +384,19 @@ Partial Class empleado
         '
         'dataEmpleado
         '
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.Black
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.White
+        Me.dataEmpleado.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
+        Me.dataEmpleado.BackgroundColor = System.Drawing.Color.White
+        Me.dataEmpleado.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.dataEmpleado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dataEmpleado.Location = New System.Drawing.Point(11, 343)
+        Me.dataEmpleado.Location = New System.Drawing.Point(82, 374)
         Me.dataEmpleado.Margin = New System.Windows.Forms.Padding(2)
         Me.dataEmpleado.Name = "dataEmpleado"
         Me.dataEmpleado.RowHeadersWidth = 62
         Me.dataEmpleado.RowTemplate.Height = 28
-        Me.dataEmpleado.Size = New System.Drawing.Size(664, 124)
+        Me.dataEmpleado.Size = New System.Drawing.Size(659, 144)
         Me.dataEmpleado.TabIndex = 7
         '
         'ErrorProvider
@@ -406,9 +413,9 @@ Partial Class empleado
         Me.btnGuardar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DeepSkyBlue
         Me.btnGuardar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.RoyalBlue
         Me.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnGuardar.Location = New System.Drawing.Point(391, 235)
+        Me.btnGuardar.Location = New System.Drawing.Point(462, 255)
         Me.btnGuardar.Name = "btnGuardar"
-        Me.btnGuardar.Size = New System.Drawing.Size(98, 37)
+        Me.btnGuardar.Size = New System.Drawing.Size(97, 37)
         Me.btnGuardar.TabIndex = 3
         Me.btnGuardar.UseVisualStyleBackColor = False
         '
@@ -422,9 +429,9 @@ Partial Class empleado
         Me.btnModificar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightSeaGreen
         Me.btnModificar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Cyan
         Me.btnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnModificar.Location = New System.Drawing.Point(495, 236)
+        Me.btnModificar.Location = New System.Drawing.Point(566, 256)
         Me.btnModificar.Name = "btnModificar"
-        Me.btnModificar.Size = New System.Drawing.Size(98, 35)
+        Me.btnModificar.Size = New System.Drawing.Size(97, 35)
         Me.btnModificar.TabIndex = 4
         Me.btnModificar.UseVisualStyleBackColor = False
         '
@@ -438,9 +445,9 @@ Partial Class empleado
         Me.btnLimpiar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Yellow
         Me.btnLimpiar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gold
         Me.btnLimpiar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnLimpiar.Location = New System.Drawing.Point(495, 284)
+        Me.btnLimpiar.Location = New System.Drawing.Point(566, 304)
         Me.btnLimpiar.Name = "btnLimpiar"
-        Me.btnLimpiar.Size = New System.Drawing.Size(98, 35)
+        Me.btnLimpiar.Size = New System.Drawing.Size(97, 35)
         Me.btnLimpiar.TabIndex = 6
         Me.btnLimpiar.UseVisualStyleBackColor = False
         '
@@ -454,9 +461,9 @@ Partial Class empleado
         Me.btnEliminar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer))
         Me.btnEliminar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnEliminar.Location = New System.Drawing.Point(599, 237)
+        Me.btnEliminar.Location = New System.Drawing.Point(670, 257)
         Me.btnEliminar.Name = "btnEliminar"
-        Me.btnEliminar.Size = New System.Drawing.Size(98, 35)
+        Me.btnEliminar.Size = New System.Drawing.Size(97, 35)
         Me.btnEliminar.TabIndex = 5
         Me.btnEliminar.UseVisualStyleBackColor = False
         '
@@ -491,11 +498,11 @@ Partial Class empleado
         Me.gbBuscar.Controls.Add(Me.txtBuscarNombre)
         Me.gbBuscar.Controls.Add(Me.Label18)
         Me.gbBuscar.ForeColor = System.Drawing.Color.White
-        Me.gbBuscar.Location = New System.Drawing.Point(431, 19)
+        Me.gbBuscar.Location = New System.Drawing.Point(502, 39)
         Me.gbBuscar.Margin = New System.Windows.Forms.Padding(2)
         Me.gbBuscar.Name = "gbBuscar"
         Me.gbBuscar.Padding = New System.Windows.Forms.Padding(2)
-        Me.gbBuscar.Size = New System.Drawing.Size(220, 198)
+        Me.gbBuscar.Size = New System.Drawing.Size(219, 198)
         Me.gbBuscar.TabIndex = 2
         Me.gbBuscar.TabStop = False
         Me.gbBuscar.Text = "Buscar"
@@ -525,7 +532,7 @@ Partial Class empleado
         Me.btnBuscar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Violet
         Me.btnBuscar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Plum
         Me.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnBuscar.Location = New System.Drawing.Point(63, 148)
+        Me.btnBuscar.Location = New System.Drawing.Point(71, 145)
         Me.btnBuscar.Name = "btnBuscar"
         Me.btnBuscar.Size = New System.Drawing.Size(98, 35)
         Me.btnBuscar.TabIndex = 5

@@ -74,7 +74,7 @@ Partial Class login
         Me.txtusuario.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtusuario.ForeColor = System.Drawing.SystemColors.Info
         Me.txtusuario.Location = New System.Drawing.Point(100, 87)
-        Me.txtusuario.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtusuario.Margin = New System.Windows.Forms.Padding(2)
         Me.txtusuario.Name = "txtusuario"
         Me.txtusuario.Size = New System.Drawing.Size(170, 15)
         Me.txtusuario.TabIndex = 2
@@ -87,7 +87,7 @@ Partial Class login
         Me.txtcontraseña.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtcontraseña.ForeColor = System.Drawing.SystemColors.Info
         Me.txtcontraseña.Location = New System.Drawing.Point(98, 175)
-        Me.txtcontraseña.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtcontraseña.Margin = New System.Windows.Forms.Padding(2)
         Me.txtcontraseña.Name = "txtcontraseña"
         Me.txtcontraseña.Size = New System.Drawing.Size(170, 15)
         Me.txtcontraseña.TabIndex = 3
@@ -101,7 +101,7 @@ Partial Class login
         Me.btnIngresar.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnIngresar.ForeColor = System.Drawing.Color.White
         Me.btnIngresar.Location = New System.Drawing.Point(83, 257)
-        Me.btnIngresar.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btnIngresar.Margin = New System.Windows.Forms.Padding(2)
         Me.btnIngresar.Name = "btnIngresar"
         Me.btnIngresar.Size = New System.Drawing.Size(187, 32)
         Me.btnIngresar.TabIndex = 4
@@ -188,9 +188,10 @@ Partial Class login
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
-        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Margin = New System.Windows.Forms.Padding(2)
         Me.Name = "login"
         Me.Opacity = 0.9R
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Login Administrador"
         CType(Me.ErrorValidacion, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel1.ResumeLayout(False)

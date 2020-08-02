@@ -24,6 +24,7 @@ Partial Class proveedor
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(proveedor))
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.txtnombre = New System.Windows.Forms.TextBox()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
@@ -265,8 +266,16 @@ Partial Class proveedor
         '
         'dtgProveedor
         '
+        Me.dtgProveedor.AllowUserToAddRows = False
+        Me.dtgProveedor.AllowUserToDeleteRows = False
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.Black
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.White
+        Me.dtgProveedor.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
+        Me.dtgProveedor.BackgroundColor = System.Drawing.Color.White
+        Me.dtgProveedor.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.dtgProveedor.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dtgProveedor.Location = New System.Drawing.Point(11, 297)
+        Me.dtgProveedor.Location = New System.Drawing.Point(37, 319)
         Me.dtgProveedor.Margin = New System.Windows.Forms.Padding(2, 1, 2, 1)
         Me.dtgProveedor.Name = "dtgProveedor"
         Me.dtgProveedor.RowHeadersWidth = 62

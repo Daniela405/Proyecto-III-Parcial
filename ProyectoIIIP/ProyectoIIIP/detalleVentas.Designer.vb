@@ -22,6 +22,8 @@ Partial Class detalleVentas
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(detalleVentas))
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.txtnumerodoc = New System.Windows.Forms.TextBox()
@@ -58,13 +60,13 @@ Partial Class detalleVentas
         Me.DataGridView3 = New System.Windows.Forms.DataGridView()
         Me.PanelDatosVenta = New System.Windows.Forms.Panel()
         Me.panelServicios = New System.Windows.Forms.Panel()
-        Me.Button3 = New System.Windows.Forms.Button()
-        Me.Button1 = New System.Windows.Forms.Button()
         Me.panelProductos = New System.Windows.Forms.Panel()
         Me.panelDetalle = New System.Windows.Forms.Panel()
         Me.btnAggServicios = New System.Windows.Forms.Button()
         Me.btnAggProductos = New System.Windows.Forms.Button()
         Me.btnDatosVenta = New System.Windows.Forms.Button()
+        Me.Button3 = New System.Windows.Forms.Button()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -90,7 +92,7 @@ Partial Class detalleVentas
         Me.GroupBox1.Controls.Add(Me.Label3)
         Me.GroupBox1.Controls.Add(Me.Label2)
         Me.GroupBox1.Controls.Add(Me.Label1)
-        Me.GroupBox1.Location = New System.Drawing.Point(18, 9)
+        Me.GroupBox1.Location = New System.Drawing.Point(25, 9)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(286, 227)
         Me.GroupBox1.TabIndex = 0
@@ -209,7 +211,7 @@ Partial Class detalleVentas
         Me.GroupBox2.Controls.Add(Me.DataGridView1)
         Me.GroupBox2.Location = New System.Drawing.Point(21, 17)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(430, 227)
+        Me.GroupBox2.Size = New System.Drawing.Size(441, 227)
         Me.GroupBox2.TabIndex = 1
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Seleccion De productos"
@@ -232,6 +234,14 @@ Partial Class detalleVentas
         '
         'DataGridView1
         '
+        Me.DataGridView1.AllowUserToDeleteRows = False
+        Me.DataGridView1.AllowUserToResizeColumns = False
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.Black
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.White
+        Me.DataGridView1.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
+        Me.DataGridView1.BackgroundColor = System.Drawing.Color.White
+        Me.DataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridView1.Location = New System.Drawing.Point(18, 61)
         Me.DataGridView1.Name = "DataGridView1"
@@ -352,7 +362,14 @@ Partial Class detalleVentas
         '
         'DataGridView2
         '
+        Me.DataGridView2.AllowUserToAddRows = False
+        Me.DataGridView2.AllowUserToDeleteRows = False
+        DataGridViewCellStyle2.BackColor = System.Drawing.Color.Black
+        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.White
+        Me.DataGridView2.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle2
         Me.DataGridView2.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.DataGridView2.BackgroundColor = System.Drawing.Color.White
+        Me.DataGridView2.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.DataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridView2.Location = New System.Drawing.Point(377, 40)
         Me.DataGridView2.Name = "DataGridView2"
@@ -366,7 +383,7 @@ Partial Class detalleVentas
         Me.GroupBox3.Controls.Add(Me.DataGridView3)
         Me.GroupBox3.Location = New System.Drawing.Point(17, 26)
         Me.GroupBox3.Name = "GroupBox3"
-        Me.GroupBox3.Size = New System.Drawing.Size(427, 218)
+        Me.GroupBox3.Size = New System.Drawing.Size(442, 218)
         Me.GroupBox3.TabIndex = 3
         Me.GroupBox3.TabStop = False
         Me.GroupBox3.Text = "Seleccion de Servicios"
@@ -389,6 +406,10 @@ Partial Class detalleVentas
         '
         'DataGridView3
         '
+        Me.DataGridView3.AllowUserToAddRows = False
+        Me.DataGridView3.AllowUserToDeleteRows = False
+        Me.DataGridView3.BackgroundColor = System.Drawing.Color.White
+        Me.DataGridView3.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.DataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridView3.Location = New System.Drawing.Point(19, 49)
         Me.DataGridView3.Name = "DataGridView3"
@@ -398,54 +419,27 @@ Partial Class detalleVentas
         'PanelDatosVenta
         '
         Me.PanelDatosVenta.Controls.Add(Me.GroupBox1)
-        Me.PanelDatosVenta.Location = New System.Drawing.Point(77, 4)
+        Me.PanelDatosVenta.Location = New System.Drawing.Point(300, 4)
         Me.PanelDatosVenta.Name = "PanelDatosVenta"
-        Me.PanelDatosVenta.Size = New System.Drawing.Size(326, 250)
+        Me.PanelDatosVenta.Size = New System.Drawing.Size(344, 250)
         Me.PanelDatosVenta.TabIndex = 4
         Me.PanelDatosVenta.Visible = False
         '
         'panelServicios
         '
         Me.panelServicios.Controls.Add(Me.GroupBox3)
-        Me.panelServicios.Location = New System.Drawing.Point(236, 13)
+        Me.panelServicios.Location = New System.Drawing.Point(236, 4)
         Me.panelServicios.Name = "panelServicios"
         Me.panelServicios.Size = New System.Drawing.Size(465, 266)
         Me.panelServicios.TabIndex = 5
         Me.panelServicios.Visible = False
         '
-        'Button3
-        '
-        Me.Button3.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.Button3.BackgroundImage = CType(resources.GetObject("Button3.BackgroundImage"), System.Drawing.Image)
-        Me.Button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Button3.FlatAppearance.BorderSize = 0
-        Me.Button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button3.Location = New System.Drawing.Point(262, 150)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(53, 50)
-        Me.Button3.TabIndex = 20
-        Me.Button3.UseVisualStyleBackColor = True
-        '
-        'Button1
-        '
-        Me.Button1.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.Button1.BackgroundImage = CType(resources.GetObject("Button1.BackgroundImage"), System.Drawing.Image)
-        Me.Button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Button1.FlatAppearance.BorderSize = 0
-        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button1.Location = New System.Drawing.Point(266, 40)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(49, 50)
-        Me.Button1.TabIndex = 19
-        Me.Button1.UseVisualStyleBackColor = True
-        '
         'panelProductos
         '
         Me.panelProductos.Controls.Add(Me.GroupBox2)
-        Me.panelProductos.Controls.Add(Me.PanelDatosVenta)
-        Me.panelProductos.Location = New System.Drawing.Point(223, 12)
+        Me.panelProductos.Location = New System.Drawing.Point(245, 1)
         Me.panelProductos.Name = "panelProductos"
-        Me.panelProductos.Size = New System.Drawing.Size(465, 266)
+        Me.panelProductos.Size = New System.Drawing.Size(465, 250)
         Me.panelProductos.TabIndex = 6
         Me.panelProductos.Visible = False
         '
@@ -467,7 +461,7 @@ Partial Class detalleVentas
         Me.panelDetalle.Controls.Add(Me.Label10)
         Me.panelDetalle.Controls.Add(Me.txtcantllevar)
         Me.panelDetalle.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.panelDetalle.Location = New System.Drawing.Point(0, 285)
+        Me.panelDetalle.Location = New System.Drawing.Point(0, 245)
         Me.panelDetalle.Name = "panelDetalle"
         Me.panelDetalle.Size = New System.Drawing.Size(834, 265)
         Me.panelDetalle.TabIndex = 22
@@ -509,18 +503,45 @@ Partial Class detalleVentas
         Me.btnDatosVenta.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.btnDatosVenta.UseVisualStyleBackColor = True
         '
+        'Button3
+        '
+        Me.Button3.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.Button3.BackgroundImage = CType(resources.GetObject("Button3.BackgroundImage"), System.Drawing.Image)
+        Me.Button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Button3.FlatAppearance.BorderSize = 0
+        Me.Button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button3.Location = New System.Drawing.Point(262, 150)
+        Me.Button3.Name = "Button3"
+        Me.Button3.Size = New System.Drawing.Size(53, 50)
+        Me.Button3.TabIndex = 20
+        Me.Button3.UseVisualStyleBackColor = True
+        '
+        'Button1
+        '
+        Me.Button1.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.Button1.BackgroundImage = CType(resources.GetObject("Button1.BackgroundImage"), System.Drawing.Image)
+        Me.Button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Button1.FlatAppearance.BorderSize = 0
+        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button1.Location = New System.Drawing.Point(266, 40)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(49, 50)
+        Me.Button1.TabIndex = 19
+        Me.Button1.UseVisualStyleBackColor = True
+        '
         'detalleVentas
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(834, 550)
+        Me.ClientSize = New System.Drawing.Size(834, 510)
         Me.Controls.Add(Me.btnDatosVenta)
+        Me.Controls.Add(Me.panelServicios)
+        Me.Controls.Add(Me.panelProductos)
+        Me.Controls.Add(Me.PanelDatosVenta)
         Me.Controls.Add(Me.btnAggProductos)
         Me.Controls.Add(Me.btnAggServicios)
         Me.Controls.Add(Me.panelDetalle)
-        Me.Controls.Add(Me.panelProductos)
-        Me.Controls.Add(Me.panelServicios)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "detalleVentas"
         Me.Text = "detalleVentas"
@@ -570,8 +591,6 @@ Partial Class detalleVentas
     Friend WithEvents DataGridView2 As DataGridView
     Friend WithEvents txttotal As TextBox
     Friend WithEvents Label11 As Label
-    Friend WithEvents Button3 As Button
-    Friend WithEvents Button1 As Button
     Friend WithEvents GroupBox3 As GroupBox
     Friend WithEvents DataGridView3 As DataGridView
     Friend WithEvents txtlookservice As TextBox
@@ -584,4 +603,6 @@ Partial Class detalleVentas
     Friend WithEvents btnAggServicios As Button
     Friend WithEvents btnAggProductos As Button
     Friend WithEvents btnDatosVenta As Button
+    Friend WithEvents Button3 As Button
+    Friend WithEvents Button1 As Button
 End Class

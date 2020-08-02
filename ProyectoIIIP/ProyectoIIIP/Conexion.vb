@@ -6,11 +6,11 @@ Imports System.Text
 Public Class Conexion
 
 
-    'Public conexion As SqlConnection = New SqlConnection("Data Source=DESKTOP-LGDBE5Q\SQLEXPRESS;Initial Catalog=proyecto;Integrated Security=True")
+    Public conexion As SqlConnection = New SqlConnection("Data Source=DORISMEZA\SQLEXPRESS;Initial Catalog=proyecto;Integrated Security=True")
 
     ' Public conexion As SqlConnection = New SqlConnection("Data Source=DESKTOP-LGDBE5Q\SQLEXPRESS;Initial Catalog=proyecto;Integrated Security=True") 'Eduardo
 
-    Public conexion As SqlConnection = New SqlConnection("Data Source=MOY-ALIENWARE;Initial Catalog=proyecto;Integrated Security=True") 'Emerson
+    'Public conexion As SqlConnection = New SqlConnection("Data Source=MOY-ALIENWARE;Initial Catalog=proyecto;Integrated Security=True") 'Emerson
 
 
     Public ds As DataSet = New DataSet()
@@ -24,9 +24,9 @@ Public Class Conexion
     Public Sub conectar()
         Try
             conexion.Open()
-            MessageBox.Show("Conectado")
+
         Catch ex As Exception
-            MessageBox.Show("Error al conectar")
+            MsgBox("Error al conectar", vbObjectError)
         Finally
             conexion.Close()
         End Try

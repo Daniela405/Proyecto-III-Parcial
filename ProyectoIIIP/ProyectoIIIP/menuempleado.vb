@@ -30,11 +30,15 @@
     End Sub
     Private Sub btnClieente_Click(sender As Object, e As EventArgs) Handles btnClieente.Click
         openChildForm(New Cliente())
-        hideSubMenu()
+        'hideSubMenu()
     End Sub
 
     Private Sub btnVentas_Click(sender As Object, e As EventArgs) Handles btnVentas.Click
         openChildForm(New ventas())
-        hideSubMenu()
+        'hideSubMenu()
+    End Sub
+
+    Private Sub panelEncabezado_Paint(sender As Object, e As PaintEventArgs) Handles panelEncabezado.Paint
+
     End Sub
 End Class
