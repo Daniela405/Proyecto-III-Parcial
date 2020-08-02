@@ -478,4 +478,18 @@ Public Class empleado
     Private Sub cmbcargo_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbcargo.SelectedIndexChanged
 
     End Sub
+
+    Private Sub txtnombre_TextChanged(sender As Object, e As EventArgs) Handles txtnombre.TextChanged
+
+        txtnombre.Text = StrConv(txtnombre.Text, vbProperCase)
+        txtnombre.SelectionStart = Len(txtnombre.Text)
+
+    End Sub
+
+    Private Sub txtapellido_TextChanged(sender As Object, e As EventArgs) Handles txtapellido.TextChanged
+
+        txtapellido.Text = StrConv(txtapellido.Text, vbProperCase)
+        txtapellido.SelectionStart = Len(txtapellido.Text)
+
+    End Sub
 End Class

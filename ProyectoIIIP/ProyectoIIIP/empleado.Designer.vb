@@ -23,7 +23,7 @@ Partial Class empleado
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(empleado))
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.mtxtIdentidad = New System.Windows.Forms.MaskedTextBox()
@@ -384,10 +384,10 @@ Partial Class empleado
         '
         'dataEmpleado
         '
-        DataGridViewCellStyle1.BackColor = System.Drawing.Color.Black
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.White
-        Me.dataEmpleado.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle2.BackColor = System.Drawing.Color.Black
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.White
+        Me.dataEmpleado.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle2
         Me.dataEmpleado.BackgroundColor = System.Drawing.Color.White
         Me.dataEmpleado.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.dataEmpleado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
