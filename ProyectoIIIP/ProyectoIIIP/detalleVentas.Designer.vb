@@ -36,12 +36,10 @@ Partial Class detalleVentas
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.Label12 = New System.Windows.Forms.Label()
         Me.txtbuscar = New System.Windows.Forms.TextBox()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
-        Me.supedido = New System.Windows.Forms.GroupBox()
         Me.Label11 = New System.Windows.Forms.Label()
-        Me.Button3 = New System.Windows.Forms.Button()
-        Me.Button1 = New System.Windows.Forms.Button()
         Me.txttotal = New System.Windows.Forms.TextBox()
         Me.txtcantllevar = New System.Windows.Forms.TextBox()
         Me.Label10 = New System.Windows.Forms.Label()
@@ -55,17 +53,28 @@ Partial Class detalleVentas
         Me.Label6 = New System.Windows.Forms.Label()
         Me.DataGridView2 = New System.Windows.Forms.DataGridView()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
+        Me.Label13 = New System.Windows.Forms.Label()
         Me.txtlookservice = New System.Windows.Forms.TextBox()
         Me.DataGridView3 = New System.Windows.Forms.DataGridView()
-        Me.Label12 = New System.Windows.Forms.Label()
-        Me.Label13 = New System.Windows.Forms.Label()
+        Me.PanelDatosVenta = New System.Windows.Forms.Panel()
+        Me.panelServicios = New System.Windows.Forms.Panel()
+        Me.Button3 = New System.Windows.Forms.Button()
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.panelProductos = New System.Windows.Forms.Panel()
+        Me.panelDetalle = New System.Windows.Forms.Panel()
+        Me.btnAggServicios = New System.Windows.Forms.Button()
+        Me.btnAggProductos = New System.Windows.Forms.Button()
+        Me.btnDatosVenta = New System.Windows.Forms.Button()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.supedido.SuspendLayout()
         CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox3.SuspendLayout()
         CType(Me.DataGridView3, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.PanelDatosVenta.SuspendLayout()
+        Me.panelServicios.SuspendLayout()
+        Me.panelProductos.SuspendLayout()
+        Me.panelDetalle.SuspendLayout()
         Me.SuspendLayout()
         '
         'GroupBox1
@@ -81,7 +90,7 @@ Partial Class detalleVentas
         Me.GroupBox1.Controls.Add(Me.Label3)
         Me.GroupBox1.Controls.Add(Me.Label2)
         Me.GroupBox1.Controls.Add(Me.Label1)
-        Me.GroupBox1.Location = New System.Drawing.Point(12, 12)
+        Me.GroupBox1.Location = New System.Drawing.Point(18, 9)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(286, 227)
         Me.GroupBox1.TabIndex = 0
@@ -90,56 +99,62 @@ Partial Class detalleVentas
         '
         'txtnumerodoc
         '
+        Me.txtnumerodoc.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.txtnumerodoc.Enabled = False
         Me.txtnumerodoc.Location = New System.Drawing.Point(111, 164)
         Me.txtnumerodoc.Name = "txtnumerodoc"
         Me.txtnumerodoc.ReadOnly = True
-        Me.txtnumerodoc.Size = New System.Drawing.Size(100, 20)
+        Me.txtnumerodoc.Size = New System.Drawing.Size(100, 13)
         Me.txtnumerodoc.TabIndex = 10
         '
         'txtnombrecliente
         '
+        Me.txtnombrecliente.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.txtnombrecliente.Enabled = False
         Me.txtnombrecliente.Location = New System.Drawing.Point(153, 61)
         Me.txtnombrecliente.Name = "txtnombrecliente"
         Me.txtnombrecliente.ReadOnly = True
-        Me.txtnombrecliente.Size = New System.Drawing.Size(84, 20)
+        Me.txtnombrecliente.Size = New System.Drawing.Size(84, 13)
         Me.txtnombrecliente.TabIndex = 9
         '
         'txtdocumento
         '
+        Me.txtdocumento.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.txtdocumento.Enabled = False
         Me.txtdocumento.Location = New System.Drawing.Point(111, 128)
         Me.txtdocumento.Name = "txtdocumento"
         Me.txtdocumento.ReadOnly = True
-        Me.txtdocumento.Size = New System.Drawing.Size(100, 20)
+        Me.txtdocumento.Size = New System.Drawing.Size(100, 13)
         Me.txtdocumento.TabIndex = 8
         '
         'txt1
         '
+        Me.txt1.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.txt1.Enabled = False
         Me.txt1.Location = New System.Drawing.Point(111, 99)
         Me.txt1.Name = "txt1"
         Me.txt1.ReadOnly = True
-        Me.txt1.Size = New System.Drawing.Size(100, 20)
+        Me.txt1.Size = New System.Drawing.Size(100, 13)
         Me.txt1.TabIndex = 7
         '
         'txtidcliente
         '
+        Me.txtidcliente.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.txtidcliente.Enabled = False
         Me.txtidcliente.Location = New System.Drawing.Point(111, 61)
         Me.txtidcliente.Name = "txtidcliente"
         Me.txtidcliente.ReadOnly = True
-        Me.txtidcliente.Size = New System.Drawing.Size(36, 20)
+        Me.txtidcliente.Size = New System.Drawing.Size(36, 13)
         Me.txtidcliente.TabIndex = 6
         '
         'txtidventa
         '
+        Me.txtidventa.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.txtidventa.Enabled = False
         Me.txtidventa.Location = New System.Drawing.Point(111, 27)
         Me.txtidventa.Name = "txtidventa"
         Me.txtidventa.ReadOnly = True
-        Me.txtidventa.Size = New System.Drawing.Size(100, 20)
+        Me.txtidventa.Size = New System.Drawing.Size(100, 13)
         Me.txtidventa.TabIndex = 1
         '
         'Label5
@@ -192,12 +207,21 @@ Partial Class detalleVentas
         Me.GroupBox2.Controls.Add(Me.Label12)
         Me.GroupBox2.Controls.Add(Me.txtbuscar)
         Me.GroupBox2.Controls.Add(Me.DataGridView1)
-        Me.GroupBox2.Location = New System.Drawing.Point(304, 12)
+        Me.GroupBox2.Location = New System.Drawing.Point(21, 17)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(389, 227)
+        Me.GroupBox2.Size = New System.Drawing.Size(430, 227)
         Me.GroupBox2.TabIndex = 1
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Seleccion De productos"
+        '
+        'Label12
+        '
+        Me.Label12.AutoSize = True
+        Me.Label12.Location = New System.Drawing.Point(29, 34)
+        Me.Label12.Name = "Label12"
+        Me.Label12.Size = New System.Drawing.Size(113, 13)
+        Me.Label12.TabIndex = 11
+        Me.Label12.Text = "Buscar por Id/nombre "
         '
         'txtbuscar
         '
@@ -211,97 +235,59 @@ Partial Class detalleVentas
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridView1.Location = New System.Drawing.Point(18, 61)
         Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.Size = New System.Drawing.Size(371, 150)
+        Me.DataGridView1.Size = New System.Drawing.Size(406, 150)
         Me.DataGridView1.TabIndex = 0
-        '
-        'supedido
-        '
-        Me.supedido.Controls.Add(Me.Label11)
-        Me.supedido.Controls.Add(Me.Button3)
-        Me.supedido.Controls.Add(Me.Button1)
-        Me.supedido.Controls.Add(Me.txttotal)
-        Me.supedido.Controls.Add(Me.txtcantllevar)
-        Me.supedido.Controls.Add(Me.Label10)
-        Me.supedido.Controls.Add(Me.txtsctok)
-        Me.supedido.Controls.Add(Me.Label9)
-        Me.supedido.Controls.Add(Me.txtprecio)
-        Me.supedido.Controls.Add(Me.Label8)
-        Me.supedido.Controls.Add(Me.txtnombreproducto)
-        Me.supedido.Controls.Add(Me.Label7)
-        Me.supedido.Controls.Add(Me.txtidproducto)
-        Me.supedido.Controls.Add(Me.Label6)
-        Me.supedido.Controls.Add(Me.DataGridView2)
-        Me.supedido.Location = New System.Drawing.Point(156, 261)
-        Me.supedido.Name = "supedido"
-        Me.supedido.Size = New System.Drawing.Size(886, 271)
-        Me.supedido.TabIndex = 2
-        Me.supedido.TabStop = False
-        Me.supedido.Text = "Su pedido"
         '
         'Label11
         '
+        Me.Label11.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.Label11.AutoSize = True
-        Me.Label11.Location = New System.Drawing.Point(632, 243)
+        Me.Label11.Location = New System.Drawing.Point(36, 203)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(49, 13)
         Me.Label11.TabIndex = 21
         Me.Label11.Text = "Sub total"
         '
-        'Button3
-        '
-        Me.Button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button3.Image = CType(resources.GetObject("Button3.Image"), System.Drawing.Image)
-        Me.Button3.Location = New System.Drawing.Point(162, 181)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(75, 59)
-        Me.Button3.TabIndex = 20
-        Me.Button3.UseVisualStyleBackColor = True
-        '
-        'Button1
-        '
-        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button1.Image = CType(resources.GetObject("Button1.Image"), System.Drawing.Image)
-        Me.Button1.Location = New System.Drawing.Point(39, 181)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(75, 59)
-        Me.Button1.TabIndex = 19
-        Me.Button1.UseVisualStyleBackColor = True
-        '
         'txttotal
         '
-        Me.txttotal.Location = New System.Drawing.Point(687, 240)
+        Me.txttotal.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.txttotal.Location = New System.Drawing.Point(101, 196)
         Me.txttotal.Name = "txttotal"
-        Me.txttotal.Size = New System.Drawing.Size(84, 20)
+        Me.txttotal.Size = New System.Drawing.Size(104, 20)
         Me.txttotal.TabIndex = 18
         '
         'txtcantllevar
         '
-        Me.txtcantllevar.Location = New System.Drawing.Point(120, 142)
+        Me.txtcantllevar.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.txtcantllevar.Location = New System.Drawing.Point(100, 100)
         Me.txtcantllevar.Name = "txtcantllevar"
-        Me.txtcantllevar.Size = New System.Drawing.Size(84, 20)
+        Me.txtcantllevar.Size = New System.Drawing.Size(105, 20)
         Me.txtcantllevar.TabIndex = 17
         '
         'Label10
         '
+        Me.Label10.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.Label10.AutoSize = True
-        Me.Label10.Location = New System.Drawing.Point(24, 142)
+        Me.Label10.Location = New System.Drawing.Point(32, 94)
         Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(90, 13)
+        Me.Label10.Size = New System.Drawing.Size(52, 26)
         Me.Label10.TabIndex = 16
-        Me.Label10.Text = "Cantidad a Llevar"
+        Me.Label10.Text = "Cantidad " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "a Llevar"
         '
         'txtsctok
         '
+        Me.txtsctok.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.txtsctok.Enabled = False
-        Me.txtsctok.Location = New System.Drawing.Point(180, 97)
+        Me.txtsctok.Location = New System.Drawing.Point(101, 164)
         Me.txtsctok.Name = "txtsctok"
-        Me.txtsctok.Size = New System.Drawing.Size(84, 20)
+        Me.txtsctok.Size = New System.Drawing.Size(104, 20)
         Me.txtsctok.TabIndex = 15
         '
         'Label9
         '
+        Me.Label9.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(139, 100)
+        Me.Label9.Location = New System.Drawing.Point(36, 167)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(35, 13)
         Me.Label9.TabIndex = 14
@@ -309,16 +295,18 @@ Partial Class detalleVentas
         '
         'txtprecio
         '
+        Me.txtprecio.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.txtprecio.Enabled = False
-        Me.txtprecio.Location = New System.Drawing.Point(49, 97)
+        Me.txtprecio.Location = New System.Drawing.Point(101, 128)
         Me.txtprecio.Name = "txtprecio"
-        Me.txtprecio.Size = New System.Drawing.Size(84, 20)
+        Me.txtprecio.Size = New System.Drawing.Size(104, 20)
         Me.txtprecio.TabIndex = 11
         '
         'Label8
         '
+        Me.Label8.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(6, 100)
+        Me.Label8.Location = New System.Drawing.Point(34, 131)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(37, 13)
         Me.Label8.TabIndex = 13
@@ -326,16 +314,18 @@ Partial Class detalleVentas
         '
         'txtnombreproducto
         '
+        Me.txtnombreproducto.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.txtnombreproducto.Enabled = False
-        Me.txtnombreproducto.Location = New System.Drawing.Point(158, 55)
+        Me.txtnombreproducto.Location = New System.Drawing.Point(100, 65)
         Me.txtnombreproducto.Name = "txtnombreproducto"
         Me.txtnombreproducto.Size = New System.Drawing.Size(133, 20)
         Me.txtnombreproducto.TabIndex = 11
         '
         'Label7
         '
+        Me.Label7.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(91, 58)
+        Me.Label7.Location = New System.Drawing.Point(33, 68)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(65, 13)
         Me.Label7.TabIndex = 12
@@ -343,16 +333,18 @@ Partial Class detalleVentas
         '
         'txtidproducto
         '
+        Me.txtidproducto.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.txtidproducto.Enabled = False
-        Me.txtidproducto.Location = New System.Drawing.Point(49, 55)
+        Me.txtidproducto.Location = New System.Drawing.Point(100, 35)
         Me.txtidproducto.Name = "txtidproducto"
-        Me.txtidproducto.Size = New System.Drawing.Size(36, 20)
+        Me.txtidproducto.Size = New System.Drawing.Size(133, 20)
         Me.txtidproducto.TabIndex = 11
         '
         'Label6
         '
+        Me.Label6.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(6, 58)
+        Me.Label6.Location = New System.Drawing.Point(32, 38)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(37, 13)
         Me.Label6.TabIndex = 11
@@ -360,10 +352,11 @@ Partial Class detalleVentas
         '
         'DataGridView2
         '
+        Me.DataGridView2.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.DataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView2.Location = New System.Drawing.Point(338, 58)
+        Me.DataGridView2.Location = New System.Drawing.Point(377, 40)
         Me.DataGridView2.Name = "DataGridView2"
-        Me.DataGridView2.Size = New System.Drawing.Size(488, 164)
+        Me.DataGridView2.Size = New System.Drawing.Size(414, 164)
         Me.DataGridView2.TabIndex = 0
         '
         'GroupBox3
@@ -371,12 +364,21 @@ Partial Class detalleVentas
         Me.GroupBox3.Controls.Add(Me.Label13)
         Me.GroupBox3.Controls.Add(Me.txtlookservice)
         Me.GroupBox3.Controls.Add(Me.DataGridView3)
-        Me.GroupBox3.Location = New System.Drawing.Point(723, 21)
+        Me.GroupBox3.Location = New System.Drawing.Point(17, 26)
         Me.GroupBox3.Name = "GroupBox3"
         Me.GroupBox3.Size = New System.Drawing.Size(427, 218)
         Me.GroupBox3.TabIndex = 3
         Me.GroupBox3.TabStop = False
         Me.GroupBox3.Text = "Seleccion de Servicios"
+        '
+        'Label13
+        '
+        Me.Label13.AutoSize = True
+        Me.Label13.Location = New System.Drawing.Point(20, 21)
+        Me.Label13.Name = "Label13"
+        Me.Label13.Size = New System.Drawing.Size(125, 13)
+        Me.Label13.TabIndex = 12
+        Me.Label13.Text = "Buscar nombre servicios "
         '
         'txtlookservice
         '
@@ -393,33 +395,133 @@ Partial Class detalleVentas
         Me.DataGridView3.Size = New System.Drawing.Size(402, 150)
         Me.DataGridView3.TabIndex = 0
         '
-        'Label12
+        'PanelDatosVenta
         '
-        Me.Label12.AutoSize = True
-        Me.Label12.Location = New System.Drawing.Point(29, 34)
-        Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(113, 13)
-        Me.Label12.TabIndex = 11
-        Me.Label12.Text = "Buscar por Id/nombre "
+        Me.PanelDatosVenta.Controls.Add(Me.GroupBox1)
+        Me.PanelDatosVenta.Location = New System.Drawing.Point(77, 4)
+        Me.PanelDatosVenta.Name = "PanelDatosVenta"
+        Me.PanelDatosVenta.Size = New System.Drawing.Size(326, 250)
+        Me.PanelDatosVenta.TabIndex = 4
+        Me.PanelDatosVenta.Visible = False
         '
-        'Label13
+        'panelServicios
         '
-        Me.Label13.AutoSize = True
-        Me.Label13.Location = New System.Drawing.Point(20, 21)
-        Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(125, 13)
-        Me.Label13.TabIndex = 12
-        Me.Label13.Text = "Buscar nombre servicios "
+        Me.panelServicios.Controls.Add(Me.GroupBox3)
+        Me.panelServicios.Location = New System.Drawing.Point(236, 13)
+        Me.panelServicios.Name = "panelServicios"
+        Me.panelServicios.Size = New System.Drawing.Size(465, 266)
+        Me.panelServicios.TabIndex = 5
+        Me.panelServicios.Visible = False
+        '
+        'Button3
+        '
+        Me.Button3.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.Button3.BackgroundImage = CType(resources.GetObject("Button3.BackgroundImage"), System.Drawing.Image)
+        Me.Button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Button3.FlatAppearance.BorderSize = 0
+        Me.Button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button3.Location = New System.Drawing.Point(262, 150)
+        Me.Button3.Name = "Button3"
+        Me.Button3.Size = New System.Drawing.Size(53, 50)
+        Me.Button3.TabIndex = 20
+        Me.Button3.UseVisualStyleBackColor = True
+        '
+        'Button1
+        '
+        Me.Button1.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.Button1.BackgroundImage = CType(resources.GetObject("Button1.BackgroundImage"), System.Drawing.Image)
+        Me.Button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Button1.FlatAppearance.BorderSize = 0
+        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button1.Location = New System.Drawing.Point(266, 40)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(49, 50)
+        Me.Button1.TabIndex = 19
+        Me.Button1.UseVisualStyleBackColor = True
+        '
+        'panelProductos
+        '
+        Me.panelProductos.Controls.Add(Me.GroupBox2)
+        Me.panelProductos.Controls.Add(Me.PanelDatosVenta)
+        Me.panelProductos.Location = New System.Drawing.Point(223, 12)
+        Me.panelProductos.Name = "panelProductos"
+        Me.panelProductos.Size = New System.Drawing.Size(465, 266)
+        Me.panelProductos.TabIndex = 6
+        Me.panelProductos.Visible = False
+        '
+        'panelDetalle
+        '
+        Me.panelDetalle.Controls.Add(Me.txtnombreproducto)
+        Me.panelDetalle.Controls.Add(Me.Label11)
+        Me.panelDetalle.Controls.Add(Me.Label8)
+        Me.panelDetalle.Controls.Add(Me.txtprecio)
+        Me.panelDetalle.Controls.Add(Me.txttotal)
+        Me.panelDetalle.Controls.Add(Me.Label7)
+        Me.panelDetalle.Controls.Add(Me.Button3)
+        Me.panelDetalle.Controls.Add(Me.Label9)
+        Me.panelDetalle.Controls.Add(Me.DataGridView2)
+        Me.panelDetalle.Controls.Add(Me.txtidproducto)
+        Me.panelDetalle.Controls.Add(Me.txtsctok)
+        Me.panelDetalle.Controls.Add(Me.Button1)
+        Me.panelDetalle.Controls.Add(Me.Label6)
+        Me.panelDetalle.Controls.Add(Me.Label10)
+        Me.panelDetalle.Controls.Add(Me.txtcantllevar)
+        Me.panelDetalle.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.panelDetalle.Location = New System.Drawing.Point(0, 285)
+        Me.panelDetalle.Name = "panelDetalle"
+        Me.panelDetalle.Size = New System.Drawing.Size(834, 265)
+        Me.panelDetalle.TabIndex = 22
+        '
+        'btnAggServicios
+        '
+        Me.btnAggServicios.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnAggServicios.Image = CType(resources.GetObject("btnAggServicios.Image"), System.Drawing.Image)
+        Me.btnAggServicios.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnAggServicios.Location = New System.Drawing.Point(33, 154)
+        Me.btnAggServicios.Name = "btnAggServicios"
+        Me.btnAggServicios.Size = New System.Drawing.Size(134, 39)
+        Me.btnAggServicios.TabIndex = 23
+        Me.btnAggServicios.Text = "Servicios"
+        Me.btnAggServicios.UseVisualStyleBackColor = True
+        '
+        'btnAggProductos
+        '
+        Me.btnAggProductos.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnAggProductos.Image = CType(resources.GetObject("btnAggProductos.Image"), System.Drawing.Image)
+        Me.btnAggProductos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnAggProductos.Location = New System.Drawing.Point(33, 90)
+        Me.btnAggProductos.Name = "btnAggProductos"
+        Me.btnAggProductos.Size = New System.Drawing.Size(135, 39)
+        Me.btnAggProductos.TabIndex = 24
+        Me.btnAggProductos.Text = "Productos"
+        Me.btnAggProductos.UseVisualStyleBackColor = True
+        '
+        'btnDatosVenta
+        '
+        Me.btnDatosVenta.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnDatosVenta.Image = CType(resources.GetObject("btnDatosVenta.Image"), System.Drawing.Image)
+        Me.btnDatosVenta.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnDatosVenta.Location = New System.Drawing.Point(27, 29)
+        Me.btnDatosVenta.Name = "btnDatosVenta"
+        Me.btnDatosVenta.Size = New System.Drawing.Size(154, 39)
+        Me.btnDatosVenta.TabIndex = 25
+        Me.btnDatosVenta.Text = "Informacion de la Venta"
+        Me.btnDatosVenta.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.btnDatosVenta.UseVisualStyleBackColor = True
         '
         'detalleVentas
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1190, 544)
-        Me.Controls.Add(Me.GroupBox3)
-        Me.Controls.Add(Me.supedido)
-        Me.Controls.Add(Me.GroupBox2)
-        Me.Controls.Add(Me.GroupBox1)
+        Me.BackColor = System.Drawing.Color.White
+        Me.ClientSize = New System.Drawing.Size(834, 550)
+        Me.Controls.Add(Me.btnDatosVenta)
+        Me.Controls.Add(Me.btnAggProductos)
+        Me.Controls.Add(Me.btnAggServicios)
+        Me.Controls.Add(Me.panelDetalle)
+        Me.Controls.Add(Me.panelProductos)
+        Me.Controls.Add(Me.panelServicios)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "detalleVentas"
         Me.Text = "detalleVentas"
         Me.GroupBox1.ResumeLayout(False)
@@ -427,12 +529,15 @@ Partial Class detalleVentas
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox2.PerformLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.supedido.ResumeLayout(False)
-        Me.supedido.PerformLayout()
         CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox3.ResumeLayout(False)
         Me.GroupBox3.PerformLayout()
         CType(Me.DataGridView3, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.PanelDatosVenta.ResumeLayout(False)
+        Me.panelServicios.ResumeLayout(False)
+        Me.panelProductos.ResumeLayout(False)
+        Me.panelDetalle.ResumeLayout(False)
+        Me.panelDetalle.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -452,7 +557,6 @@ Partial Class detalleVentas
     Friend WithEvents GroupBox2 As GroupBox
     Friend WithEvents txtbuscar As TextBox
     Friend WithEvents DataGridView1 As DataGridView
-    Friend WithEvents supedido As GroupBox
     Friend WithEvents txtcantllevar As TextBox
     Friend WithEvents Label10 As Label
     Friend WithEvents txtsctok As TextBox
@@ -473,4 +577,11 @@ Partial Class detalleVentas
     Friend WithEvents txtlookservice As TextBox
     Friend WithEvents Label12 As Label
     Friend WithEvents Label13 As Label
+    Friend WithEvents PanelDatosVenta As Panel
+    Friend WithEvents panelServicios As Panel
+    Friend WithEvents panelProductos As Panel
+    Friend WithEvents panelDetalle As Panel
+    Friend WithEvents btnAggServicios As Button
+    Friend WithEvents btnAggProductos As Button
+    Friend WithEvents btnDatosVenta As Button
 End Class

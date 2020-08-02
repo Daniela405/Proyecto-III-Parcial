@@ -490,5 +490,33 @@ Public Class detalleVentas
         Buscarservicio()
     End Sub
 
+    Private Sub txtidventa_TextChanged(sender As Object, e As EventArgs) Handles txtidventa.TextChanged
 
+    End Sub
+
+    Private Sub DataGridView2_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView2.CellContentClick
+
+    End Sub
+
+    Private Sub Panel2_Paint(sender As Object, e As PaintEventArgs) Handles panelServicios.Paint
+
+    End Sub
+
+    Private Sub btnDatosVenta_Click(sender As Object, e As EventArgs) Handles btnDatosVenta.Click
+        PanelDatosVenta.Visible = True
+        panelServicios.Visible = False
+        panelProductos.Visible = False
+    End Sub
+
+    Private Sub btnAggProductos_Click(sender As Object, e As EventArgs) Handles btnAggProductos.Click
+        PanelDatosVenta.Visible = False
+        panelServicios.Visible = False
+        panelProductos.Visible = True
+    End Sub
+
+    Private Sub btnAggServicios_Click(sender As Object, e As EventArgs) Handles btnAggServicios.Click
+        PanelDatosVenta.Visible = False
+        panelServicios.Visible = True
+        panelProductos.Visible = False
+    End Sub
 End Class

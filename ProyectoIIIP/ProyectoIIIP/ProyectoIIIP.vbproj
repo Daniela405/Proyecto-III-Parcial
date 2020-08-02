@@ -250,6 +250,8 @@
   <ItemGroup>
     <Content Include="MensajeAennviar.html" />
     <None Include="Resources\WhatsApp Image 2020-07-15 at 9.58.18 PM.jpeg" />
+    <None Include="Resources\Icono cerrar FN.png" />
+    <None Include="Resources\Yessy.png" />
     <Content Include="script.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />

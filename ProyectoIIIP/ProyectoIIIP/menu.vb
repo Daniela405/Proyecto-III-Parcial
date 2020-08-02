@@ -45,8 +45,8 @@
         Me.Close()
     End Sub
 
-    Private Sub btnMaximizar_Click(sender As Object, e As EventArgs) Handles btnMaximizar.Click
-        btnMaximizar.Visible = False
+    Private Sub btnMaximizar_Click(sender As Object, e As EventArgs)
+
         btnRestaurar.Visible = True
         Me.WindowState = FormWindowState.Maximized
     End Sub
@@ -57,7 +57,7 @@
 
     Private Sub btnRestaurar_Click(sender As Object, e As EventArgs) Handles btnRestaurar.Click
         btnRestaurar.Visible = False
-        btnMaximizar.Visible = True
+
         Me.WindowState = FormWindowState.Normal
     End Sub
     Private Sub hideSubMenu()
@@ -151,4 +151,51 @@
 
     End Sub
 
+    Private Sub PanelChildForm_Paint(sender As Object, e As PaintEventArgs) Handles PanelChildForm.Paint
+
+    End Sub
+
+    Private Sub panelEncabezado_Paint(sender As Object, e As PaintEventArgs) Handles panelEncabezado.Paint
+
+    End Sub
+
+    Private Sub panelMenu_Paint(sender As Object, e As PaintEventArgs) Handles panelMenu.Paint
+
+    End Sub
+
+    Private Sub Panel1_Paint(sender As Object, e As PaintEventArgs) Handles Panel1.Paint
+
+    End Sub
+
+    Private Sub paneelMenu_Paint(sender As Object, e As PaintEventArgs) Handles paneelMenu.Paint
+
+    End Sub
+
+    Private Sub subMenuReporte_Paint(sender As Object, e As PaintEventArgs) Handles subMenuReporte.Paint
+
+    End Sub
+
+    Private Sub Panel2_Paint(sender As Object, e As PaintEventArgs) Handles Panel2.Paint
+
+    End Sub
+
+    Private Sub Label3_Click(sender As Object, e As EventArgs) Handles Label3.Click
+
+    End Sub
+
+    Private Sub Label2_Click(sender As Object, e As EventArgs) Handles Label2.Click
+
+    End Sub
+
+    Private Sub Label1_Click(sender As Object, e As EventArgs) Handles Label1.Click
+
+    End Sub
+
+    Private Sub PictureBox2_Click(sender As Object, e As EventArgs) Handles PictureBox2.Click
+
+    End Sub
+
+    Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click
+
+    End Sub
 End Class
