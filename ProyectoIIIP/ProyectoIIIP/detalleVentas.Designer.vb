@@ -62,11 +62,11 @@ Partial Class detalleVentas
         Me.panelServicios = New System.Windows.Forms.Panel()
         Me.panelProductos = New System.Windows.Forms.Panel()
         Me.panelDetalle = New System.Windows.Forms.Panel()
+        Me.Button3 = New System.Windows.Forms.Button()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.btnAggServicios = New System.Windows.Forms.Button()
         Me.btnAggProductos = New System.Windows.Forms.Button()
         Me.btnDatosVenta = New System.Windows.Forms.Button()
-        Me.Button3 = New System.Windows.Forms.Button()
-        Me.Button1 = New System.Windows.Forms.Button()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -252,7 +252,7 @@ Partial Class detalleVentas
         '
         Me.Label11.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.Label11.AutoSize = True
-        Me.Label11.Location = New System.Drawing.Point(36, 203)
+        Me.Label11.Location = New System.Drawing.Point(41, 203)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(49, 13)
         Me.Label11.TabIndex = 21
@@ -261,7 +261,7 @@ Partial Class detalleVentas
         'txttotal
         '
         Me.txttotal.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.txttotal.Location = New System.Drawing.Point(101, 196)
+        Me.txttotal.Location = New System.Drawing.Point(101, 203)
         Me.txttotal.Name = "txttotal"
         Me.txttotal.Size = New System.Drawing.Size(104, 20)
         Me.txttotal.TabIndex = 18
@@ -269,7 +269,7 @@ Partial Class detalleVentas
         'txtcantllevar
         '
         Me.txtcantllevar.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.txtcantllevar.Location = New System.Drawing.Point(100, 100)
+        Me.txtcantllevar.Location = New System.Drawing.Point(100, 103)
         Me.txtcantllevar.Name = "txtcantllevar"
         Me.txtcantllevar.Size = New System.Drawing.Size(105, 20)
         Me.txtcantllevar.TabIndex = 17
@@ -278,7 +278,7 @@ Partial Class detalleVentas
         '
         Me.Label10.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.Label10.AutoSize = True
-        Me.Label10.Location = New System.Drawing.Point(32, 94)
+        Me.Label10.Location = New System.Drawing.Point(40, 98)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(52, 26)
         Me.Label10.TabIndex = 16
@@ -288,7 +288,7 @@ Partial Class detalleVentas
         '
         Me.txtsctok.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.txtsctok.Enabled = False
-        Me.txtsctok.Location = New System.Drawing.Point(101, 164)
+        Me.txtsctok.Location = New System.Drawing.Point(101, 171)
         Me.txtsctok.Name = "txtsctok"
         Me.txtsctok.Size = New System.Drawing.Size(104, 20)
         Me.txtsctok.TabIndex = 15
@@ -297,7 +297,7 @@ Partial Class detalleVentas
         '
         Me.Label9.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(36, 167)
+        Me.Label9.Location = New System.Drawing.Point(51, 171)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(35, 13)
         Me.Label9.TabIndex = 14
@@ -307,7 +307,7 @@ Partial Class detalleVentas
         '
         Me.txtprecio.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.txtprecio.Enabled = False
-        Me.txtprecio.Location = New System.Drawing.Point(101, 128)
+        Me.txtprecio.Location = New System.Drawing.Point(101, 135)
         Me.txtprecio.Name = "txtprecio"
         Me.txtprecio.Size = New System.Drawing.Size(104, 20)
         Me.txtprecio.TabIndex = 11
@@ -316,7 +316,7 @@ Partial Class detalleVentas
         '
         Me.Label8.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(34, 131)
+        Me.Label8.Location = New System.Drawing.Point(51, 140)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(37, 13)
         Me.Label8.TabIndex = 13
@@ -326,7 +326,7 @@ Partial Class detalleVentas
         '
         Me.txtnombreproducto.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.txtnombreproducto.Enabled = False
-        Me.txtnombreproducto.Location = New System.Drawing.Point(100, 65)
+        Me.txtnombreproducto.Location = New System.Drawing.Point(100, 69)
         Me.txtnombreproducto.Name = "txtnombreproducto"
         Me.txtnombreproducto.Size = New System.Drawing.Size(133, 20)
         Me.txtnombreproducto.TabIndex = 11
@@ -335,7 +335,7 @@ Partial Class detalleVentas
         '
         Me.Label7.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(33, 68)
+        Me.Label7.Location = New System.Drawing.Point(25, 72)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(65, 13)
         Me.Label7.TabIndex = 12
@@ -354,7 +354,7 @@ Partial Class detalleVentas
         '
         Me.Label6.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(32, 38)
+        Me.Label6.Location = New System.Drawing.Point(53, 38)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(37, 13)
         Me.Label6.TabIndex = 11
@@ -466,43 +466,6 @@ Partial Class detalleVentas
         Me.panelDetalle.Size = New System.Drawing.Size(834, 265)
         Me.panelDetalle.TabIndex = 22
         '
-        'btnAggServicios
-        '
-        Me.btnAggServicios.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnAggServicios.Image = CType(resources.GetObject("btnAggServicios.Image"), System.Drawing.Image)
-        Me.btnAggServicios.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnAggServicios.Location = New System.Drawing.Point(33, 154)
-        Me.btnAggServicios.Name = "btnAggServicios"
-        Me.btnAggServicios.Size = New System.Drawing.Size(134, 39)
-        Me.btnAggServicios.TabIndex = 23
-        Me.btnAggServicios.Text = "Servicios"
-        Me.btnAggServicios.UseVisualStyleBackColor = True
-        '
-        'btnAggProductos
-        '
-        Me.btnAggProductos.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnAggProductos.Image = CType(resources.GetObject("btnAggProductos.Image"), System.Drawing.Image)
-        Me.btnAggProductos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnAggProductos.Location = New System.Drawing.Point(33, 90)
-        Me.btnAggProductos.Name = "btnAggProductos"
-        Me.btnAggProductos.Size = New System.Drawing.Size(135, 39)
-        Me.btnAggProductos.TabIndex = 24
-        Me.btnAggProductos.Text = "Productos"
-        Me.btnAggProductos.UseVisualStyleBackColor = True
-        '
-        'btnDatosVenta
-        '
-        Me.btnDatosVenta.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnDatosVenta.Image = CType(resources.GetObject("btnDatosVenta.Image"), System.Drawing.Image)
-        Me.btnDatosVenta.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnDatosVenta.Location = New System.Drawing.Point(27, 29)
-        Me.btnDatosVenta.Name = "btnDatosVenta"
-        Me.btnDatosVenta.Size = New System.Drawing.Size(154, 39)
-        Me.btnDatosVenta.TabIndex = 25
-        Me.btnDatosVenta.Text = "Informacion de la Venta"
-        Me.btnDatosVenta.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.btnDatosVenta.UseVisualStyleBackColor = True
-        '
         'Button3
         '
         Me.Button3.Anchor = System.Windows.Forms.AnchorStyles.Top
@@ -529,11 +492,48 @@ Partial Class detalleVentas
         Me.Button1.TabIndex = 19
         Me.Button1.UseVisualStyleBackColor = True
         '
+        'btnAggServicios
+        '
+        Me.btnAggServicios.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnAggServicios.Image = CType(resources.GetObject("btnAggServicios.Image"), System.Drawing.Image)
+        Me.btnAggServicios.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnAggServicios.Location = New System.Drawing.Point(43, 163)
+        Me.btnAggServicios.Name = "btnAggServicios"
+        Me.btnAggServicios.Size = New System.Drawing.Size(134, 39)
+        Me.btnAggServicios.TabIndex = 23
+        Me.btnAggServicios.Text = "Servicios"
+        Me.btnAggServicios.UseVisualStyleBackColor = True
+        '
+        'btnAggProductos
+        '
+        Me.btnAggProductos.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnAggProductos.Image = CType(resources.GetObject("btnAggProductos.Image"), System.Drawing.Image)
+        Me.btnAggProductos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnAggProductos.Location = New System.Drawing.Point(43, 99)
+        Me.btnAggProductos.Name = "btnAggProductos"
+        Me.btnAggProductos.Size = New System.Drawing.Size(135, 39)
+        Me.btnAggProductos.TabIndex = 24
+        Me.btnAggProductos.Text = "Productos"
+        Me.btnAggProductos.UseVisualStyleBackColor = True
+        '
+        'btnDatosVenta
+        '
+        Me.btnDatosVenta.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnDatosVenta.Image = CType(resources.GetObject("btnDatosVenta.Image"), System.Drawing.Image)
+        Me.btnDatosVenta.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnDatosVenta.Location = New System.Drawing.Point(37, 38)
+        Me.btnDatosVenta.Name = "btnDatosVenta"
+        Me.btnDatosVenta.Size = New System.Drawing.Size(154, 39)
+        Me.btnDatosVenta.TabIndex = 25
+        Me.btnDatosVenta.Text = "Informacion de la Venta"
+        Me.btnDatosVenta.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.btnDatosVenta.UseVisualStyleBackColor = True
+        '
         'detalleVentas
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.Color.White
+        Me.BackColor = System.Drawing.Color.Thistle
         Me.ClientSize = New System.Drawing.Size(834, 510)
         Me.Controls.Add(Me.btnDatosVenta)
         Me.Controls.Add(Me.panelServicios)

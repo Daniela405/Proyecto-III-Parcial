@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class servicios
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class servicios
     'NOTA: el Diseñador de Windows Forms necesita el siguiente procedimiento
     'Se puede modificar usando el Diseñador de Windows Forms.  
     'No lo modifique con el editor de código.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
@@ -28,12 +28,6 @@ Partial Class servicios
         Me.dtgServicios = New System.Windows.Forms.DataGridView()
         Me.ErrorProvider = New System.Windows.Forms.ErrorProvider(Me.components)
         Me.ToolTip = New System.Windows.Forms.ToolTip(Me.components)
-        Me.btnEliminar = New System.Windows.Forms.Button()
-        Me.btnLimpiar = New System.Windows.Forms.Button()
-        Me.btnBuscar = New System.Windows.Forms.Button()
-        Me.btnModificar = New System.Windows.Forms.Button()
-        Me.btnGuardar = New System.Windows.Forms.Button()
-        Me.btnCerrar = New System.Windows.Forms.Button()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.lbEstado = New System.Windows.Forms.Label()
         Me.Label10 = New System.Windows.Forms.Label()
@@ -52,10 +46,18 @@ Partial Class servicios
         Me.Label16 = New System.Windows.Forms.Label()
         Me.Label17 = New System.Windows.Forms.Label()
         Me.Label18 = New System.Windows.Forms.Label()
+        Me.btnBuscar = New System.Windows.Forms.Button()
+        Me.btnCerrar = New System.Windows.Forms.Button()
+        Me.btnLimpiar = New System.Windows.Forms.Button()
+        Me.btnEliminar = New System.Windows.Forms.Button()
+        Me.btnGuardar = New System.Windows.Forms.Button()
+        Me.btnModificar = New System.Windows.Forms.Button()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         CType(Me.dtgServicios, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ErrorProvider, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox2.SuspendLayout()
         Me.gbBuscar.SuspendLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'dtgServicios
@@ -69,7 +71,7 @@ Partial Class servicios
         Me.dtgServicios.BackgroundColor = System.Drawing.Color.White
         Me.dtgServicios.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.dtgServicios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dtgServicios.Location = New System.Drawing.Point(107, 268)
+        Me.dtgServicios.Location = New System.Drawing.Point(136, 293)
         Me.dtgServicios.Margin = New System.Windows.Forms.Padding(2)
         Me.dtgServicios.Name = "dtgServicios"
         Me.dtgServicios.RowHeadersWidth = 62
@@ -81,107 +83,9 @@ Partial Class servicios
         '
         Me.ErrorProvider.ContainerControl = Me
         '
-        'btnEliminar
-        '
-        Me.btnEliminar.BackColor = System.Drawing.Color.Transparent
-        Me.btnEliminar.BackgroundImage = CType(resources.GetObject("btnEliminar.BackgroundImage"), System.Drawing.Image)
-        Me.btnEliminar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.btnEliminar.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnEliminar.FlatAppearance.BorderSize = 0
-        Me.btnEliminar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer))
-        Me.btnEliminar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnEliminar.Location = New System.Drawing.Point(620, 141)
-        Me.btnEliminar.Name = "btnEliminar"
-        Me.btnEliminar.Size = New System.Drawing.Size(98, 35)
-        Me.btnEliminar.TabIndex = 33
-        Me.btnEliminar.UseVisualStyleBackColor = False
-        '
-        'btnLimpiar
-        '
-        Me.btnLimpiar.BackColor = System.Drawing.Color.Transparent
-        Me.btnLimpiar.BackgroundImage = CType(resources.GetObject("btnLimpiar.BackgroundImage"), System.Drawing.Image)
-        Me.btnLimpiar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.btnLimpiar.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnLimpiar.FlatAppearance.BorderSize = 0
-        Me.btnLimpiar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Yellow
-        Me.btnLimpiar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gold
-        Me.btnLimpiar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnLimpiar.Location = New System.Drawing.Point(516, 188)
-        Me.btnLimpiar.Name = "btnLimpiar"
-        Me.btnLimpiar.Size = New System.Drawing.Size(98, 35)
-        Me.btnLimpiar.TabIndex = 32
-        Me.btnLimpiar.UseVisualStyleBackColor = False
-        '
-        'btnBuscar
-        '
-        Me.btnBuscar.BackColor = System.Drawing.Color.Transparent
-        Me.btnBuscar.BackgroundImage = CType(resources.GetObject("btnBuscar.BackgroundImage"), System.Drawing.Image)
-        Me.btnBuscar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.btnBuscar.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnBuscar.FlatAppearance.BorderSize = 0
-        Me.btnBuscar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Violet
-        Me.btnBuscar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Plum
-        Me.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnBuscar.Location = New System.Drawing.Point(210, 22)
-        Me.btnBuscar.Name = "btnBuscar"
-        Me.btnBuscar.Size = New System.Drawing.Size(98, 35)
-        Me.btnBuscar.TabIndex = 31
-        Me.btnBuscar.UseVisualStyleBackColor = False
-        '
-        'btnModificar
-        '
-        Me.btnModificar.BackColor = System.Drawing.Color.Transparent
-        Me.btnModificar.BackgroundImage = CType(resources.GetObject("btnModificar.BackgroundImage"), System.Drawing.Image)
-        Me.btnModificar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.btnModificar.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnModificar.FlatAppearance.BorderSize = 0
-        Me.btnModificar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightSeaGreen
-        Me.btnModificar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Cyan
-        Me.btnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnModificar.Location = New System.Drawing.Point(516, 141)
-        Me.btnModificar.Name = "btnModificar"
-        Me.btnModificar.Size = New System.Drawing.Size(98, 35)
-        Me.btnModificar.TabIndex = 30
-        Me.btnModificar.UseVisualStyleBackColor = False
-        '
-        'btnGuardar
-        '
-        Me.btnGuardar.BackColor = System.Drawing.Color.Transparent
-        Me.btnGuardar.BackgroundImage = CType(resources.GetObject("btnGuardar.BackgroundImage"), System.Drawing.Image)
-        Me.btnGuardar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.btnGuardar.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnGuardar.FlatAppearance.BorderSize = 0
-        Me.btnGuardar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DeepSkyBlue
-        Me.btnGuardar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.RoyalBlue
-        Me.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnGuardar.Location = New System.Drawing.Point(412, 140)
-        Me.btnGuardar.Name = "btnGuardar"
-        Me.btnGuardar.Size = New System.Drawing.Size(98, 37)
-        Me.btnGuardar.TabIndex = 29
-        Me.btnGuardar.UseVisualStyleBackColor = False
-        '
-        'btnCerrar
-        '
-        Me.btnCerrar.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnCerrar.BackColor = System.Drawing.Color.Transparent
-        Me.btnCerrar.BackgroundImage = CType(resources.GetObject("btnCerrar.BackgroundImage"), System.Drawing.Image)
-        Me.btnCerrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.btnCerrar.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnCerrar.FlatAppearance.BorderColor = System.Drawing.Color.DimGray
-        Me.btnCerrar.FlatAppearance.BorderSize = 3
-        Me.btnCerrar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightSeaGreen
-        Me.btnCerrar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Cyan
-        Me.btnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnCerrar.Location = New System.Drawing.Point(775, 503)
-        Me.btnCerrar.Name = "btnCerrar"
-        Me.btnCerrar.Size = New System.Drawing.Size(47, 35)
-        Me.btnCerrar.TabIndex = 38
-        Me.btnCerrar.UseVisualStyleBackColor = False
-        '
         'GroupBox2
         '
-        Me.GroupBox2.BackColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.GroupBox2.BackColor = System.Drawing.Color.Transparent
         Me.GroupBox2.Controls.Add(Me.lbEstado)
         Me.GroupBox2.Controls.Add(Me.Label10)
         Me.GroupBox2.Controls.Add(Me.txtPrecio)
@@ -193,8 +97,8 @@ Partial Class servicios
         Me.GroupBox2.Controls.Add(Me.Label14)
         Me.GroupBox2.Controls.Add(Me.txtNombre)
         Me.GroupBox2.Controls.Add(Me.Label15)
-        Me.GroupBox2.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.GroupBox2.Location = New System.Drawing.Point(107, 56)
+        Me.GroupBox2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.GroupBox2.Location = New System.Drawing.Point(118, 72)
         Me.GroupBox2.Margin = New System.Windows.Forms.Padding(2)
         Me.GroupBox2.Name = "GroupBox2"
         Me.GroupBox2.Padding = New System.Windows.Forms.Padding(2)
@@ -218,7 +122,7 @@ Partial Class servicios
         '
         Me.Label10.AutoSize = True
         Me.Label10.Font = New System.Drawing.Font("Modern No. 20", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label10.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.Label10.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.Label10.Location = New System.Drawing.Point(33, 135)
         Me.Label10.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label10.Name = "Label10"
@@ -239,7 +143,7 @@ Partial Class servicios
         '
         Me.Label11.AutoSize = True
         Me.Label11.Font = New System.Drawing.Font("Modern No. 20", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label11.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.Label11.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.Label11.Location = New System.Drawing.Point(33, 33)
         Me.Label11.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label11.Name = "Label11"
@@ -260,7 +164,7 @@ Partial Class servicios
         '
         Me.Label12.AutoSize = True
         Me.Label12.Font = New System.Drawing.Font("Modern No. 20", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label12.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.Label12.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.Label12.Location = New System.Drawing.Point(33, 105)
         Me.Label12.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label12.Name = "Label12"
@@ -272,7 +176,7 @@ Partial Class servicios
         '
         Me.Label13.AutoSize = True
         Me.Label13.Font = New System.Drawing.Font("Modern No. 20", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label13.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.Label13.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.Label13.Location = New System.Drawing.Point(33, 71)
         Me.Label13.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label13.Name = "Label13"
@@ -332,15 +236,15 @@ Partial Class servicios
         '
         'gbBuscar
         '
-        Me.gbBuscar.BackColor = System.Drawing.Color.Black
+        Me.gbBuscar.BackColor = System.Drawing.Color.Transparent
         Me.gbBuscar.Controls.Add(Me.Label5)
         Me.gbBuscar.Controls.Add(Me.txtBuscar)
         Me.gbBuscar.Controls.Add(Me.Label16)
         Me.gbBuscar.Controls.Add(Me.Label17)
         Me.gbBuscar.Controls.Add(Me.btnBuscar)
         Me.gbBuscar.Controls.Add(Me.Label18)
-        Me.gbBuscar.ForeColor = System.Drawing.Color.White
-        Me.gbBuscar.Location = New System.Drawing.Point(403, 56)
+        Me.gbBuscar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.gbBuscar.Location = New System.Drawing.Point(440, 48)
         Me.gbBuscar.Margin = New System.Windows.Forms.Padding(2)
         Me.gbBuscar.Name = "gbBuscar"
         Me.gbBuscar.Padding = New System.Windows.Forms.Padding(2)
@@ -353,7 +257,7 @@ Partial Class servicios
         '
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Modern No. 20", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.Label5.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.Label5.Location = New System.Drawing.Point(19, 26)
         Me.Label5.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label5.Name = "Label5"
@@ -388,13 +292,123 @@ Partial Class servicios
         Me.Label18.Size = New System.Drawing.Size(0, 13)
         Me.Label18.TabIndex = 0
         '
+        'btnBuscar
+        '
+        Me.btnBuscar.BackColor = System.Drawing.Color.Transparent
+        Me.btnBuscar.BackgroundImage = CType(resources.GetObject("btnBuscar.BackgroundImage"), System.Drawing.Image)
+        Me.btnBuscar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btnBuscar.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnBuscar.FlatAppearance.BorderSize = 0
+        Me.btnBuscar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Violet
+        Me.btnBuscar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Plum
+        Me.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnBuscar.Location = New System.Drawing.Point(210, 22)
+        Me.btnBuscar.Name = "btnBuscar"
+        Me.btnBuscar.Size = New System.Drawing.Size(98, 35)
+        Me.btnBuscar.TabIndex = 31
+        Me.btnBuscar.UseVisualStyleBackColor = False
+        '
+        'btnCerrar
+        '
+        Me.btnCerrar.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btnCerrar.BackColor = System.Drawing.Color.Transparent
+        Me.btnCerrar.BackgroundImage = CType(resources.GetObject("btnCerrar.BackgroundImage"), System.Drawing.Image)
+        Me.btnCerrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btnCerrar.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnCerrar.FlatAppearance.BorderColor = System.Drawing.Color.DimGray
+        Me.btnCerrar.FlatAppearance.BorderSize = 3
+        Me.btnCerrar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightSeaGreen
+        Me.btnCerrar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Cyan
+        Me.btnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnCerrar.Location = New System.Drawing.Point(775, 503)
+        Me.btnCerrar.Name = "btnCerrar"
+        Me.btnCerrar.Size = New System.Drawing.Size(47, 35)
+        Me.btnCerrar.TabIndex = 38
+        Me.btnCerrar.UseVisualStyleBackColor = False
+        '
+        'btnLimpiar
+        '
+        Me.btnLimpiar.BackColor = System.Drawing.Color.Transparent
+        Me.btnLimpiar.BackgroundImage = CType(resources.GetObject("btnLimpiar.BackgroundImage"), System.Drawing.Image)
+        Me.btnLimpiar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btnLimpiar.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnLimpiar.FlatAppearance.BorderSize = 0
+        Me.btnLimpiar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Yellow
+        Me.btnLimpiar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gold
+        Me.btnLimpiar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnLimpiar.Location = New System.Drawing.Point(534, 220)
+        Me.btnLimpiar.Name = "btnLimpiar"
+        Me.btnLimpiar.Size = New System.Drawing.Size(98, 35)
+        Me.btnLimpiar.TabIndex = 32
+        Me.btnLimpiar.UseVisualStyleBackColor = False
+        '
+        'btnEliminar
+        '
+        Me.btnEliminar.BackColor = System.Drawing.Color.Transparent
+        Me.btnEliminar.BackgroundImage = CType(resources.GetObject("btnEliminar.BackgroundImage"), System.Drawing.Image)
+        Me.btnEliminar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btnEliminar.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnEliminar.FlatAppearance.BorderSize = 0
+        Me.btnEliminar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer))
+        Me.btnEliminar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnEliminar.Location = New System.Drawing.Point(638, 165)
+        Me.btnEliminar.Name = "btnEliminar"
+        Me.btnEliminar.Size = New System.Drawing.Size(98, 35)
+        Me.btnEliminar.TabIndex = 33
+        Me.btnEliminar.UseVisualStyleBackColor = False
+        '
+        'btnGuardar
+        '
+        Me.btnGuardar.BackColor = System.Drawing.Color.Transparent
+        Me.btnGuardar.BackgroundImage = CType(resources.GetObject("btnGuardar.BackgroundImage"), System.Drawing.Image)
+        Me.btnGuardar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btnGuardar.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnGuardar.FlatAppearance.BorderSize = 0
+        Me.btnGuardar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DeepSkyBlue
+        Me.btnGuardar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.RoyalBlue
+        Me.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnGuardar.Location = New System.Drawing.Point(430, 164)
+        Me.btnGuardar.Name = "btnGuardar"
+        Me.btnGuardar.Size = New System.Drawing.Size(98, 37)
+        Me.btnGuardar.TabIndex = 29
+        Me.btnGuardar.UseVisualStyleBackColor = False
+        '
+        'btnModificar
+        '
+        Me.btnModificar.BackColor = System.Drawing.Color.Transparent
+        Me.btnModificar.BackgroundImage = CType(resources.GetObject("btnModificar.BackgroundImage"), System.Drawing.Image)
+        Me.btnModificar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btnModificar.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnModificar.FlatAppearance.BorderSize = 0
+        Me.btnModificar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightSeaGreen
+        Me.btnModificar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Cyan
+        Me.btnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnModificar.Location = New System.Drawing.Point(534, 165)
+        Me.btnModificar.Name = "btnModificar"
+        Me.btnModificar.Size = New System.Drawing.Size(98, 35)
+        Me.btnModificar.TabIndex = 30
+        Me.btnModificar.UseVisualStyleBackColor = False
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
+        Me.PictureBox1.Location = New System.Drawing.Point(-2, 105)
+        Me.PictureBox1.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(116, 109)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox1.TabIndex = 42
+        Me.PictureBox1.TabStop = False
+        '
         'servicios
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.Color.White
+        Me.BackColor = System.Drawing.Color.Thistle
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(834, 550)
+        Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.gbBuscar)
         Me.Controls.Add(Me.btnCerrar)
         Me.Controls.Add(Me.GroupBox2)
@@ -413,6 +427,7 @@ Partial Class servicios
         Me.GroupBox2.PerformLayout()
         Me.gbBuscar.ResumeLayout(False)
         Me.gbBuscar.PerformLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -443,4 +458,5 @@ Partial Class servicios
     Friend WithEvents Label16 As Label
     Friend WithEvents Label17 As Label
     Friend WithEvents Label18 As Label
+    Friend WithEvents PictureBox1 As PictureBox
 End Class

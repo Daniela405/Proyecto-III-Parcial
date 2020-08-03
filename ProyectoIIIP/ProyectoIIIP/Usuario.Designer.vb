@@ -62,8 +62,8 @@ Partial Class usuario
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Modern No. 20", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Label1.Location = New System.Drawing.Point(25, 66)
+        Me.Label1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.Label1.Location = New System.Drawing.Point(70, 41)
         Me.Label1.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(49, 17)
@@ -72,7 +72,7 @@ Partial Class usuario
         '
         'txtcodigo
         '
-        Me.txtcodigo.Location = New System.Drawing.Point(112, 71)
+        Me.txtcodigo.Location = New System.Drawing.Point(126, 41)
         Me.txtcodigo.Margin = New System.Windows.Forms.Padding(2, 1, 2, 1)
         Me.txtcodigo.Name = "txtcodigo"
         Me.txtcodigo.Size = New System.Drawing.Size(143, 20)
@@ -80,7 +80,7 @@ Partial Class usuario
         '
         'txtnombre
         '
-        Me.txtnombre.Location = New System.Drawing.Point(112, 100)
+        Me.txtnombre.Location = New System.Drawing.Point(126, 73)
         Me.txtnombre.Margin = New System.Windows.Forms.Padding(2, 1, 2, 1)
         Me.txtnombre.Name = "txtnombre"
         Me.txtnombre.Size = New System.Drawing.Size(143, 20)
@@ -90,8 +90,8 @@ Partial Class usuario
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Modern No. 20", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Label2.Location = New System.Drawing.Point(25, 103)
+        Me.Label2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.Label2.Location = New System.Drawing.Point(64, 74)
         Me.Label2.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(55, 17)
@@ -100,7 +100,7 @@ Partial Class usuario
         '
         'txtapellido
         '
-        Me.txtapellido.Location = New System.Drawing.Point(112, 134)
+        Me.txtapellido.Location = New System.Drawing.Point(126, 107)
         Me.txtapellido.Margin = New System.Windows.Forms.Padding(2, 1, 2, 1)
         Me.txtapellido.Name = "txtapellido"
         Me.txtapellido.Size = New System.Drawing.Size(143, 20)
@@ -110,8 +110,8 @@ Partial Class usuario
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Modern No. 20", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Label3.Location = New System.Drawing.Point(25, 134)
+        Me.Label3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.Label3.Location = New System.Drawing.Point(61, 109)
         Me.Label3.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(60, 17)
@@ -120,7 +120,7 @@ Partial Class usuario
         '
         'txtusuario
         '
-        Me.txtusuario.Location = New System.Drawing.Point(112, 161)
+        Me.txtusuario.Location = New System.Drawing.Point(126, 139)
         Me.txtusuario.Margin = New System.Windows.Forms.Padding(2, 1, 2, 1)
         Me.txtusuario.Name = "txtusuario"
         Me.txtusuario.Size = New System.Drawing.Size(143, 20)
@@ -130,8 +130,8 @@ Partial Class usuario
         '
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Modern No. 20", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Label4.Location = New System.Drawing.Point(25, 162)
+        Me.Label4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.Label4.Location = New System.Drawing.Point(62, 141)
         Me.Label4.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(57, 17)
@@ -140,7 +140,7 @@ Partial Class usuario
         '
         'txtcorreo
         '
-        Me.txtcorreo.Location = New System.Drawing.Point(112, 214)
+        Me.txtcorreo.Location = New System.Drawing.Point(126, 198)
         Me.txtcorreo.Margin = New System.Windows.Forms.Padding(2, 1, 2, 1)
         Me.txtcorreo.Name = "txtcorreo"
         Me.txtcorreo.Size = New System.Drawing.Size(143, 20)
@@ -150,8 +150,8 @@ Partial Class usuario
         '
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Modern No. 20", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Label5.Location = New System.Drawing.Point(25, 216)
+        Me.Label5.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.Label5.Location = New System.Drawing.Point(72, 199)
         Me.Label5.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(48, 17)
@@ -174,12 +174,12 @@ Partial Class usuario
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.RowHeadersWidth = 62
         Me.DataGridView1.RowTemplate.Height = 28
-        Me.DataGridView1.Size = New System.Drawing.Size(574, 141)
+        Me.DataGridView1.Size = New System.Drawing.Size(574, 169)
         Me.DataGridView1.TabIndex = 12
         '
         'GroupBox1
         '
-        Me.GroupBox1.BackColor = System.Drawing.Color.Black
+        Me.GroupBox1.BackColor = System.Drawing.Color.Transparent
         Me.GroupBox1.Controls.Add(Me.Label6)
         Me.GroupBox1.Controls.Add(Me.txtcontraseña)
         Me.GroupBox1.Controls.Add(Me.txtestado)
@@ -192,13 +192,12 @@ Partial Class usuario
         Me.GroupBox1.Controls.Add(Me.Label2)
         Me.GroupBox1.Controls.Add(Me.txtnombre)
         Me.GroupBox1.Controls.Add(Me.Label3)
-        Me.GroupBox1.Controls.Add(Me.PictureBox1)
         Me.GroupBox1.Controls.Add(Me.txtapellido)
         Me.GroupBox1.Controls.Add(Me.txtusuario)
         Me.GroupBox1.Controls.Add(Me.txtcorreo)
         Me.GroupBox1.Controls.Add(Me.Label5)
-        Me.GroupBox1.ForeColor = System.Drawing.SystemColors.Control
-        Me.GroupBox1.Location = New System.Drawing.Point(164, 10)
+        Me.GroupBox1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.GroupBox1.Location = New System.Drawing.Point(218, 19)
         Me.GroupBox1.Margin = New System.Windows.Forms.Padding(2, 1, 2, 1)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Padding = New System.Windows.Forms.Padding(2, 1, 2, 1)
@@ -211,8 +210,8 @@ Partial Class usuario
         '
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Modern No. 20", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Label6.Location = New System.Drawing.Point(25, 195)
+        Me.Label6.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.Label6.Location = New System.Drawing.Point(45, 170)
         Me.Label6.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(75, 17)
@@ -221,7 +220,7 @@ Partial Class usuario
         '
         'txtcontraseña
         '
-        Me.txtcontraseña.Location = New System.Drawing.Point(112, 188)
+        Me.txtcontraseña.Location = New System.Drawing.Point(126, 169)
         Me.txtcontraseña.Margin = New System.Windows.Forms.Padding(2, 1, 2, 1)
         Me.txtcontraseña.Name = "txtcontraseña"
         Me.txtcontraseña.Size = New System.Drawing.Size(143, 20)
@@ -229,7 +228,7 @@ Partial Class usuario
         '
         'txtestado
         '
-        Me.txtestado.Location = New System.Drawing.Point(112, 271)
+        Me.txtestado.Location = New System.Drawing.Point(126, 262)
         Me.txtestado.Margin = New System.Windows.Forms.Padding(2, 1, 2, 1)
         Me.txtestado.Name = "txtestado"
         Me.txtestado.Size = New System.Drawing.Size(143, 20)
@@ -239,8 +238,8 @@ Partial Class usuario
         '
         Me.Estado.AutoSize = True
         Me.Estado.Font = New System.Drawing.Font("Modern No. 20", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Estado.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Estado.Location = New System.Drawing.Point(25, 272)
+        Me.Estado.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.Estado.Location = New System.Drawing.Point(70, 263)
         Me.Estado.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Estado.Name = "Estado"
         Me.Estado.Size = New System.Drawing.Size(49, 17)
@@ -251,7 +250,7 @@ Partial Class usuario
         '
         Me.cmbrol.FormattingEnabled = True
         Me.cmbrol.Items.AddRange(New Object() {"Maquillista"})
-        Me.cmbrol.Location = New System.Drawing.Point(112, 241)
+        Me.cmbrol.Location = New System.Drawing.Point(126, 230)
         Me.cmbrol.Margin = New System.Windows.Forms.Padding(2)
         Me.cmbrol.Name = "cmbrol"
         Me.cmbrol.Size = New System.Drawing.Size(143, 21)
@@ -261,8 +260,8 @@ Partial Class usuario
         '
         Me.Label7.AutoSize = True
         Me.Label7.Font = New System.Drawing.Font("Modern No. 20", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Label7.Location = New System.Drawing.Point(26, 244)
+        Me.Label7.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.Label7.Location = New System.Drawing.Point(89, 231)
         Me.Label7.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(30, 17)
@@ -272,10 +271,10 @@ Partial Class usuario
         'PictureBox1
         '
         Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
-        Me.PictureBox1.Location = New System.Drawing.Point(127, 13)
+        Me.PictureBox1.Location = New System.Drawing.Point(29, 93)
         Me.PictureBox1.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
         Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(57, 51)
+        Me.PictureBox1.Size = New System.Drawing.Size(154, 140)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox1.TabIndex = 22
         Me.PictureBox1.TabStop = False
@@ -295,7 +294,7 @@ Partial Class usuario
         Me.btnGuardar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DeepSkyBlue
         Me.btnGuardar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.RoyalBlue
         Me.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnGuardar.Location = New System.Drawing.Point(509, 66)
+        Me.btnGuardar.Location = New System.Drawing.Point(585, 61)
         Me.btnGuardar.Name = "btnGuardar"
         Me.btnGuardar.Size = New System.Drawing.Size(98, 36)
         Me.btnGuardar.TabIndex = 23
@@ -312,7 +311,7 @@ Partial Class usuario
         Me.btnModificar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightSeaGreen
         Me.btnModificar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Cyan
         Me.btnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnModificar.Location = New System.Drawing.Point(509, 108)
+        Me.btnModificar.Location = New System.Drawing.Point(585, 109)
         Me.btnModificar.Name = "btnModificar"
         Me.btnModificar.Size = New System.Drawing.Size(98, 35)
         Me.btnModificar.TabIndex = 24
@@ -329,7 +328,7 @@ Partial Class usuario
         Me.btnBuscar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Violet
         Me.btnBuscar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Plum
         Me.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnBuscar.Location = New System.Drawing.Point(509, 209)
+        Me.btnBuscar.Location = New System.Drawing.Point(587, 206)
         Me.btnBuscar.Name = "btnBuscar"
         Me.btnBuscar.Size = New System.Drawing.Size(98, 35)
         Me.btnBuscar.TabIndex = 25
@@ -345,7 +344,7 @@ Partial Class usuario
         Me.btnLimpiar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Yellow
         Me.btnLimpiar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gold
         Me.btnLimpiar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnLimpiar.Location = New System.Drawing.Point(509, 264)
+        Me.btnLimpiar.Location = New System.Drawing.Point(585, 253)
         Me.btnLimpiar.Name = "btnLimpiar"
         Me.btnLimpiar.Size = New System.Drawing.Size(98, 35)
         Me.btnLimpiar.TabIndex = 26
@@ -362,7 +361,7 @@ Partial Class usuario
         Me.btnEliminar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer))
         Me.btnEliminar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnEliminar.Location = New System.Drawing.Point(509, 156)
+        Me.btnEliminar.Location = New System.Drawing.Point(585, 157)
         Me.btnEliminar.Name = "btnEliminar"
         Me.btnEliminar.Size = New System.Drawing.Size(98, 35)
         Me.btnEliminar.TabIndex = 27
@@ -389,7 +388,7 @@ Partial Class usuario
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.Color.White
+        Me.BackColor = System.Drawing.Color.Thistle
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(834, 550)
         Me.Controls.Add(Me.btnCerrar)
@@ -400,6 +399,7 @@ Partial Class usuario
         Me.Controls.Add(Me.btnGuardar)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.DataGridView1)
+        Me.Controls.Add(Me.PictureBox1)
         Me.DoubleBuffered = True
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Margin = New System.Windows.Forms.Padding(2, 1, 2, 1)

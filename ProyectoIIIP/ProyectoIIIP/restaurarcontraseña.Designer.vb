@@ -33,24 +33,27 @@ Partial Class restaurarcontraseña
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(27, 124)
+        Me.Label1.Location = New System.Drawing.Point(54, 80)
+        Me.Label1.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(57, 20)
+        Me.Label1.Size = New System.Drawing.Size(38, 13)
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "Correo"
         '
         'txtcorreo
         '
-        Me.txtcorreo.Location = New System.Drawing.Point(114, 118)
+        Me.txtcorreo.Location = New System.Drawing.Point(112, 76)
+        Me.txtcorreo.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.txtcorreo.Name = "txtcorreo"
-        Me.txtcorreo.Size = New System.Drawing.Size(100, 26)
+        Me.txtcorreo.Size = New System.Drawing.Size(153, 20)
         Me.txtcorreo.TabIndex = 1
         '
         'btnrecuperar
         '
-        Me.btnrecuperar.Location = New System.Drawing.Point(168, 212)
+        Me.btnrecuperar.Location = New System.Drawing.Point(112, 138)
+        Me.btnrecuperar.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.btnrecuperar.Name = "btnrecuperar"
-        Me.btnrecuperar.Size = New System.Drawing.Size(228, 69)
+        Me.btnrecuperar.Size = New System.Drawing.Size(152, 45)
         Me.btnrecuperar.TabIndex = 2
         Me.btnrecuperar.Text = "Recuperar Contraseña"
         Me.btnrecuperar.UseVisualStyleBackColor = True
@@ -58,30 +61,33 @@ Partial Class restaurarcontraseña
         'txtPswMostra
         '
         Me.txtPswMostra.AutoSize = True
-        Me.txtPswMostra.Location = New System.Drawing.Point(324, 261)
+        Me.txtPswMostra.Location = New System.Drawing.Point(216, 170)
+        Me.txtPswMostra.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.txtPswMostra.Name = "txtPswMostra"
-        Me.txtPswMostra.Size = New System.Drawing.Size(42, 20)
+        Me.txtPswMostra.Size = New System.Drawing.Size(29, 13)
         Me.txtPswMostra.TabIndex = 3
         Me.txtPswMostra.Text = "label"
         '
         'rtxHtml
         '
-        Me.rtxHtml.Location = New System.Drawing.Point(451, 212)
+        Me.rtxHtml.Location = New System.Drawing.Point(301, 138)
+        Me.rtxHtml.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.rtxHtml.Name = "rtxHtml"
-        Me.rtxHtml.Size = New System.Drawing.Size(185, 144)
+        Me.rtxHtml.Size = New System.Drawing.Size(125, 95)
         Me.rtxHtml.TabIndex = 4
         Me.rtxHtml.Text = resources.GetString("rtxHtml.Text")
         '
         'restaurarcontraseña
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.ClientSize = New System.Drawing.Size(533, 292)
         Me.Controls.Add(Me.rtxHtml)
         Me.Controls.Add(Me.txtPswMostra)
         Me.Controls.Add(Me.btnrecuperar)
         Me.Controls.Add(Me.txtcorreo)
         Me.Controls.Add(Me.Label1)
+        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Name = "restaurarcontraseña"
         Me.Text = "restaurarcontraseña"
         Me.ResumeLayout(False)

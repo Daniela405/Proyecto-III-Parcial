@@ -32,15 +32,15 @@ Partial Class loginempleado
         Me.ErrorValidacion = New System.Windows.Forms.ErrorProvider(Me.components)
         Me.tmensaje = New System.Windows.Forms.ToolTip(Me.components)
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.btnSalir = New System.Windows.Forms.Button()
-        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.PictureBox3 = New System.Windows.Forms.PictureBox()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
+        Me.btnSalir = New System.Windows.Forms.Button()
         CType(Me.ErrorValidacion, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
-        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'btnIngresar
@@ -51,7 +51,7 @@ Partial Class loginempleado
         Me.btnIngresar.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnIngresar.ForeColor = System.Drawing.Color.White
         Me.btnIngresar.Location = New System.Drawing.Point(76, 238)
-        Me.btnIngresar.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btnIngresar.Margin = New System.Windows.Forms.Padding(2)
         Me.btnIngresar.Name = "btnIngresar"
         Me.btnIngresar.Size = New System.Drawing.Size(189, 32)
         Me.btnIngresar.TabIndex = 10
@@ -65,7 +65,7 @@ Partial Class loginempleado
         Me.txtcontraseña.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtcontraseña.ForeColor = System.Drawing.Color.White
         Me.txtcontraseña.Location = New System.Drawing.Point(87, 162)
-        Me.txtcontraseña.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtcontraseña.Margin = New System.Windows.Forms.Padding(2)
         Me.txtcontraseña.Name = "txtcontraseña"
         Me.txtcontraseña.Size = New System.Drawing.Size(117, 15)
         Me.txtcontraseña.TabIndex = 9
@@ -78,7 +78,7 @@ Partial Class loginempleado
         Me.txtusuario.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtusuario.ForeColor = System.Drawing.Color.White
         Me.txtusuario.Location = New System.Drawing.Point(87, 83)
-        Me.txtusuario.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtusuario.Margin = New System.Windows.Forms.Padding(2)
         Me.txtusuario.Name = "txtusuario"
         Me.txtusuario.Size = New System.Drawing.Size(117, 15)
         Me.txtusuario.TabIndex = 8
@@ -121,29 +121,6 @@ Partial Class loginempleado
         Me.Panel1.Size = New System.Drawing.Size(338, 36)
         Me.Panel1.TabIndex = 12
         '
-        'btnSalir
-        '
-        Me.btnSalir.FlatAppearance.BorderSize = 0
-        Me.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnSalir.Image = Global.ProyectoIIIP.My.Resources.Resources.Icono_cerrar_FN
-        Me.btnSalir.Location = New System.Drawing.Point(302, 0)
-        Me.btnSalir.Margin = New System.Windows.Forms.Padding(2)
-        Me.btnSalir.Name = "btnSalir"
-        Me.btnSalir.Size = New System.Drawing.Size(36, 34)
-        Me.btnSalir.TabIndex = 11
-        Me.btnSalir.UseVisualStyleBackColor = True
-        '
-        'PictureBox2
-        '
-        Me.PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), System.Drawing.Image)
-        Me.PictureBox2.Location = New System.Drawing.Point(2, 1)
-        Me.PictureBox2.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
-        Me.PictureBox2.Name = "PictureBox2"
-        Me.PictureBox2.Size = New System.Drawing.Size(41, 35)
-        Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox2.TabIndex = 14
-        Me.PictureBox2.TabStop = False
-        '
         'PictureBox3
         '
         Me.PictureBox3.Image = CType(resources.GetObject("PictureBox3.Image"), System.Drawing.Image)
@@ -166,6 +143,29 @@ Partial Class loginempleado
         Me.PictureBox1.TabIndex = 16
         Me.PictureBox1.TabStop = False
         '
+        'PictureBox2
+        '
+        Me.PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), System.Drawing.Image)
+        Me.PictureBox2.Location = New System.Drawing.Point(2, 1)
+        Me.PictureBox2.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
+        Me.PictureBox2.Name = "PictureBox2"
+        Me.PictureBox2.Size = New System.Drawing.Size(41, 35)
+        Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox2.TabIndex = 14
+        Me.PictureBox2.TabStop = False
+        '
+        'btnSalir
+        '
+        Me.btnSalir.FlatAppearance.BorderSize = 0
+        Me.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnSalir.Image = Global.ProyectoIIIP.My.Resources.Resources.Icono_cerrar_FN
+        Me.btnSalir.Location = New System.Drawing.Point(302, 0)
+        Me.btnSalir.Margin = New System.Windows.Forms.Padding(2)
+        Me.btnSalir.Name = "btnSalir"
+        Me.btnSalir.Size = New System.Drawing.Size(36, 34)
+        Me.btnSalir.TabIndex = 11
+        Me.btnSalir.UseVisualStyleBackColor = True
+        '
         'loginempleado
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -181,15 +181,15 @@ Partial Class loginempleado
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
-        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Margin = New System.Windows.Forms.Padding(2)
         Me.Name = "loginempleado"
         Me.Opacity = 0.9R
-        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         CType(Me.ErrorValidacion, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel1.ResumeLayout(False)
-        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

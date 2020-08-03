@@ -101,6 +101,7 @@ Partial Class Bienvenida
         '
         'Progress
         '
+        Me.Progress.ForeColor = System.Drawing.Color.MidnightBlue
         Me.Progress.Location = New System.Drawing.Point(386, 280)
         Me.Progress.Margin = New System.Windows.Forms.Padding(2)
         Me.Progress.Name = "Progress"
@@ -111,7 +112,7 @@ Partial Class Bienvenida
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.Color.Plum
+        Me.BackColor = System.Drawing.Color.Thistle
         Me.ClientSize = New System.Drawing.Size(707, 429)
         Me.Controls.Add(Me.Progress)
         Me.Controls.Add(Me.Label1)
@@ -121,6 +122,7 @@ Partial Class Bienvenida
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Margin = New System.Windows.Forms.Padding(2)
         Me.Name = "Bienvenida"
+        Me.Opacity = 0.9R
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
         Me.Text = "Bienvenida"
         Me.Panel1.ResumeLayout(False)

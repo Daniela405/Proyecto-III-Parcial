@@ -6,7 +6,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{5DC8482B-A50D-45FF-976E-BEDF48AD0F9E}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <StartupObject>ProyectoIIIP.usuario</StartupObject>
+    <StartupObject>ProyectoIIIP.menus</StartupObject>
     <RootNamespace>ProyectoIIIP</RootNamespace>
     <AssemblyName>ProyectoIIIP</AssemblyName>
     <FileAlignment>512</FileAlignment>
@@ -252,6 +252,15 @@
     <None Include="Resources\WhatsApp Image 2020-07-15 at 9.58.18 PM.jpeg" />
     <None Include="Resources\Icono cerrar FN.png" />
     <None Include="Resources\Yessy.png" />
+    <None Include="Resources\login pricipal.jpg" />
+    <None Include="Resources\login pricipal 1.jpg" />
+    <None Include="Resources\cliente fondo.jpg" />
+    <None Include="Resources\beauty.jpg" />
+    <None Include="Resources\pink.png" />
+    <None Include="Resources\empl.jpg" />
+    <None Include="Resources\servi.png" />
+    <None Include="Resources\servi1.png" />
+    <None Include="Resources\clientee.png" />
     <Content Include="script.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
