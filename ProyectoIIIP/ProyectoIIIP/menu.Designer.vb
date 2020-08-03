@@ -24,8 +24,9 @@ Partial Class menus
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(menus))
         Me.panelEncabezado = New System.Windows.Forms.Panel()
+        Me.btnMinimizar = New System.Windows.Forms.Button()
+        Me.btnSalir = New System.Windows.Forms.Button()
         Me.panelMenu = New System.Windows.Forms.Panel()
-        Me.Panel1 = New System.Windows.Forms.Panel()
         Me.paneelMenu = New System.Windows.Forms.Panel()
         Me.btnVentas = New System.Windows.Forms.Button()
         Me.subMenuReporte = New System.Windows.Forms.Panel()
@@ -46,19 +47,17 @@ Partial Class menus
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.PanelChildForm = New System.Windows.Forms.Panel()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.btnRestaurar = New System.Windows.Forms.Button()
-        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
-        Me.btnMinimizar = New System.Windows.Forms.Button()
-        Me.btnSalir = New System.Windows.Forms.Button()
         Me.panelEncabezado.SuspendLayout()
         Me.paneelMenu.SuspendLayout()
         Me.subMenuReporte.SuspendLayout()
         Me.Panel2.SuspendLayout()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelChildForm.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'panelEncabezado
@@ -67,13 +66,44 @@ Partial Class menus
         Me.panelEncabezado.Controls.Add(Me.btnMinimizar)
         Me.panelEncabezado.Controls.Add(Me.btnSalir)
         Me.panelEncabezado.Controls.Add(Me.panelMenu)
-        Me.panelEncabezado.Controls.Add(Me.Panel1)
         Me.panelEncabezado.Dock = System.Windows.Forms.DockStyle.Top
         Me.panelEncabezado.Location = New System.Drawing.Point(0, 0)
         Me.panelEncabezado.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
         Me.panelEncabezado.Name = "panelEncabezado"
-        Me.panelEncabezado.Size = New System.Drawing.Size(1034, 50)
+        Me.panelEncabezado.Size = New System.Drawing.Size(1034, 48)
         Me.panelEncabezado.TabIndex = 1
+        '
+        'btnMinimizar
+        '
+        Me.btnMinimizar.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btnMinimizar.BackgroundImage = CType(resources.GetObject("btnMinimizar.BackgroundImage"), System.Drawing.Image)
+        Me.btnMinimizar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btnMinimizar.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnMinimizar.FlatAppearance.BorderSize = 0
+        Me.btnMinimizar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.MediumPurple
+        Me.btnMinimizar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MediumPurple
+        Me.btnMinimizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnMinimizar.Location = New System.Drawing.Point(930, -1)
+        Me.btnMinimizar.Name = "btnMinimizar"
+        Me.btnMinimizar.Size = New System.Drawing.Size(50, 50)
+        Me.btnMinimizar.TabIndex = 5
+        Me.btnMinimizar.UseVisualStyleBackColor = True
+        '
+        'btnSalir
+        '
+        Me.btnSalir.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btnSalir.BackgroundImage = CType(resources.GetObject("btnSalir.BackgroundImage"), System.Drawing.Image)
+        Me.btnSalir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btnSalir.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnSalir.FlatAppearance.BorderSize = 0
+        Me.btnSalir.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Brown
+        Me.btnSalir.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red
+        Me.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnSalir.Location = New System.Drawing.Point(984, -1)
+        Me.btnSalir.Name = "btnSalir"
+        Me.btnSalir.Size = New System.Drawing.Size(50, 50)
+        Me.btnSalir.TabIndex = 4
+        Me.btnSalir.UseVisualStyleBackColor = True
         '
         'panelMenu
         '
@@ -82,14 +112,6 @@ Partial Class menus
         Me.panelMenu.Name = "panelMenu"
         Me.panelMenu.Size = New System.Drawing.Size(150, 432)
         Me.panelMenu.TabIndex = 2
-        '
-        'Panel1
-        '
-        Me.Panel1.Location = New System.Drawing.Point(0, 40)
-        Me.Panel1.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
-        Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(906, 81)
-        Me.Panel1.TabIndex = 2
         '
         'paneelMenu
         '
@@ -105,10 +127,10 @@ Partial Class menus
         Me.paneelMenu.Controls.Add(Me.btnUsuario)
         Me.paneelMenu.Controls.Add(Me.Panel2)
         Me.paneelMenu.Dock = System.Windows.Forms.DockStyle.Left
-        Me.paneelMenu.Location = New System.Drawing.Point(0, 50)
+        Me.paneelMenu.Location = New System.Drawing.Point(0, 48)
         Me.paneelMenu.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
         Me.paneelMenu.Name = "paneelMenu"
-        Me.paneelMenu.Size = New System.Drawing.Size(200, 550)
+        Me.paneelMenu.Size = New System.Drawing.Size(200, 552)
         Me.paneelMenu.TabIndex = 2
         '
         'btnVentas
@@ -444,6 +466,17 @@ Partial Class menus
         Me.Label1.TabIndex = 9
         Me.Label1.Text = "SALON"
         '
+        'PictureBox2
+        '
+        Me.PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), System.Drawing.Image)
+        Me.PictureBox2.Location = New System.Drawing.Point(11, 3)
+        Me.PictureBox2.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
+        Me.PictureBox2.Name = "PictureBox2"
+        Me.PictureBox2.Size = New System.Drawing.Size(74, 59)
+        Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox2.TabIndex = 8
+        Me.PictureBox2.TabStop = False
+        '
         'PanelChildForm
         '
         Me.PanelChildForm.BackColor = System.Drawing.Color.Thistle
@@ -451,10 +484,10 @@ Partial Class menus
         Me.PanelChildForm.Controls.Add(Me.btnRestaurar)
         Me.PanelChildForm.Cursor = System.Windows.Forms.Cursors.Default
         Me.PanelChildForm.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.PanelChildForm.Location = New System.Drawing.Point(200, 50)
+        Me.PanelChildForm.Location = New System.Drawing.Point(200, 48)
         Me.PanelChildForm.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
         Me.PanelChildForm.Name = "PanelChildForm"
-        Me.PanelChildForm.Size = New System.Drawing.Size(834, 550)
+        Me.PanelChildForm.Size = New System.Drawing.Size(834, 552)
         Me.PanelChildForm.TabIndex = 3
         '
         'PictureBox1
@@ -485,49 +518,6 @@ Partial Class menus
         Me.btnRestaurar.UseVisualStyleBackColor = True
         Me.btnRestaurar.Visible = False
         '
-        'PictureBox2
-        '
-        Me.PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), System.Drawing.Image)
-        Me.PictureBox2.Location = New System.Drawing.Point(11, 3)
-        Me.PictureBox2.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
-        Me.PictureBox2.Name = "PictureBox2"
-        Me.PictureBox2.Size = New System.Drawing.Size(74, 59)
-        Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox2.TabIndex = 8
-        Me.PictureBox2.TabStop = False
-        '
-        'btnMinimizar
-        '
-        Me.btnMinimizar.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnMinimizar.BackgroundImage = CType(resources.GetObject("btnMinimizar.BackgroundImage"), System.Drawing.Image)
-        Me.btnMinimizar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.btnMinimizar.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnMinimizar.FlatAppearance.BorderSize = 0
-        Me.btnMinimizar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.MediumPurple
-        Me.btnMinimizar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MediumPurple
-        Me.btnMinimizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnMinimizar.Location = New System.Drawing.Point(925, 5)
-        Me.btnMinimizar.Name = "btnMinimizar"
-        Me.btnMinimizar.Size = New System.Drawing.Size(50, 45)
-        Me.btnMinimizar.TabIndex = 5
-        Me.btnMinimizar.UseVisualStyleBackColor = True
-        '
-        'btnSalir
-        '
-        Me.btnSalir.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnSalir.BackgroundImage = CType(resources.GetObject("btnSalir.BackgroundImage"), System.Drawing.Image)
-        Me.btnSalir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.btnSalir.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnSalir.FlatAppearance.BorderSize = 0
-        Me.btnSalir.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Brown
-        Me.btnSalir.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red
-        Me.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnSalir.Location = New System.Drawing.Point(981, 2)
-        Me.btnSalir.Name = "btnSalir"
-        Me.btnSalir.Size = New System.Drawing.Size(50, 45)
-        Me.btnSalir.TabIndex = 4
-        Me.btnSalir.UseVisualStyleBackColor = True
-        '
         'menus
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -546,17 +536,15 @@ Partial Class menus
         Me.subMenuReporte.ResumeLayout(False)
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PanelChildForm.ResumeLayout(False)
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
     Friend WithEvents panelEncabezado As Panel
-    Friend WithEvents Panel1 As Panel
     Friend WithEvents btnRestaurar As Button
     Friend WithEvents btnMinimizar As Button
-    Friend WithEvents btnSalir As Button
     Friend WithEvents paneelMenu As Panel
     Friend WithEvents PanelChildForm As Panel
     Friend WithEvents PictureBox2 As PictureBox
@@ -581,4 +569,5 @@ Partial Class menus
     Friend WithEvents btnUsuario As Button
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents panelMenu As Panel
+    Friend WithEvents btnSalir As Button
 End Class

@@ -51,7 +51,7 @@ Partial Class menuempleado
         Me.panelEncabezado.Location = New System.Drawing.Point(0, 0)
         Me.panelEncabezado.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
         Me.panelEncabezado.Name = "panelEncabezado"
-        Me.panelEncabezado.Size = New System.Drawing.Size(1034, 50)
+        Me.panelEncabezado.Size = New System.Drawing.Size(1034, 48)
         Me.panelEncabezado.TabIndex = 2
         '
         'btnSalir
@@ -64,9 +64,9 @@ Partial Class menuempleado
         Me.btnSalir.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Brown
         Me.btnSalir.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red
         Me.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnSalir.Location = New System.Drawing.Point(981, 3)
+        Me.btnSalir.Location = New System.Drawing.Point(984, -1)
         Me.btnSalir.Name = "btnSalir"
-        Me.btnSalir.Size = New System.Drawing.Size(50, 45)
+        Me.btnSalir.Size = New System.Drawing.Size(50, 50)
         Me.btnSalir.TabIndex = 4
         Me.btnSalir.UseVisualStyleBackColor = True
         '
@@ -80,9 +80,9 @@ Partial Class menuempleado
         Me.btnMinimizar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.MediumPurple
         Me.btnMinimizar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MediumPurple
         Me.btnMinimizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnMinimizar.Location = New System.Drawing.Point(923, 3)
+        Me.btnMinimizar.Location = New System.Drawing.Point(930, -1)
         Me.btnMinimizar.Name = "btnMinimizar"
-        Me.btnMinimizar.Size = New System.Drawing.Size(50, 45)
+        Me.btnMinimizar.Size = New System.Drawing.Size(50, 50)
         Me.btnMinimizar.TabIndex = 5
         Me.btnMinimizar.UseVisualStyleBackColor = True
         '
@@ -96,9 +96,9 @@ Partial Class menuempleado
         Me.Panel1.Controls.Add(Me.Label2)
         Me.Panel1.Controls.Add(Me.Label1)
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Panel1.Location = New System.Drawing.Point(0, 50)
+        Me.Panel1.Location = New System.Drawing.Point(0, 48)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(200, 550)
+        Me.Panel1.Size = New System.Drawing.Size(200, 552)
         Me.Panel1.TabIndex = 3
         '
         'btnVentas
@@ -189,9 +189,9 @@ Partial Class menuempleado
         Me.PanelChildForm.BackColor = System.Drawing.Color.Thistle
         Me.PanelChildForm.Controls.Add(Me.PictureBox1)
         Me.PanelChildForm.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.PanelChildForm.Location = New System.Drawing.Point(200, 50)
+        Me.PanelChildForm.Location = New System.Drawing.Point(200, 48)
         Me.PanelChildForm.Name = "PanelChildForm"
-        Me.PanelChildForm.Size = New System.Drawing.Size(834, 550)
+        Me.PanelChildForm.Size = New System.Drawing.Size(834, 552)
         Me.PanelChildForm.TabIndex = 4
         '
         'PictureBox1

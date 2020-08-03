@@ -25,11 +25,4 @@
         TIEMPO.Start() 'Iniciamos el temporizador 1'
     End Sub
 
-    Private Sub Progress_Click(sender As Object, e As EventArgs) Handles Progress.Click
-
-    End Sub
-
-    Private Sub PictureBox3_Click(sender As Object, e As EventArgs)
-
-    End Sub
 End Class

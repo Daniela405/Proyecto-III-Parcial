@@ -4,17 +4,20 @@ Imports System.Data
 Imports System.Windows.Forms
 Imports System.Security.Cryptography
 Imports System.Text
+Imports System.Runtime.InteropServices
 Public Class loginempleado
     Public cmb As SqlCommand
-
     Dim conexion As Conexion = New Conexion()
-    Private Sub btnSalir_Click(sender As Object, e As EventArgs) Handles btnSalir.Click
-        Dim opcion As DialogResult
-        opcion = MessageBox.Show("¿Desea finalizar?", "SALIR", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
-        If (opcion = DialogResult.Yes) Then
 
-            Me.Hide()
-        End If
+    <DllImport("user32.DLL", EntryPoint:="ReleaseCapture")>
+    Private Shared Sub ReleaseCapture()
+    End Sub
+    <DllImport("user32.DLL", EntryPoint:="SendMessage")>
+    Private Shared Sub SendMessage(ByVal hWnd As System.IntPtr, ByVal wMsg As Integer, ByVal wParam As Integer, ByVal lParam As Integer)
+    End Sub
+    Private Sub Panel1_MouseMove(sender As Object, e As MouseEventArgs) Handles Panel1.MouseMove
+        ReleaseCapture()
+        SendMessage(Me.Handle, &H112&, &HF012&, 0)
     End Sub
 
     Private Sub txtusuario_Validating(sender As Object, e As CancelEventArgs) Handles txtusuario.Validating
@@ -46,7 +49,6 @@ Public Class loginempleado
         tmensaje.ToolTipIcon = ToolTipIcon.Info
     End Sub
 
-
     Private Sub loginempleado_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         conexion.conectar()
     End Sub
@@ -59,7 +61,8 @@ Public Class loginempleado
             If conexion.validarUsuario(userName, psw) Then
                 MsgBox("Correcto")
                 menuempleado.Show()
-                Me.Hide()
+                principal.Hide()
+                Me.Close()
             Else
                 MsgBox("Usuario/Contraseña invalido")
             End If
@@ -68,11 +71,16 @@ Public Class loginempleado
         End Try
     End Sub
 
-
-
-
     Private Sub btnIngresar_Click(sender As Object, e As EventArgs) Handles btnIngresar.Click
         ingresarMenu()
+    End Sub
 
+    Private Sub btnSalir_Click(sender As Object, e As EventArgs) Handles btnSalir.Click
+        Dim opcion As DialogResult
+        opcion = MessageBox.Show("¿Desea finalizar?", "SALIR", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+        If (opcion = DialogResult.Yes) Then
+            principal.Show()
+            Me.Close()
+        End If
     End Sub
 End Class

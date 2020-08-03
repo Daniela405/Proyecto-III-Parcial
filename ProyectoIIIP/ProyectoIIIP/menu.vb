@@ -1,4 +1,18 @@
-﻿Public Class menus
+﻿Imports System.Runtime.InteropServices
+Public Class menus
+    <DllImport("user32.DLL", EntryPoint:="ReleaseCapture")>
+    Private Shared Sub ReleaseCapture()
+    End Sub
+    <DllImport("user32.DLL", EntryPoint:="SendMessage")>
+    Private Shared Sub SendMessage(ByVal hWnd As System.IntPtr, ByVal wMsg As Integer, ByVal wParam As Integer, ByVal lParam As Integer)
+    End Sub
+
+    Private Sub panelEncabezado_MouseMove(sender As Object, e As MouseEventArgs) Handles panelEncabezado.MouseMove
+        ReleaseCapture()
+        SendMessage(Me.Handle, &H112&, &HF012&, 0)
+    End Sub
+
+
     Private Sub ReportesProveedoresToolStripMenuItem_Click(sender As Object, e As EventArgs)
 
     End Sub
@@ -42,7 +56,12 @@
     End Sub
 
     Private Sub btnSalir_Click(sender As Object, e As EventArgs) Handles btnSalir.Click
-        Me.Close()
+        Dim opcion As DialogResult
+        opcion = MessageBox.Show("¿Desea finalizar?", "SALIR", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+        If (opcion = DialogResult.Yes) Then
+            principal.Show()
+            Me.Close()
+        End If
     End Sub
 
     Private Sub btnMaximizar_Click(sender As Object, e As EventArgs)
@@ -125,77 +144,5 @@
     Private Sub btnVentas_Click(sender As Object, e As EventArgs) Handles btnVentas.Click
         openChildForm(New ventas())
         hideSubMenu()
-    End Sub
-
-    Private Sub btnArreglo_Click(sender As Object, e As EventArgs) Handles btnArreglo.Click
-
-    End Sub
-
-    Private Sub Button7_Click(sender As Object, e As EventArgs) Handles Button7.Click
-
-    End Sub
-
-    Private Sub Button8_Click(sender As Object, e As EventArgs) Handles Button8.Click
-
-    End Sub
-
-    Private Sub Button9_Click(sender As Object, e As EventArgs) Handles Button9.Click
-
-    End Sub
-
-    Private Sub Button10_Click(sender As Object, e As EventArgs) Handles Button10.Click
-
-    End Sub
-
-    Private Sub Button11_Click(sender As Object, e As EventArgs) Handles Button11.Click
-
-    End Sub
-
-    Private Sub PanelChildForm_Paint(sender As Object, e As PaintEventArgs) Handles PanelChildForm.Paint
-
-    End Sub
-
-    Private Sub panelEncabezado_Paint(sender As Object, e As PaintEventArgs) Handles panelEncabezado.Paint
-
-    End Sub
-
-    Private Sub panelMenu_Paint(sender As Object, e As PaintEventArgs) Handles panelMenu.Paint
-
-    End Sub
-
-    Private Sub Panel1_Paint(sender As Object, e As PaintEventArgs) Handles Panel1.Paint
-
-    End Sub
-
-    Private Sub paneelMenu_Paint(sender As Object, e As PaintEventArgs) Handles paneelMenu.Paint
-
-    End Sub
-
-    Private Sub subMenuReporte_Paint(sender As Object, e As PaintEventArgs) Handles subMenuReporte.Paint
-
-    End Sub
-
-    Private Sub Panel2_Paint(sender As Object, e As PaintEventArgs) Handles Panel2.Paint
-
-    End Sub
-
-    Private Sub Label3_Click(sender As Object, e As EventArgs) Handles Label3.Click
-
-    End Sub
-
-    Private Sub Label2_Click(sender As Object, e As EventArgs) Handles Label2.Click
-
-    End Sub
-
-    Private Sub Label1_Click(sender As Object, e As EventArgs) Handles Label1.Click
-
-    End Sub
-
-    Private Sub PictureBox2_Click(sender As Object, e As EventArgs) Handles PictureBox2.Click
-
-    End Sub
-
-    Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click
-
     End Sub
 End Class

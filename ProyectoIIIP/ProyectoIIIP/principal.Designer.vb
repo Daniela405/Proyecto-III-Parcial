@@ -27,6 +27,7 @@ Partial Class principal
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.btnempleado = New System.Windows.Forms.Button()
         Me.btnadministrador = New System.Windows.Forms.Button()
+        Me.btnSalir = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -58,11 +59,11 @@ Partial Class principal
         Me.btnempleado.FlatAppearance.BorderSize = 2
         Me.btnempleado.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MidnightBlue
         Me.btnempleado.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnempleado.Font = New System.Drawing.Font("Dubai", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnempleado.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnempleado.ForeColor = System.Drawing.Color.Turquoise
         Me.btnempleado.Image = CType(resources.GetObject("btnempleado.Image"), System.Drawing.Image)
         Me.btnempleado.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnempleado.Location = New System.Drawing.Point(265, 161)
+        Me.btnempleado.Location = New System.Drawing.Point(265, 167)
         Me.btnempleado.Margin = New System.Windows.Forms.Padding(2)
         Me.btnempleado.Name = "btnempleado"
         Me.btnempleado.Size = New System.Drawing.Size(143, 64)
@@ -76,11 +77,11 @@ Partial Class principal
         Me.btnadministrador.FlatAppearance.BorderSize = 2
         Me.btnadministrador.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MidnightBlue
         Me.btnadministrador.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnadministrador.Font = New System.Drawing.Font("Dubai", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnadministrador.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnadministrador.ForeColor = System.Drawing.Color.Turquoise
         Me.btnadministrador.Image = CType(resources.GetObject("btnadministrador.Image"), System.Drawing.Image)
         Me.btnadministrador.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnadministrador.Location = New System.Drawing.Point(265, 43)
+        Me.btnadministrador.Location = New System.Drawing.Point(265, 64)
         Me.btnadministrador.Margin = New System.Windows.Forms.Padding(2)
         Me.btnadministrador.Name = "btnadministrador"
         Me.btnadministrador.Size = New System.Drawing.Size(143, 64)
@@ -89,12 +90,29 @@ Partial Class principal
         Me.btnadministrador.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.btnadministrador.UseVisualStyleBackColor = False
         '
+        'btnSalir
+        '
+        Me.btnSalir.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btnSalir.BackgroundImage = CType(resources.GetObject("btnSalir.BackgroundImage"), System.Drawing.Image)
+        Me.btnSalir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btnSalir.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnSalir.FlatAppearance.BorderSize = 0
+        Me.btnSalir.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Brown
+        Me.btnSalir.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red
+        Me.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnSalir.Location = New System.Drawing.Point(406, 0)
+        Me.btnSalir.Name = "btnSalir"
+        Me.btnSalir.Size = New System.Drawing.Size(50, 45)
+        Me.btnSalir.TabIndex = 5
+        Me.btnSalir.UseVisualStyleBackColor = True
+        '
         'principal
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.DarkOrchid
         Me.ClientSize = New System.Drawing.Size(456, 292)
+        Me.Controls.Add(Me.btnSalir)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.btnempleado)
         Me.Controls.Add(Me.btnadministrador)
@@ -114,4 +132,5 @@ Partial Class principal
     Friend WithEvents btnempleado As Button
     Friend WithEvents Panel1 As Panel
     Friend WithEvents PictureBox1 As PictureBox
+    Friend WithEvents btnSalir As Button
 End Class

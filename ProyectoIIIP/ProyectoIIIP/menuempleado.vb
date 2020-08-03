@@ -1,4 +1,18 @@
-﻿Public Class menuempleado
+﻿Imports System.Runtime.InteropServices
+Public Class menuempleado
+    <DllImport("user32.DLL", EntryPoint:="ReleaseCapture")>
+    Private Shared Sub ReleaseCapture()
+    End Sub
+    <DllImport("user32.DLL", EntryPoint:="SendMessage")>
+    Private Shared Sub SendMessage(ByVal hWnd As System.IntPtr, ByVal wMsg As Integer, ByVal wParam As Integer, ByVal lParam As Integer)
+    End Sub
+
+    Private Sub panelEncabezado_MouseMove(sender As Object, e As MouseEventArgs) Handles panelEncabezado.MouseMove
+        ReleaseCapture()
+        SendMessage(Me.Handle, &H112&, &HF012&, 0)
+    End Sub
+
+
     Private Sub ClientesToolStripMenuItem_Click(sender As Object, e As EventArgs)
         Cliente.Show()
     End Sub
@@ -38,7 +52,12 @@
         'hideSubMenu()
     End Sub
 
-    Private Sub panelEncabezado_Paint(sender As Object, e As PaintEventArgs) Handles panelEncabezado.Paint
-
+    Private Sub btnSalir_Click(sender As Object, e As EventArgs) Handles btnSalir.Click
+        Dim opcion As DialogResult
+        opcion = MessageBox.Show("¿Desea finalizar?", "SALIR", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+        If (opcion = DialogResult.Yes) Then
+            principal.Show()
+            Me.Close()
+        End If
     End Sub
 End Class
