@@ -24,10 +24,10 @@ Partial Class principal
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(principal))
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.btnSalir = New System.Windows.Forms.Button()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.btnempleado = New System.Windows.Forms.Button()
         Me.btnadministrador = New System.Windows.Forms.Button()
-        Me.btnSalir = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -42,13 +42,29 @@ Partial Class principal
         Me.Panel1.Size = New System.Drawing.Size(223, 292)
         Me.Panel1.TabIndex = 2
         '
+        'btnSalir
+        '
+        Me.btnSalir.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btnSalir.BackgroundImage = CType(resources.GetObject("btnSalir.BackgroundImage"), System.Drawing.Image)
+        Me.btnSalir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btnSalir.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnSalir.FlatAppearance.BorderSize = 0
+        Me.btnSalir.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Brown
+        Me.btnSalir.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red
+        Me.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnSalir.Location = New System.Drawing.Point(406, 0)
+        Me.btnSalir.Name = "btnSalir"
+        Me.btnSalir.Size = New System.Drawing.Size(50, 45)
+        Me.btnSalir.TabIndex = 5
+        Me.btnSalir.UseVisualStyleBackColor = True
+        '
         'PictureBox1
         '
         Me.PictureBox1.BackgroundImage = Global.ProyectoIIIP.My.Resources.Resources.login_pricipal_1
         Me.PictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.PictureBox1.Location = New System.Drawing.Point(0, 0)
+        Me.PictureBox1.Location = New System.Drawing.Point(-8, -11)
         Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(223, 292)
+        Me.PictureBox1.Size = New System.Drawing.Size(231, 310)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox1.TabIndex = 0
         Me.PictureBox1.TabStop = False
@@ -66,7 +82,7 @@ Partial Class principal
         Me.btnempleado.Location = New System.Drawing.Point(265, 167)
         Me.btnempleado.Margin = New System.Windows.Forms.Padding(2)
         Me.btnempleado.Name = "btnempleado"
-        Me.btnempleado.Size = New System.Drawing.Size(143, 64)
+        Me.btnempleado.Size = New System.Drawing.Size(157, 64)
         Me.btnempleado.TabIndex = 1
         Me.btnempleado.Text = "      Empleado" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
         Me.btnempleado.UseVisualStyleBackColor = False
@@ -84,27 +100,11 @@ Partial Class principal
         Me.btnadministrador.Location = New System.Drawing.Point(265, 64)
         Me.btnadministrador.Margin = New System.Windows.Forms.Padding(2)
         Me.btnadministrador.Name = "btnadministrador"
-        Me.btnadministrador.Size = New System.Drawing.Size(143, 64)
+        Me.btnadministrador.Size = New System.Drawing.Size(157, 64)
         Me.btnadministrador.TabIndex = 0
         Me.btnadministrador.Text = "Administrador"
         Me.btnadministrador.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.btnadministrador.UseVisualStyleBackColor = False
-        '
-        'btnSalir
-        '
-        Me.btnSalir.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnSalir.BackgroundImage = CType(resources.GetObject("btnSalir.BackgroundImage"), System.Drawing.Image)
-        Me.btnSalir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.btnSalir.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnSalir.FlatAppearance.BorderSize = 0
-        Me.btnSalir.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Brown
-        Me.btnSalir.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red
-        Me.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnSalir.Location = New System.Drawing.Point(406, 0)
-        Me.btnSalir.Name = "btnSalir"
-        Me.btnSalir.Size = New System.Drawing.Size(50, 45)
-        Me.btnSalir.TabIndex = 5
-        Me.btnSalir.UseVisualStyleBackColor = True
         '
         'principal
         '

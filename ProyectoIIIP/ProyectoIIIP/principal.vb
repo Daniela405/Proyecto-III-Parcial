@@ -2,10 +2,13 @@
 Public Class principal
     Private Sub btnadministrador_Click(sender As Object, e As EventArgs) Handles btnadministrador.Click
         login.Show()
+        Me.Hide()
+
     End Sub
 
     Private Sub btnempleado_Click(sender As Object, e As EventArgs) Handles btnempleado.Click
         loginempleado.Show()
+        Me.Hide()
     End Sub
 
     Private Sub btnSalir_Click(sender As Object, e As EventArgs) Handles btnSalir.Click

@@ -32,10 +32,10 @@ Partial Class login
         Me.ErrorValidacion = New System.Windows.Forms.ErrorProvider(Me.components)
         Me.tmensaje = New System.Windows.Forms.ToolTip(Me.components)
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.btnSalir = New System.Windows.Forms.Button()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.PictureBox3 = New System.Windows.Forms.PictureBox()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.btnSalir = New System.Windows.Forms.Button()
         CType(Me.ErrorValidacion, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -92,6 +92,7 @@ Partial Class login
         Me.txtcontraseña.Size = New System.Drawing.Size(170, 15)
         Me.txtcontraseña.TabIndex = 3
         Me.txtcontraseña.Text = "CONTRASEÑA"
+        Me.txtcontraseña.UseSystemPasswordChar = True
         '
         'btnIngresar
         '
@@ -122,6 +123,22 @@ Partial Class login
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(340, 36)
         Me.Panel1.TabIndex = 6
+        '
+        'btnSalir
+        '
+        Me.btnSalir.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btnSalir.BackgroundImage = CType(resources.GetObject("btnSalir.BackgroundImage"), System.Drawing.Image)
+        Me.btnSalir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btnSalir.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnSalir.FlatAppearance.BorderSize = 0
+        Me.btnSalir.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Brown
+        Me.btnSalir.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red
+        Me.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnSalir.Location = New System.Drawing.Point(301, -2)
+        Me.btnSalir.Name = "btnSalir"
+        Me.btnSalir.Size = New System.Drawing.Size(40, 40)
+        Me.btnSalir.TabIndex = 19
+        Me.btnSalir.UseVisualStyleBackColor = True
         '
         'PictureBox2
         '
@@ -155,22 +172,6 @@ Partial Class login
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox1.TabIndex = 14
         Me.PictureBox1.TabStop = False
-        '
-        'btnSalir
-        '
-        Me.btnSalir.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnSalir.BackgroundImage = CType(resources.GetObject("btnSalir.BackgroundImage"), System.Drawing.Image)
-        Me.btnSalir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.btnSalir.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnSalir.FlatAppearance.BorderSize = 0
-        Me.btnSalir.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Brown
-        Me.btnSalir.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red
-        Me.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnSalir.Location = New System.Drawing.Point(301, -2)
-        Me.btnSalir.Name = "btnSalir"
-        Me.btnSalir.Size = New System.Drawing.Size(40, 40)
-        Me.btnSalir.TabIndex = 19
-        Me.btnSalir.UseVisualStyleBackColor = True
         '
         'login
         '

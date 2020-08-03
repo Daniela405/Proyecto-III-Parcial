@@ -6,7 +6,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{5DC8482B-A50D-45FF-976E-BEDF48AD0F9E}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <StartupObject>ProyectoIIIP.principal</StartupObject>
+    <StartupObject>ProyectoIIIP.menuempleado</StartupObject>
     <RootNamespace>ProyectoIIIP</RootNamespace>
     <AssemblyName>ProyectoIIIP</AssemblyName>
     <FileAlignment>512</FileAlignment>
@@ -261,6 +261,8 @@
     <None Include="Resources\servi.png" />
     <None Include="Resources\servi1.png" />
     <None Include="Resources\clientee.png" />
+    <None Include="Resources\shopping-basket-add256_24909.png" />
+    <None Include="Resources\shopping-basket-remove256_24901.png" />
     <Content Include="script.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />

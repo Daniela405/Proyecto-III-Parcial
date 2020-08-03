@@ -42,14 +42,25 @@ Public Class menuempleado
         childForm.BringToFront()
         childForm.Show()
     End Sub
+    Private Sub hideSubMenu()
+        'subMenuReporte.Visible = False
+    End Sub
+    Private Sub showSubmenu(submenu As Panel)
+        If submenu.Visible = False Then
+            hideSubMenu()
+            submenu.Visible = True
+        Else
+            submenu.Visible = False
+        End If
+    End Sub
     Private Sub btnClieente_Click(sender As Object, e As EventArgs) Handles btnClieente.Click
         openChildForm(New Cliente())
-        'hideSubMenu()
+        hideSubMenu()
     End Sub
 
     Private Sub btnVentas_Click(sender As Object, e As EventArgs) Handles btnVentas.Click
         openChildForm(New ventas())
-        'hideSubMenu()
+        hideSubMenu()
     End Sub
 
     Private Sub btnSalir_Click(sender As Object, e As EventArgs) Handles btnSalir.Click
@@ -59,5 +70,12 @@ Public Class menuempleado
             principal.Show()
             Me.Close()
         End If
+    End Sub
+
+    Private Sub Label5_Click(sender As Object, e As EventArgs) Handles Label5.Click
+        Me.Hide()
+        principal.Show()
+
+        Label5.Text = Label5.ForeColor.B
     End Sub
 End Class

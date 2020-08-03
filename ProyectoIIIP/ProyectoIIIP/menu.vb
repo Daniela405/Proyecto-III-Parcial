@@ -145,4 +145,19 @@ Public Class menus
         openChildForm(New ventas())
         hideSubMenu()
     End Sub
+
+    Private Sub PanelChildForm_Paint(sender As Object, e As PaintEventArgs) Handles PanelChildForm.Paint
+
+    End Sub
+
+    Private Sub Label3_Click(sender As Object, e As EventArgs) Handles Label3.Click
+
+    End Sub
+
+    Private Sub Label5_Click(sender As Object, e As EventArgs) Handles Label5.Click
+        Me.Hide()
+        principal.Show()
+
+        Label5.Text = Label5.ForeColor.B
+    End Sub
 End Class

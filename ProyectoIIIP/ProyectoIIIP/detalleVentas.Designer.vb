@@ -62,11 +62,11 @@ Partial Class detalleVentas
         Me.panelServicios = New System.Windows.Forms.Panel()
         Me.panelProductos = New System.Windows.Forms.Panel()
         Me.panelDetalle = New System.Windows.Forms.Panel()
+        Me.btnDatosVenta = New System.Windows.Forms.Button()
+        Me.btnAggProductos = New System.Windows.Forms.Button()
+        Me.btnAggServicios = New System.Windows.Forms.Button()
         Me.Button3 = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
-        Me.btnAggServicios = New System.Windows.Forms.Button()
-        Me.btnAggProductos = New System.Windows.Forms.Button()
-        Me.btnDatosVenta = New System.Windows.Forms.Button()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -466,43 +466,18 @@ Partial Class detalleVentas
         Me.panelDetalle.Size = New System.Drawing.Size(834, 265)
         Me.panelDetalle.TabIndex = 22
         '
-        'Button3
+        'btnDatosVenta
         '
-        Me.Button3.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.Button3.BackgroundImage = CType(resources.GetObject("Button3.BackgroundImage"), System.Drawing.Image)
-        Me.Button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Button3.FlatAppearance.BorderSize = 0
-        Me.Button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button3.Location = New System.Drawing.Point(262, 150)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(53, 50)
-        Me.Button3.TabIndex = 20
-        Me.Button3.UseVisualStyleBackColor = True
-        '
-        'Button1
-        '
-        Me.Button1.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.Button1.BackgroundImage = CType(resources.GetObject("Button1.BackgroundImage"), System.Drawing.Image)
-        Me.Button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Button1.FlatAppearance.BorderSize = 0
-        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button1.Location = New System.Drawing.Point(266, 40)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(49, 50)
-        Me.Button1.TabIndex = 19
-        Me.Button1.UseVisualStyleBackColor = True
-        '
-        'btnAggServicios
-        '
-        Me.btnAggServicios.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnAggServicios.Image = CType(resources.GetObject("btnAggServicios.Image"), System.Drawing.Image)
-        Me.btnAggServicios.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnAggServicios.Location = New System.Drawing.Point(43, 163)
-        Me.btnAggServicios.Name = "btnAggServicios"
-        Me.btnAggServicios.Size = New System.Drawing.Size(134, 39)
-        Me.btnAggServicios.TabIndex = 23
-        Me.btnAggServicios.Text = "Servicios"
-        Me.btnAggServicios.UseVisualStyleBackColor = True
+        Me.btnDatosVenta.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnDatosVenta.Image = CType(resources.GetObject("btnDatosVenta.Image"), System.Drawing.Image)
+        Me.btnDatosVenta.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnDatosVenta.Location = New System.Drawing.Point(37, 38)
+        Me.btnDatosVenta.Name = "btnDatosVenta"
+        Me.btnDatosVenta.Size = New System.Drawing.Size(154, 39)
+        Me.btnDatosVenta.TabIndex = 25
+        Me.btnDatosVenta.Text = "Informacion de la Venta"
+        Me.btnDatosVenta.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.btnDatosVenta.UseVisualStyleBackColor = True
         '
         'btnAggProductos
         '
@@ -516,18 +491,43 @@ Partial Class detalleVentas
         Me.btnAggProductos.Text = "Productos"
         Me.btnAggProductos.UseVisualStyleBackColor = True
         '
-        'btnDatosVenta
+        'btnAggServicios
         '
-        Me.btnDatosVenta.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnDatosVenta.Image = CType(resources.GetObject("btnDatosVenta.Image"), System.Drawing.Image)
-        Me.btnDatosVenta.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnDatosVenta.Location = New System.Drawing.Point(37, 38)
-        Me.btnDatosVenta.Name = "btnDatosVenta"
-        Me.btnDatosVenta.Size = New System.Drawing.Size(154, 39)
-        Me.btnDatosVenta.TabIndex = 25
-        Me.btnDatosVenta.Text = "Informacion de la Venta"
-        Me.btnDatosVenta.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.btnDatosVenta.UseVisualStyleBackColor = True
+        Me.btnAggServicios.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnAggServicios.Image = CType(resources.GetObject("btnAggServicios.Image"), System.Drawing.Image)
+        Me.btnAggServicios.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnAggServicios.Location = New System.Drawing.Point(43, 163)
+        Me.btnAggServicios.Name = "btnAggServicios"
+        Me.btnAggServicios.Size = New System.Drawing.Size(134, 39)
+        Me.btnAggServicios.TabIndex = 23
+        Me.btnAggServicios.Text = "Servicios"
+        Me.btnAggServicios.UseVisualStyleBackColor = True
+        '
+        'Button3
+        '
+        Me.Button3.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.Button3.BackgroundImage = Global.ProyectoIIIP.My.Resources.Resources.shopping_basket_remove256_24901
+        Me.Button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Button3.FlatAppearance.BorderSize = 0
+        Me.Button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button3.Location = New System.Drawing.Point(284, 140)
+        Me.Button3.Name = "Button3"
+        Me.Button3.Size = New System.Drawing.Size(68, 74)
+        Me.Button3.TabIndex = 20
+        Me.Button3.UseVisualStyleBackColor = True
+        '
+        'Button1
+        '
+        Me.Button1.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.Button1.BackgroundImage = Global.ProyectoIIIP.My.Resources.Resources.shopping_basket_add256_24909
+        Me.Button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Button1.FlatAppearance.BorderSize = 0
+        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button1.Location = New System.Drawing.Point(284, 53)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(68, 71)
+        Me.Button1.TabIndex = 19
+        Me.Button1.UseVisualStyleBackColor = True
         '
         'detalleVentas
         '
