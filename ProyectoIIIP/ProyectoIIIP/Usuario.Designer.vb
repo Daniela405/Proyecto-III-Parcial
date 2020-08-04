@@ -61,12 +61,12 @@ Partial Class usuario
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Modern No. 20", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.Label1.Location = New System.Drawing.Point(70, 41)
         Me.Label1.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(49, 17)
+        Me.Label1.Size = New System.Drawing.Size(56, 18)
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "Código"
         '
@@ -89,12 +89,12 @@ Partial Class usuario
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Modern No. 20", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.Label2.Location = New System.Drawing.Point(64, 74)
         Me.Label2.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(55, 17)
+        Me.Label2.Size = New System.Drawing.Size(62, 18)
         Me.Label2.TabIndex = 2
         Me.Label2.Text = "Nombre"
         '
@@ -109,12 +109,12 @@ Partial Class usuario
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Modern No. 20", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.Label3.Location = New System.Drawing.Point(61, 109)
         Me.Label3.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(60, 17)
+        Me.Label3.Size = New System.Drawing.Size(59, 18)
         Me.Label3.TabIndex = 4
         Me.Label3.Text = "Apellido"
         '
@@ -129,12 +129,12 @@ Partial Class usuario
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Font = New System.Drawing.Font("Modern No. 20", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.Label4.Location = New System.Drawing.Point(62, 141)
         Me.Label4.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(57, 17)
+        Me.Label4.Size = New System.Drawing.Size(60, 18)
         Me.Label4.TabIndex = 6
         Me.Label4.Text = "Usuario"
         '
@@ -149,12 +149,12 @@ Partial Class usuario
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Font = New System.Drawing.Font("Modern No. 20", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label5.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.Label5.Location = New System.Drawing.Point(72, 199)
         Me.Label5.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(48, 17)
+        Me.Label5.Size = New System.Drawing.Size(55, 18)
         Me.Label5.TabIndex = 10
         Me.Label5.Text = "Correo"
         '
@@ -209,12 +209,12 @@ Partial Class usuario
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Font = New System.Drawing.Font("Modern No. 20", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label6.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.Label6.Location = New System.Drawing.Point(45, 170)
         Me.Label6.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(75, 17)
+        Me.Label6.Size = New System.Drawing.Size(85, 18)
         Me.Label6.TabIndex = 28
         Me.Label6.Text = "Contraseña"
         '
@@ -237,19 +237,19 @@ Partial Class usuario
         'Estado
         '
         Me.Estado.AutoSize = True
-        Me.Estado.Font = New System.Drawing.Font("Modern No. 20", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Estado.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Estado.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.Estado.Location = New System.Drawing.Point(70, 263)
         Me.Estado.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Estado.Name = "Estado"
-        Me.Estado.Size = New System.Drawing.Size(49, 17)
+        Me.Estado.Size = New System.Drawing.Size(55, 18)
         Me.Estado.TabIndex = 25
         Me.Estado.Text = "Estado"
         '
         'cmbrol
         '
         Me.cmbrol.FormattingEnabled = True
-        Me.cmbrol.Items.AddRange(New Object() {"Maquillista"})
+        Me.cmbrol.Items.AddRange(New Object() {"<Seleccionar>", "Estilista", "Masajista", "Maquillador", "Manicurista"})
         Me.cmbrol.Location = New System.Drawing.Point(126, 230)
         Me.cmbrol.Margin = New System.Windows.Forms.Padding(2)
         Me.cmbrol.Name = "cmbrol"
@@ -259,12 +259,12 @@ Partial Class usuario
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Font = New System.Drawing.Font("Modern No. 20", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label7.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.Label7.Location = New System.Drawing.Point(89, 231)
         Me.Label7.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(30, 17)
+        Me.Label7.Size = New System.Drawing.Size(31, 18)
         Me.Label7.TabIndex = 23
         Me.Label7.Text = "Rol"
         '

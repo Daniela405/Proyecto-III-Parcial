@@ -6,7 +6,8 @@ Public Class empleado
     Private Sub empleado_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         conexion.conectar()
         actualizarID()
-        txtcodigo.Enabled = False
+
+        mostrardatos()
     End Sub
 
     Private Function validarCorreo(ByVal isCorreo As String) As Boolean
@@ -50,11 +51,12 @@ Public Class empleado
             Else
                 If IsNumeric(mtxtIdentidad.Text) = True And mtxtIdentidad.TextLength = 13 Then
                     If conexion.comprobarExistenciaIdentidadEm(mtxtIdentidad.Text) = 2 Then
-                        If (conexion.agregarEmpleado(Val(txtcodigo.Text), mtxtIdentidad.Text, txtnombre.Text, txtapellido.Text, txtUsuario.Text, Val(txtedad.Text), cmbsexo.SelectedItem, txtTel.Text, txtCorreo.Text, cmbcargo.SelectedItem, txtEstado.Text)) Then
+                        If (conexion.agregarEmpleado(Val(txtcodigo.Text), mtxtIdentidad.Text, txtnombre.Text, txtapellido.Text, txtUsuario.Text, txtedad.Text, cmbsexo.SelectedItem, txtTel.Text, txtCorreo.Text, cmbcargo.SelectedItem, txtEstado.Text)) Then
                             actualizarID()
                             conexion.consultaEmpleado("SELECT * from empleado Where empleado.Identidad = " & mtxtIdentidad.Text, "data")
                             MessageBox.Show("Guardado", "Correcto", MessageBoxButtons.OK, MessageBoxIcon.Information)
                             dataEmpleado.DataSource = conexion.ds.Tables("data")
+                            mostrardatos()
                         Else
                             MessageBox.Show("Error al guardar", "Incorrecto", MessageBoxButtons.OK, MessageBoxIcon.Error)
                             limpiar()
@@ -71,7 +73,7 @@ Public Class empleado
             End If
 
         Catch ex As Exception
-            MsgBox(ex.Message)
+
         End Try
     End Sub
 
@@ -181,7 +183,7 @@ Public Class empleado
                 MessageBox.Show("Eliminado", "Correcto", MessageBoxButtons.OK, MessageBoxIcon.Information)
                 txtEstado.Text = "Eliminado"
 
-                dataEmpleado.DataSource = conexion.ds.Tables("data")
+                mostrardatos()
                 Dim dtg As DataGridViewRow = dataEmpleado.Rows(0)
 
                 txtcodigo.Text = dtg.Cells(0).Value.ToString()
@@ -206,7 +208,7 @@ Public Class empleado
     End Sub
 
     Public Sub actualizarID()
-        If conexion.retornarUltimoEmpleado() = 0 Then
+        If conexion.retornarUltimoEmpleado() = " " Then
             idAnterior = 1
             txtcodigo.Text = idAnterior
         Else
@@ -459,16 +461,36 @@ Public Class empleado
 
     Private Sub rbCodigo_CheckedChanged(sender As Object, e As EventArgs) Handles rbCodigo.CheckedChanged
         dataEmpleado.DataSource = ""
-        limpiar()
+        limpiar1()
+
         txtBuscarNombre.Enabled = False
+        txtBuscarNombre.Visible = False
         mBuscarIdentidad.Enabled = True
+        mBuscarIdentidad.Visible = True
     End Sub
 
     Private Sub rbNombre_CheckedChanged_1(sender As Object, e As EventArgs) Handles rbNombre.CheckedChanged
         dataEmpleado.DataSource = ""
-        limpiar()
+        limpiar1()
         txtBuscarNombre.Enabled = True
+        txtBuscarNombre.Visible = True
         mBuscarIdentidad.Enabled = False
+        mBuscarIdentidad.Visible = False
+    End Sub
+    Private Sub limpiar1()
+        txtnombre.Clear()
+        txtapellido.Clear()
+        txtedad.Clear()
+        cmbsexo.SelectedItem = "<Seleccionar>"
+        cmbcargo.SelectedItem = "<Seleccionar>"
+        mtxtIdentidad.Clear()
+        mBuscarIdentidad.Clear()
+        txtBuscarNombre.Clear()
+        txtUsuario.Clear()
+        txtEstado.Clear()
+        txtCorreo.Clear()
+        txtTel.Clear()
+        dataEmpleado.DataSource = ""
     End Sub
 
     Private Sub cmbsexo_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbsexo.SelectedIndexChanged
@@ -490,6 +512,16 @@ Public Class empleado
 
         txtapellido.Text = StrConv(txtapellido.Text, vbProperCase)
         txtapellido.SelectionStart = Len(txtapellido.Text)
+
+    End Sub
+    Public Sub mostrardatos()
+        conexion.consulta("select * from empleado", "empleado")
+
+        dataEmpleado.DataSource = conexion.ds.Tables("empleado")
+
+    End Sub
+
+    Private Sub txtBuscarNombre_TextChanged(sender As Object, e As EventArgs) Handles txtBuscarNombre.TextChanged
 
     End Sub
 End Class

@@ -22,8 +22,8 @@ Partial Class detalleVentas
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(detalleVentas))
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.txtnumerodoc = New System.Windows.Forms.TextBox()
@@ -62,11 +62,13 @@ Partial Class detalleVentas
         Me.panelServicios = New System.Windows.Forms.Panel()
         Me.panelProductos = New System.Windows.Forms.Panel()
         Me.panelDetalle = New System.Windows.Forms.Panel()
+        Me.Button3 = New System.Windows.Forms.Button()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.btnDatosVenta = New System.Windows.Forms.Button()
         Me.btnAggProductos = New System.Windows.Forms.Button()
         Me.btnAggServicios = New System.Windows.Forms.Button()
-        Me.Button3 = New System.Windows.Forms.Button()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.Button2 = New System.Windows.Forms.Button()
+        Me.imprimirfactura = New System.Drawing.Printing.PrintDocument()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -236,10 +238,10 @@ Partial Class detalleVentas
         '
         Me.DataGridView1.AllowUserToDeleteRows = False
         Me.DataGridView1.AllowUserToResizeColumns = False
-        DataGridViewCellStyle1.BackColor = System.Drawing.Color.Black
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.White
-        Me.DataGridView1.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle3.BackColor = System.Drawing.Color.Black
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.White
+        Me.DataGridView1.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle3
         Me.DataGridView1.BackgroundColor = System.Drawing.Color.White
         Me.DataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
@@ -364,9 +366,9 @@ Partial Class detalleVentas
         '
         Me.DataGridView2.AllowUserToAddRows = False
         Me.DataGridView2.AllowUserToDeleteRows = False
-        DataGridViewCellStyle2.BackColor = System.Drawing.Color.Black
-        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.White
-        Me.DataGridView2.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle4.BackColor = System.Drawing.Color.Black
+        DataGridViewCellStyle4.ForeColor = System.Drawing.Color.White
+        Me.DataGridView2.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle4
         Me.DataGridView2.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.DataGridView2.BackgroundColor = System.Drawing.Color.White
         Me.DataGridView2.BorderStyle = System.Windows.Forms.BorderStyle.None
@@ -445,6 +447,7 @@ Partial Class detalleVentas
         '
         'panelDetalle
         '
+        Me.panelDetalle.Controls.Add(Me.Button2)
         Me.panelDetalle.Controls.Add(Me.txtnombreproducto)
         Me.panelDetalle.Controls.Add(Me.Label11)
         Me.panelDetalle.Controls.Add(Me.Label8)
@@ -465,6 +468,32 @@ Partial Class detalleVentas
         Me.panelDetalle.Name = "panelDetalle"
         Me.panelDetalle.Size = New System.Drawing.Size(834, 265)
         Me.panelDetalle.TabIndex = 22
+        '
+        'Button3
+        '
+        Me.Button3.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.Button3.BackgroundImage = Global.ProyectoIIIP.My.Resources.Resources.shopping_basket_remove256_24901
+        Me.Button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Button3.FlatAppearance.BorderSize = 0
+        Me.Button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button3.Location = New System.Drawing.Point(284, 117)
+        Me.Button3.Name = "Button3"
+        Me.Button3.Size = New System.Drawing.Size(68, 74)
+        Me.Button3.TabIndex = 20
+        Me.Button3.UseVisualStyleBackColor = True
+        '
+        'Button1
+        '
+        Me.Button1.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.Button1.BackgroundImage = Global.ProyectoIIIP.My.Resources.Resources.shopping_basket_add256_24909
+        Me.Button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Button1.FlatAppearance.BorderSize = 0
+        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button1.Location = New System.Drawing.Point(284, 53)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(68, 71)
+        Me.Button1.TabIndex = 19
+        Me.Button1.UseVisualStyleBackColor = True
         '
         'btnDatosVenta
         '
@@ -503,31 +532,22 @@ Partial Class detalleVentas
         Me.btnAggServicios.Text = "Servicios"
         Me.btnAggServicios.UseVisualStyleBackColor = True
         '
-        'Button3
+        'Button2
         '
-        Me.Button3.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.Button3.BackgroundImage = Global.ProyectoIIIP.My.Resources.Resources.shopping_basket_remove256_24901
-        Me.Button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Button3.FlatAppearance.BorderSize = 0
-        Me.Button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button3.Location = New System.Drawing.Point(284, 140)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(68, 74)
-        Me.Button3.TabIndex = 20
-        Me.Button3.UseVisualStyleBackColor = True
+        Me.Button2.BackColor = System.Drawing.Color.Transparent
+        Me.Button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
+        Me.Button2.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Button2.FlatAppearance.BorderSize = 0
+        Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button2.Image = CType(resources.GetObject("Button2.Image"), System.Drawing.Image)
+        Me.Button2.Location = New System.Drawing.Point(275, 197)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(77, 56)
+        Me.Button2.TabIndex = 22
+        Me.Button2.UseVisualStyleBackColor = False
         '
-        'Button1
+        'imprimirfactura
         '
-        Me.Button1.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.Button1.BackgroundImage = Global.ProyectoIIIP.My.Resources.Resources.shopping_basket_add256_24909
-        Me.Button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Button1.FlatAppearance.BorderSize = 0
-        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button1.Location = New System.Drawing.Point(284, 53)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(68, 71)
-        Me.Button1.TabIndex = 19
-        Me.Button1.UseVisualStyleBackColor = True
         '
         'detalleVentas
         '
@@ -605,4 +625,6 @@ Partial Class detalleVentas
     Friend WithEvents btnDatosVenta As Button
     Friend WithEvents Button3 As Button
     Friend WithEvents Button1 As Button
+    Friend WithEvents Button2 As Button
+    Friend WithEvents imprimirfactura As Printing.PrintDocument
 End Class

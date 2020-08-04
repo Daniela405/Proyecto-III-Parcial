@@ -181,10 +181,10 @@ Public Class usuario
         rol = cmbrol.Text
         Try
             If (conexion.eliminarUsuarios(idUsuario, rol)) Then
-                MsgBox("Dado de baja")
+                MessageBox.Show("se le dio de baja", "Correcto", MessageBoxButtons.OK, MessageBoxIcon.Information)
                 ' conexion.conexion.Close()
             Else
-                MsgBox("Error al dar de baja usuario")
+                MessageBox.Show("No se pudo darle de baja al usuario", "InCorrecto", MessageBoxButtons.OK, MessageBoxIcon.Error)
                 ' conexion.conexion.Close()
             End If
         Catch ex As Exception
@@ -200,7 +200,7 @@ Public Class usuario
 
         Try
             If conexion.Eliminar(id, rol) Then
-                MsgBox("Eliminado Correctamente")
+                MessageBox.Show("Se le dio de baja correctamente", "Correcto", MessageBoxButtons.OK, MessageBoxIcon.Information)
             End If
         Catch ex As Exception
 
@@ -234,11 +234,11 @@ Public Class usuario
         Estado = txtestado.Text
         Try
             If (conexion.modificar(id, nombre, apellido, usuario, contraseña, correo, rol, Estado)) Then
-                MsgBox("Modificado correctamente")
+                MessageBox.Show("Se modifico correctamente", "Correcto", MessageBoxButtons.OK, MessageBoxIcon.Information)
                 ' conexion.conexion.Close()
 
             Else
-                MsgBox("Error al modificar usuario")
+                MessageBox.Show("Error al modificar ", "InCorrecto", MessageBoxButtons.OK, MessageBoxIcon.Error)
                 ' conexion.conexion.Close()
 
             End If
@@ -270,7 +270,7 @@ Public Class usuario
 
         Try
             If conexion.modificar(id, nombre, apellido, usuario, contraseña, correo, rol, Estado) Then
-                MsgBox("Modificado Correctamente")
+                MessageBox.Show("Se modifico correctamente", "Correcto", MessageBoxButtons.OK, MessageBoxIcon.Information)
             End If
         Catch ex As Exception
 

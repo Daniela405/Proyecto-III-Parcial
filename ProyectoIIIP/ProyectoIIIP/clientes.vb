@@ -165,7 +165,7 @@ Public Class Cliente
 
     Private Sub mostrarBusqueda()
         Dim dato As String
-        dato = txtcodigo.Text
+        dato = txtnombre.Text
         Try
             dt = conexion.buscarCliente(dato)
             If dt.Rows.Count <> 0 Then
@@ -237,12 +237,13 @@ Public Class Cliente
 
         Try
             If (conexion.modificarCliente(id, nombre, apellido)) Then
-                MessageBox.Show("Actualizado")
+                MessageBox.Show("Se actualizaron los datos del Cliente", "Actualizacion Correcta", MessageBoxButtons.OK, MessageBoxIcon.Information)
                 mostrarDatos()
                 Limpiar()
 
             Else
-                MessageBox.Show("Error al actualizar")
+                MessageBox.Show("No Se  actualizaron los datos del Cliente  revise los datos !", "Actualizacion Incorrecta", MessageBoxButtons.OK, MessageBoxIcon.Error)
+
 
             End If
         Catch ex As Exception
@@ -297,5 +298,19 @@ Public Class Cliente
         txtapellido.Text = StrConv(txtapellido.Text, vbProperCase)
         txtapellido.SelectionStart = Len(txtapellido.Text)
 
+    End Sub
+
+    Private Sub dataclientes_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dataclientes.CellClick
+        Try
+            Dim dtg As DataGridViewRow = dataclientes.Rows(e.RowIndex)
+            txtcodigo.Text = dtg.Cells(0).Value.ToString()
+            txtnombre.Text = dtg.Cells(1).Value.ToString()
+            txtapellido.Text = dtg.Cells(2).Value.ToString()
+
+            conexion.conexion.Close()
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            conexion.conexion.Close()
+        End Try
     End Sub
 End Class

@@ -59,7 +59,7 @@ Public Class loginempleado
         psw = txtcontraseña.Text
         Try
             If conexion.validarUsuario(userName, psw) Then
-                MsgBox("Correcto")
+                MessageBox.Show("Usuario Correcto ", "Se Encontro el Usuario", MessageBoxButtons.OK, MessageBoxIcon.Information)
                 menuempleado.Show()
                 principal.Hide()
                 Me.Close()

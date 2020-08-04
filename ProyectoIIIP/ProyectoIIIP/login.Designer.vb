@@ -71,12 +71,12 @@ Partial Class login
         '
         Me.txtusuario.BackColor = System.Drawing.Color.FromArgb(CType(CType(23, Byte), Integer), CType(CType(23, Byte), Integer), CType(CType(23, Byte), Integer))
         Me.txtusuario.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.txtusuario.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtusuario.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtusuario.ForeColor = System.Drawing.SystemColors.Info
         Me.txtusuario.Location = New System.Drawing.Point(100, 87)
         Me.txtusuario.Margin = New System.Windows.Forms.Padding(2)
         Me.txtusuario.Name = "txtusuario"
-        Me.txtusuario.Size = New System.Drawing.Size(170, 15)
+        Me.txtusuario.Size = New System.Drawing.Size(170, 14)
         Me.txtusuario.TabIndex = 2
         Me.txtusuario.Text = "USUARIO"
         '
@@ -84,12 +84,12 @@ Partial Class login
         '
         Me.txtcontraseña.BackColor = System.Drawing.Color.FromArgb(CType(CType(23, Byte), Integer), CType(CType(23, Byte), Integer), CType(CType(23, Byte), Integer))
         Me.txtcontraseña.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.txtcontraseña.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtcontraseña.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtcontraseña.ForeColor = System.Drawing.SystemColors.Info
         Me.txtcontraseña.Location = New System.Drawing.Point(98, 175)
         Me.txtcontraseña.Margin = New System.Windows.Forms.Padding(2)
         Me.txtcontraseña.Name = "txtcontraseña"
-        Me.txtcontraseña.Size = New System.Drawing.Size(170, 15)
+        Me.txtcontraseña.Size = New System.Drawing.Size(170, 14)
         Me.txtcontraseña.TabIndex = 3
         Me.txtcontraseña.Text = "CONTRASEÑA"
         Me.txtcontraseña.UseSystemPasswordChar = True
@@ -99,7 +99,7 @@ Partial Class login
         Me.btnIngresar.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.btnIngresar.FlatAppearance.BorderSize = 0
         Me.btnIngresar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnIngresar.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnIngresar.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnIngresar.ForeColor = System.Drawing.Color.White
         Me.btnIngresar.Location = New System.Drawing.Point(83, 257)
         Me.btnIngresar.Margin = New System.Windows.Forms.Padding(2)

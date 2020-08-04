@@ -45,8 +45,8 @@ Partial Class servicios
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label16 = New System.Windows.Forms.Label()
         Me.Label17 = New System.Windows.Forms.Label()
-        Me.Label18 = New System.Windows.Forms.Label()
         Me.btnBuscar = New System.Windows.Forms.Button()
+        Me.Label18 = New System.Windows.Forms.Label()
         Me.btnCerrar = New System.Windows.Forms.Button()
         Me.btnLimpiar = New System.Windows.Forms.Button()
         Me.btnEliminar = New System.Windows.Forms.Button()
@@ -110,23 +110,23 @@ Partial Class servicios
         'lbEstado
         '
         Me.lbEstado.AutoSize = True
-        Me.lbEstado.Font = New System.Drawing.Font("Modern No. 20", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbEstado.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbEstado.ForeColor = System.Drawing.SystemColors.ButtonHighlight
         Me.lbEstado.Location = New System.Drawing.Point(156, 169)
         Me.lbEstado.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lbEstado.Name = "lbEstado"
-        Me.lbEstado.Size = New System.Drawing.Size(0, 17)
+        Me.lbEstado.Size = New System.Drawing.Size(0, 18)
         Me.lbEstado.TabIndex = 23
         '
         'Label10
         '
         Me.Label10.AutoSize = True
-        Me.Label10.Font = New System.Drawing.Font("Modern No. 20", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label10.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label10.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.Label10.Location = New System.Drawing.Point(33, 135)
         Me.Label10.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(48, 17)
+        Me.Label10.Size = New System.Drawing.Size(51, 18)
         Me.Label10.TabIndex = 22
         Me.Label10.Text = "Precio"
         '
@@ -142,12 +142,12 @@ Partial Class servicios
         'Label11
         '
         Me.Label11.AutoSize = True
-        Me.Label11.Font = New System.Drawing.Font("Modern No. 20", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label11.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label11.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.Label11.Location = New System.Drawing.Point(33, 33)
         Me.Label11.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(49, 17)
+        Me.Label11.Size = New System.Drawing.Size(56, 18)
         Me.Label11.TabIndex = 20
         Me.Label11.Text = "Código"
         '
@@ -163,24 +163,24 @@ Partial Class servicios
         'Label12
         '
         Me.Label12.AutoSize = True
-        Me.Label12.Font = New System.Drawing.Font("Modern No. 20", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label12.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label12.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.Label12.Location = New System.Drawing.Point(33, 105)
         Me.Label12.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(55, 17)
+        Me.Label12.Size = New System.Drawing.Size(62, 18)
         Me.Label12.TabIndex = 17
         Me.Label12.Text = "Nombre"
         '
         'Label13
         '
         Me.Label13.AutoSize = True
-        Me.Label13.Font = New System.Drawing.Font("Modern No. 20", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label13.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label13.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.Label13.Location = New System.Drawing.Point(33, 71)
         Me.Label13.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(103, 17)
+        Me.Label13.Size = New System.Drawing.Size(112, 18)
         Me.Label13.TabIndex = 18
         Me.Label13.Text = "Tipo de servicio"
         '
@@ -256,12 +256,12 @@ Partial Class servicios
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Font = New System.Drawing.Font("Modern No. 20", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label5.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Label5.Location = New System.Drawing.Point(19, 26)
+        Me.Label5.Location = New System.Drawing.Point(11, 26)
         Me.Label5.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(55, 17)
+        Me.Label5.Size = New System.Drawing.Size(62, 18)
         Me.Label5.TabIndex = 0
         Me.Label5.Text = "Nombre"
         '
@@ -283,15 +283,6 @@ Partial Class servicios
         Me.Label17.Size = New System.Drawing.Size(0, 13)
         Me.Label17.TabIndex = 7
         '
-        'Label18
-        '
-        Me.Label18.AutoSize = True
-        Me.Label18.Location = New System.Drawing.Point(25, 33)
-        Me.Label18.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.Label18.Name = "Label18"
-        Me.Label18.Size = New System.Drawing.Size(0, 13)
-        Me.Label18.TabIndex = 0
-        '
         'btnBuscar
         '
         Me.btnBuscar.BackColor = System.Drawing.Color.Transparent
@@ -307,6 +298,15 @@ Partial Class servicios
         Me.btnBuscar.Size = New System.Drawing.Size(98, 35)
         Me.btnBuscar.TabIndex = 31
         Me.btnBuscar.UseVisualStyleBackColor = False
+        '
+        'Label18
+        '
+        Me.Label18.AutoSize = True
+        Me.Label18.Location = New System.Drawing.Point(25, 33)
+        Me.Label18.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label18.Name = "Label18"
+        Me.Label18.Size = New System.Drawing.Size(0, 13)
+        Me.Label18.TabIndex = 0
         '
         'btnCerrar
         '

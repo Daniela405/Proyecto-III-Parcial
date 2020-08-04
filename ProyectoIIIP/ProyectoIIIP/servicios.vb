@@ -17,10 +17,12 @@ Public Class servicios
 
     Private Sub servicios_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         conexion.conectar()
+        mostrarDatos()
     End Sub
 
     Private Sub btnGuardar_Click(sender As Object, e As EventArgs) Handles btnGuardar.Click
         insertarServicio()
+        mostrarDatos()
         mostrarDatos()
         conexion.conexion.Close()
     End Sub
@@ -48,10 +50,12 @@ Public Class servicios
     End Sub
     Private Sub btnModificar_Click(sender As Object, e As EventArgs) Handles btnModificar.Click
         modificarServicio()
+        mostrarDatos()
     End Sub
 
     Private Sub btnBuscar_Click(sender As Object, e As EventArgs) Handles btnBuscar.Click
         mostrarBusqueda()
+
     End Sub
     '@id int ,
     '@tiposervicio varchar(50) ,

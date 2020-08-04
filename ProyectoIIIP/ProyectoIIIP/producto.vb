@@ -179,15 +179,16 @@ Public Class producto
 
     Private Sub insertarProducto()
         Dim id As Integer, codigobarra As String, tipoproducto As String, nombre As String, precio As Decimal, precioventa As Decimal, cantidad As Integer, caracteristica As String
-        id = txtcodigo.Text
-        codigobarra = txtcodbarra.Text
-        tipoproducto = txttipo.Text
-        nombre = txtnombre.Text
-        precio = txtprecio.Text
-        precioventa = txtprecioventa.Text
-        cantidad = txtcantidad.Text
-        caracteristica = txtcaracteristica.Text
+
         Try
+            id = Val(txtcodigo.Text)
+            codigobarra = txtcodbarra.Text
+            tipoproducto = txttipo.Text
+            nombre = txtnombre.Text
+            precio = Val(txtprecio.Text)
+            precioventa = Val(txtprecioventa.Text)
+            cantidad = Val(txtcantidad.Text)
+            caracteristica = txtcaracteristica.Text
             If conexion.agregarProductos(id, codigobarra, tipoproducto, nombre, precio, precioventa, cantidad, caracteristica) Then
                 MessageBox.Show("Guardado", "Correcto", MessageBoxButtons.OK, MessageBoxIcon.Information)
                 mostrardatos()
@@ -223,31 +224,39 @@ Public Class producto
 
     Private Sub modificar()
         Dim id As Integer, codigobarra As String, tipoproducto As String, nombre As String, precio As Decimal, precioventa As Decimal, cantidad As Integer, caracteristica As String
-        id = txtcodigo.Text
-        codigobarra = txtcodbarra.Text
-        tipoproducto = txttipo.Text
-        nombre = txtnombre.Text
-        precio = txtprecio.Text
-        precioventa = txtprecioventa.Text
-        cantidad = txtcantidad.Text
-        caracteristica = txtcaracteristica.Text
-        Try
-            If (conexion.modificarProducto(id, codigobarra, tipoproducto, nombre, precio, precioventa, cantidad, caracteristica)) Then
-                MsgBox("Modificado correctamente")
-                ' conexion.conexion.Close()
+
+        If txtcodigo.Text = " " Then
+            MessageBox.Show("Falta Datos para poder actualizar", "Actualizacion Incorrecta", MessageBoxButtons.OK, MessageBoxIcon.Error)
+
+        Else
+
+            Try
+                id = Val(txtcodigo.Text)
+                codigobarra = txtcodbarra.Text
+                tipoproducto = txttipo.Text
+                nombre = txtnombre.Text
+                precio = Val(txtprecio.Text)
+                precioventa = Val(txtprecioventa.Text)
+                cantidad = Val(txtcantidad.Text)
+                caracteristica = txtcaracteristica.Text
+                If (conexion.modificarProducto(id, codigobarra, tipoproducto, nombre, precio, precioventa, cantidad, caracteristica)) Then
+                    MessageBox.Show("Actualizacion Correcta", "Actualizacion correcta", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                    ' conexion.conexion.Close()
+                    mostrardatos()
+
+                Else
+                    MessageBox.Show("Falta Datos para poder actualizar", "Actualizacion Incorrecta", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                    ' conexion.conexion.Close()
+
+                End If
+            Catch ex As Exception
+                MsgBox(ex.Message)
                 mostrardatos()
-
-            Else
-                MsgBox("Error al modificar usuario")
-                ' conexion.conexion.Close()
-
-            End If
-        Catch ex As Exception
-            MsgBox(ex.Message)
+            End Try
             mostrardatos()
-        End Try
-        mostrardatos()
-        limpiar()
+            limpiar()
+
+        End If
     End Sub
 
     Private Sub btnModificar_Click(sender As Object, e As EventArgs) Handles btnModificar.Click
@@ -265,11 +274,11 @@ Public Class producto
             DataT = conexion.BuscarProducto(nombreproducto)
 
             If DataT.Rows.Count <> 0 Then
-                MessageBox.Show("Usuario Encontrado correctamente", "Buscando", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                MessageBox.Show("Producto Encontrado correctamente", "Buscando", MessageBoxButtons.OK, MessageBoxIcon.Information)
                 DataGridView1.DataSource = DataT
                 txtnombre.Text = ""
             Else
-                MessageBox.Show("Usuario no encontrado", "Buscando", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                MessageBox.Show("Producto no encontrado", "No se encontro producto", MessageBoxButtons.OK, MessageBoxIcon.Error)
                 DataGridView1.DataSource = Nothing
                 txtnombre.Text = ""
             End If
@@ -285,17 +294,18 @@ Public Class producto
     Private Sub btnEliminar_Click(sender As Object, e As EventArgs) Handles btnEliminar.Click
         Dim id As Integer
 
-        id = txtcodigo.Text
 
 
         Try
+            id = Val(txtcodigo.Text)
+
             If conexion.EliminarProducto(id) Then
-                MsgBox("Se elimino")
+                MessageBox.Show("Se elimino correctamente el cliente", "Se Elimino", MessageBoxButtons.OK, MessageBoxIcon.Warning)
                 mostrardatos()
                 limpiar()
             End If
         Catch ex As Exception
-
+            MsgBox(ex.Message)
         End Try
 
     End Sub

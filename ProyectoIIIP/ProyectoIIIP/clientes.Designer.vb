@@ -60,7 +60,7 @@ Partial Class Cliente
         Me.GroupBox1.Controls.Add(Me.txtnombre)
         Me.GroupBox1.Controls.Add(Me.txtcodigo)
         Me.GroupBox1.Controls.Add(Me.Label1)
-        Me.GroupBox1.Font = New System.Drawing.Font("Dubai", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GroupBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox1.ForeColor = System.Drawing.Color.Black
         Me.GroupBox1.Location = New System.Drawing.Point(33, 73)
         Me.GroupBox1.Margin = New System.Windows.Forms.Padding(2, 1, 2, 1)
@@ -74,64 +74,64 @@ Partial Class Cliente
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Font = New System.Drawing.Font("Dubai", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label5.ForeColor = System.Drawing.Color.Black
         Me.Label5.Location = New System.Drawing.Point(39, 50)
         Me.Label5.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(60, 27)
+        Me.Label5.Size = New System.Drawing.Size(65, 20)
         Me.Label5.TabIndex = 7
         Me.Label5.Text = "Código"
         '
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Font = New System.Drawing.Font("Dubai", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label6.ForeColor = System.Drawing.Color.Black
         Me.Label6.Location = New System.Drawing.Point(39, 94)
         Me.Label6.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(68, 27)
+        Me.Label6.Size = New System.Drawing.Size(71, 20)
         Me.Label6.TabIndex = 8
         Me.Label6.Text = "Nombre"
         '
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Font = New System.Drawing.Font("Dubai", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label7.ForeColor = System.Drawing.Color.Black
         Me.Label7.Location = New System.Drawing.Point(39, 137)
         Me.Label7.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(70, 27)
+        Me.Label7.Size = New System.Drawing.Size(73, 20)
         Me.Label7.TabIndex = 9
         Me.Label7.Text = "Apellido"
         '
         'txtapellido
         '
-        Me.txtapellido.Font = New System.Drawing.Font("Dubai", 9.749999!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtapellido.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.749999!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtapellido.Location = New System.Drawing.Point(113, 137)
         Me.txtapellido.Margin = New System.Windows.Forms.Padding(2, 1, 2, 1)
         Me.txtapellido.Name = "txtapellido"
-        Me.txtapellido.Size = New System.Drawing.Size(155, 29)
+        Me.txtapellido.Size = New System.Drawing.Size(155, 22)
         Me.txtapellido.TabIndex = 6
         '
         'txtnombre
         '
-        Me.txtnombre.Font = New System.Drawing.Font("Dubai", 9.749999!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtnombre.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.749999!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtnombre.Location = New System.Drawing.Point(113, 93)
         Me.txtnombre.Margin = New System.Windows.Forms.Padding(2, 1, 2, 1)
         Me.txtnombre.Name = "txtnombre"
-        Me.txtnombre.Size = New System.Drawing.Size(155, 29)
+        Me.txtnombre.Size = New System.Drawing.Size(155, 22)
         Me.txtnombre.TabIndex = 5
         '
         'txtcodigo
         '
-        Me.txtcodigo.Font = New System.Drawing.Font("Dubai", 9.749999!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtcodigo.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.749999!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtcodigo.Location = New System.Drawing.Point(113, 51)
         Me.txtcodigo.Margin = New System.Windows.Forms.Padding(2, 1, 2, 1)
         Me.txtcodigo.Name = "txtcodigo"
-        Me.txtcodigo.Size = New System.Drawing.Size(104, 29)
+        Me.txtcodigo.Size = New System.Drawing.Size(104, 22)
         Me.txtcodigo.TabIndex = 1
         '
         'Label1
@@ -140,7 +140,7 @@ Partial Class Cliente
         Me.Label1.Location = New System.Drawing.Point(25, 33)
         Me.Label1.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(0, 27)
+        Me.Label1.Size = New System.Drawing.Size(0, 20)
         Me.Label1.TabIndex = 0
         '
         'PictureBox1

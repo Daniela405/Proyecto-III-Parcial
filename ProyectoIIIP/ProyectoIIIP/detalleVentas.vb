@@ -79,17 +79,21 @@ Public Class detalleVentas
         Dim id As Integer, idventa As String, idproducto As String, cantidad As Integer, precio As Decimal, suma As Integer
 
         id = idnuevodetalle()
-        idventa = txtidventa.Text
+        idventa = Val(txtidventa.Text)
         idproducto = txtnombreproducto.Text
-        cantidad = txtcantllevar.Text
-        precio = txtprecio.Text
+        cantidad = Val(txtcantllevar.Text)
+        precio = Val(txtprecio.Text)
 
         Try
             If conexion.agregardetalle(id, idventa, idproducto, cantidad, precio) Then
                 MessageBox.Show("Guardado", "Correcto", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
                 idnuevo()
-                modificarstock()
+                If txtsctok.Text <> String.Empty Then
+                    modificarstock()
+                End If
+
+
                 suma = cantidad * precio
                 sumatotal = suma + sumatotal
 
@@ -100,15 +104,15 @@ Public Class detalleVentas
                 txtsctok.Clear()
                 txtcantllevar.Clear()
 
-                cantidad = txtcantllevar.Text
-                precio = txtprecio.Text
+                cantidad = Val(txtcantllevar.Text)
+                precio = Val(txtprecio.Text)
 
             Else
                 MessageBox.Show("Error al guardar", "Incorrecto", MessageBoxButtons.OK, MessageBoxIcon.Error)
                 conexion.conexion.Close()
             End If
         Catch ex As Exception
-            MsgBox(ex.Message)
+
         End Try
         buscarProductosdetalle()
     End Sub
@@ -224,9 +228,9 @@ Public Class detalleVentas
 
         Dim stockintermediario As Integer
         Dim id As Integer
-        id = txtidproducto.Text
-        stock = txtsctok.Text
-        cantidadllevar = txtcantllevar.Text
+        id = Val(txtidproducto.Text)
+        stock = Val(txtsctok.Text)
+        cantidadllevar = Val(txtcantllevar.Text)
         stockintermediario = stock - cantidadllevar
 
 
@@ -356,115 +360,7 @@ Public Class detalleVentas
     End Sub
 
     Private Sub ImpresionFactura_PrintPage(sender As Object, e As Printing.PrintPageEventArgs)
-        Dim fuente As System.Drawing.Font = New Font("consolas", 15)
-        Dim topMargin As Double = e.MarginBounds.Top
-        Dim yPos As Double = 120
-        Dim count As Integer = 0
-        Dim texto As String = ""
-        Dim unidad As Byte = 0
-        Dim detalle As String = ""
-        Dim valor As String = ""
-        Dim tabulacion As String = ""
-        Dim compensador As Integer = 0
-        Dim total As Decimal = 0
-        Dim Lvalor As Integer
-        Dim lineaTotal As String
-        Dim totaltotal As String
-        conexion.selectdeproductos(idnuevodetalle())
 
-        'Dim printFont As System.Drawing.Font = New Font("consolas", 12)
-        'For Each row As DataGridViewRow In conexion.tabladatosg.Rows
-        '    detalle = row.Cells(0).Value : unidad = row.Cells(1).Value : valor = row.Cells(2).FormattedValue
-        '    Lvalor = Len(row.Cells(2).FormattedValue.ToString)
-
-
-        '    texto = detalle & "    " & unidad & tabulacion & StrDup(8 - Lvalor, " ") & valor 'Configura la linea
-        '    yPos = 120 + topMargin + (count * printFont.GetHeight(e.Graphics)) ' Calcula la posición en la que se escribe la línea
-        '    ' Imprime la línea con el objeto Graphics
-        '    If Not row.IsNewRow Then
-        '        e.Graphics.DrawString(texto, printFont, System.Drawing.Brushes.Black, 10, yPos)
-        '        total += valor
-        '    End If
-        '    count += 1
-        'Next
-        'yPos += 10
-        'e.Graphics.DrawString("                           _______", printFont, System.Drawing.Brushes.Black, 10, yPos)
-
-        'Dim nombreEncargado As String = conexion.obtenerVariableCadena("select nombres from DATOS_PERSONAS where numeroIdentidad = '" & identidadPersonalEntro & "'", "nombres")
-        'Dim datos(7) As Object
-        'Dim cantRows As Integer = tablaDatosG.Rows.Count - 1
-        'If tablaDatosG.Rows.Count > 0 Then
-        '    For i As Integer = 0 To tablaDatosG.Columns.Count - 1
-        '        datos(i) = tablaDatosG.Rows(cantRows)(i)
-        '    Next
-        'End If
-        ' Imprime la cabecera
-
-        'Dim printFont As System.Drawing.Font = New Font("consolas", 12)
-        'e.Graphics.DrawString(("Salon De Belleza "), fuente, Brushes.Black, 100, 40)
-        'e.Graphics.DrawString(("Fecha De Compra :") & txt1.Text, printFont, Brushes.Black, 10, 60)
-        'e.Graphics.DrawString(("Nombre Cliente :") & txtnombrecliente.Text, printFont, Brushes.Black, 10, 80)
-        'e.Graphics.DrawString(("N.0 Factura :") & txtnumerodoc.Text, printFont, Brushes.Black, 10, 100)
-
-        ''' If conexion.tabladatosg.Rows.Count > 0 Then
-        'For i As Integer = 0 To conexion.tabladatosg.Rows.Count - 1
-
-
-        '    Dim nombreProd As String = conexion.tabladatosg.Rows(i)(0).ToString
-
-        '    Dim cantidad As String = conexion.tabladatosg.Rows(i)(1).ToString
-
-        '    Dim precio As String = conexion.tabladatosg.Rows(i)(2).ToString
-
-        '    Dim totalproducto As String = conexion.tabladatosg.Rows(i)(3).ToString
-
-
-
-
-        '    e.Graphics.DrawString(nombreProd + "   " + cantidad + "    " + precio, printFont, System.Drawing.Brushes.Black, 10, yPos + 1)
-
-        '    count = +1
-        '    yPos += 15
-        'Next
-        'e.Graphics.DrawString(("Total :") & txttotal.Text, printFont, Brushes.Black, 10, yPos + 20)
-
-        ''End If
-
-        'e.Graphics.DrawString("Tiket N. 4", printFont, Brushes.Black, 10, 100)
-        ''e.Graphics.DrawString("Fecha: " & Date.Now, printFont, Brushes.Black, 10, 120)
-        'e.Graphics.DrawString("Articulos: 4", printFont, Brushes.Black, 10, 140)
-        'e.Graphics.DrawString("Mesa N. 5", printFont, Brushes.Black, 10, 160)
-        'e.Graphics.DrawString("---------------------------------", printFont, Brushes.Black, 10, 180)
-
-
-
-
-
-        'For Each row As DataGridViewRow In DataGridView2.Rows
-        '    unidad = row.Cells(0).Value : detalle = row.Cells(1).Value : valor = row.Cells(2).FormattedValue
-        '    Lvalor = Len(row.Cells(2).FormattedValue.ToString)
-        '    compensador = Len(row.Cells(1).Value)
-        '    tabulacion = StrDup(22 - compensador, " ")
-
-        '    texto = unidad & "    " & detalle & tabulacion & StrDup(8 - Lvalor, " ") & valor 'Configura la linea
-        '    yPos = 120 + topMargin + (count * printFont.GetHeight(e.Graphics)) ' Calcula la posición en la que se escribe la línea
-        '    ' Imprime la línea con el objeto Graphics
-        '    If Not row.IsNewRow Then
-        '        e.Graphics.DrawString(texto, printFont, System.Drawing.Brushes.Black, 10, yPos)
-        '        total += valor
-        '    End If
-        '    count += 1
-        'Next
-        'yPos += 10
-        'e.Graphics.DrawString("                           ___", printFont, System.Drawing.Brushes.Black, 10, yPos)
-        'Dim XXX As Integer = 0
-        'XXX = Len(total.ToString)
-        'lineaTotal = StrDup(28 - XXX, ".")
-        'yPos += 20
-        'e.Graphics.DrawString("Total" & lineaTotal & total, printFont, System.Drawing.Brushes.Black, 10, yPos)
-        'yPos += 30
-        'e.Graphics.DrawString("Servido por: Hola", printFont, System.Drawing.Brushes.Black, 10, yPos)
-        'e.Graphics.DrawString(("Coletilla"), printFont, Brushes.Black, 10, yPos + 20)
     End Sub
 
 
@@ -478,6 +374,7 @@ Public Class detalleVentas
         txtidproducto.Text = dgv.Cells(0).Value.ToString()
         txtnombreproducto.Text = dgv.Cells(2).Value.ToString()
         txtprecio.Text = dgv.Cells(3).Value.ToString()
+
 
 
     End Sub
@@ -518,5 +415,139 @@ Public Class detalleVentas
         PanelDatosVenta.Visible = False
         panelServicios.Visible = True
         panelProductos.Visible = False
+    End Sub
+
+    Private Sub panelDetalle_Paint(sender As Object, e As PaintEventArgs) Handles panelDetalle.Paint
+
+    End Sub
+
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+        imprimirfactura.Print()
+    End Sub
+
+    Private Sub imprimirfactura_PrintPage(sender As Object, e As Printing.PrintPageEventArgs) Handles imprimirfactura.PrintPage
+        Dim fuente As System.Drawing.Font = New Font("consolas", 15)
+        Dim topMargin As Double = e.MarginBounds.Top
+        Dim yPos As Double = 305
+        Dim count As Integer = 0
+        Dim texto As String = ""
+        Dim unidad As Byte = 0
+        Dim detalle As String = ""
+        Dim valor As String = ""
+        Dim tabulacion As String = ""
+        Dim compensador As Integer = 0
+        Dim total As Decimal = 0
+        Dim Lvalor As Integer
+        Dim lineaTotal As String
+        Dim totaltotal As String
+        Dim empleado As String
+
+
+        empleado = conexion.retornarempleado()
+        Dim tabladatosg As DataTable = conexion.selectdeproductos(ventas.lavariable)
+
+        MsgBox(tabladatosg.Rows.Count)
+
+        'Dim printFont As System.Drawing.Font = New Font("consolas", 12)
+        'For Each row As DataGridViewRow In conexion.tabladatosg.Rows
+        '    detalle = row.Cells(0).Value : unidad = row.Cells(1).Value : valor = row.Cells(2).FormattedValue
+        '    Lvalor = Len(row.Cells(2).FormattedValue.ToString)
+
+
+        '    texto = detalle & "    " & unidad & tabulacion & StrDup(8 - Lvalor, " ") & valor 'Configura la linea
+        '    yPos = 120 + topMargin + (count * printFont.GetHeight(e.Graphics)) ' Calcula la posición en la que se escribe la línea
+        '    ' Imprime la línea con el objeto Graphics
+        '    If Not row.IsNewRow Then
+        '        e.Graphics.DrawString(texto, printFont, System.Drawing.Brushes.Black, 10, yPos)
+        '        total += valor
+        '    End If
+        '    count += 1
+        'Next
+        'yPos += 10
+        'e.Graphics.DrawString("                           _______", printFont, System.Drawing.Brushes.Black, 10, yPos)
+
+        'Dim nombreEncargado As String = conexion.obtenerVariableCadena("select nombres from DATOS_PERSONAS where numeroIdentidad = '" & identidadPersonalEntro & "'", "nombres")
+        'Dim datos(7) As Object
+        'Dim cantRows As Integer = tablaDatosG.Rows.Count - 1
+        'If tablaDatosG.Rows.Count > 0 Then
+        '    For i As Integer = 0 To tablaDatosG.Columns.Count - 1
+        '        datos(i) = tablaDatosG.Rows(cantRows)(i)
+        '    Next
+        'End If
+        ' Imprime la cabecera
+
+        Dim printFont As System.Drawing.Font = New Font("consolas", 12)
+        e.Graphics.DrawImage(My.Resources.Yessy, 70, 40, 150, 150)
+        e.Graphics.DrawString(("Salon De Belleza "), fuente, Brushes.Black, 100, 190)
+        e.Graphics.DrawString(("Fecha De Compra :") & txt1.Text, printFont, Brushes.Black, 10, 210)
+        e.Graphics.DrawString(("Nombre Cliente :") & txtnombrecliente.Text, printFont, Brushes.Black, 10, 230)
+        e.Graphics.DrawString(("Fue Atendido por :") & empleado, printFont, Brushes.Black, 10, 250)
+        e.Graphics.DrawString(("N.0 Factura :") & txtnumerodoc.Text, printFont, Brushes.Black, 10, 270)
+        e.Graphics.DrawString(("------------------------------------------------"), printFont, Brushes.Black, 10, 290)
+        '' If conexion.tabladatosg.Rows.Count > 0 Then
+
+        MsgBox(tabladatosg.Rows.Count)
+        For i As Integer = 0 To tabladatosg.Rows.Count - 1
+
+
+
+            Dim nombreProd As String = tabladatosg.Rows(i)(0).ToString
+
+            Dim cantidad As String = tabladatosg.Rows(i)(1).ToString
+
+            Dim precio As String = tabladatosg.Rows(i)(2).ToString
+
+            Dim totalproducto As String = tabladatosg.Rows(i)(3).ToString
+
+
+
+
+            e.Graphics.DrawString((i + 1) & ". " & nombreProd + "    " + cantidad + "     " + precio + "   " + totalproducto, printFont, System.Drawing.Brushes.Black, 10, yPos + 1)
+
+            count = +1
+            yPos += 15
+        Next
+
+        e.Graphics.DrawString(("-----------------------------------------------"), printFont, Brushes.Black, 10, yPos + 20)
+
+        e.Graphics.DrawString(("Total :") & txttotal.Text, printFont, Brushes.Black, 10, yPos + 40)
+
+        'End If
+
+        'e.Graphics.DrawString("Tiket N. 4", printFont, Brushes.Black, 10, 100)
+        'e.Graphics.DrawString("Fecha: " & Date.Now, printFont, Brushes.Black, 10, 120)
+        'e.Graphics.DrawString("Articulos: 4", printFont, Brushes.Black, 10, 140)
+        'e.Graphics.DrawString("Mesa N. 5", printFont, Brushes.Black, 10, 160)
+        'e.Graphics.DrawString("---------------------------------", printFont, Brushes.Black, 10, 180)
+
+
+
+
+
+        'For Each row As DataGridViewRow In DataGridView2.Rows
+        '    unidad = row.Cells(0).Value : detalle = row.Cells(1).Value : valor = row.Cells(2).FormattedValue
+        '    Lvalor = Len(row.Cells(2).FormattedValue.ToString)
+        '    compensador = Len(row.Cells(1).Value)
+        '    tabulacion = StrDup(22 - compensador, " ")
+
+        '    texto = unidad & "    " & detalle & tabulacion & StrDup(8 - Lvalor, " ") & valor 'Configura la linea
+        '    yPos = 120 + topMargin + (count * printFont.GetHeight(e.Graphics)) ' Calcula la posición en la que se escribe la línea
+        '    ' Imprime la línea con el objeto Graphics
+        '    If Not row.IsNewRow Then
+        '        e.Graphics.DrawString(texto, printFont, System.Drawing.Brushes.Black, 10, yPos)
+        '        total += valor
+        '    End If
+        '    count += 1
+        'Next
+        'yPos += 10
+        'e.Graphics.DrawString("                           ___", printFont, System.Drawing.Brushes.Black, 10, yPos)
+        'Dim XXX As Integer = 0
+        'XXX = Len(total.ToString)
+        'lineaTotal = StrDup(28 - XXX, ".")
+        'yPos += 20
+        'e.Graphics.DrawString("Total" & lineaTotal & total, printFont, System.Drawing.Brushes.Black, 10, yPos)
+        'yPos += 30
+        'e.Graphics.DrawString("Servido por: Hola", printFont, System.Drawing.Brushes.Black, 10, yPos)
+        'e.Graphics.DrawString(("Coletilla"), printFont, Brushes.Black, 10, yPos + 20) 
     End Sub
 End Class

@@ -24,8 +24,8 @@ Partial Class principal
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(principal))
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.btnSalir = New System.Windows.Forms.Button()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.btnSalir = New System.Windows.Forms.Button()
         Me.btnempleado = New System.Windows.Forms.Button()
         Me.btnadministrador = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
@@ -42,6 +42,17 @@ Partial Class principal
         Me.Panel1.Size = New System.Drawing.Size(223, 292)
         Me.Panel1.TabIndex = 2
         '
+        'PictureBox1
+        '
+        Me.PictureBox1.BackgroundImage = Global.ProyectoIIIP.My.Resources.Resources.login_pricipal_1
+        Me.PictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.PictureBox1.Location = New System.Drawing.Point(-8, -11)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(231, 310)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox1.TabIndex = 0
+        Me.PictureBox1.TabStop = False
+        '
         'btnSalir
         '
         Me.btnSalir.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
@@ -57,17 +68,6 @@ Partial Class principal
         Me.btnSalir.Size = New System.Drawing.Size(50, 45)
         Me.btnSalir.TabIndex = 5
         Me.btnSalir.UseVisualStyleBackColor = True
-        '
-        'PictureBox1
-        '
-        Me.PictureBox1.BackgroundImage = Global.ProyectoIIIP.My.Resources.Resources.login_pricipal_1
-        Me.PictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.PictureBox1.Location = New System.Drawing.Point(-8, -11)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(231, 310)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox1.TabIndex = 0
-        Me.PictureBox1.TabStop = False
         '
         'btnempleado
         '

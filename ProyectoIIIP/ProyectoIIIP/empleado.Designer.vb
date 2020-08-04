@@ -23,7 +23,7 @@ Partial Class empleado
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(empleado))
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.mtxtIdentidad = New System.Windows.Forms.MaskedTextBox()
@@ -63,9 +63,7 @@ Partial Class empleado
         Me.rbNombre = New System.Windows.Forms.RadioButton()
         Me.btnBuscar = New System.Windows.Forms.Button()
         Me.rbCodigo = New System.Windows.Forms.RadioButton()
-        Me.Label6 = New System.Windows.Forms.Label()
         Me.mBuscarIdentidad = New System.Windows.Forms.MaskedTextBox()
-        Me.Label7 = New System.Windows.Forms.Label()
         Me.Label16 = New System.Windows.Forms.Label()
         Me.Label17 = New System.Windows.Forms.Label()
         Me.txtBuscarNombre = New System.Windows.Forms.TextBox()
@@ -104,13 +102,13 @@ Partial Class empleado
         Me.GroupBox1.Controls.Add(Me.txtnombre)
         Me.GroupBox1.Controls.Add(Me.txtcodigo)
         Me.GroupBox1.Controls.Add(Me.Label1)
-        Me.GroupBox1.Font = New System.Drawing.Font("Dubai", 9.749999!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GroupBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.749999!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox1.ForeColor = System.Drawing.Color.Black
-        Me.GroupBox1.Location = New System.Drawing.Point(54, 26)
+        Me.GroupBox1.Location = New System.Drawing.Point(56, 26)
         Me.GroupBox1.Margin = New System.Windows.Forms.Padding(2)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Padding = New System.Windows.Forms.Padding(2)
-        Me.GroupBox1.Size = New System.Drawing.Size(373, 313)
+        Me.GroupBox1.Size = New System.Drawing.Size(371, 313)
         Me.GroupBox1.TabIndex = 1
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Información"
@@ -128,19 +126,19 @@ Partial Class empleado
         'Label22
         '
         Me.Label22.AutoSize = True
-        Me.Label22.Font = New System.Drawing.Font("Dubai", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label22.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label22.ForeColor = System.Drawing.Color.Black
         Me.Label22.Location = New System.Drawing.Point(183, 274)
         Me.Label22.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label22.Name = "Label22"
-        Me.Label22.Size = New System.Drawing.Size(57, 27)
+        Me.Label22.Size = New System.Drawing.Size(60, 20)
         Me.Label22.TabIndex = 46
         Me.Label22.Text = "Estado"
         '
         'txtEstado
         '
         Me.txtEstado.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtEstado.Location = New System.Drawing.Point(243, 279)
+        Me.txtEstado.Location = New System.Drawing.Point(243, 273)
         Me.txtEstado.Margin = New System.Windows.Forms.Padding(2)
         Me.txtEstado.Name = "txtEstado"
         Me.txtEstado.Size = New System.Drawing.Size(113, 21)
@@ -149,19 +147,19 @@ Partial Class empleado
         'Label21
         '
         Me.Label21.AutoSize = True
-        Me.Label21.Font = New System.Drawing.Font("Dubai", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label21.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label21.ForeColor = System.Drawing.Color.Black
         Me.Label21.Location = New System.Drawing.Point(183, 234)
         Me.Label21.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label21.Name = "Label21"
-        Me.Label21.Size = New System.Drawing.Size(56, 27)
+        Me.Label21.Size = New System.Drawing.Size(57, 20)
         Me.Label21.TabIndex = 44
         Me.Label21.Text = "Correo"
         '
         'txtCorreo
         '
         Me.txtCorreo.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtCorreo.Location = New System.Drawing.Point(243, 236)
+        Me.txtCorreo.Location = New System.Drawing.Point(243, 234)
         Me.txtCorreo.Margin = New System.Windows.Forms.Padding(2)
         Me.txtCorreo.Name = "txtCorreo"
         Me.txtCorreo.Size = New System.Drawing.Size(113, 21)
@@ -170,19 +168,19 @@ Partial Class empleado
         'Label20
         '
         Me.Label20.AutoSize = True
-        Me.Label20.Font = New System.Drawing.Font("Dubai", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label20.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label20.ForeColor = System.Drawing.Color.Black
         Me.Label20.Location = New System.Drawing.Point(-4, 236)
         Me.Label20.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label20.Name = "Label20"
-        Me.Label20.Size = New System.Drawing.Size(68, 27)
+        Me.Label20.Size = New System.Drawing.Size(71, 20)
         Me.Label20.TabIndex = 42
         Me.Label20.Text = "Teléfono"
         '
         'txtTel
         '
         Me.txtTel.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtTel.Location = New System.Drawing.Point(64, 238)
+        Me.txtTel.Location = New System.Drawing.Point(68, 238)
         Me.txtTel.Margin = New System.Windows.Forms.Padding(2)
         Me.txtTel.Name = "txtTel"
         Me.txtTel.Size = New System.Drawing.Size(113, 21)
@@ -191,19 +189,19 @@ Partial Class empleado
         'Label19
         '
         Me.Label19.AutoSize = True
-        Me.Label19.Font = New System.Drawing.Font("Dubai", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label19.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label19.ForeColor = System.Drawing.Color.Black
-        Me.Label19.Location = New System.Drawing.Point(4, 163)
+        Me.Label19.Location = New System.Drawing.Point(0, 166)
         Me.Label19.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label19.Name = "Label19"
-        Me.Label19.Size = New System.Drawing.Size(135, 27)
+        Me.Label19.Size = New System.Drawing.Size(143, 20)
         Me.Label19.TabIndex = 40
         Me.Label19.Text = "Nombre de usuario"
         '
         'txtUsuario
         '
         Me.txtUsuario.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtUsuario.Location = New System.Drawing.Point(143, 167)
+        Me.txtUsuario.Location = New System.Drawing.Point(145, 167)
         Me.txtUsuario.Margin = New System.Windows.Forms.Padding(2)
         Me.txtUsuario.Name = "txtUsuario"
         Me.txtUsuario.Size = New System.Drawing.Size(133, 21)
@@ -212,48 +210,48 @@ Partial Class empleado
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Dubai", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.Color.Black
         Me.Label2.Location = New System.Drawing.Point(39, 64)
         Me.Label2.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(72, 27)
+        Me.Label2.Size = New System.Drawing.Size(76, 20)
         Me.Label2.TabIndex = 38
         Me.Label2.Text = "Identidad"
         '
         'Label15
         '
         Me.Label15.AutoSize = True
-        Me.Label15.Font = New System.Drawing.Font("Dubai", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label15.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label15.ForeColor = System.Drawing.Color.Black
         Me.Label15.Location = New System.Drawing.Point(10, 274)
         Me.Label15.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label15.Name = "Label15"
-        Me.Label15.Size = New System.Drawing.Size(50, 27)
+        Me.Label15.Size = New System.Drawing.Size(52, 20)
         Me.Label15.TabIndex = 35
         Me.Label15.Text = "Cargo"
         '
         'Label14
         '
         Me.Label14.AutoSize = True
-        Me.Label14.Font = New System.Drawing.Font("Modern No. 20", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label14.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label14.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Label14.Location = New System.Drawing.Point(141, 205)
+        Me.Label14.Location = New System.Drawing.Point(135, 205)
         Me.Label14.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label14.Name = "Label14"
-        Me.Label14.Size = New System.Drawing.Size(36, 17)
+        Me.Label14.Size = New System.Drawing.Size(42, 18)
         Me.Label14.TabIndex = 34
         Me.Label14.Text = "Sexo"
         '
         'Label10
         '
         Me.Label10.AutoSize = True
-        Me.Label10.Font = New System.Drawing.Font("Dubai", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label10.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label10.ForeColor = System.Drawing.Color.Black
-        Me.Label10.Location = New System.Drawing.Point(17, 200)
+        Me.Label10.Location = New System.Drawing.Point(12, 202)
         Me.Label10.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(44, 27)
+        Me.Label10.Size = New System.Drawing.Size(47, 20)
         Me.Label10.TabIndex = 33
         Me.Label10.Text = "Edad"
         '
@@ -272,36 +270,36 @@ Partial Class empleado
         'Label13
         '
         Me.Label13.AutoSize = True
-        Me.Label13.Font = New System.Drawing.Font("Dubai", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label13.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label13.ForeColor = System.Drawing.Color.Black
         Me.Label13.Location = New System.Drawing.Point(42, 128)
         Me.Label13.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(65, 27)
+        Me.Label13.Size = New System.Drawing.Size(65, 20)
         Me.Label13.TabIndex = 32
         Me.Label13.Text = "Apellido"
         '
         'Label12
         '
         Me.Label12.AutoSize = True
-        Me.Label12.Font = New System.Drawing.Font("Dubai", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label12.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label12.ForeColor = System.Drawing.Color.Black
         Me.Label12.Location = New System.Drawing.Point(44, 94)
         Me.Label12.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(64, 27)
+        Me.Label12.Size = New System.Drawing.Size(65, 20)
         Me.Label12.TabIndex = 31
         Me.Label12.Text = "Nombre"
         '
         'Label11
         '
         Me.Label11.AutoSize = True
-        Me.Label11.Font = New System.Drawing.Font("Dubai", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label11.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label11.ForeColor = System.Drawing.Color.Black
         Me.Label11.Location = New System.Drawing.Point(53, 29)
         Me.Label11.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(57, 27)
+        Me.Label11.Size = New System.Drawing.Size(59, 20)
         Me.Label11.TabIndex = 30
         Me.Label11.Text = "Código"
         '
@@ -320,12 +318,12 @@ Partial Class empleado
         'Label9
         '
         Me.Label9.AutoSize = True
-        Me.Label9.Font = New System.Drawing.Font("Dubai", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label9.ForeColor = System.Drawing.Color.Black
         Me.Label9.Location = New System.Drawing.Point(20, 184)
         Me.Label9.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(0, 27)
+        Me.Label9.Size = New System.Drawing.Size(0, 20)
         Me.Label9.TabIndex = 14
         '
         'txtedad
@@ -340,12 +338,12 @@ Partial Class empleado
         'Label8
         '
         Me.Label8.AutoSize = True
-        Me.Label8.Font = New System.Drawing.Font("Dubai", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label8.ForeColor = System.Drawing.Color.Black
         Me.Label8.Location = New System.Drawing.Point(10, 121)
         Me.Label8.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(0, 27)
+        Me.Label8.Size = New System.Drawing.Size(0, 20)
         Me.Label8.TabIndex = 7
         '
         'txtapellido
@@ -381,20 +379,20 @@ Partial Class empleado
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Dubai", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.Black
         Me.Label1.Location = New System.Drawing.Point(10, 54)
         Me.Label1.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(0, 27)
+        Me.Label1.Size = New System.Drawing.Size(0, 20)
         Me.Label1.TabIndex = 0
         '
         'dataEmpleado
         '
-        DataGridViewCellStyle1.BackColor = System.Drawing.Color.Black
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.White
-        Me.dataEmpleado.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle3.BackColor = System.Drawing.Color.Black
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.White
+        Me.dataEmpleado.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle3
         Me.dataEmpleado.BackgroundColor = System.Drawing.Color.White
         Me.dataEmpleado.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.dataEmpleado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
@@ -497,9 +495,7 @@ Partial Class empleado
         Me.gbBuscar.Controls.Add(Me.rbNombre)
         Me.gbBuscar.Controls.Add(Me.btnBuscar)
         Me.gbBuscar.Controls.Add(Me.rbCodigo)
-        Me.gbBuscar.Controls.Add(Me.Label6)
         Me.gbBuscar.Controls.Add(Me.mBuscarIdentidad)
-        Me.gbBuscar.Controls.Add(Me.Label7)
         Me.gbBuscar.Controls.Add(Me.Label16)
         Me.gbBuscar.Controls.Add(Me.Label17)
         Me.gbBuscar.Controls.Add(Me.txtBuscarNombre)
@@ -519,11 +515,11 @@ Partial Class empleado
         '
         Me.rbNombre.AutoSize = True
         Me.rbNombre.BackColor = System.Drawing.Color.Transparent
-        Me.rbNombre.Font = New System.Drawing.Font("Modern No. 20", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.rbNombre.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.rbNombre.Location = New System.Drawing.Point(30, 66)
         Me.rbNombre.Margin = New System.Windows.Forms.Padding(2)
         Me.rbNombre.Name = "rbNombre"
-        Me.rbNombre.Size = New System.Drawing.Size(151, 20)
+        Me.rbNombre.Size = New System.Drawing.Size(166, 21)
         Me.rbNombre.TabIndex = 2
         Me.rbNombre.TabStop = True
         Me.rbNombre.Text = "Buscar por Nombre"
@@ -550,27 +546,15 @@ Partial Class empleado
         '
         Me.rbCodigo.AutoSize = True
         Me.rbCodigo.BackColor = System.Drawing.Color.Transparent
-        Me.rbCodigo.Font = New System.Drawing.Font("Modern No. 20", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.rbCodigo.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.rbCodigo.Location = New System.Drawing.Point(30, 33)
         Me.rbCodigo.Margin = New System.Windows.Forms.Padding(2)
         Me.rbCodigo.Name = "rbCodigo"
-        Me.rbCodigo.Size = New System.Drawing.Size(190, 20)
+        Me.rbCodigo.Size = New System.Drawing.Size(207, 21)
         Me.rbCodigo.TabIndex = 1
         Me.rbCodigo.TabStop = True
         Me.rbCodigo.Text = "Buscar por No. Identidad"
         Me.rbCodigo.UseVisualStyleBackColor = False
-        '
-        'Label6
-        '
-        Me.Label6.AutoSize = True
-        Me.Label6.Font = New System.Drawing.Font("Modern No. 20", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Label6.Location = New System.Drawing.Point(27, 140)
-        Me.Label6.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(55, 17)
-        Me.Label6.TabIndex = 31
-        Me.Label6.Text = "Nombre"
         '
         'mBuscarIdentidad
         '
@@ -582,18 +566,7 @@ Partial Class empleado
         Me.mBuscarIdentidad.Name = "mBuscarIdentidad"
         Me.mBuscarIdentidad.Size = New System.Drawing.Size(134, 21)
         Me.mBuscarIdentidad.TabIndex = 3
-        '
-        'Label7
-        '
-        Me.Label7.AutoSize = True
-        Me.Label7.Font = New System.Drawing.Font("Modern No. 20", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Label7.Location = New System.Drawing.Point(18, 108)
-        Me.Label7.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(66, 17)
-        Me.Label7.TabIndex = 39
-        Me.Label7.Text = "Identidad"
+        Me.mBuscarIdentidad.Visible = False
         '
         'Label16
         '
@@ -618,11 +591,12 @@ Partial Class empleado
         '
         Me.txtBuscarNombre.Enabled = False
         Me.txtBuscarNombre.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtBuscarNombre.Location = New System.Drawing.Point(86, 139)
+        Me.txtBuscarNombre.Location = New System.Drawing.Point(86, 107)
         Me.txtBuscarNombre.Margin = New System.Windows.Forms.Padding(2)
         Me.txtBuscarNombre.Name = "txtBuscarNombre"
         Me.txtBuscarNombre.Size = New System.Drawing.Size(134, 21)
         Me.txtBuscarNombre.TabIndex = 4
+        Me.txtBuscarNombre.Visible = False
         '
         'Label18
         '
@@ -687,7 +661,6 @@ Partial Class empleado
     Friend WithEvents Label13 As Label
     Friend WithEvents Label12 As Label
     Friend WithEvents Label11 As Label
-    Friend WithEvents Label6 As Label
     Friend WithEvents gbBuscar As GroupBox
     Friend WithEvents Label16 As Label
     Friend WithEvents Label17 As Label
@@ -703,7 +676,6 @@ Partial Class empleado
     Friend WithEvents txtTel As TextBox
     Friend WithEvents Label22 As Label
     Friend WithEvents txtEstado As TextBox
-    Friend WithEvents Label7 As Label
     Friend WithEvents mtxtIdentidad As MaskedTextBox
     Friend WithEvents mBuscarIdentidad As MaskedTextBox
     Friend WithEvents btnBuscar As Button

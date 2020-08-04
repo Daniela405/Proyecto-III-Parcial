@@ -237,7 +237,7 @@ Public Class proveedor
         Dim Cancel As Integer
 
         Try
-            If (MsgBox("¿Esta seguro que desea eliminar este servicio?", vbCritical + vbYesNo) = vbYes) Then
+            If (MsgBox("¿Esta seguro que desea eliminar este Proovedor?", vbCritical + vbYesNo) = vbYes) Then
                 eliminarProveedor()
                 mostrarDatos()
             Else
@@ -259,6 +259,7 @@ Public Class proveedor
     'Operativo
     Private Sub proveedor_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         conexion.conectar()
+        mostrarDatos()
     End Sub
 
     Private Sub dtgProveedor_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dtgProveedor.CellContentClick
@@ -342,12 +343,12 @@ Public Class proveedor
 
         Try
             If (conexion.modificarProveedor(id, nombre, direccion, telefono, correo, rtn, idProducto)) Then
-                MessageBox.Show("Actualizado")
+                MessageBox.Show("Se Actualizo el porveedor correctamente", "correcto", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
                 mostrarDatos()
 
                 'conexion.conexion.Close()
             Else
-                MessageBox.Show("Error al actualizar")
+                MessageBox.Show(" No Se Actualizo el porveedor correctamente", "Incorrecto", MessageBoxButtons.OK, MessageBoxIcon.Error)
                 'conexion.conexion.Close()
             End If
         Catch ex As Exception
@@ -359,13 +360,13 @@ Public Class proveedor
 
     Private Sub eliminarProveedor()
         Dim id As Integer
-
+        id = txtcodigo.Text
         Try
             If (conexion.eliminarProveedor(id)) Then
-                MsgBox("Servicio Eliminado")
+                MessageBox.Show("Se elimino el porveedor correctamente", "correcto", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
                 mostrarDatos()
             Else
-                MsgBox("No se pudo eliminar el servicio")
+                MessageBox.Show("No Se elimino el porveedor correctamente", "Incorrecto", MessageBoxButtons.OK, MessageBoxIcon.Error)
                 conexion.conexion.Close()
             End If
         Catch ex As Exception

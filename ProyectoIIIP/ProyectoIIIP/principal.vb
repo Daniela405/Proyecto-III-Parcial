@@ -29,4 +29,8 @@ Public Class principal
         ReleaseCapture()
         SendMessage(Me.Handle, &H112&, &HF012&, 0)
     End Sub
+
+    Private Sub principal_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+    End Sub
 End Class

@@ -6,7 +6,7 @@ Imports System.Text
 Public Class Conexion
 
 
-    Public conexion As SqlConnection = New SqlConnection("Data Source=DORISMEZA\SQLEXPRESS;Initial Catalog=proyecto;Integrated Security=True")
+    Public conexion As SqlConnection = New SqlConnection("Data Source=DESKTOP-LGDBE5Q\SQLEXPRESS;Initial Catalog=proyecto;Integrated Security=True")
 
     ' Public conexion As SqlConnection = New SqlConnection("Data Source=DESKTOP-LGDBE5Q\SQLEXPRESS;Initial Catalog=proyecto;Integrated Security=True") 'Eduardo
 
@@ -18,6 +18,7 @@ Public Class Conexion
     Public cmb As SqlCommand
     Public dr As SqlDataReader
     Public comando As SqlCommandBuilder
+    'Public tabladatosg As DataTable
 
 
 
@@ -255,7 +256,7 @@ Public Class Conexion
 
         Try
             conexion.Open()
-            cmb = New SqlCommand("buscarProduct", conexion)
+            cmb = New SqlCommand("buscarProductos", conexion)
             cmb.CommandType = CommandType.StoredProcedure
             cmb.Parameters.AddWithValue("@nombre", nombreproducto)
 
@@ -742,7 +743,7 @@ Public Class Conexion
         Try
             conexion.Open()
 
-            cmb = New SqlCommand("consultarProveedor", conexion)
+            cmb = New SqlCommand("consultarProveedores", conexion)
 
             cmb.CommandType = CommandType.StoredProcedure
 
@@ -827,6 +828,8 @@ Public Class Conexion
                 Return dt
                 conexion.Close()
             Else
+
+                MessageBox.Show("Error al buscar , no existe", "Incorrecto", MessageBoxButtons.OK, MessageBoxIcon.Error)
                 Return Nothing
                 conexion.Close()
             End If
@@ -838,6 +841,34 @@ Public Class Conexion
         End Try
     End Function
 
+
+
+    Function retornarempleado()
+        Try
+
+            Dim valorARetornar As String
+            Dim cmd As SqlCommand = conexion.CreateCommand()
+
+
+            cmd.CommandText = ("SELECT concat(Nombre,' ', Apellido) FROM venta inner join empleado on empleado.Id=venta.idempleado and venta.id = " & ventas.lavariable)
+
+            conexion.Open()
+
+            Dim value As Object = cmd.ExecuteScalar()
+
+            valorARetornar = value
+            conexion.Close()
+
+            Return valorARetornar
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            conexion.Close()
+        Finally
+            conexion.Close()
+        End Try
+
+    End Function
     Function retornarventa(ByVal contador As Integer)
         Try
 
@@ -1061,6 +1092,9 @@ Public Class Conexion
                 Dim dt As New DataTable
                 Dim da As New SqlDataAdapter(cmb)
                 da.Fill(dt)
+
+
+
                 Return dt
                 conexion.Close()
             Else
@@ -1299,7 +1333,7 @@ Public Class Conexion
 
         Try
             conexion.Open()
-            cmb = New SqlCommand("buscarCliente", conexion)
+            cmb = New SqlCommand("consultarClientes", conexion)
             cmb.CommandType = CommandType.StoredProcedure
             cmb.Parameters.AddWithValue("@nombre", nombre)
 
