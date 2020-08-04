@@ -78,7 +78,7 @@ Public Class detalleVentas
     Private Sub insertardetalle()
         Dim id As Integer, idventa As String, idproducto As String, cantidad As Integer, precio As Decimal, suma As Integer
 
-        id = idnuevodetalle()
+        id = Val(idnuevodetalle())
         idventa = Val(txtidventa.Text)
         idproducto = txtnombreproducto.Text
         cantidad = Val(txtcantllevar.Text)
@@ -257,7 +257,7 @@ Public Class detalleVentas
 
     Private Sub buscarProductosdetalle()
         Dim idventa As Integer
-        idventa = ventas.lavariable
+        idventa = conexion.retornarIdventa()
 
         Try
 
@@ -444,7 +444,7 @@ Public Class detalleVentas
 
 
         empleado = conexion.retornarempleado()
-        Dim tabladatosg As DataTable = conexion.selectdeproductos(ventas.lavariable)
+        Dim tabladatosg As DataTable = conexion.selectdeproductos(conexion.retornarIdventa)
 
         MsgBox(tabladatosg.Rows.Count)
 
@@ -549,5 +549,9 @@ Public Class detalleVentas
         'yPos += 30
         'e.Graphics.DrawString("Servido por: Hola", printFont, System.Drawing.Brushes.Black, 10, yPos)
         'e.Graphics.DrawString(("Coletilla"), printFont, Brushes.Black, 10, yPos + 20) 
+    End Sub
+
+    Private Sub btnCerrar_Click(sender As Object, e As EventArgs) Handles btnCerrar.Click
+        Me.Close()
     End Sub
 End Class

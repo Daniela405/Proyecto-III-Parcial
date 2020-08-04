@@ -186,11 +186,11 @@ Public Class ventas
 
     End Sub
 
-    Private Sub insertarVenta()
+    Public Sub insertarVenta()
         Dim id As Integer, idcliente As Integer, idempleado As Integer, fecha As String, formapago As String, numerofactura As Integer
         id = idventa()
         idcliente = Val(txtidcliente.Text)
-        idempleado = Val(txtidcliente.Text)
+        idempleado = cmbempleado.SelectedIndex + 1
         fecha = MaskedTextBox1.Text
         formapago = ComboBox1.Text
         numerofactura = Val(TextBox2.Text)
@@ -200,6 +200,7 @@ Public Class ventas
             If conexion.agregarVenta(id, idcliente, idempleado, fecha, formapago, numerofactura) Then
                 MessageBox.Show("Venta Generada Ahora a Agregar Productos ", "Correcto", MessageBoxButtons.OK, MessageBoxIcon.Information)
                 mostrardatos()
+
                 detalleVentas.Show()
                 Me.Hide()
 
@@ -278,4 +279,5 @@ Public Class ventas
         End Try
 
     End Sub
+
 End Class

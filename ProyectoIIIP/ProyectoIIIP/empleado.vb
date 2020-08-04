@@ -70,6 +70,7 @@ Public Class empleado
 
                 End If
                 MessageBox.Show("Correo valido", "Correcto", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                mostrardatos()
             End If
 
         Catch ex As Exception

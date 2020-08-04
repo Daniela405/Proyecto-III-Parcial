@@ -142,6 +142,8 @@ Public Class usuario
             MessageBox.Show("Correo invalido, *username@midominio.com*", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
             txtcorreo.Focus()
             txtcorreo.SelectAll()
+
+
         Else
             insertarUsuaurio()
             'MessageBox.Show("Correo valido", "Correcto", MessageBoxButtons.OK, MessageBoxIcon.Information)
@@ -165,6 +167,7 @@ Public Class usuario
             If conexion.agregarUsuario(idUsuario, nombre, apellido, userName, psw, correo, rol, estado) Then
                 MessageBox.Show("Guardado", "Correcto", MessageBoxButtons.OK, MessageBoxIcon.Information)
                 limpiar()
+                mostrardatos()
             Else
                 MessageBox.Show("Error al guardar", "Incorrecto", MessageBoxButtons.OK, MessageBoxIcon.Error)
                 conexion.conexion.Close()
@@ -271,6 +274,7 @@ Public Class usuario
         Try
             If conexion.modificar(id, nombre, apellido, usuario, contraseña, correo, rol, Estado) Then
                 MessageBox.Show("Se modifico correctamente", "Correcto", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                mostrardatos()
             End If
         Catch ex As Exception
 

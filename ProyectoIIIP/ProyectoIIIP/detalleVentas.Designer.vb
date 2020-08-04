@@ -62,13 +62,14 @@ Partial Class detalleVentas
         Me.panelServicios = New System.Windows.Forms.Panel()
         Me.panelProductos = New System.Windows.Forms.Panel()
         Me.panelDetalle = New System.Windows.Forms.Panel()
+        Me.Button2 = New System.Windows.Forms.Button()
         Me.Button3 = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.btnDatosVenta = New System.Windows.Forms.Button()
         Me.btnAggProductos = New System.Windows.Forms.Button()
         Me.btnAggServicios = New System.Windows.Forms.Button()
-        Me.Button2 = New System.Windows.Forms.Button()
         Me.imprimirfactura = New System.Drawing.Printing.PrintDocument()
+        Me.btnCerrar = New System.Windows.Forms.Button()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -447,6 +448,7 @@ Partial Class detalleVentas
         '
         'panelDetalle
         '
+        Me.panelDetalle.Controls.Add(Me.btnCerrar)
         Me.panelDetalle.Controls.Add(Me.Button2)
         Me.panelDetalle.Controls.Add(Me.txtnombreproducto)
         Me.panelDetalle.Controls.Add(Me.Label11)
@@ -468,6 +470,20 @@ Partial Class detalleVentas
         Me.panelDetalle.Name = "panelDetalle"
         Me.panelDetalle.Size = New System.Drawing.Size(834, 265)
         Me.panelDetalle.TabIndex = 22
+        '
+        'Button2
+        '
+        Me.Button2.BackColor = System.Drawing.Color.Transparent
+        Me.Button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
+        Me.Button2.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Button2.FlatAppearance.BorderSize = 0
+        Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button2.Image = CType(resources.GetObject("Button2.Image"), System.Drawing.Image)
+        Me.Button2.Location = New System.Drawing.Point(275, 197)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(77, 56)
+        Me.Button2.TabIndex = 22
+        Me.Button2.UseVisualStyleBackColor = False
         '
         'Button3
         '
@@ -532,22 +548,25 @@ Partial Class detalleVentas
         Me.btnAggServicios.Text = "Servicios"
         Me.btnAggServicios.UseVisualStyleBackColor = True
         '
-        'Button2
-        '
-        Me.Button2.BackColor = System.Drawing.Color.Transparent
-        Me.Button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
-        Me.Button2.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Button2.FlatAppearance.BorderSize = 0
-        Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button2.Image = CType(resources.GetObject("Button2.Image"), System.Drawing.Image)
-        Me.Button2.Location = New System.Drawing.Point(275, 197)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(77, 56)
-        Me.Button2.TabIndex = 22
-        Me.Button2.UseVisualStyleBackColor = False
-        '
         'imprimirfactura
         '
+        '
+        'btnCerrar
+        '
+        Me.btnCerrar.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btnCerrar.BackColor = System.Drawing.Color.Transparent
+        Me.btnCerrar.BackgroundImage = CType(resources.GetObject("btnCerrar.BackgroundImage"), System.Drawing.Image)
+        Me.btnCerrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btnCerrar.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnCerrar.FlatAppearance.BorderSize = 0
+        Me.btnCerrar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightSeaGreen
+        Me.btnCerrar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Cyan
+        Me.btnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnCerrar.Location = New System.Drawing.Point(750, 213)
+        Me.btnCerrar.Name = "btnCerrar"
+        Me.btnCerrar.Size = New System.Drawing.Size(41, 40)
+        Me.btnCerrar.TabIndex = 30
+        Me.btnCerrar.UseVisualStyleBackColor = False
         '
         'detalleVentas
         '
@@ -564,6 +583,7 @@ Partial Class detalleVentas
         Me.Controls.Add(Me.panelDetalle)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "detalleVentas"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "detalleVentas"
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
@@ -627,4 +647,5 @@ Partial Class detalleVentas
     Friend WithEvents Button1 As Button
     Friend WithEvents Button2 As Button
     Friend WithEvents imprimirfactura As Printing.PrintDocument
+    Friend WithEvents btnCerrar As Button
 End Class

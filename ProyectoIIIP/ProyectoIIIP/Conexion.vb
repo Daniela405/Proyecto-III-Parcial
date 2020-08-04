@@ -18,6 +18,7 @@ Public Class Conexion
     Public cmb As SqlCommand
     Public dr As SqlDataReader
     Public comando As SqlCommandBuilder
+    Public numero As Integer
     'Public tabladatosg As DataTable
 
 
@@ -875,9 +876,11 @@ Public Class Conexion
             Dim valorARetornar As String
             Dim cmd As SqlCommand = conexion.CreateCommand()
 
+            numero = retornarIdventa()
+
             Select Case contador
                 Case 0
-                    cmd.CommandText = ("SELECT id FROM venta where id = " & ventas.lavariable)
+                    cmd.CommandText = ("SELECT id FROM venta where id = " & numero)
 
                     conexion.Open()
 
@@ -889,7 +892,7 @@ Public Class Conexion
                     Return valorARetornar
 
                 Case 1
-                    cmd.CommandText = ("SELECT idcliente FROM venta where id = " & ventas.lavariable)
+                    cmd.CommandText = ("SELECT idcliente FROM venta where id = " & numero)
 
                     conexion.Open()
 
@@ -900,7 +903,7 @@ Public Class Conexion
 
                     Return valorARetornar
                 Case 2
-                    cmd.CommandText = ("SELECT concat(nombre,' ', apellido) FROM venta inner join cliente on venta.idcliente=cliente.id and venta.id = " & ventas.lavariable)
+                    cmd.CommandText = ("SELECT concat(nombre,' ', apellido) FROM venta inner join cliente on venta.idcliente=cliente.id and venta.id = " & numero)
 
                     conexion.Open()
 
@@ -911,7 +914,7 @@ Public Class Conexion
 
                     Return valorARetornar
                 Case 3
-                    cmd.CommandText = ("SELECT  fecha FROM venta where id = " & ventas.lavariable)
+                    cmd.CommandText = ("SELECT  fecha FROM venta where id = " & numero)
 
                     conexion.Open()
 
@@ -922,7 +925,7 @@ Public Class Conexion
 
                     Return valorARetornar
                 Case 4
-                    cmd.CommandText = ("SELECT formapago FROM venta where id = " & ventas.lavariable)
+                    cmd.CommandText = ("SELECT formapago FROM venta where id = " & numero)
 
                     conexion.Open()
 
@@ -935,7 +938,7 @@ Public Class Conexion
 
                 Case 5
 
-                    cmd.CommandText = ("SELECT numerofactura FROM venta where id = " & ventas.lavariable)
+                    cmd.CommandText = ("SELECT numerofactura FROM venta where id = " & numero)
 
                     conexion.Open()
 
